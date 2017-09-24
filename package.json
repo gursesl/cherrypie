@@ -4,17 +4,22 @@
   "description": "Cherry Pie Making Recipes",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check server lint:watch",
+    "start": "npm-run-all --parallel security-check server lint:watch jest",
     "server": "babel-node buildScripts/srcServer.js",
     "lint": "esw webpack.config.* src buildScripts",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000 --subdomain levent",
-    "share": "npm-run-all --parallel server localtunnel"
+    "share": "npm-run-all --parallel server localtunnel",
+    "mocha": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "jest": "react-scripts test --env=jsdom"
   },
   "author": "Levent Gurses",
   "license": "MIT",
   "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "^1.0.13",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
@@ -34,7 +39,8 @@
     "eslint-watch": "^3.1.2",
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
-    "jsdom": "9.8.0",
+    "jest": "^21.1.0",
+    "jsdom": "^11.2.0",
     "json-schema-faker": "0.3.6",
     "json-server": "0.8.22",
     "localtunnel": "1.8.1",
