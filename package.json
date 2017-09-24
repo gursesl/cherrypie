@@ -12,7 +12,8 @@
     "localtunnel": "lt --port 3000 --subdomain levent",
     "share": "npm-run-all --parallel server localtunnel",
     "mocha": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "jest": "react-scripts test --env=jsdom"
+    "jest": "react-scripts test --env=jsdom",
+    "test": "jest"
   },
   "author": "Levent Gurses",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "3.5.0",
