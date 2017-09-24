@@ -18,4 +18,4 @@ export default {
       {test: /\.css$/, loaders: ['style-loader','css-loader']}
     ]
   }
-}
+};
