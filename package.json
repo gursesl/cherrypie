@@ -13,7 +13,8 @@
     "share": "npm-run-all --parallel server localtunnel",
     "mocha": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "jest": "react-scripts test --env=jsdom",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Levent Gurses",
   "license": "MIT",
