@@ -58,3 +58,6 @@ typings/
 .env
 
 src/api/db.json
+package-lock.json
+
+dist
