@@ -30,6 +30,7 @@
   "author": "Levent Gurses",
   "license": "MIT",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "^1.0.13",
@@ -40,6 +41,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "3.5.0",
