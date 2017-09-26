@@ -6,7 +6,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import config from '../webpack.config.dev';
 
 /* eslint-disable no-console */
-const port = 3000;
+const port = 5000;
 const app = express();
 const compiler = webpack(config);
 
@@ -28,7 +28,7 @@ app.get('/users', (req, res) => {
   ]);
 });
 
-app.listen(port, function(err) {
+app.listen(process.env.PORT || port, function(err) {
   if (err) {
     console.log(err);
   } else {
