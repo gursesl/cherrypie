@@ -1,6 +1,14 @@
 import './index.css';
 import { getUsers, deleteUser } from './api/userApi';
 
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
 // Populate table of users via API call
 getUsers().then( result => {
   let usersBody = "";
