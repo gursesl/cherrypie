@@ -28,7 +28,7 @@
     "postbuild": "babel-node buildScripts/distServer.js",
     "deploy": "npm-run-all deploy-api deploy-ui",
     "deploy-api": "git push heroku master",
-    "deploy-ui": "surge ./dist"
+    "deploy-ui": "surge ./dist --domain cherrypie.surge.sh"
   },
   "author": "Levent Gurses",
   "license": "MIT",
