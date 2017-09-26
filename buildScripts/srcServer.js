@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import open from 'open';
 import webpack from 'webpack';
+import cors from 'cors';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import config from '../webpack.config.dev';
 
@@ -9,6 +10,8 @@ import config from '../webpack.config.dev';
 const port = 5000;
 const app = express();
 const compiler = webpack(config);
+
+app.use(cors());
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
