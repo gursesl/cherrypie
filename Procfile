@@ -1,1 +1,1 @@
-web: node heroku.js
+web: babel-node buildScripts/srcServer.js
