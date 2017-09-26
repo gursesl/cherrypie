@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/babel-node buildScripts/srcServer.js
+web: babel-node buildScripts/srcServer.js
