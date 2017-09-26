@@ -26,7 +26,9 @@
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node buildScripts/build.js",
     "postbuild": "babel-node buildScripts/distServer.js",
-    "deploy": "surge ./dist"
+    "deploy": "npm-run-all deploy-api deploy-ui",
+    "deploy-api": "git push heroku master",
+    "deploy-ui": "surge ./dist"
   },
   "author": "Levent Gurses",
   "license": "MIT",
