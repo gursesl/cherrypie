@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount, render, configure } from 'enzyme';
@@ -6,7 +7,6 @@ import sinon from 'sinon';
 import App from './App';
 
 configure({ adapter: new Adapter() });
-
 
 sinon.spy(App.prototype, 'componentDidMount');
 
