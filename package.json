@@ -25,7 +25,6 @@
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node buildScripts/build.js",
-    "postbuild": "babel-node buildScripts/distServer.js",
     "deploy": "npm-run-all --parallel deploy-api deploy-ui",
     "deploy-api": "git push heroku master",
     "deploy-ui": "surge ./dist --domain cherrypie.surge.sh"

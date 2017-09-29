@@ -1,3 +1,17 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
+jobs:
+  include:
+  - stage: test
+    script: npm run test
+  - stage: build
+    script: npm run build
+  - stage: deploy
+    script: skip
+    deploy:
+      provider: heroku
+deploy:
+  api_key:
+    secure: nXJRwqZfP2p/gYwdy1ycVWRBgTuD86VUUFYH7JKdu2UeJmkjWDQ3NrwzXZRBRJL2EJvmaJYIISCGYzM88KEE+FtQq5ahoTN6IvxopXhYgiT2gYbzdfN6IeueKBxPygEaTjjLB7F4Stjaiy8x93RMCfT92aY3ZuWYEs4Hw4uJROoAKfOFqp7a4HjRbpu4/ADYnSv8pS9UGzt+WQef/BTWE0T0obS9N70iYaa1r+hjz3hfvL61iiKe98sWUZoI1d3ok3WaeSVOP/QYYSPXIM2v7CLOqyTx/p/e8vUVt0JevgDzfkL4rSvs0nJgaInYuY8V3PqUaiGM04J5K7CPAeyt+snCEpfy2kjmEVWCtoYGVuqsq6b6tHaPs84Kj9aJty4vtImwQl0LALATFBWv+VjxGCZy0AFlvv3FwEUg1gWbeSS8AJLYBlIzhWnEHFGZiJokjW1CdYwpR4bZvD2SaeIVaNfQab29AdgIth4hHFVZls/uGMvHxCi0Onw6SQjzeylmeafhsDrDl797lJwTE+J0fOJD9ZcvR7VG8DafK2biYQ65NtYJAUOBZpXcw5EOMsKYYJFIWtaHUKvLP3umwOg/IBwiUKtgXHzREpbfy5DJVTIfHoIGZCGJX4Qcvk0IM41lGwGzS5ZKVtmYQBzgUuib/62AEjprnrGbenPUyqAai5M=
+    app: cherrypieapp
