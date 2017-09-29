@@ -1,4 +1,5 @@
 module.exports = {
   verbose: true,
-  "setupFiles": ["./buildScripts/testSetup.js"]
+  "setupFiles": ["./buildScripts/testSetup.js"],
+  "coveragePathIgnorePatterns": ["/node_modules/", "/buildScripts/"]
 };
