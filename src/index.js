@@ -1,4 +1,5 @@
 import './index.css';
+import 'semantic-ui-css/semantic.min.css';
 import { getUsers, deleteUser } from './api/userApi';
 
 /* eslint-disable no-unused-vars */

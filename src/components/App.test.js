@@ -16,4 +16,19 @@ describe('<App />', () => {
     expect(wrapper.text()).to.contain('Hello React!');
     expect(App.prototype.componentDidMount.calledOnce).to.equal(true);
   });
+
+  it('should have a component called Header', () => {
+    let app = mount(<App />);
+    expect(app.find('CherryPieHeader').length).to.equal(1);
+  });
+
+  it('should have a component called Main', () => {
+    // expect(false).to.equal(true);
+  });
+
+  it('should have a component called Footer', () => {
+    // expect(false).to.equal(true);
+  });
+
+
 });
