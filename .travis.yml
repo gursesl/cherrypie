@@ -17,3 +17,5 @@ jobs:
       provider: surge
       project: ./dist/
       domain: cherrypie.surge.sh
+      SURGE_TOKEN: ccb34be5b3f1a52a3305986e11da0e90
+
