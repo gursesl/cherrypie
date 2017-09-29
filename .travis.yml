@@ -10,12 +10,13 @@ jobs:
   - stage: deploy
     script: skip
     deploy:
-      provider: heroku
-      api_key: $HEROKU_API_KEY
-      app: cherrypieapp
-    deploy:
       provider: surge
       project: ./dist/
       domain: cherrypie.surge.sh
       skip_cleanup: true
+    deploy:
+      provider: heroku
+      api_key: $HEROKU_API_KEY
+      app: cherrypieapp
+
 
