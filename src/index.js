@@ -5,12 +5,32 @@ import { getUsers, deleteUser } from './api/userApi';
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+import App from './components/App';
+import reducers from './reducers';
+
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+
+ReactDOM.render(
+  <Provider store={ createStoreWithMiddleware(reducers) }>
+    <App />
+  </Provider>
+  , document.getElementById('root'));
+
+
+
+
+
+
+
+
 
 
 // Populate table of users via API call
+// This is juk stuff that will need to go
 getUsers().then( result => {
   let usersBody = "";
 
