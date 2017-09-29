@@ -23,7 +23,7 @@
     "prestart-mockapi": "npm run generate-mock-data",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "clean-dist": "rimraf ./dist && mkdir dist",
-    "prebuild": "npm-run-all clean-dist test lint",
+    "prebuild": "npm-run-all clean-dist",
     "build": "babel-node buildScripts/build.js",
     "deploy": "npm-run-all --parallel deploy-api deploy-ui",
     "deploy-api": "git push heroku master",
