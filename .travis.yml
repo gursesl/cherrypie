@@ -7,16 +7,17 @@ jobs:
     script: npm run test
   - stage: build
     script: npm run build
-  - stage: deploy
+  - stage: heroku
     script: skip
+    deploy:
+      provider: heroku
+      api_key: $HEROKU_API_KEY
+      app: cherrypieapp
+  - stage: surge
+    script: npm run build
     deploy:
       provider: surge
       project: ./dist/
       domain: cherrypie.surge.sh
       skip_cleanup: true
-    deploy:
-      provider: heroku
-      api_key: $HEROKU_API_KEY
-      app: cherrypieapp
-
 
