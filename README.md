@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/gursesl/cherrypie/badge.svg)](https://coveralls.io/github/gursesl/cherrypie)
+
 # Cherry Pie
 This is a repository with code for cherry pie making recipes
 
@@ -12,7 +14,7 @@ TravisCI Setup
 - Environment vars for Surge, Heroku
 - Build stages in YAML file
 
-TECH TODO
+Tech Todo
 ==
 - [ ] Add Redux
   - [ ] Test Redux
@@ -34,7 +36,7 @@ TECH TODO
   - [ ] Test react router
 
 
-USE CASES
+Functional Todo
 ==
 - [ ] User sign-up
   - [ ] Test user sign-up
