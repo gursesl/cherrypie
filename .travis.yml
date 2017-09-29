@@ -15,6 +15,7 @@ jobs:
       app: cherrypieapp
     deploy:
       provider: surge
-      project: /dist/
+      project: ./dist/
       domain: cherrypie.surge.sh
+      skip_cleanup: true
 
