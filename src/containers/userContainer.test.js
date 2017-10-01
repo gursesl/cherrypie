@@ -1,11 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Provider } from 'react-redux';
-import { shallow, mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount } from 'enzyme';
+import '../setupTests';
 import UserList from './userContainer';
-
-configure({ adapter: new Adapter() });
 
 const store = {
   getState: () => {

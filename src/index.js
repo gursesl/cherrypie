@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import "regenerator-runtime/runtime"
 import './index.css';
 import 'semantic-ui-css/semantic.min.css';
 import { getUsers, deleteUser } from './api/userApi';
@@ -6,13 +7,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga'
 import App from './components/App';
 import reducers from './reducers';
+import rootSaga from './sagas'
+
+const sagaMiddleware = createSagaMiddleware()
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
-  applyMiddleware()
+  applyMiddleware(sagaMiddleware)
 ));
+
+sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider store={ store }>

@@ -16,18 +16,25 @@ TravisCI Setup
 
 Tech Todo
 ==
-- [ ] Add Redux
-  - [ ] Test Redux
-- [ ] Container/component template w/ Redux
-- [ ] Apollo server
-  - [ ] Test Apollo server
-  - [ ] Apollo mock server
-- [ ] Apollo client
-  - [ ] Test Apollo client
-- [ ] Sagas middleware
+- [x] Add Redux
+  - [x] Test Redux
+  - [ ] Add actions and action creators
+  - [ ] Solidify reducers
+  - [ ] Solidify central api calling script
+  - [ ] Add Proptypes
+    - [ ] Test Proptypes
+  - [ ] Refactor client/server scrips
+  - [ ] Test sagas
+- [ ] Add Redux Sagas
   - [ ] Test sagas
 - [ ] Restate for Redux
   - [ ] Test restate
+- [ ] Container/component template w/ Redux
+- [ ] Apollo server
+  - [ ] Apollo mock server
+  - [ ] Test Apollo server
+- [ ] Apollo client
+  - [ ] Test Apollo client
 - [ ] React Forms
   - Test forms
 - [ ] Semantic UI main App layout component

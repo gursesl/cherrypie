@@ -1,38 +1,48 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { Provider } from 'react-redux';
-import { expect } from 'chai';
-import { shallow, mount, render, configure } from 'enzyme';
-import sinon from 'sinon';
-import Adapter from 'enzyme-adapter-react-16';
-import App from './App';
+import React from 'react'
+import { Provider } from 'react-redux'
+import { expect } from 'chai'
+import { shallow, mount, render } from 'enzyme'
+import '../setupTests'
+import sinon from 'sinon'
+import App from './App'
+import CounterContainer from '../containers/CounterContainer'
 
-configure({ adapter: new Adapter() });
-sinon.spy(App.prototype, 'componentDidMount');
+sinon.spy(App.prototype, 'componentDidMount')
 
 describe('<App />', () => {
+  const store = {
+    getState: () => {
+      return {users: [
+        { id: 1, username: "user1" },
+        { id: 2, username: "user2" },
+        { id: 3, username: "user3" },
+        { id: 4, username: "user4" },
+        { id: 5, username: "user5" },
+      ],
+      value:88
+      }
+    },
+    subscribe: () => {},
+    dispatch: () => {}
+  };
+
+  const container = mount(<Provider store={store}><App /></Provider>)
 
   it('should render <UserList>', () => {
-    expect(shallow(<App />).find('Connect(UserList)').length).to.equal(1);
-  });
+    expect(container.find('Connect(UserList)').length).to.equal(1)
+  })
 
   it('calls componentDidMount', () => {
-    const wrapper = shallow(<App/>);
-    expect(wrapper.text()).to.contain('Hello React!');
-    // expect(App.prototype.componentDidMount.calledOnce).to.equal(true);
-  });
+    expect(container.text()).to.contain('Hello React!')
+  })
 
   it('should have a component called Header', () => {
-    let app = shallow(<App />);
-    expect(app.find('CherryPieHeader').length).to.equal(1);
-  });
+    expect(container.find('CherryPieHeader').length).to.equal(1)
+  })
 
-  it('should have a component called Main', () => {
-    // expect(false).to.equal(true);
-  });
+  it('should have a component called CounterContainer', () => {
+    expect(container.find('CounterContainer').length).to.equal(1)
+  })
 
-  it('should have a component called Footer', () => {
-    // expect(false).to.equal(true);
-  });
-
-});
+})

@@ -20,6 +20,6 @@
   },
   "rules": {
     "no-console": 1,
-    "semi": 2
+    "semi": 0
   }
 }

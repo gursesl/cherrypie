@@ -33,10 +33,16 @@
   "author": "Levent Gurses",
   "license": "MIT",
   "dependencies": {
+    "immutable": "^3.8.1",
+    "mime": "^2.0.3",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
+    "react-scripts": "^1.0.14",
     "redux": "^3.7.2",
+    "redux-saga": "^0.15.6",
+    "reselect": "^3.0.1",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
@@ -82,7 +88,6 @@
     "nsp": "2.6.2",
     "numeral": "1.5.3",
     "open": "0.0.5",
-    "react-scripts": "^1.0.14",
     "react-test-renderer": "^16.0.0",
     "regenerator-runtime": "^0.11.0",
     "rimraf": "2.5.4",
