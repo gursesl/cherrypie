@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import CherryPieHeader from './cherryPieHeader';
-import UserList from '../containers/userContainer';
+import UserList from '../containers/UserListContainer';
 import CounterContainer from '../containers/CounterContainer'
 
 export default class App extends Component {
