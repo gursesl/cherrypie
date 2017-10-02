@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+// REFERENCE: COMPONENT TEST
 import React from 'react'
 import { Provider } from 'react-redux';
 import { mount, unmount, shallow } from 'enzyme'

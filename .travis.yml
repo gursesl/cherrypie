@@ -12,8 +12,6 @@ jobs:
       api_key:
         secure: lfmjBS/nCZUEWlpLJP7X2Pi0hMDqoTHQjGxjbAYlj32YJfQjTvsY0/6zVHUG2KWCr7+JBBO/YVaaHkQffs0qoXc2LY3AvyyWodJi0R76mAZX5T2YkMjASWEM9VqoSHZFKcujzTxHKBuqZVHHc0TOjJalpLoDAvKHQUc563kiwREkTwlVXEPVZ1VFLFbIRzn2H+sHykKlU4ZA3XZQA31bjZLsuPrjBqbycxJyOqv+Lfmcmfl+EXxQMh3U/HznhA2yqr2ItQ+h8BMbfkAi/Sfke0VHwjuHmN22mHq+Ig2z+d9xwOnrQnuJGwtq72diTgeGblo8r2DKqaASFScH/SsRlT6zDCGOefpMU7b+PEioxPxYxu8g9N88Pk0MH910DkwuRtXYx8RtI2XcFrpKju9rmvVHwV96eoGQrNu+xBm1qFW/569DMm2O5UaElYyA7GHZ0irtKW4zdI+WEtJ/79vteYkOtb4BU905Uhn6FcuBtEByfYKUputJ9nzjywsQXcBKDpvPTeQg1E6zzxjXMQtUc3vYBmcnbuoIEbdP5T4Ng8uvER4EtmnF4Jbq0asmqpoQk+UYgDhYyoV49iCVJdAQWsd8ImI1r+rt2N2eUOW5NlnDlECcYLV1iTIz4S8v5AVq46gU2fem1WjISA7itmUXyyKtk0u/n8lmDUVFIYn4cQw=
       app: cherrypieapp
-      on:
-        branch: master
   - stage: surge
     script: npm run build
     deploy:
@@ -21,5 +19,3 @@ jobs:
       project: "./dist/"
       domain: cherrypie.surge.sh
       skip_cleanup: true
-      on:
-        branch: master
