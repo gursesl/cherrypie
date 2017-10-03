@@ -21,7 +21,6 @@ const props = {
 
 let component = shallow(<CounterComponent {...props} />)
 
-
 describe('<CounterComponent>', () => {
 
   beforeEach(() => {

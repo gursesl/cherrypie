@@ -14,7 +14,6 @@ function counterContainerReducer(state = initialState, action) {
     case DECREMENT_ACTION:
       return state - 1
     case INCREMENT_ACTION_ASYNC:
-      console.log('Async action called') //eslint-disable-line
       return state
     default:
       return state
