@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { Provider } from 'react-redux'
-import { expect } from 'chai'
 import { shallow, mount, render } from 'enzyme'
 import '../setupTests'
 import sinon from 'sinon'
@@ -29,20 +28,25 @@ describe('<App />', () => {
 
   const container = mount(<Provider store={store}><App /></Provider>)
 
+  it('should have a predefined number of nested React coponents', () => {
+    const wrapper = shallow(React.createElement(App));
+    expect(wrapper.children().filterWhere(n => typeof n.type() !== 'string').length).toEqual(3);
+  })
+
   it('should render <UserList>', () => {
-    expect(container.find('Connect(UserList)').length).to.equal(1)
+    expect(container.find('Connect(UserList)').length).toEqual(1)
   })
 
   it('calls componentDidMount', () => {
-    expect(container.text()).to.contain('Hello React!')
+    expect(container.text()).toContain('Hello React!')
   })
 
   it('should have a component called Header', () => {
-    expect(container.find('CherryPieHeader').length).to.equal(1)
+    expect(container.find('CherryPieHeader').length).toEqual(1)
   })
 
   it('should have a component called CounterContainer', () => {
-    expect(container.find('CounterContainer').length).to.equal(1)
+    expect(container.find('CounterContainer').length).toEqual(1)
   })
 
 })
