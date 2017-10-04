@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`counterContainerReducer handles the incrementAction action snapshot 1`] = `"[object Object]1"`;
+
+exports[`counterContainerReducer handles the toggleNav action snapshot 1`] = `NaN`;
+
+exports[`counterContainerReducer handles the toggleNav action snapshot 2`] = `Object {}`;
+
+exports[`counterContainerReducer returns the initial state snapshot 1`] = `0`;

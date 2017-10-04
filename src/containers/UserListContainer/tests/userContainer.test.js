@@ -2,8 +2,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { shallow, mount } from 'enzyme';
-import '../setupTests';
-import UserList from './userContainer';
+import '../../../setupTests';
+import UserList from '..';
 
 const store = {
   getState: () => {
