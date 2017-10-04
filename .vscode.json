@@ -2,6 +2,8 @@
 {
   "window.zoomLevel": 0,
   "workbench.statusBar.visible": true,
+  "window.nativeTabs": true,
+  "editor.renderWhitespace": "boundary",
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "git.confirmSync": false,
   "todohighlight.keywords": [
