@@ -24,13 +24,20 @@ describe('<App />', () => {
     },
     subscribe: () => {},
     dispatch: () => {}
-  };
+  }
 
   const container = mount(<Provider store={store}><App /></Provider>)
 
   it('should have a predefined number of nested React coponents', () => {
-    const wrapper = shallow(React.createElement(App));
-    expect(wrapper.children().filterWhere(n => typeof n.type() !== 'string').length).toEqual(3);
+    const wrapper = shallow(React.createElement(App))
+    expect(wrapper.children().filterWhere(n => typeof n.type() !== 'string').length).toEqual(8)
+  })
+
+  it('should have FixedMenu visible if state visible parameter is set to true', () => {
+    const wrapper = shallow(React.createElement(App))
+    wrapper.setState({visible: true})
+    expect(wrapper.find('FixedMenu').exists()).toBe(true)
+    expect(wrapper.children().filterWhere(n => typeof n.type() !== 'string').length).toEqual(9)
   })
 
   it('should render <UserList>', () => {

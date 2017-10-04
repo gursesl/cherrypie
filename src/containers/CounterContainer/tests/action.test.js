@@ -1,6 +1,5 @@
 // REFERENCE: ACTIONS TEST
 import configureStore from 'redux-mock-store'
-import { expect } from 'chai'
 import '../../../setupTests'
 
 import {
@@ -24,20 +23,20 @@ describe('CounterContainer actions', () => {
     store.dispatch(incrementAction())
     actions = store.getActions()
     const expectedPayload = { type: INCREMENT_ACTION }
-    expect(actions).to.deep.equal([expectedPayload])
+    expect(actions).toEqual([expectedPayload])
   })
 
   it('should dispatch decrementAction', () => {
     store.dispatch(decrementAction())
     actions = store.getActions()
     const expectedPayload = { type: DECREMENT_ACTION }
-    expect(actions).to.deep.equal([expectedPayload])
+    expect(actions).toEqual([expectedPayload])
   })
 
   it('should dispatch incrementAsyncAction', () => {
     store.dispatch(incrementActionAsync())
     actions = store.getActions()
     const expectedPayload = { type: INCREMENT_ACTION_ASYNC }
-    expect(actions).to.deep.equal([expectedPayload])
+    expect(actions).toEqual([expectedPayload])
   })
 })

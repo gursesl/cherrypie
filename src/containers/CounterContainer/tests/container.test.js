@@ -4,7 +4,6 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import { shallow, mount } from 'enzyme'
-import { expect } from 'chai'
 import '../../../setupTests'
 import CounterContainer from '../index'
 import Counter from '../../../components/Counter'
@@ -18,7 +17,6 @@ let initialState = {
 }
 let store = mockStore(initialState)
 
-
 describe('<CounterContainer>', () => {
 
   let container = mount(<Provider store={store}><CounterContainer /></Provider>)
@@ -29,11 +27,11 @@ describe('<CounterContainer>', () => {
   })
 
   it('should be available', () => {
-    expect(container.text()).to.include('Counter')
+    expect(container.text()).toContain('Counter')
   })
 
   it('should have a CounterComponent', () => {
-    expect(component.length).to.equal(1)
+    expect(component.length).toEqual(1)
   })
 
 })
