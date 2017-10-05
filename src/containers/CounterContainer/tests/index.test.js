@@ -17,7 +17,7 @@ let initialState = {
 }
 let store = mockStore(initialState)
 
-describe('<CounterContainer>', () => {
+describe('CounterContainer:index', () => {
 
   let container = mount(<Provider store={store}><CounterContainer /></Provider>)
   let component = container.find('Counter')

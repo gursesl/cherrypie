@@ -18,9 +18,8 @@ class UserListContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  const users = state.get('users').toJS().users
   return {
-    users
+    users: state.toJS().users.users
   };
 }
 

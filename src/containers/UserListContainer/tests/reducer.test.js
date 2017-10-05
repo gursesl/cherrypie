@@ -1,4 +1,5 @@
-import { fromJS, Map, List } from 'immutable'
+// REFERENCE: REDUCER TEST
+import Immutable from 'immutable'
 import initialState from '../../../initialState'
 import userListReducer from '../reducer'
 import * as a from '../actions'
@@ -23,7 +24,7 @@ const mockError = {type: 1, message: "An error occurred."}
 describe('UserListContainer:reducer', () => {
 
   beforeEach(() => {
-    state = Map(initialState)
+    state = Immutable.fromJS(initialState)
   })
 
   it('sould return the initial state', () => {
@@ -35,13 +36,13 @@ describe('UserListContainer:reducer', () => {
   })
 
   it('should handle usersFetchSuccess action correctly', () => {
-    const expectedState = Map({...state, users: mockUsers})
-    expect(userListReducer(state, a.usersFetchSuccess(mockUsers)).get('users')).toEqual(List(expectedState.get('users')))
+    const expectedState = Immutable.fromJS({...state.toJS(), users: mockUsers})
+    expect(userListReducer(state, a.usersFetchSuccess(mockUsers)).toJS().users).toEqual(expectedState.toJS().users)
   })
 
   it('should handle usersFetchFailure action correctly', () => {
-    const expectedState = Map({...state, error: mockError})
-    expect(userListReducer(state, a.usersFetchFailure(mockError)).get('error')).toEqual(expectedState.get('error'))
+    const expectedState = Immutable.fromJS({...state, error: mockError})
+    expect(userListReducer(state, a.usersFetchFailure(mockError)).toJS().error).toEqual(expectedState.toJS().error)
   })
 
 })
