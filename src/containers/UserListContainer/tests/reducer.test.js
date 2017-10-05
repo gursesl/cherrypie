@@ -1,4 +1,5 @@
-import { fromJS } from 'immutable'
+import { fromJS, Map, List } from 'immutable'
+import initialState from '../../../initialState'
 import userListReducer from '../reducer'
 import * as a from '../actions'
 
@@ -17,15 +18,12 @@ const mockUsers = [
     email: "jsmith@mail.com"
   },
 ]
-const mockErr = {type: 1, message: "An error occurred."}
+const mockError = {type: 1, message: "An error occurred."}
 
-describe('userListReducer', () => {
+describe('UserListContainer:reducer', () => {
 
   beforeEach(() => {
-    state = fromJS({
-      users: [],
-      error: null
-    })
+    state = Map(initialState)
   })
 
   it('sould return the initial state', () => {
@@ -37,19 +35,13 @@ describe('userListReducer', () => {
   })
 
   it('should handle usersFetchSuccess action correctly', () => {
-    const expectedState = fromJS({
-      users: mockUsers,
-      error: null
-    })
-    expect(userListReducer(state, a.usersFetchSuccess(mockUsers))).toEqual(expectedState)
+    const expectedState = Map({...state, users: mockUsers})
+    expect(userListReducer(state, a.usersFetchSuccess(mockUsers)).get('users')).toEqual(List(expectedState.get('users')))
   })
 
   it('should handle usersFetchFailure action correctly', () => {
-    const expectedState = fromJS({
-      users: [],
-      error: mockErr
-    })
-    expect(userListReducer(state, a.usersFetchFailure(mockErr))).toEqual(expectedState)
+    const expectedState = Map({...state, error: mockError})
+    expect(userListReducer(state, a.usersFetchFailure(mockError)).get('error')).toEqual(expectedState.get('error'))
   })
 
 })

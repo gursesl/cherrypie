@@ -20,7 +20,7 @@ const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) =>
   </div>
 
 Counter.propTypes = {
-  value: PropTypes.number.isRequired,
+  // value: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
   onIncrementAsync: PropTypes.func.isRequired

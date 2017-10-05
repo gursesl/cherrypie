@@ -1,9 +1,8 @@
-import { fromJS } from 'immutable'
+import { Map, List } from 'immutable'
+import initialState from '../../initialState'
 import * as c from './constants'
 
-const initialState = fromJS(0);
-
-function counterContainerReducer(state = initialState, action) {
+function counterContainerReducer(state = Map(initialState), action) {
   switch (action.type) {
     case c.INCREMENT_ACTION:
       return state + 1

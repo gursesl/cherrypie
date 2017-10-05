@@ -1,5 +1,6 @@
 // REFERENCE: REDUCER TEST
-import { fromJS } from 'immutable'
+import { fromJS, Map, List } from 'immutable'
+import initialState from '../../../initialState'
 import counterContainerReducer from '../reducer'
 import * as a from '../actions'
 
@@ -8,12 +9,11 @@ let state
 describe('counterContainerReducer', () => {
 
   beforeEach(() => {
-    state = fromJS(0)
+    state = Map(initialState)
   })
 
   it('should return the initial state', () => {
-    const expectedResult = state
-    expect(counterContainerReducer(undefined, {})).toEqual(expectedResult)
+    expect(counterContainerReducer(undefined, {})).toEqual(state)
   })
 
   it('should handle incrementAction action correctly', () => {

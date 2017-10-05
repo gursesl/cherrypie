@@ -16,7 +16,7 @@ import {
 } from 'semantic-ui-react'
 
 import CherryPieHeader from './cherryPieHeader'
-import UserList from '../containers/UserListContainer'
+import UserListContainer from '../containers/UserListContainer'
 import CounterContainer from '../containers/CounterContainer'
 
 
@@ -406,7 +406,7 @@ export default class App extends Component {
         </div>
 
         <h1>Hello React!</h1>
-        <UserList />
+        <UserListContainer />
         <CherryPieHeader />
         <CounterContainer />
       </div>

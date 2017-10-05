@@ -1,29 +1,35 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import { connect } from 'react-redux';
+import React, { Component } from 'react' // eslint-disable-line no-unused-vars
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as a from './actions'
+import UserList from '../../components/UserList' // eslint-disable-line no-unused-vars
 
-class UserList extends Component {
-  renderList() {
-    return this.props.users.map((user) => {
-      return (
-        <li key={user.id}>{user.username}</li>
-      );
-    });
+
+class UserListContainer extends Component {
+  usersFetchStart() {
+    a.usersFetchStart()
   }
 
   render() {
     return (
-      <ul>
-        {this.renderList()}
-      </ul>
+      <UserList {...this.props} />
     );
   }
 }
 
 function mapStateToProps(state) {
+  const users = state.get('users').toJS().users
   return {
-    asdf: 123,
-    users: state.users
+    users
   };
 }
 
-export default connect(mapStateToProps)(UserList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    onFetchUsers: a.usersFetchStart,
+    onFetchUsersSuccess: a.usersFetchSuccess,
+    onFetchUsersFailure: a.usersFetchFailure
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserListContainer);
