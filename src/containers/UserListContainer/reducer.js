@@ -11,9 +11,9 @@ function userListContainerReducer(state = initialState, action) {
     case c.USERS_FETCH_START:
       return state
     case c.USERS_FETCH_SUCCESS:
-      return state.set('users', action.payload)
+      return state.setIn(['users'], fromJS(action.payload))
     case c.USERS_FETCH_FAILURE:
-      return state.set('error', action.error)
+      return state.setIn(['error'], fromJS(action.error))
     default:
       return state
   }

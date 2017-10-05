@@ -3,8 +3,9 @@ import { fromJS } from 'immutable'
 import counterContainerReducer from '../reducer'
 import * as a from '../actions'
 
+let state
+
 describe('counterContainerReducer', () => {
-  let state
 
   beforeEach(() => {
     state = fromJS(0)

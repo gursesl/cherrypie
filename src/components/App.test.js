@@ -40,6 +40,14 @@ describe('<App />', () => {
     expect(wrapper.children().filterWhere(n => typeof n.type() !== 'string').length).toEqual(9)
   })
 
+  it('should have a FixedMenu', () => {
+    // window.scrollTo(5, 100);
+    // const wrapper = shallow(React.createElement(App))
+    // wrapper.hideFixedMenu()
+    // expect(container.find('FixedMenu').exists()).toBe(true)
+    // expect(container.find('CounterContainer').length).toEqual(1)
+  })
+
   it('should render <UserList>', () => {
     expect(container.find('Connect(UserList)').length).toEqual(1)
   })
@@ -55,5 +63,7 @@ describe('<App />', () => {
   it('should have a component called CounterContainer', () => {
     expect(container.find('CounterContainer').length).toEqual(1)
   })
+
+
 
 })
