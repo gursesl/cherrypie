@@ -1,9 +1,6 @@
 import { takeEvery, call, put } from 'redux-saga/effects'
-// import getBaseUrl from '../../api/baseUrl';
 import { getUsers } from '../../api/userApi'
 import * as c from './constants'
-
-// const baseUrl = getBaseUrl();
 
 export function* usersFetchSaga() {
   try {
