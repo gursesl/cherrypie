@@ -1,4 +1,5 @@
-// REFERENCE: REDUCER TEST
+// REFERENCE: REDUCER TEST CANDIDATE
+// TODO: CLEAN-UP IMMUTABLE STATE
 import Immutable from 'immutable'
 import initialState from '../../../initialState'
 import userListReducer from '../reducer'

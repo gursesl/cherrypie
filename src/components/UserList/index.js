@@ -8,6 +8,7 @@ class UserList extends Component {
   }
 
   renderList() {
+    // console.log(this.props)
     return this.props.users.map((user) => {
       return (
         <li key={user.id}>{user.id}: {user.lastName}, {user.firstName} -> {user.email}</li>
@@ -16,7 +17,7 @@ class UserList extends Component {
   }
 
   render() {
-    console.log(this.props.users)
+    // console.log(this.props.users)
     return (
       <div>
         <h1>User List Component</h1>

@@ -10,7 +10,7 @@ exports[`counterContainerReducer returns the initial state snapshot 1`] = `
 Immutable.Map {
   "users": Array [],
   "error": null,
-  "asdf": true,
+  "isLoading": true,
   "value": 10,
 }
 `;

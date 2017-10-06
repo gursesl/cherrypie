@@ -3,13 +3,12 @@
 import React from 'react'
 import { Provider } from 'react-redux';
 import { shallow } from 'enzyme'
-import sinon from 'sinon'
 import '../../../setupTests'
 import CounterComponent from '../'
 
-const onIncrementSpy = sinon.spy();
-const onDecrementSpy = sinon.spy();
-const onIncrementAsyncSpy = sinon.spy();
+const onIncrementSpy = jest.fn()
+const onDecrementSpy = jest.fn()
+const onIncrementAsyncSpy = jest.fn()
 
 const props = {
   value: 71,
@@ -20,15 +19,7 @@ const props = {
 
 let component = shallow(<CounterComponent {...props} />)
 
-describe('<CounterComponent>', () => {
-
-  beforeEach(() => {
-
-  })
-
-  afterEach(() => {
-
-  })
+describe('CounterComponent:index', () => {
 
   it('should be available', () => {
     expect(component.find('button').at(1).text()).toEqual('Increment')
@@ -40,17 +31,17 @@ describe('<CounterComponent>', () => {
 
   it('should find Increment Async button and simulate a click', () => {
     component.find('button').at(0).simulate('click')
-    expect(onIncrementAsyncSpy.calledOnce).toEqual(true)
+    expect(onIncrementAsyncSpy.mock.calls.length).toBe(1)
   })
 
   it('should find Increment button and simulate a click', () => {
     component.find('button').at(1).simulate('click')
-    expect(onIncrementSpy.calledOnce).toEqual(true)
+    expect(onIncrementSpy.mock.calls.length).toBe(1)
   })
 
   it('should find Decrement button and simulate a click', () => {
     component.find('button').at(2).simulate('click')
-    expect(onDecrementSpy.calledOnce).toEqual(true);
+    expect(onDecrementSpy.mock.calls.length).toBe(1)
   })
 
 })

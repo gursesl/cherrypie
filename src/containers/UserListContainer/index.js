@@ -6,10 +6,6 @@ import UserList from '../../components/UserList' // eslint-disable-line no-unuse
 
 
 class UserListContainer extends Component {
-  usersFetchStart() {
-    a.usersFetchStart()
-  }
-
   render() {
     return (
       <UserList {...this.props} />
@@ -18,6 +14,7 @@ class UserListContainer extends Component {
 }
 
 function mapStateToProps(state) {
+  // console.log("Inside mapStateToProps state:", state.toJS().users.users)
   return {
     users: state.toJS().users.users
   };
