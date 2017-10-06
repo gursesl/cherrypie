@@ -1,5 +1,5 @@
 // REFERENCE: REDUCER TEST
-import { fromJS, Map, List } from 'immutable'
+import immutable from 'immutable'
 import initialState from '../../../initialState'
 import counterContainerReducer from '../reducer'
 import * as a from '../actions'
@@ -9,7 +9,7 @@ let state
 describe('counterContainerReducer', () => {
 
   beforeEach(() => {
-    state = Map(initialState)
+    state = immutable.fromJS(initialState)
   })
 
   it('should return the initial state', () => {

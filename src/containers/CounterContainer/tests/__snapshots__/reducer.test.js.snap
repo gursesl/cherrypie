@@ -8,7 +8,7 @@ exports[`counterContainerReducer handles the toggleNav action snapshot 2`] = `Ob
 
 exports[`counterContainerReducer returns the initial state snapshot 1`] = `
 Immutable.Map {
-  "users": Array [],
+  "users": Immutable.List [],
   "error": null,
   "isLoading": true,
   "value": 10,

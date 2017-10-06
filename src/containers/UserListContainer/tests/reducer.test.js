@@ -37,12 +37,14 @@ describe('UserListContainer:reducer', () => {
   })
 
   it('should handle usersFetchSuccess action correctly', () => {
-    const expectedState = Immutable.fromJS({...state.toJS(), users: mockUsers})
+    const newstate = state.set('users', mockUsers)
+    const expectedState = Immutable.fromJS(newstate)
     expect(userListReducer(state, a.usersFetchSuccess(mockUsers)).toJS().users).toEqual(expectedState.toJS().users)
   })
 
   it('should handle usersFetchFailure action correctly', () => {
-    const expectedState = Immutable.fromJS({...state, error: mockError})
+    const newstate = state.set('error', mockError)
+    const expectedState = Immutable.fromJS(newstate)
     expect(userListReducer(state, a.usersFetchFailure(mockError)).toJS().error).toEqual(expectedState.toJS().error)
   })
 
