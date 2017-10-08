@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware, { delay, runSaga } from 'redux-saga'
 import { mockSaga } from 'redux-saga-mock'
@@ -106,7 +107,7 @@ describe('App:sagas:incrementSaga', () => {
           expect(query.effects[0].CALL.fn).toBe(delay)
           expect(query.effects[0].CALL.args).toEqual([1000])
 
-          console.log(query.effects)
+          //           console.log(query.effects)
           // console.log(query.effects[2].PUT)
           // console.log(query.effect('PUT'))
           // expect(query.putAction({ type: c.INCREMENT_ACTION, payload: 'sdsd' })).toBeTruthy()

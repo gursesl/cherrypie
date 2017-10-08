@@ -16,10 +16,18 @@
     "browser": true,
     "node": true,
     "mocha": true,
-    "jest": true
+    "jest": true,
+    "es6": true
   },
   "rules": {
     "no-console": 1,
-    "semi": 0
+    "semi": 0,
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "never",
+      "exports": "never",
+      "functions": "ignore"
+  }]
   }
 }

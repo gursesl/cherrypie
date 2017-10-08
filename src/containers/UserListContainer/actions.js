@@ -7,13 +7,13 @@ export function usersFetchStart() {
 export function usersFetchSuccess(users) {
   return {
     type: c.USERS_FETCH_SUCCESS,
-    payload: users
+    payload: users,
   }
 }
 
 export function usersFetchFailure(err) {
   return {
     type: c.USERS_FETCH_FAILURE,
-    error: err
+    error: err,
   }
 }

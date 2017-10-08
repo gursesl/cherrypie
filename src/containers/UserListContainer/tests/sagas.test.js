@@ -1,87 +1,96 @@
 // REFERENCE: SAGAS TEST
+/* eslint-disable no-unused-vars */
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware, { runSaga } from 'redux-saga'
-import { mockSaga } from 'redux-saga-mock'
+import { put, take, takeLatest, takeEvery, call } from 'redux-saga/effects'
+import sagaHelper from 'redux-saga-testing'
 import { watchUsersFetchSaga, usersFetchSaga } from '../sagas'
 import * as c from '../constants'
+import * as a from '../actions'
 import { getUsers } from '../../../api/userApi'
-
-
-// import { runSaga } from 'redux-saga'
 
 const mockUsers = [
   {
     id: "95617189",
     firstName: "Elfrieda",
     lastName: "Frank",
-    email: "Ada20@hotmail.com"
+    email: "Ada20@hotmail.com",
   },
   {
     id: "95617188",
     firstName: "Jim",
     lastName: "Smith",
-    email: "jsmith@mail.com"
+    email: "jsmith@mail.com",
   },
 ]
 
-
-const reducer = s => s
-const initialState = {}
-// const MOCK_RESPONSE = {
-//   json: () => Promise.resolve({
-//     users: mockUsers
-//   })
-// }
-
 const MOCK_RESPONSE = {
-  users: mockUsers
+  users: mockUsers,
 }
-
-
-
 
 
 describe('UserListContainer:sagas', () => {
 
-  it('usersFetchSaga test', () => {
-    const sagaMiddleware = createSagaMiddleware()
-    const store = createStore(reducer, initialState, applyMiddleware(sagaMiddleware))
+  const genWatch = watchUsersFetchSaga()
+  const genFetch = usersFetchSaga()
 
-    const testSaga = mockSaga(usersFetchSaga)
-
-    testSaga.stubCall(getUsers, () => Promise.resolve(MOCK_RESPONSE))
-
-    return sagaMiddleware.run(testSaga).done
-      .then(() => {
-
-        // console.log("I am resoved")
-        const query = testSaga.query()
-
-        // console.log(query)
-
-        // expect(query.putAction({ type: c.USERS_FETCH_SUCCESS, payload: mockUsers })).toBeDefined()
-        // expect(query.putAction({ type: c.USERS_FETCH_FAILURE, payload: 'sdsd' })).toBeDefined()
-
-        // console.log(query)
-        // expect(query.callWithArgs(getUsers, 'data')).toBeDefined()
-        // expect(query.putAction({ type: c.USERS_FETCH_SUCCESS, data: mockUsers})).toBeDefined()
-      })
+  // STEP 1: WATCH
+  it('should watch for a USERS_FETCH_START action', () => {
+    const expectedValue = takeEvery(c.USERS_FETCH_START, usersFetchSaga)
+    expect(genWatch.next().value).toEqual(expectedValue)
   })
 
-  it('should work', () => {
+  describe('Scenario 2: The API returns expected data', () => {
+    const it = sagaHelper(usersFetchSaga())
+    const api = jest.fn()
 
-  })
+    it('should have called the mock API first, which we are going to specify the results of', result => {
+      expect(result).toEqual(call(getUsers));
 
-  it('should intercepts USERS_FETCH_START actions', () => {
+      // Here we specify what the API should have returned.
+      // Again, the API is not called so we have to give its expected response.
+      return MOCK_RESPONSE;
+    });
 
-  })
+    it('and then trigger an action with the transformed data we got from the API', result => {
+      expect(result).toEqual(put(a.usersFetchSuccess(MOCK_RESPONSE)))
+      // console.log(result.PUT.action.payload.users)
+    });
 
-  it('should put USERS_FETCH_SUCCESS action if successful', () => {
+    it('and then nothing', result => {
+      expect(result).toBeUndefined();
+    });
 
   })
 
-  it('should put USERS_FETCH_FAILURE action when failed', () => {
+  describe('Scenario 3: The API throws an exception', () => {
+    const it = sagaHelper(usersFetchSaga())
+    const api = jest.fn()
 
+    it('should have called the mock API first, which we are going to specify the results of', result => {
+      expect(result).toEqual(call(getUsers));
+
+      // Here we specify what the API should have returned.
+      // Again, the API is not called so we have to give its expected response.
+      return MOCK_RESPONSE;
+    })
+
+    it('should have called the mock API first, which will throw an exception', result => {
+      expect(result).toEqual(put(a.usersFetchSuccess(MOCK_RESPONSE)))
+
+        // Here we pretend that the API threw an exception.
+        // We don't "throw" here but we return an error, which will be considered by the
+        // redux-saga-testing helper to be an exception to throw on the generator
+        return new Error('Something went wrong');
+    })
+
+    it('and then trigger an error action with the error message', result => {
+        expect(result).toEqual(put(a.usersFetchFailure('Something went wrong')));
+    })
+
+    it('and then nothing', result => {
+        expect(result).toBeUndefined();
+    })
   })
 
 })
