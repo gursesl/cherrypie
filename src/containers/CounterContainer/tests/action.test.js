@@ -1,43 +1,37 @@
 // REFERENCE: ACTIONS TEST
 import configureStore from 'redux-mock-store'
-import { expect } from 'chai'
 import '../../../setupTests'
-
-import {
-  INCREMENT_ACTION,
-  DECREMENT_ACTION,
-  INCREMENT_ACTION_ASYNC
-} from '../constants'
-import { incrementAction, decrementAction, incrementActionAsync } from '../actions'
+import * as c from '../constants'
+import * as a from '../actions'
 
 const mockStore = configureStore()
 let store
 let actions
 
-describe('CounterContainer actions', () => {
+describe('CounterContainer:actions', () => {
 
   beforeEach(() => {
     store = mockStore({})
   })
 
   it('should dispatch incrementAction', () => {
-    store.dispatch(incrementAction())
+    store.dispatch(a.incrementAction())
     actions = store.getActions()
-    const expectedPayload = { type: INCREMENT_ACTION }
-    expect(actions).to.deep.equal([expectedPayload])
+    const expectedPayload = { type: c.INCREMENT_ACTION }
+    expect(actions).toEqual([expectedPayload])
   })
 
   it('should dispatch decrementAction', () => {
-    store.dispatch(decrementAction())
+    store.dispatch(a.decrementAction())
     actions = store.getActions()
-    const expectedPayload = { type: DECREMENT_ACTION }
-    expect(actions).to.deep.equal([expectedPayload])
+    const expectedPayload = { type: c.DECREMENT_ACTION }
+    expect(actions).toEqual([expectedPayload])
   })
 
   it('should dispatch incrementAsyncAction', () => {
-    store.dispatch(incrementActionAsync())
+    store.dispatch(a.incrementActionAsync())
     actions = store.getActions()
-    const expectedPayload = { type: INCREMENT_ACTION_ASYNC }
-    expect(actions).to.deep.equal([expectedPayload])
+    const expectedPayload = { type: c.INCREMENT_ACTION_ASYNC }
+    expect(actions).toEqual([expectedPayload])
   })
 })

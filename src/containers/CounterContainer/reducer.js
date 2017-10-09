@@ -1,19 +1,14 @@
-import { fromJS } from 'immutable'
-import {
-  INCREMENT_ACTION,
-  DECREMENT_ACTION,
-  INCREMENT_ACTION_ASYNC
-} from './constants'
+import Immutable from 'immutable'
+import initialState from '../../initialState'
+import * as c from './constants'
 
-const initialState = fromJS(0);
-
-function counterContainerReducer(state = initialState, action) {
+function counterContainerReducer(state = Immutable.fromJS(initialState.value), action) {
   switch (action.type) {
-    case INCREMENT_ACTION:
+    case c.INCREMENT_ACTION:
       return state + 1
-    case DECREMENT_ACTION:
+    case c.DECREMENT_ACTION:
       return state - 1
-    case INCREMENT_ACTION_ASYNC:
+    case c.INCREMENT_ACTION_ASYNC:
       return state
     default:
       return state

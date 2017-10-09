@@ -6,4 +6,4 @@ exports[`counterContainerReducer handles the toggleNav action snapshot 1`] = `Na
 
 exports[`counterContainerReducer handles the toggleNav action snapshot 2`] = `Object {}`;
 
-exports[`counterContainerReducer returns the initial state snapshot 1`] = `0`;
+exports[`counterContainerReducer returns the initial state snapshot 1`] = `10`;

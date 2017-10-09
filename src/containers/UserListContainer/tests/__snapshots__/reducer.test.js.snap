@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserListContainer:reducer handles the usersFetchFailure action snapshot 1`] = `
+Object {
+  "message": "An error occurred.",
+  "type": 1,
+}
+`;
+
+exports[`UserListContainer:reducer handles the usersFetchStart action snapshot 1`] = `Object {}`;
+
+exports[`UserListContainer:reducer handles the usersFetchSuccess action snapshot 1`] = `
+Array [
+  Object {
+    "email": "Ada20@hotmail.com",
+    "firstName": "Elfrieda",
+    "id": "95617189",
+    "lastName": "Frank",
+  },
+  Object {
+    "email": "jsmith@mail.com",
+    "firstName": "Jim",
+    "id": "95617188",
+    "lastName": "Smith",
+  },
+]
+`;

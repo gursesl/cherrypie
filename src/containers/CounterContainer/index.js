@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { incrementAction, decrementAction, incrementActionAsync } from './actions'
+import * as a from './actions'
 import selectCounterContainer from './selectors'
 import Counter from '../../components/Counter'
 
@@ -19,15 +19,15 @@ class CounterContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    value: state.value
+    value: state.toJS().value,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    onIncrement: incrementAction,
-    onDecrement: decrementAction,
-    onIncrementAsync: incrementActionAsync
+    onIncrement: a.incrementAction,
+    onDecrement: a.decrementAction,
+    onIncrementAsync: a.incrementActionAsync,
   }, dispatch)
 }
 

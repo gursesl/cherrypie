@@ -3,37 +3,30 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
-import { shallow, mount } from 'enzyme'
-import { expect } from 'chai'
+import { mount } from 'enzyme'
+import { fromJS } from 'immutable'
 import '../../../setupTests'
+import initialState from '../../../initialState'
 import CounterContainer from '../index'
-import Counter from '../../../components/Counter'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
+let store = mockStore(fromJS(initialState))
 
-// Initialize mock store with empty state
-let initialState = {
-  value: 7
-}
-let store = mockStore(initialState)
-
-
-describe('<CounterContainer>', () => {
+describe('CounterContainer:index', () => {
 
   let container = mount(<Provider store={store}><CounterContainer /></Provider>)
   let component = container.find('Counter')
 
   beforeEach(() => {
-    store = mockStore(initialState)
   })
 
   it('should be available', () => {
-    expect(container.text()).to.include('Counter')
+    expect(container.text()).toContain('Counter')
   })
 
   it('should have a CounterComponent', () => {
-    expect(component.length).to.equal(1)
+    expect(component.length).toEqual(1)
   })
 
 })
