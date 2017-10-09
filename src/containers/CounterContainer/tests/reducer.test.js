@@ -1,19 +1,18 @@
 // REFERENCE: REDUCER TEST
-import immutable from 'immutable'
+import Immutable from 'immutable'
 import initialState from '../../../initialState'
 import counterContainerReducer from '../reducer'
 import * as a from '../actions'
 
-let state
+const state = Immutable.fromJS(initialState)
 
 describe('counterContainerReducer', () => {
 
   beforeEach(() => {
-    state = immutable.fromJS(initialState)
   })
 
   it('should return the initial state', () => {
-    expect(counterContainerReducer(undefined, {})).toEqual(state)
+    expect(counterContainerReducer(undefined, {})).toEqual(state.toJS().value)
   })
 
   it('should handle incrementAction action correctly', () => {

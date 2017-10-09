@@ -2,7 +2,7 @@ import Immutable from 'immutable'
 import initialState from '../../initialState'
 import * as c from './constants'
 
-function counterContainerReducer(state = Immutable.fromJS(initialState), action) {
+function counterContainerReducer(state = Immutable.fromJS(initialState.value), action) {
   switch (action.type) {
     case c.INCREMENT_ACTION:
       return state + 1

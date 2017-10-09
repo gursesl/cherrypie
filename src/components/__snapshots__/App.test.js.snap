@@ -956,6 +956,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
       <hr />
       <div>
         Clicked: 
+        10
          times
       </div>
     </div>

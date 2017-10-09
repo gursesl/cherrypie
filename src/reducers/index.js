@@ -4,7 +4,7 @@ import counterContainerReducer from '../containers/CounterContainer/reducer'
 
 const rootReducer = combineReducers({
   users: userListContainerReducer,
-  value: counterContainerReducer
+  value: counterContainerReducer,
 });
 
 export default rootReducer;

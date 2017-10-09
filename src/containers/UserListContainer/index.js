@@ -14,9 +14,9 @@ class UserListContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  // console.log("Inside mapStateToProps state:", state.toJS().users.users)
+  // console.log("Inside mapStateToProps state:", state.toJS().users)
   return {
-    users: state.toJS().users.users
+    users: state.toJS().users,
   };
 }
 
@@ -24,7 +24,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     onFetchUsers: a.usersFetchStart,
     onFetchUsersSuccess: a.usersFetchSuccess,
-    onFetchUsersFailure: a.usersFetchFailure
+    onFetchUsersFailure: a.usersFetchFailure,
   }, dispatch)
 }
 

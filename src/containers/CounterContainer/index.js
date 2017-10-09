@@ -19,7 +19,7 @@ class CounterContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    value: state.value
+    value: state.toJS().value,
   }
 }
 
@@ -27,7 +27,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     onIncrement: a.incrementAction,
     onDecrement: a.decrementAction,
-    onIncrementAsync: a.incrementActionAsync
+    onIncrementAsync: a.incrementActionAsync,
   }, dispatch)
 }
 

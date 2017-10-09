@@ -3,19 +3,15 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
+import { fromJS } from 'immutable'
 import '../../../setupTests'
+import initialState from '../../../initialState'
 import CounterContainer from '../index'
-import Counter from '../../../components/Counter'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
-
-// Initialize mock store with empty state
-let initialState = {
-  value: 7
-}
-let store = mockStore(initialState)
+let store = mockStore(fromJS(initialState))
 
 describe('CounterContainer:index', () => {
 
@@ -23,7 +19,6 @@ describe('CounterContainer:index', () => {
   let component = container.find('Counter')
 
   beforeEach(() => {
-    store = mockStore(initialState)
   })
 
   it('should be available', () => {

@@ -14,35 +14,13 @@ sinon.spy(App.prototype, 'componentDidMount')
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
-
-const mockUsers = {
-  users: [
-    {
-      id: "95617189",
-      firstName: "Elfrieda",
-      lastName: "Frank",
-      email: "Ada20@hotmail.com"
-    },
-    {
-      id: "95617188",
-      firstName: "Jim",
-      lastName: "Smith",
-      email: "jsmith@mail.com"
-    },
-  ]
-}
-
-const loadedStore = Immutable.fromJS(initialState).set('users', mockUsers)
-const store = mockStore(loadedStore)
-// console.log("Test:App:store.getState().toJS()", store.getState().toJS().users)
-
-let container
+let store = mockStore(Immutable.fromJS(initialState))
 
 describe('App:index', () => {
 
+  let container = mount(<Provider store={store}><App /></Provider>)
 
   beforeEach(() => {
-    container = mount(<Provider store={store}><App /></Provider>)
   })
 
   it('should render without blowing up', () => {

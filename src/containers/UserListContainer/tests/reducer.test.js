@@ -4,19 +4,19 @@ import initialState from '../../../initialState'
 import userListReducer from '../reducer'
 import * as a from '../actions'
 
-let state
+const state = Immutable.fromJS(initialState)
 const mockUsers = [
   {
     id: "95617189",
     firstName: "Elfrieda",
     lastName: "Frank",
-    email: "Ada20@hotmail.com"
+    email: "Ada20@hotmail.com",
   },
   {
     id: "95617188",
     firstName: "Jim",
     lastName: "Smith",
-    email: "jsmith@mail.com"
+    email: "jsmith@mail.com",
   },
 ]
 const mockError = {type: 1, message: "An error occurred."}
@@ -24,11 +24,10 @@ const mockError = {type: 1, message: "An error occurred."}
 describe('UserListContainer:reducer', () => {
 
   beforeEach(() => {
-    state = Immutable.fromJS(initialState)
   })
 
   it('sould return the initial state', () => {
-    expect(userListReducer(undefined, {})).toEqual(state)
+    expect(userListReducer(undefined, {})).toEqual(Immutable.fromJS(state.get('users')))
   })
 
   it('should handle usersFetchStart action correctly', () => {
@@ -38,13 +37,25 @@ describe('UserListContainer:reducer', () => {
   it('should handle usersFetchSuccess action correctly', () => {
     const newstate = state.set('users', mockUsers)
     const expectedState = Immutable.fromJS(newstate)
-    expect(userListReducer(state, a.usersFetchSuccess(mockUsers)).toJS().users).toEqual(expectedState.toJS().users)
+    expect(userListReducer(state, a.usersFetchSuccess(mockUsers)).toJS().users).toEqual(expectedState.get('users'))
   })
 
   it('should handle usersFetchFailure action correctly', () => {
     const newstate = state.set('error', mockError)
     const expectedState = Immutable.fromJS(newstate)
-    expect(userListReducer(state, a.usersFetchFailure(mockError)).toJS().error).toEqual(expectedState.toJS().error)
+    expect(userListReducer(state, a.usersFetchFailure(mockError)).toJS().error).toEqual(expectedState.get('error'))
   })
+
+  it('handles the usersFetchStart action snapshot', () => {
+    expect(userListReducer({}, a.usersFetchStart())).toMatchSnapshot();
+  });
+
+  it('handles the usersFetchSuccess action snapshot', () => {
+    expect(userListReducer(state, a.usersFetchSuccess(mockUsers)).toJS().users).toMatchSnapshot();
+  });
+
+  it('handles the usersFetchFailure action snapshot', () => {
+    expect(userListReducer(state, a.usersFetchFailure(mockError)).toJS().error).toMatchSnapshot();
+  });
 
 })
