@@ -1,4 +1,7 @@
+[![Build Status](https://travis-ci.org/gursesl/cherrypie.svg?branch=master)](https://travis-ci.org/gursesl/cherrypie)
+
 [![Coverage Status](https://coveralls.io/repos/github/gursesl/cherrypie/badge.svg)](https://coveralls.io/github/gursesl/cherrypie)
+
 
 # Cherry Pie
 This is a repository with code for cherry pie making recipes
