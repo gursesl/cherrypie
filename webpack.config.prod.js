@@ -7,24 +7,24 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 var imgQuery = {
   bypassOnDebug: true,
   optipng: {
-    optimizationLevel: 7
+    optimizationLevel: 7,
   },
   gifsicle: {
-    interlaced: false
-  }
+    interlaced: false,
+  },
 };
 
 export default {
   devtool: 'source-map',
   entry: {
     vendor: path.resolve(__dirname, 'src/vendor'),
-    main: path.resolve(__dirname, 'src/index')
+    main: path.resolve(__dirname, 'src/index'),
   },
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js',
   },
   plugins: [
     // Generate an external CSS file with a hash in the filename
@@ -35,7 +35,7 @@ export default {
 
     // Create separate bundles for faster loading
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      name: 'vendor',
     }),
 
     // Create HTML file with references to bundled JS
@@ -51,15 +51,15 @@ export default {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
+        minifyURLs: true,
       },
-      inject: true
+      inject: true,
     }),
 
     // Minify JS
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
-    })
+      sourceMap: true,
+    }),
   ],
   module: {
     loaders: [
@@ -67,15 +67,15 @@ export default {
       {test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap')},
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
-        loader: 'url-loader'
+        loader: 'url-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-          `image-webpack-loader?${JSON.stringify(imgQuery)}`
-        ]
-      }
-    ]
-  }
+          `image-webpack-loader?${JSON.stringify(imgQuery)}`,
+        ],
+      },
+    ],
+  },
 };

@@ -13,7 +13,7 @@ export function deleteUser(id) {
 
 function del(url) {
   const request = new Request(baseUrl + url, {
-    method: 'DELETE'
+    method: 'DELETE',
   });
 
   return fetch(request).then(onSuccess, onError);

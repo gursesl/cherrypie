@@ -16,16 +16,16 @@ const props = {
       id: "95617189",
       firstName: "Elfrieda",
       lastName: "Frank",
-      email: "Ada20@hotmail.com"
+      email: "Ada20@hotmail.com",
     },
     {
       id: "95617188",
       firstName: "Jim",
       lastName: "Smith",
-      email: "jsmith@mail.com"
+      email: "jsmith@mail.com",
     },
   ],
-  onFetchUsers: onFetchUsersSpy
+  onFetchUsers: onFetchUsersSpy,
 }
 
 let component = shallow(<UserComponent {...props} />)

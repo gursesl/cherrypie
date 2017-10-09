@@ -2,7 +2,7 @@ import configureStore from 'redux-mock-store'
 import {
   USERS_FETCH_START,
   USERS_FETCH_SUCCESS,
-  USERS_FETCH_FAILURE
+  USERS_FETCH_FAILURE,
 } from '../constants'
 import {
   usersFetchStart,
@@ -15,13 +15,13 @@ const mockUsers = [
     id: "95617189",
     firstName: "Elfrieda",
     lastName: "Frank",
-    email: "Ada20@hotmail.com"
+    email: "Ada20@hotmail.com",
   },
   {
     id: "95617188",
     firstName: "Jim",
     lastName: "Smith",
-    email: "jsmith@mail.com"
+    email: "jsmith@mail.com",
   },
 ]
 const mockErr = {type: 1, message: "An error occurred."}

@@ -16,7 +16,7 @@ app.use(cors());
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
+  publicPath: config.output.publicPath,
 }));
 
 app.get('/', function(req, res) {
@@ -27,7 +27,7 @@ app.get('/users', (req, res) => {
   res.json([
     {"id": 1, "firstName": "Bob", "lastName": "Smith", "email": "bob@rmail.com"},
     {"id": 2, "firstName": "Mark", "lastName": "Smith", "email": "bob@rmail.com"},
-    {"id": 3, "firstName": "Tina", "lastName": "Smith", "email": "bob@rmail.com"}
+    {"id": 3, "firstName": "Tina", "lastName": "Smith", "email": "bob@rmail.com"},
   ]);
 });
 

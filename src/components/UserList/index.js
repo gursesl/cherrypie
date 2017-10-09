@@ -32,7 +32,7 @@ class UserList extends Component {
 
 UserList.propTypes = {
   onFetchUsers: PropTypes.func,
-  users: PropTypes.array
+  users: PropTypes.array,
 };
 
 

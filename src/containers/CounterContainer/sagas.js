@@ -1,7 +1,6 @@
 import { delay } from 'redux-saga'
 import { put, takeEvery, call } from 'redux-saga/effects'
 import * as c from './constants'
-import * as a from './actions'
 
 // Increment sagas
 export function* incrementAsync() {

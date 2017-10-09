@@ -14,7 +14,7 @@ const props = {
   value: 71,
   onIncrement: onIncrementSpy,
   onDecrement: onDecrementSpy,
-  onIncrementAsync: onIncrementAsyncSpy
+  onIncrementAsync: onIncrementAsyncSpy,
 }
 
 let component = shallow(<CounterComponent {...props} />)
