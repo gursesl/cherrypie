@@ -6,10 +6,13 @@ module.exports = {
     "**/*.{js,jsx}",
     "!**/node_modules/**",
     "!**/vendor/**",
+    "**/*.test.{js,jsx}",
     "!dist/**",
     "!coverage/**",
     "!jest.config.js",
     "!webpack.*.js",
+    "!**/vendor.*",
+    "!src/index.js",
   ],
   "testMatch": [ '**/__tests__/**/*.js?(x)', '**/?(*.)(spec|test).js?(x)' ]
 };
