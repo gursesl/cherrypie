@@ -2,24 +2,24 @@
 
 exports[`counterContainerReducer handles the decrementAction action snapshot 1`] = `
 Immutable.Map {
-  "value": -1,
+  "app/CounterContainer/SELECTOR_COUNT_VALUE": -1,
 }
 `;
 
 exports[`counterContainerReducer handles the incrementAction action snapshot 1`] = `
 Immutable.Map {
-  "value": 1,
+  "app/CounterContainer/SELECTOR_COUNT_VALUE": 1,
 }
 `;
 
 exports[`counterContainerReducer handles the incrementActionAsync action snapshot 1`] = `
 Immutable.Map {
-  "value": 0,
+  "app/CounterContainer/SELECTOR_COUNT_VALUE": 0,
 }
 `;
 
 exports[`counterContainerReducer returns the initial state snapshot 1`] = `
 Immutable.Map {
-  "value": 0,
+  "app/CounterContainer/SELECTOR_COUNT_VALUE": 0,
 }
 `;

@@ -8,13 +8,14 @@ import { mount } from 'enzyme'
 import '../../../setupTests'
 import initialState from '../initialState'
 import CounterContainer from '../index'
+import { SELECTOR_COUNT } from '../constants'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
 
 // Emulate state from combineReducers
 const reducedState = Immutable.fromJS({
-  counterContainer: initialState.toJS(),
+  [SELECTOR_COUNT]: initialState.toJS(),
 })
 
 let store = mockStore(reducedState)

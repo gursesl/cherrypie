@@ -916,6 +916,14 @@ exports[`App:index renders itself into the DOM with the correct container styles
     >
       Fetch Users
     </button>
+    <hr />
+    <h4>
+      Error:
+    </h4>
+    <h4>
+      Loading:
+      true
+    </h4>
   </div>
   <div>
     <h1>

@@ -25,6 +25,9 @@ class UserList extends Component {
           {this.renderList()}
         </ul>
         <button onClick={this.props.onFetchUsers}>Fetch Users</button>
+        <hr/>
+        <h4>Error:{this.props.error}</h4>
+        <h4>Loading:{this.props.isLoading.toString()}</h4>
       </div>
     )
   }

@@ -7,13 +7,14 @@ import '../../../setupTests';
 import configureStore from 'redux-mock-store'
 import initialState from '../initialState'
 import UserListContainer from '..'
+import { SELECTOR_USERS } from '../constants'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
 
 // Emulate state from combineReducers
 const reducedState = Immutable.fromJS({
-  usersContainer: initialState.toJS(),
+  [SELECTOR_USERS]: initialState.toJS(),
 })
 
 let store = mockStore(reducedState)

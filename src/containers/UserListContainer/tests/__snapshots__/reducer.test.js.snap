@@ -2,7 +2,7 @@
 
 exports[`UserListContainer:reducer handles the usersFetchFailure action snapshot 1`] = `
 Immutable.Map {
-  "users": Immutable.List [
+  "app/UserListContainer/SELECTOR_USERS_USERS": Immutable.List [
     Immutable.Map {
       "id": "95617189",
       "firstName": "Elfrieda",
@@ -16,11 +16,11 @@ Immutable.Map {
       "email": "jsmith@mail.com",
     },
   ],
-  "error": Object {
-    "message": "An error occurred.",
+  "app/UserListContainer/SELECTOR_USERS_ERROR": Immutable.Map {
     "type": 1,
+    "message": "An error occurred.",
   },
-  "isLoading": false,
+  "app/UserListContainer/SELECTOR_USERS_ISLOADING": true,
 }
 `;
 
@@ -28,21 +28,21 @@ exports[`UserListContainer:reducer handles the usersFetchStart action snapshot 1
 
 exports[`UserListContainer:reducer handles the usersFetchSuccess action snapshot 1`] = `
 Immutable.Map {
-  "users": Array [
-    Object {
-      "email": "Ada20@hotmail.com",
-      "firstName": "Elfrieda",
+  "app/UserListContainer/SELECTOR_USERS_USERS": Immutable.List [
+    Immutable.Map {
       "id": "95617189",
+      "firstName": "Elfrieda",
       "lastName": "Frank",
+      "email": "Ada20@hotmail.com",
     },
-    Object {
-      "email": "jsmith@mail.com",
-      "firstName": "Jim",
+    Immutable.Map {
       "id": "95617188",
+      "firstName": "Jim",
       "lastName": "Smith",
+      "email": "jsmith@mail.com",
     },
   ],
-  "error": null,
-  "isLoading": false,
+  "app/UserListContainer/SELECTOR_USERS_ERROR": "This is an error",
+  "app/UserListContainer/SELECTOR_USERS_ISLOADING": true,
 }
 `;

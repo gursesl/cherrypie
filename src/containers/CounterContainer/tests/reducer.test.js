@@ -3,6 +3,7 @@ import * as matchers from 'jest-immutable-matchers'
 import initialState from '../initialState'
 import counterContainerReducer from '../reducer'
 import * as a from '../actions'
+import { SELECTOR_COUNT_VALUE } from '../constants'
 
 const state = initialState
 
@@ -21,12 +22,12 @@ describe('counterContainerReducer', () => {
   })
 
   it('should handle incrementAction action correctly', () => {
-    const expectedResult = state.set('value', state.get('value') + 1)
+    const expectedResult = state.set(SELECTOR_COUNT_VALUE, state.get(SELECTOR_COUNT_VALUE) + 1)
     expect(counterContainerReducer(state, a.incrementAction())).toEqual(expectedResult)
   })
 
   it('should handle decrementAction action correctly', () => {
-    const expectedResult = state.set('value', state.get('value') - 1)
+    const expectedResult = state.set(SELECTOR_COUNT_VALUE, state.get(SELECTOR_COUNT_VALUE) - 1)
     expect(counterContainerReducer(state, a.decrementAction())).toEqual(expectedResult)
   })
 

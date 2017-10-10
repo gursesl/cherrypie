@@ -1,11 +1,12 @@
 // REFERENCE: REDUCER TEST
-import Immutable from 'immutable'
+import { fromJS } from 'immutable'
 import initialState from '../initialState'
 import userListReducer from '../reducer'
 import * as a from '../actions'
+import * as c from '../constants'
 
 const state = initialState
-const mockUsers = [
+const mockUsers = fromJS([
   {
     id: "95617189",
     firstName: "Elfrieda",
@@ -18,8 +19,9 @@ const mockUsers = [
     lastName: "Smith",
     email: "jsmith@mail.com",
   },
-]
-const mockError = {type: 1, message: "An error occurred."}
+])
+
+const mockError = fromJS({type: 1, message: "An error occurred."})
 
 describe('UserListContainer:reducer', () => {
 
@@ -35,12 +37,12 @@ describe('UserListContainer:reducer', () => {
   })
 
   it('should handle usersFetchSuccess action correctly', () => {
-    const expectedState = state.set('users', mockUsers)
+    const expectedState = state.set(c.SELECTOR_USERS_USERS, mockUsers)
     expect(userListReducer(state, a.usersFetchSuccess(mockUsers))).toEqual(expectedState)
   })
 
   it('should handle usersFetchFailure action correctly', () => {
-    const expectedState = state.set('error', mockError)
+    const expectedState = state.set(c.SELECTOR_USERS_ERROR, mockError)
     expect(userListReducer(state, a.usersFetchFailure(mockError))).toEqual(expectedState)
   })
 

@@ -1,3 +1,4 @@
+import { fromJS, List } from 'immutable'
 import initialState from './initialState'
 import * as c from './constants'
 
@@ -6,9 +7,9 @@ function userListContainerReducer(state = initialState, action) {
     case c.USERS_FETCH_START:
       return state
     case c.USERS_FETCH_SUCCESS:
-      return state.set('users', action.payload)
+      return state.set(c.SELECTOR_USERS_USERS, fromJS(action.payload) || List())
     case c.USERS_FETCH_FAILURE:
-      return state.set('error', action.error)
+      return state.set(c.SELECTOR_USERS_ERROR, fromJS(action.error) || "")
     default:
       return state
   }

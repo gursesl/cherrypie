@@ -1,8 +1,10 @@
 import { fromJS } from 'immutable'
+import { SELECTOR_COUNT, SELECTOR_COUNT_VALUE } from './containers/CounterContainer/constants'
+import { SELECTOR_USERS, SELECTOR_USERS_USERS, SELECTOR_USERS_ERROR, SELECTOR_USERS_ISLOADING} from './containers/UserListContainer/constants'
 
 export default fromJS({
-  usersContainer: {
-    users: [
+  [SELECTOR_USERS]: {
+    [SELECTOR_USERS_USERS]: [
       {
         id: "95617189",
         firstName: "Elfrieda",
@@ -16,10 +18,10 @@ export default fromJS({
         email: "jsmith@mail.com",
       },
     ],
-    error: null,
-    isLoading: true,
+    [SELECTOR_USERS_ERROR]: null,
+    [SELECTOR_USERS_ISLOADING]: true,
   },
-  counterContainer: {
-    value: 10,
+  [SELECTOR_COUNT]: {
+    [SELECTOR_COUNT_VALUE]: 10,
   },
 })

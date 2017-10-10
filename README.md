@@ -25,18 +25,17 @@ Tech Todo
 ==
 - [x] Add Redux
   - [x] Test Redux
-  - [ ] Add actions and action creators
-  - [ ] Solidify reducers
+  - [x] Add actions and action creators
+  - [x] Solidify reducers
   - [ ] Solidify central api calling script
   - [ ] Add Proptypes
     - [ ] Test Proptypes
   - [ ] Refactor client/server scrips
-  - [ ] Test sagas
-- [ ] Add Redux Sagas
-  - [ ] Test sagas
-- [ ] Restate for Redux
-  - [ ] Test restate
-- [ ] Container/component template w/ Redux
+- [x] Add Redux Sagas
+  - [x] Test sagas
+- [x] Reselect for Redux
+  - [x] Test restate
+- [x] Container/component template w/ Redux
 - [ ] Apollo server
   - [ ] Apollo mock server
   - [ ] Test Apollo server

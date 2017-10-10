@@ -1,7 +1,8 @@
 import { fromJS } from 'immutable'
+import { SELECTOR_USERS_USERS, SELECTOR_USERS_ERROR, SELECTOR_USERS_ISLOADING } from './constants'
 
 const initialState = fromJS({
-  users: [
+  [SELECTOR_USERS_USERS]: [
     {
       id: "95617189",
       firstName: "Elfrieda",
@@ -15,8 +16,8 @@ const initialState = fromJS({
       email: "jsmith@mail.com",
     },
   ],
-  error: null,
-  isLoading: false,
+  [SELECTOR_USERS_ERROR]: 'This is an error',
+  [SELECTOR_USERS_ISLOADING]: true,
 })
 
 export default initialState
