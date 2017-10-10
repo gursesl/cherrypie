@@ -1,27 +1,33 @@
 // REFERENCE: REDUCER TEST
-import Immutable from 'immutable'
-import initialState from '../../../initialState'
+import * as matchers from 'jest-immutable-matchers'
+import initialState from '../initialState'
 import counterContainerReducer from '../reducer'
 import * as a from '../actions'
+import { SELECTOR_COUNT_VALUE } from '../constants'
 
-const state = Immutable.fromJS(initialState)
+const state = initialState
 
 describe('counterContainerReducer', () => {
 
   beforeEach(() => {
+    jest.addMatchers(matchers)
   })
 
+  it('should have the initial state to be immutable', function () {
+    expect(state).toBeImmutable();
+  });
+
   it('should return the initial state', () => {
-    expect(counterContainerReducer(undefined, {})).toEqual(state.toJS().value)
+    expect(counterContainerReducer(undefined, {})).toEqual(state)
   })
 
   it('should handle incrementAction action correctly', () => {
-    const expectedResult = state + 1
+    const expectedResult = state.set(SELECTOR_COUNT_VALUE, state.get(SELECTOR_COUNT_VALUE) + 1)
     expect(counterContainerReducer(state, a.incrementAction())).toEqual(expectedResult)
   })
 
   it('should handle decrementAction action correctly', () => {
-    const expectedResult = state - 1
+    const expectedResult = state.set(SELECTOR_COUNT_VALUE, state.get(SELECTOR_COUNT_VALUE) - 1)
     expect(counterContainerReducer(state, a.decrementAction())).toEqual(expectedResult)
   })
 
@@ -35,15 +41,15 @@ describe('counterContainerReducer', () => {
   });
 
   it('handles the incrementAction action snapshot', () => {
-    expect(counterContainerReducer({}, a.incrementAction())).toMatchSnapshot();
+    expect(counterContainerReducer(state, a.incrementAction())).toMatchSnapshot();
   });
 
-  it('handles the toggleNav action snapshot', () => {
-    expect(counterContainerReducer({}, a.decrementAction())).toMatchSnapshot();
+  it('handles the decrementAction action snapshot', () => {
+    expect(counterContainerReducer(state, a.decrementAction())).toMatchSnapshot();
   });
 
-  it('handles the toggleNav action snapshot', () => {
-    expect(counterContainerReducer({}, a.incrementActionAsync())).toMatchSnapshot();
+  it('handles the incrementActionAsync action snapshot', () => {
+    expect(counterContainerReducer(state, a.incrementActionAsync())).toMatchSnapshot();
   });
 
 })

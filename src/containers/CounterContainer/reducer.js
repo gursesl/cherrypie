@@ -1,13 +1,12 @@
-import Immutable from 'immutable'
-import initialState from '../../initialState'
+import initialState from './initialState'
 import * as c from './constants'
 
-function counterContainerReducer(state = Immutable.fromJS(initialState.value), action) {
+function counterContainerReducer(state = initialState, action) {
   switch (action.type) {
     case c.INCREMENT_ACTION:
-      return state + 1
+      return state.set(c.SELECTOR_COUNT_VALUE, state.get(c.SELECTOR_COUNT_VALUE) + 1)
     case c.DECREMENT_ACTION:
-      return state - 1
+      return state.set(c.SELECTOR_COUNT_VALUE, state.get(c.SELECTOR_COUNT_VALUE) - 1)
     case c.INCREMENT_ACTION_ASYNC:
       return state
     default:

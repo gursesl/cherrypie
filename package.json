@@ -78,6 +78,7 @@
     "image-webpack-loader": "^3.4.2",
     "jest": "^21.1.0",
     "jest-cli": "^21.1.0",
+    "jest-immutable-matchers": "^1.5.0",
     "jsdom": "11.2.0",
     "jsdom-global": "3.0.2",
     "json-schema-faker": "0.4.3",

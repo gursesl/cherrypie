@@ -1,14 +1,16 @@
-// import { createSelector } from 'reselect'
+import { createSelector } from 'reselect'
+import { SELECTOR_COUNT, SELECTOR_COUNT_VALUE } from './constants'
 
-// const selectCounterContainerDomain = () => state => state.get('counterContainer')
+// Direct selector to state domain
+const selectCounter = (state) => state.get(SELECTOR_COUNT)
 
-// const selectCounterContainer = () => createSelector(
-//   selectCounterContainerDomain(),
-//   (substate) => substate.toJS()
-// )
+// Select the counter value
+const makeSelectValue = () => createSelector(
+  selectCounter,
+  (counterState) => counterState.get(SELECTOR_COUNT_VALUE)
+)
 
-// export default selectCounterContainer
-
-// export {
-//   selectCounterContainerDomain
-// }
+export {
+  selectCounter,
+  makeSelectValue,
+}

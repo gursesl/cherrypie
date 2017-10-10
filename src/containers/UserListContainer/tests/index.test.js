@@ -5,12 +5,19 @@ import { shallow, mount } from 'enzyme'
 import Immutable from 'immutable'
 import '../../../setupTests';
 import configureStore from 'redux-mock-store'
-import initialState from '../../../initialState'
+import initialState from '../initialState'
 import UserListContainer from '..'
+import { SELECTOR_USERS } from '../constants'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
-let store = mockStore(Immutable.fromJS(initialState))
+
+// Emulate state from combineReducers
+const reducedState = Immutable.fromJS({
+  [SELECTOR_USERS]: initialState.toJS(),
+})
+
+let store = mockStore(reducedState)
 
 describe('UserListContainer:index', () => {
   let container = mount(<Provider store={store}><UserListContainer /></Provider>)

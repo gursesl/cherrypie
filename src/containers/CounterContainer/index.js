@@ -2,8 +2,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { createSelector } from 'reselect'
 import * as a from './actions'
-import selectCounterContainer from './selectors'
+import { makeSelectValue } from './selectors'
 import Counter from '../../components/Counter'
 
 class CounterContainer extends Component {
@@ -17,11 +18,10 @@ class CounterContainer extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    value: state.toJS().value,
-  }
-}
+const mapStateToProps = createSelector(
+  makeSelectValue(),
+  (value) => ({ value }),
+)
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({

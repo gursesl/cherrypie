@@ -25,6 +25,8 @@ const props = {
       email: "jsmith@mail.com",
     },
   ],
+  error: 'Error',
+  isLoading: true,
   onFetchUsers: onFetchUsersSpy,
 }
 

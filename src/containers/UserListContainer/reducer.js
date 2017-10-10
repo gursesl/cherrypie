@@ -1,15 +1,15 @@
-import Immutable from 'immutable'
-import initialState from '../../initialState'
+import { fromJS, List } from 'immutable'
+import initialState from './initialState'
 import * as c from './constants'
 
-function userListContainerReducer(state = Immutable.fromJS(initialState.users), action) {
+function userListContainerReducer(state = initialState, action) {
   switch (action.type) {
     case c.USERS_FETCH_START:
       return state
     case c.USERS_FETCH_SUCCESS:
-      return action.payload
+      return state.set(c.SELECTOR_USERS_USERS, fromJS(action.payload) || List())
     case c.USERS_FETCH_FAILURE:
-      return action.error
+      return state.set(c.SELECTOR_USERS_ERROR, fromJS(action.error) || "")
     default:
       return state
   }

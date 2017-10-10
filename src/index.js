@@ -7,13 +7,13 @@ import { Provider } from 'react-redux'; //eslint-disable-line
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import App from './components/App'; //eslint-disable-line
-import reducers from './reducers';
+import combineReducers from './reducers';
 import rootSaga from './sagas'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
+const store = createStore(combineReducers, /* preloadedState, */ composeEnhancers(
   applyMiddleware(sagaMiddleware)
 ));
 

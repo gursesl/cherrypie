@@ -1,20 +1,14 @@
-import jsdom from 'jsdom';
-import fs from 'fs';
+import jsdom from 'jsdom'
+import fs from 'fs'
 
-const { JSDOM } = jsdom;
-
-describe('Index test', () => {
-  it('should pass', () => {
-    expect(true).toEqual(true);
-  });
-});
+const { JSDOM } = jsdom
 
 describe('index.html', () => {
-  it('should have H1 that says Users', (done) => {
-    const index = fs.readFileSync('./src/index.html', "utf-8");
-    const dom = new JSDOM(index);
-    const h1 = dom.window.document.getElementsByTagName('h1')[0];
-    expect(h1.innerHTML).toEqual("Users");
+  it('should have a root div element', (done) => {
+    const index = fs.readFileSync('./src/index.html', "utf-8")
+    const dom = new JSDOM(index)
+    const rootDiv = dom.window.document.getElementById('root')
+    expect(rootDiv).toBeDefined()
     done();
     dom.window.close();
   });
