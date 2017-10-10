@@ -10,11 +10,11 @@ describe('App:reducers:rootReducer', () => {
     expect(Object.keys(combinedReducer).length).toBe(2)
   })
 
-  it('we should have two keys (reducers) defined', () => {
-    expect(combinedReducer.users).toBeDefined()
+  it('usersContainer should be defined', () => {
+    expect(combinedReducer.usersContainer).toBeDefined()
   })
 
-  it('we should have two keys (reducers) defined', () => {
-    expect(combinedReducer.value).toBeDefined()
+  it('counterContainer should be defined', () => {
+    expect(combinedReducer.counterContainer).toBeDefined()
   })
 })

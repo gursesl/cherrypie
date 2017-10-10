@@ -18,8 +18,9 @@ class CounterContainer extends Component {
 }
 
 function mapStateToProps(state) {
+  // console.log("Inside mapStateToProps state:", state.toJS().counterContainer.value)
   return {
-    value: state.toJS().value,
+    value: state.toJS().counterContainer.value,
   }
 }
 

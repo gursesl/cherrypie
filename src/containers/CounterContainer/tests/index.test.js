@@ -2,16 +2,22 @@
 // REFERENCE: CONTAINER TEST
 import React from 'react'
 import { Provider } from 'react-redux'
+import Immutable from 'immutable'
 import configureStore from 'redux-mock-store'
 import { mount } from 'enzyme'
-import { fromJS } from 'immutable'
 import '../../../setupTests'
-import initialState from '../../../initialState'
+import initialState from '../initialState'
 import CounterContainer from '../index'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
-let store = mockStore(fromJS(initialState))
+
+// Emulate state from combineReducers
+const reducedState = Immutable.fromJS({
+  counterContainer: initialState.toJS(),
+})
+
+let store = mockStore(reducedState)
 
 describe('CounterContainer:index', () => {
 

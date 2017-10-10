@@ -14,9 +14,9 @@ class UserListContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  // console.log("Inside mapStateToProps state:", state.toJS().users)
+  // console.log("Inside UserListContainer.mapStateToProps state:", state.toJS().usersContainer.users)
   return {
-    users: state.toJS().users,
+    users: state.toJS().usersContainer.users,
   };
 }
 

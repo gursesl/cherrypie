@@ -3,8 +3,8 @@ import userListContainerReducer from './containers/UserListContainer/reducer'
 import counterContainerReducer from './containers/CounterContainer/reducer'
 
 export const combinedReducer = {
-  users: userListContainerReducer,
-  value: counterContainerReducer,
+  usersContainer: userListContainerReducer,
+  counterContainer: counterContainerReducer,
 }
 
 export default combineReducers(combinedReducer)
