@@ -4,7 +4,7 @@
 require('babel-register')();
 
 // Disable webpack features taht Mocha doesn't understand
-require.extensions['css'] = function() {};
+require.extensions.css = function () {};
 
 global.requestAnimationFrame = (callback) => {
   setTimeout(callback, 0);

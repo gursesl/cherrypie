@@ -1,4 +1,4 @@
-import React, { Component } from 'react' // eslint-disable-line no-unused-vars
+import React, { PureComponent } from 'react' // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { createSelector } from 'reselect'
@@ -7,7 +7,7 @@ import { makeSelectUsers, makeSelectError, makeSelectIsLoading } from './selecto
 import UserList from '../../components/UserList' // eslint-disable-line no-unused-vars
 
 
-class UserListContainer extends Component {
+class UserListContainer extends PureComponent {
   render() {
     return (
       <UserList {...this.props} />
@@ -19,16 +19,10 @@ const mapStateToProps = createSelector(
   [makeSelectUsers(), makeSelectError(), makeSelectIsLoading()],
   (users, error, isLoading) => ({
     users: users.toJS(),
-    error: error,
-    isLoading: isLoading,
+    error,
+    isLoading,
   })
 )
-
-// const mapStateToProps = () => {
-//   return {
-//     users: makeSelectUsers(),
-//   }
-// }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({

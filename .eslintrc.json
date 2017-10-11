@@ -1,16 +1,15 @@
 {
   "root": true,
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
+  "extends": "airbnb",
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+  "settings" : {
+    "import/extensions": [".js", ".jsx"]
   },
   "env": {
     "browser": true,
@@ -28,6 +27,8 @@
       "imports": "always-multiline",
       "exports": "always-multiline",
       "functions": "ignore"
-  }]
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }

@@ -20,21 +20,24 @@ exports[`App:index renders itself into the DOM with the correct container styles
         >
           <a
             className="active item"
+            href="/"
             onClick={[Function]}
           >
             Home
           </a>
           <a
             className="item"
+            href="/counter"
             onClick={[Function]}
           >
-            Work
+            Counter
           </a>
           <a
             className="item"
+            href="/users"
             onClick={[Function]}
           >
-            Company
+            Users
           </a>
           <a
             className="item"
@@ -673,12 +676,6 @@ exports[`App:index renders itself into the DOM with the correct container styles
       </div>
     </div>
   </div>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
   <div
     className="ui grid"
   >
