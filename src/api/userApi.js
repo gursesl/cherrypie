@@ -3,12 +3,12 @@ import getBaseUrl from './baseUrl';
 
 const baseUrl = getBaseUrl();
 
-export function getUsers() {
-  return get('users');
+function onSuccess(response) {
+  return response.json();
 }
 
-export function deleteUser(id) {
-  return del(`users/${id}`);
+function onError(error) {
+  console.log(error); // eslint-disable-line no-console
 }
 
 function del(url) {
@@ -23,10 +23,10 @@ function get(url) {
   return fetch(baseUrl + url).then(onSuccess, onError);
 }
 
-function onSuccess(response) {
-  return response.json();
+export function getUsers() {
+  return get('users');
 }
 
-function onError(error) {
-  console.log(error); // eslint-disable-line no-console
+export function deleteUser(id) {
+  return del(`users/${id}`);
 }

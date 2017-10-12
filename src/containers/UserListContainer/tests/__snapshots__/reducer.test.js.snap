@@ -4,13 +4,13 @@ exports[`UserListContainer:reducer handles the usersFetchFailure action snapshot
 Immutable.Map {
   "app/UserListContainer/SELECTOR_USERS_USERS": Immutable.List [
     Immutable.Map {
-      "id": "95617189",
+      "id": 95617189,
       "firstName": "Elfrieda",
       "lastName": "Frank",
       "email": "Ada20@hotmail.com",
     },
     Immutable.Map {
-      "id": "95617188",
+      "id": 95617188,
       "firstName": "Jim",
       "lastName": "Smith",
       "email": "jsmith@mail.com",
@@ -30,13 +30,13 @@ exports[`UserListContainer:reducer handles the usersFetchSuccess action snapshot
 Immutable.Map {
   "app/UserListContainer/SELECTOR_USERS_USERS": Immutable.List [
     Immutable.Map {
-      "id": "95617189",
+      "id": 95617189,
       "firstName": "Elfrieda",
       "lastName": "Frank",
       "email": "Ada20@hotmail.com",
     },
     Immutable.Map {
-      "id": "95617188",
+      "id": 95617188,
       "firstName": "Jim",
       "lastName": "Smith",
       "email": "jsmith@mail.com",

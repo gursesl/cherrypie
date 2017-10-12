@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { createSelector } from 'reselect'
@@ -7,7 +7,7 @@ import * as a from './actions'
 import { makeSelectValue } from './selectors'
 import Counter from '../../components/Counter'
 
-class CounterContainer extends Component {
+class CounterContainer extends PureComponent {
   render() {
     return (
       <div>
@@ -20,7 +20,7 @@ class CounterContainer extends Component {
 
 const mapStateToProps = createSelector(
   makeSelectValue(),
-  (value) => ({ value }),
+  value => ({ value }),
 )
 
 function mapDispatchToProps(dispatch) {

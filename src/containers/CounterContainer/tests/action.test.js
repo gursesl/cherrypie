@@ -9,7 +9,6 @@ let store
 let actions
 
 describe('CounterContainer:actions', () => {
-
   beforeEach(() => {
     store = mockStore({})
   })

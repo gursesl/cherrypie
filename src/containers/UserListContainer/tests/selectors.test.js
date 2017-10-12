@@ -3,7 +3,6 @@ import { selectUsers } from '../selectors'
 import { SELECTOR_USERS } from '../constants'
 
 describe('CounterContainer:selectors', () => {
-
   it('should select the global state', () => {
     const globalState = fromJS({})
     const mockedState = fromJS({
@@ -11,5 +10,4 @@ describe('CounterContainer:selectors', () => {
     })
     expect(selectUsers(mockedState)).toEqual(globalState)
   })
-
 })

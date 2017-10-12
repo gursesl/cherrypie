@@ -12,7 +12,6 @@ const imgQuery = {
 };
 
 
-const DIST_DIR  = path.resolve(__dirname, 'build/')
 const SRC_DIR = path.resolve(__dirname, 'src')
 
 export default {

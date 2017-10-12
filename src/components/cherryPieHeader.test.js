@@ -4,8 +4,7 @@ import '../setupTests';
 import CherryPieHeader from './cherryPieHeader'; // eslint-disable-line no-unused-vars
 
 describe('CherryPieHeader', () => {
-
-  let wrapper = shallow(<CherryPieHeader />)
+  const wrapper = shallow(<CherryPieHeader />)
 
   it('should contain a certain text', () => {
     expect(wrapper.render().text()).toContain('Header')

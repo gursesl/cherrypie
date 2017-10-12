@@ -17,10 +17,9 @@ const props = {
   onIncrementAsync: onIncrementAsyncSpy,
 }
 
-let component = shallow(<CounterComponent {...props} />)
+const component = shallow(<CounterComponent {...props} />)
 
 describe('CounterComponent:index', () => {
-
   it('should be available', () => {
     expect(component.find('button').at(1).text()).toEqual('Increment')
   })
@@ -43,5 +42,4 @@ describe('CounterComponent:index', () => {
     component.find('button').at(2).simulate('click')
     expect(onDecrementSpy.mock.calls.length).toBe(1)
   })
-
 })

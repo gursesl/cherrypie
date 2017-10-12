@@ -8,13 +8,13 @@ import * as c from '../constants'
 const state = initialState
 const mockUsers = fromJS([
   {
-    id: '95617189',
+    id: 95617189,
     firstName: 'Elfrieda',
     lastName: 'Frank',
     email: 'Ada20@hotmail.com',
   },
   {
-    id: '95617188',
+    id: 95617188,
     firstName: 'Jim',
     lastName: 'Smith',
     email: 'jsmith@mail.com',

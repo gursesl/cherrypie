@@ -88,10 +88,7 @@ describe('App:index', () => {
   });
 
   it('should render routes', () => {
-    const wrapper = mount(
-      <Provider store={store}>
-        <ConnectedRouter history={history} />
-      </Provider>)
+    const wrapper = mount(<Provider store={store}><ConnectedRouter history={history} /></Provider>)
     expect(wrapper.find(Router).length).toBeGreaterThanOrEqual(1)
   });
 

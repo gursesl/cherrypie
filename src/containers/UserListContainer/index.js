@@ -6,7 +6,6 @@ import * as a from './actions'
 import { makeSelectUsers, makeSelectError, makeSelectIsLoading } from './selectors'
 import UserList from '../../components/UserList' // eslint-disable-line no-unused-vars
 
-
 class UserListContainer extends PureComponent {
   render() {
     return (
