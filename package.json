@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cherry Pie Making Recipes",
   "engines": {
-    "node": "8.6.0",
+    "node": "8.7.0",
     "npm": "5.4.2"
   },
   "scripts": {
