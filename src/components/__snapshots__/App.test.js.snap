@@ -171,7 +171,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
               }
             }
           >
-            Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+            Yes thats right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
           </p>
         </div>
         <div
@@ -237,7 +237,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
               }
             }
           >
-            "What a Company"
+            What a Company
           </h3>
           <p
             style={
@@ -266,7 +266,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
               }
             }
           >
-            "I shouldn't have gone with their competitor."
+            I should not have gone with their competitor.
           </h3>
           <p
             style={
@@ -410,76 +410,6 @@ exports[`App:index renders itself into the DOM with the correct container styles
                 onClick={[Function]}
                 role="listitem"
               >
-                Sitemap
-              </a>
-              <a
-                className="item"
-                data-value={undefined}
-                onClick={[Function]}
-                role="listitem"
-              >
-                Contact Us
-              </a>
-              <a
-                className="item"
-                data-value={undefined}
-                onClick={[Function]}
-                role="listitem"
-              >
-                Religious Ceremonies
-              </a>
-              <a
-                className="item"
-                data-value={undefined}
-                onClick={[Function]}
-                role="listitem"
-              >
-                Gazebo Plans
-              </a>
-            </div>
-          </div>
-          <div
-            className="three wide column"
-          >
-            <h4
-              className="ui inverted header"
-            >
-              Services
-            </h4>
-            <div
-              className="ui inverted link list"
-              role="list"
-            >
-              <a
-                className="item"
-                data-value={undefined}
-                onClick={[Function]}
-                role="listitem"
-              >
-                Banana Pre-Order
-              </a>
-              <a
-                className="item"
-                data-value={undefined}
-                onClick={[Function]}
-                role="listitem"
-              >
-                DNA FAQ
-              </a>
-              <a
-                className="item"
-                data-value={undefined}
-                onClick={[Function]}
-                role="listitem"
-              >
-                How To Access
-              </a>
-              <a
-                className="item"
-                data-value={undefined}
-                onClick={[Function]}
-                role="listitem"
-              >
                 Favorite X-Men
               </a>
             </div>
@@ -510,26 +440,31 @@ exports[`App:index renders itself into the DOM with the correct container styles
     </h3>
     <a
       className="active item"
+      href={true}
     >
       Users
     </a>
     <a
       className="item"
+      href={true}
     >
       Counter
     </a>
     <a
       className="item"
+      href={true}
     >
       Tornado
     </a>
     <a
       className="item"
+      href={true}
     >
       Item 4
     </a>
     <a
       className="item"
+      href={true}
     >
       Item 5
     </a>
@@ -590,12 +525,6 @@ exports[`App:index renders itself into the DOM with the correct container styles
       </p>
     </div>
   </div>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
   <div
     className="ui attached stackable menu"
   >
@@ -604,6 +533,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
     >
       <a
         className="item"
+        href={true}
       >
         <i
           className="home icon"
@@ -612,6 +542,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
       </a>
       <a
         className="item"
+        href={true}
       >
         <i
           className="grid layout icon"
@@ -620,6 +551,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
       </a>
       <a
         className="item"
+        href={true}
       >
         <i
           className="mail icon"
@@ -638,6 +570,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
         >
           <a
             className="item"
+            href={true}
           >
             <i
               className="edit icon"
@@ -646,6 +579,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
           </a>
           <a
             className="item"
+            href={true}
           >
             <i
               className="globe icon"
@@ -654,6 +588,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
           </a>
           <a
             className="item"
+            href={true}
           >
             <i
               className="settings icon"
