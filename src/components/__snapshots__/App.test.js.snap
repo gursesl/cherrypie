@@ -340,7 +340,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
         }
       >
         <a
-          href="#"
+          href="/"
         >
           Case Studies
         </a>
@@ -440,31 +440,31 @@ exports[`App:index renders itself into the DOM with the correct container styles
     </h3>
     <a
       className="active item"
-      href={true}
+      href="/"
     >
       Users
     </a>
     <a
       className="item"
-      href={true}
+      href="/"
     >
       Counter
     </a>
     <a
       className="item"
-      href={true}
+      href="/"
     >
       Tornado
     </a>
     <a
       className="item"
-      href={true}
+      href="/"
     >
       Item 4
     </a>
     <a
       className="item"
-      href={true}
+      href="/"
     >
       Item 5
     </a>
@@ -533,7 +533,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
     >
       <a
         className="item"
-        href={true}
+        href="/"
       >
         <i
           className="home icon"
@@ -542,7 +542,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
       </a>
       <a
         className="item"
-        href={true}
+        href="/"
       >
         <i
           className="grid layout icon"
@@ -551,7 +551,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
       </a>
       <a
         className="item"
-        href={true}
+        href="/"
       >
         <i
           className="mail icon"
@@ -570,7 +570,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
         >
           <a
             className="item"
-            href={true}
+            href="/"
           >
             <i
               className="edit icon"
@@ -579,7 +579,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
           </a>
           <a
             className="item"
-            href={true}
+            href="/"
           >
             <i
               className="globe icon"
@@ -588,7 +588,7 @@ exports[`App:index renders itself into the DOM with the correct container styles
           </a>
           <a
             className="item"
-            href={true}
+            href="/"
           >
             <i
               className="settings icon"

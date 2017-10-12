@@ -178,7 +178,7 @@ export default class App extends Component {
               horizontal
               style={{ margin: '3em 0em', textTransform: 'uppercase' }}
             >
-              <a href='#'>Case Studies</a>
+              <a href="/">Case Studies</a>
             </Divider>
 
             <Header as="h3" style={{ fontSize: '2em' }}>Did We Tell You About Our Bananas?</Header>
@@ -212,11 +212,11 @@ export default class App extends Component {
 
         <nav className="ui inverted red menu">
           <h3 className="header iterm">CherryPie</h3>
-          <a href className="active item">Users</a>
-          <a href className="item">Counter</a>
-          <a href className="item">Tornado</a>
-          <a href className="item">Item 4</a>
-          <a href className="item">Item 5</a>
+          <a href="/" className="active item">Users</a>
+          <a href="/" className="item">Counter</a>
+          <a href="/" className="item">Tornado</a>
+          <a href="/" className="item">Item 4</a>
+          <a href="/" className="item">Item 5</a>
         </nav>
 
         <div className="ui four column doubling stackable grid">
@@ -244,22 +244,22 @@ export default class App extends Component {
 
         <div className="ui attached stackable menu">
           <div className="ui container">
-            <a href className="item">
+            <a href="/" className="item">
               <i className="home icon" /> Home
             </a>
-            <a href className="item">
+            <a href="/" className="item">
               <i className="grid layout icon" /> Browse
             </a>
-            <a href className="item">
+            <a href="/" className="item">
               <i className="mail icon" /> Messages
             </a>
             <div className="ui simple dropdown item">
               More
               <i className="dropdown icon" />
               <div className="menu">
-                <a href className="item"><i className="edit icon" /> Edit Profile</a>
-                <a href className="item"><i className="globe icon" /> Choose Language</a>
-                <a href className="item"><i className="settings icon" /> Account Settings</a>
+                <a href="/" className="item"><i className="edit icon" /> Edit Profile</a>
+                <a href="/" className="item"><i className="globe icon" /> Choose Language</a>
+                <a href="/" className="item"><i className="settings icon" /> Account Settings</a>
               </div>
             </div>
             <div className="right item">

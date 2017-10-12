@@ -58,7 +58,7 @@ describe('App:index', () => {
 
   it('should render a header', () => {
     const renderedComponent = mount(containerDom)
-    expect(renderedComponent.find(Header).length).toBe(12)
+    expect(renderedComponent.find(Header).length).toBe(11)
   });
 
   it('should have a predefined number of nested React coponents', () => {
