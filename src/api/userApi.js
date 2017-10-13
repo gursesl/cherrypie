@@ -8,7 +8,9 @@ function onSuccess(response) {
 }
 
 function onError(error) {
-  console.log(error); // eslint-disable-line no-console
+  // console.log(error); // eslint-disable-line no-console
+  // Promise.reject(new Error(error))
+  throw new Error(error)
 }
 
 function del(url) {
@@ -24,9 +26,10 @@ function get(url) {
 }
 
 export function getUsers() {
-  return get('users');
+  // console.log(baseUrl)
+  return get('/users');
 }
 
 export function deleteUser(id) {
-  return del(`users/${id}`);
+  return del(`/users/${id}`);
 }
