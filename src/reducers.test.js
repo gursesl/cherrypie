@@ -1,4 +1,4 @@
-import rootReducer, { combinedReducer } from './reducers'
+import rootReducer, { reducers } from './reducers'
 import { SELECTOR_COUNT } from './containers/CounterContainer/constants'
 import { SELECTOR_USERS } from './containers/UserListContainer/constants'
 
@@ -8,15 +8,15 @@ describe('App:reducers:rootReducer', () => {
   })
 
   it('we should have two keys (reducers) defined', () => {
-    expect(combinedReducer).toBeDefined()
-    expect(Object.keys(combinedReducer).length).toBe(2)
+    expect(reducers).toBeDefined()
+    expect(Object.keys(reducers).length).toBe(2)
   })
 
   it('usersContainer should be defined', () => {
-    expect(combinedReducer[SELECTOR_USERS]).toBeDefined()
+    expect(reducers[SELECTOR_USERS]).toBeDefined()
   })
 
   it('counterContainer should be defined', () => {
-    expect(combinedReducer[SELECTOR_COUNT]).toBeDefined()
+    expect(reducers[SELECTOR_COUNT]).toBeDefined()
   })
 })

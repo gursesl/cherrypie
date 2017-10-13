@@ -3,14 +3,14 @@ import { take, takeEvery, takeLatest, put } from 'redux-saga/effects' //eslint-d
 const CHOOSE_COLOR = 'CHOOSE_COLOR'
 const CHANGE_UI = 'CHANGE_UI'
 
-const chooseColor = (color) => ({
+const chooseColor = color => ({
   type: CHOOSE_COLOR,
   payload: {
     color,
   },
 })
 
-const changeUI = (color) => ({
+const changeUI = color => ({
   type: CHANGE_UI,
   payload: {
     color,
@@ -24,7 +24,6 @@ function* changeColorSaga() {
 }
 
 describe('Saga testing for fun', () => {
-
   const gen = changeColorSaga();
 
   it('should wait for users to choose a color', () => {
@@ -41,5 +40,4 @@ describe('Saga testing for fun', () => {
   it('should return when done', () => {
     expect(gen.next().done).toBe(true)
   })
-
 })

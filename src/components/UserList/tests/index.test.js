@@ -13,16 +13,16 @@ const onFetchUsersSpy = jest.fn()
 const props = {
   users: [
     {
-      id: "95617189",
-      firstName: "Elfrieda",
-      lastName: "Frank",
-      email: "Ada20@hotmail.com",
+      id: 95617189,
+      firstName: 'Elfrieda',
+      lastName: 'Frank',
+      email: 'Ada20@hotmail.com',
     },
     {
-      id: "95617188",
-      firstName: "Jim",
-      lastName: "Smith",
-      email: "jsmith@mail.com",
+      id: 95617188,
+      firstName: 'Jim',
+      lastName: 'Smith',
+      email: 'jsmith@mail.com',
     },
   ],
   error: 'Error',
@@ -30,11 +30,10 @@ const props = {
   onFetchUsers: onFetchUsersSpy,
 }
 
-let component = shallow(<UserComponent {...props} />)
+const component = shallow(<UserComponent {...props} />)
 // console.log(component.debug())
 
 describe('UserComponent:index', () => {
-
   it('should be available', () => {
     expect(component.find('button').at(0).text()).toEqual('Fetch Users')
   })
@@ -43,5 +42,4 @@ describe('UserComponent:index', () => {
     component.find('button').at(0).simulate('click')
     expect(onFetchUsersSpy.mock.calls.length).toBe(1)
   })
-
 })

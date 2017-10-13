@@ -4,9 +4,9 @@ import counterContainerReducer from './containers/CounterContainer/reducer'
 import { SELECTOR_COUNT } from './containers/CounterContainer/constants'
 import { SELECTOR_USERS } from './containers/UserListContainer/constants'
 
-export const combinedReducer = {
+export const reducers = {
   [SELECTOR_USERS]: userListContainerReducer,
   [SELECTOR_COUNT]: counterContainerReducer,
 }
 
-export default combineReducers(combinedReducer)
+export default combineReducers(reducers)

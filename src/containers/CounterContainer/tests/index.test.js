@@ -18,12 +18,11 @@ const reducedState = Immutable.fromJS({
   [SELECTOR_COUNT]: initialState.toJS(),
 })
 
-let store = mockStore(reducedState)
+const store = mockStore(reducedState)
 
 describe('CounterContainer:index', () => {
-
-  let container = mount(<Provider store={store}><CounterContainer /></Provider>)
-  let component = container.find('Counter')
+  const container = mount(<Provider store={store}><CounterContainer /></Provider>)
+  const component = container.find('Counter')
 
   beforeEach(() => {
   })
@@ -35,5 +34,4 @@ describe('CounterContainer:index', () => {
   it('should have a CounterComponent', () => {
     expect(component.length).toEqual(1)
   })
-
 })

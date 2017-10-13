@@ -3,8 +3,8 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { shallow, mount } from 'enzyme'
 import Immutable from 'immutable'
-import '../../../setupTests';
 import configureStore from 'redux-mock-store'
+import '../../../setupTests';
 import initialState from '../initialState'
 import UserListContainer from '..'
 import { SELECTOR_USERS } from '../constants'
@@ -17,10 +17,10 @@ const reducedState = Immutable.fromJS({
   [SELECTOR_USERS]: initialState.toJS(),
 })
 
-let store = mockStore(reducedState)
+const store = mockStore(reducedState)
 
 describe('UserListContainer:index', () => {
-  let container = mount(<Provider store={store}><UserListContainer /></Provider>)
+  const container = mount(<Provider store={store}><UserListContainer /></Provider>)
 
   beforeEach(() => {
   })
@@ -35,7 +35,6 @@ describe('UserListContainer:index', () => {
 
   it('should render a list of users', () => {
     expect(container.find('li').length).toEqual(2);
-    expect(container.find('li').at(0).text()).toEqual('95617189: Frank, Elfrieda -> Ada20@hotmail.com');
+    expect(container.find('li').at(0).text()).toEqual('95617189: Frank, Elfrieda = Ada20@hotmail.com');
   });
-
 });

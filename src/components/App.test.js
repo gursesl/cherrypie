@@ -1,24 +1,47 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'react-router-redux'
 import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import Immutable from 'immutable'
-import '../setupTests'
-import sinon from 'sinon'
 import configureStore from 'redux-mock-store'
+import sinon from 'sinon'
+import {
+  Button,
+  Container,
+  Divider,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  List,
+  Menu,
+  Segment,
+  Visibility,
+} from 'semantic-ui-react'
+import { Router, Route, Switch } from 'react-router'
+import createHistory from 'history/createBrowserHistory'
+import '../setupTests'
 import initialState from '../initialState'
-import App from './App'
+import App, { FixedMenu } from './App'
 
 sinon.spy(App.prototype, 'componentDidMount')
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
-let store = mockStore(Immutable.fromJS(initialState))
+const store = mockStore(Immutable.fromJS(initialState))
+const history = createHistory()
+const containerDom = (
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>
+)
 
 describe('App:index', () => {
-
-  let container = mount(<Provider store={store}><App /></Provider>)
+  const container = mount(containerDom)
 
   beforeEach(() => {
   })
@@ -26,6 +49,17 @@ describe('App:index', () => {
   it('should render without blowing up', () => {
     expect(container).toBeDefined();
   })
+
+
+  it('should have the proper initial state', () => {
+    const wrapper = shallow(containerDom)
+    expect(wrapper.instance().store.getState()).toEqual(initialState)
+  })
+
+  it('should render a header', () => {
+    const renderedComponent = mount(containerDom)
+    expect(renderedComponent.find(Header).length).toBe(11)
+  });
 
   it('should have a predefined number of nested React coponents', () => {
     const wrapper = shallow(React.createElement(App))
@@ -48,18 +82,19 @@ describe('App:index', () => {
     expect(container.find('FixedMenu').exists()).toBe(false)
   });
 
-  it('renders itself into the DOM with the correct container styles', function() {
-    const wrapper = renderer.create(
-      <Provider store={store}><App /></Provider>
-    );
-
+  it('renders itself into the DOM with the correct container styles', () => {
+    const wrapper = renderer.create(containerDom);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render routes', () => {
+    const wrapper = mount(<Provider store={store}><ConnectedRouter history={history} /></Provider>)
+    expect(wrapper.find(Router).length).toBeGreaterThanOrEqual(1)
   });
 
   // TODO: Implement scroll simulation and assert FixedMenu found
   it('should have FixedMenu visible if state visible parameter is set to true', () => {
-    const wrapper = shallow(<App />);
-    wrapper.instance().showFixedMenu()
+    const wrapper = shallow(containerDom)
   })
 
   it('should have FixedMenu hidden if state visible parameter is set to false', () => {
@@ -71,5 +106,4 @@ describe('App:index', () => {
   it('calls componentDidMount', () => {
     expect(container.text()).toContain('Hello React!')
   })
-
 })

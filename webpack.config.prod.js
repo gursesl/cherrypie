@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-var imgQuery = {
+const imgQuery = {
   bypassOnDebug: true,
   optipng: {
     optimizationLevel: 7,
@@ -18,7 +18,7 @@ export default {
   devtool: 'source-map',
   entry: {
     vendor: path.resolve(__dirname, 'src/vendor'),
-    main: path.resolve(__dirname, 'src/index'),
+    main: path.resolve(__dirname, 'src/index.js'),
   },
   target: 'web',
   output: {
@@ -63,8 +63,8 @@ export default {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-      {test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap')},
+      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         loader: 'url-loader',

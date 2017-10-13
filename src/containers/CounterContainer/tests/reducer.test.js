@@ -8,12 +8,11 @@ import { SELECTOR_COUNT_VALUE } from '../constants'
 const state = initialState
 
 describe('counterContainerReducer', () => {
-
   beforeEach(() => {
     jest.addMatchers(matchers)
   })
 
-  it('should have the initial state to be immutable', function () {
+  it('should have the initial state to be immutable', () => {
     expect(state).toBeImmutable();
   });
 
@@ -51,5 +50,4 @@ describe('counterContainerReducer', () => {
   it('handles the incrementActionAsync action snapshot', () => {
     expect(counterContainerReducer(state, a.incrementActionAsync())).toMatchSnapshot();
   });
-
 })

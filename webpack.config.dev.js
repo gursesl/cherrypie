@@ -1,7 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-var imgQuery = {
+const imgQuery = {
   bypassOnDebug: true,
   optipng: {
     optimizationLevel: 7,
@@ -11,14 +11,17 @@ var imgQuery = {
   },
 };
 
+
+const SRC_DIR = path.resolve(__dirname, 'src')
+
 export default {
   devtool: 'inline-source-map',
   entry: [
-    path.resolve(__dirname, 'src/index'),
+    path.resolve(__dirname, `${SRC_DIR}/index.js`),
   ],
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, SRC_DIR),
     publicPath: '/',
     filename: 'bundle.js',
   },
@@ -32,8 +35,13 @@ export default {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/, loaders: ['style-loader','css-loader'] },
+      {
+        test: /\.jsx$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: { presets: ['es2015', 'react', 'stage-2'] },
+      },
+      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         loader: 'url-loader',

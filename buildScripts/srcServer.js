@@ -19,23 +19,29 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../src/index.html'));
-});
+})
 
 app.get('/users', (req, res) => {
   res.json([
-    {"id": 1, "firstName": "Bob", "lastName": "Smith", "email": "bob@rmail.com"},
-    {"id": 2, "firstName": "Mark", "lastName": "Smith", "email": "bob@rmail.com"},
-    {"id": 3, "firstName": "Tina", "lastName": "Smith", "email": "bob@rmail.com"},
+    {
+      id: 1, firstName: 'Bob', lastName: 'Smith', email: 'bob@rmail.com',
+    },
+    {
+      id: 2, firstName: 'Bob1', lastName: 'Smith2', email: 'bob1@rmail.com',
+    },
+    {
+      id: 3, firstName: 'Bob2', lastName: 'Smith3', email: 'bob2@rmail.com',
+    },
   ]);
 });
 
-app.listen(process.env.PORT || port, function(err) {
+app.listen(process.env.PORT || port, (err) => {
   if (err) {
     console.log(err);
   } else {
-    open('http://localhost:' + port + '?useMockApi=true');
+    open(`http://localhost:${port}?useMockApi=true`)
   }
 });
 
