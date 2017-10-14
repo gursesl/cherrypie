@@ -1,11 +1,15 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import { ConnectedRouter as Router } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 import App from './components/App'
 import UserListContainer from './containers/UserListContainer'
 import CounterContainer from './containers/CounterContainer'
 
+const history = createHistory()
+
 const AppRouter = () => (
-  <Router>
+  <Router history={history}>
     <div>
       <Route exact path="/" component={App} />
       <Route path="/counter" component={CounterContainer} />
