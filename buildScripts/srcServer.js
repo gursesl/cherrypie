@@ -4,10 +4,10 @@ import open from 'open'
 import webpack from 'webpack'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import chalk from 'chalk'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import config from '../webpack.config.dev'
 
-/* eslint-disable no-console */
 const port = 5000
 const app = express()
 const compiler = webpack(config)
@@ -41,7 +41,7 @@ app.get('/users', (req, res) => {
 
 app.listen(process.env.PORT || port, (err) => {
   if (err) {
-    console.log(err)
+    console.log(chalk.red(err)) // eslint-disable-line no-console
   } else {
     open(`http://localhost:${port}`)
   }

@@ -40,7 +40,7 @@ describe('Users API', () => {
   })
 
   it('should get users using nock', (done) => {
-    console.log(process.env.MOCK_API_URL)
+    // console.log(process.env.MOCK_API_URL)
     nock(process.env.MOCK_API_URL)
       .get('/users')
       .reply(200, mockUsers, {
