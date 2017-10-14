@@ -27,19 +27,20 @@ Tech Todo
   - [x] Test Redux
   - [x] Add actions and action creators
   - [x] Solidify reducers
-- [ ] React router
-  - [ ] Test react router
-- [ ] Styled components
-  - [ ] Test styled components
+- [x] React-redux router
+  - [ ] Separate router file
+  - [ ] Test react-redux router
+- [ ] Refactor client/server folders/scrips
 - [ ] Apollo server
   - [ ] Apollo mock server
   - [ ] Test Apollo server
 - [ ] Apollo client
   - [ ] Test Apollo client
   - [ ] Solidify central api calling script
+- [ ] Styled components
+  - [ ] Test styled components
 - [x] Add Proptypes
   - [ ] Test Proptypes
-  - [ ] Refactor client/server scrips
 - [x] Add Redux Sagas
   - [x] Test sagas
 - [x] Reselect for Redux
