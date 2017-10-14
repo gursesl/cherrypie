@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import { ConnectedRouter as Router } from 'react-router-redux'
 import AppRouter from './router'
 import './setupTests'
 

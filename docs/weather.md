@@ -8,6 +8,7 @@
 - [x] Refactor routers to use React Router DOM
 - [x] Move routes to a separate file
 - [ ] Refactor App component
+  - [x] Integrate React Router with Redux
   - [ ] Extract header navigation
   - [ ] Nested routes
 - [ ] Heroku env variable for API key
