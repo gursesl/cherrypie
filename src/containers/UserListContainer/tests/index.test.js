@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
 import { Provider } from 'react-redux'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import Immutable from 'immutable'
 import configureStore from 'redux-mock-store'
 import '../../../setupTests';
