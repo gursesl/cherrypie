@@ -1,6 +1,6 @@
 import nock from 'nock'
+import dotenv from 'dotenv'
 import * as api from '../userApi'
-import getBaseUrl from '../baseUrl';
 
 const mockUsers = [
   {
@@ -31,6 +31,7 @@ describe('Users API', () => {
   beforeEach(() => {
     nock.disableNetConnect()
     nock.enableNetConnect('127.0.0.1')
+    dotenv.config('../../../.env')
   })
 
   afterEach(() => {
@@ -39,7 +40,8 @@ describe('Users API', () => {
   })
 
   it('should get users using nock', (done) => {
-    nock(getBaseUrl())
+    console.log(process.env.MOCK_API_URL)
+    nock(process.env.MOCK_API_URL)
       .get('/users')
       .reply(200, mockUsers, {
         'Access-Control-Allow-Origin': '*',

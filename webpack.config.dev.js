@@ -1,5 +1,6 @@
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import Dotenv from 'dotenv-webpack'
 
 const imgQuery = {
   bypassOnDebug: true,
@@ -9,8 +10,7 @@ const imgQuery = {
   gifsicle: {
     interlaced: false,
   },
-};
-
+}
 
 const SRC_DIR = path.resolve(__dirname, 'src')
 
@@ -30,6 +30,10 @@ export default {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: true,
+    }),
+    new Dotenv({
+      path: './.env', // Path to .env file (this is the default)
+      safe: false, // load .env.example (defaults to "false" which does not use dotenv-safe)
     }),
   ],
   module: {
@@ -55,4 +59,4 @@ export default {
       },
     ],
   },
-};
+}

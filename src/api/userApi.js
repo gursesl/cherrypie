@@ -8,8 +8,6 @@ function onSuccess(response) {
 }
 
 function onError(error) {
-  // console.log(error); // eslint-disable-line no-console
-  // Promise.reject(new Error(error))
   throw new Error(error)
 }
 
@@ -26,7 +24,7 @@ function get(url) {
 }
 
 export function getUsers() {
-  // console.log(baseUrl)
+  // console.log('api.getUsers():', baseUrl)
   return get('/users');
 }
 

@@ -53,6 +53,7 @@ Tech Todo
 
 Functional Todo
 ==
+- [ ] [Create a weather route/container/component](./docs/weather.md)
 - [ ] User sign-up
   - [ ] Test user sign-up
 - [ ] User sign-in
