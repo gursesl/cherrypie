@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { withRouter, NavLink } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { createSelector } from 'reselect'
 import * as a from './actions'
@@ -12,6 +13,9 @@ class CounterContainer extends PureComponent {
     return (
       <div>
         <h1>Counter</h1>
+        <NavLink exact to="/">Home</NavLink>
+        <NavLink to="/counter">Counter</NavLink>
+        <NavLink to="/users">Users</NavLink>
         <Counter {...this.props} />
       </div>
     )
@@ -31,4 +35,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CounterContainer))

@@ -9,6 +9,7 @@
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "NODE_ENV=development npm-run-all --parallel security-check server lint:watch start-mockapi",
+    "start:dev": "webpack-dev-server --open --config webpack.config.dev.js",
     "debug": "babel-node --inspect-brk=9229 buildScripts/srcServer.js",
     "server": "babel-node buildScripts/srcServer.js",
     "lint": "esw webpack.config.* src buildScripts",
@@ -44,6 +45,7 @@
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
     "express": "^4.16.2",
+    "express-history-api-fallback": "^2.2.1",
     "fetch-mock": "^5.13.1",
     "history": "^4.7.2",
     "immutable": "^3.8.1",
@@ -116,6 +118,7 @@
     "sinon": "^4.0.0",
     "style-loader": "^0.19.0",
     "surge": "^0.19.0",
+    "webpack-dev-server": "^2.9.1",
     "webpack-hot-middleware": "^2.19.1",
     "webpack-md5-hash": "0.0.5"
   }

@@ -1,8 +1,9 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter as Router } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import App from './components/App'
+import Home from './components/Home'
 import UserListContainer from './containers/UserListContainer'
 import CounterContainer from './containers/CounterContainer'
 
@@ -10,11 +11,14 @@ const history = createHistory()
 
 const AppRouter = () => (
   <Router history={history}>
-    <div>
-      <Route exact path="/" component={App} />
-      <Route path="/counter" component={CounterContainer} />
-      <Route path="/users" component={UserListContainer} />
-    </div>
+    <App>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/counter" component={CounterContainer} />
+        <Route path="/users" component={UserListContainer} />
+        <Route path="/careers" component={Home} />
+      </Switch>
+    </App>
   </Router>
 )
 

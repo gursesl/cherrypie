@@ -2,6 +2,8 @@
 // REFERENCE: CONTAINER TEST
 import React from 'react'
 import { Provider } from 'react-redux'
+import { ConnectedRouter as Router } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 import Immutable from 'immutable'
 import configureStore from 'redux-mock-store'
 import { mount } from 'enzyme'
@@ -19,10 +21,22 @@ const reducedState = Immutable.fromJS({
 })
 
 const store = mockStore(reducedState)
+const history = createHistory()
+
+const component = (
+  <Provider store={store}>
+    <Router history={history}>
+      <CounterContainer>
+        <div>Child elements</div>
+      </CounterContainer>
+    </Router>
+  </Provider>
+)
+
 
 describe('CounterContainer:index', () => {
-  const container = mount(<Provider store={store}><CounterContainer /></Provider>)
-  const component = container.find('Counter')
+  const container = mount(component)
+  const wrapper = container.find('Counter')
 
   beforeEach(() => {
   })
@@ -32,6 +46,6 @@ describe('CounterContainer:index', () => {
   })
 
   it('should have a CounterComponent', () => {
-    expect(component.length).toEqual(1)
+    expect(wrapper.length).toEqual(1)
   })
 })
