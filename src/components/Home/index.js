@@ -7,7 +7,6 @@ import {
   Header,
   Icon,
   Image,
-  List,
   Segment,
   Visibility,
 } from 'semantic-ui-react'
@@ -137,8 +136,6 @@ export default class Home extends Component {
             <Button as="a" size="large">I am Still Quite Interested</Button>
           </Container>
         </Segment>
-
-
 
         <nav className="ui inverted red menu">
           <h3 className="header iterm">CherryPie</h3>
