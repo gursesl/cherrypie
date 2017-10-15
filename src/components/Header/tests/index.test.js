@@ -1,3 +1,4 @@
+// REFERENCE: COMPONENT TEST WITH REACT-ROUTER 4
 import React from 'react'
 import { Provider } from 'react-redux'
 import { ConnectedRouter as Router } from 'react-router-redux'
@@ -24,18 +25,18 @@ const component = (
 )
 
 describe('AppHeader:index', () => {
-  const shallowComponent = shallow(component)
+  const shallowComponent = shallow(<AppHeader.WrappedComponent />)
   const deepComponent = mount(component)
 
   beforeEach(() => {
   })
 
   it('should render without blowing up', () => {
-    expect(shallowComponent).toBeDefined();
+    expect(shallowComponent).toBeDefined()
   })
 
   it('should have the proper initial state', () => {
-    expect(shallowComponent.instance().store.getState()).toEqual(initialState)
+    expect(shallowComponent.instance().state).toEqual({ visible: false })
   })
 
   it('should render a Visibility element', () => {
@@ -57,16 +58,12 @@ describe('AppHeader:index', () => {
 
   // TODO: Implement scroll simulation and assert FixedMenu found
   it('should have FixedMenu visible if state visible parameter is set to true', () => {
-    // const wrapper = shallow(React.createElement(component))
-    // wrapper.instance().showFixedMenu()
-    // expect(wrapper.state().visible).toBe(true)
+    shallowComponent.instance().hideFixedMenu()
+    expect(shallowComponent.instance().state.visible).toBeFalsy()
   })
 
-  // TODO: Test shallow instance and methods.
-  // TODO: This used to work before wrapping withRouter(AppHeader)
   it('should have FixedMenu hidden if state visible parameter is set to false', () => {
-    // const wrapper = shallow(React.createElement(AppHeader))
-    // wrapper.instance().hideFixedMenu()
-    // expect(wrapper.state().visible).toBe(false)
+    shallowComponent.instance().showFixedMenu()
+    expect(shallowComponent.instance().state.visible).toBeTruthy()
   })
 })
