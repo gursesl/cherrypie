@@ -1,8 +1,10 @@
 import React from 'react'
 import { Provider } from 'react-redux'
+import { ConnectedRouter as Router } from 'react-router-redux'
 import { mount } from 'enzyme'
 import Immutable from 'immutable'
 import configureStore from 'redux-mock-store'
+import createHistory from 'history/createBrowserHistory'
 import '../../../setupTests';
 import initialState from '../initialState'
 import UserListContainer from '..'
@@ -17,9 +19,21 @@ const reducedState = Immutable.fromJS({
 })
 
 const store = mockStore(reducedState)
+const history = createHistory()
+
+const component = (
+  <Provider store={store}>
+    <Router history={history}>
+      <UserListContainer>
+        <div>Child element</div>
+      </UserListContainer>
+    </Router>
+  </Provider>
+)
+
 
 describe('UserListContainer:index', () => {
-  const container = mount(<Provider store={store}><UserListContainer /></Provider>)
+  const container = mount(component)
 
   beforeEach(() => {
   })

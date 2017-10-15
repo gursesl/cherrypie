@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { Route } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 import { ConnectedRouter as Router } from 'react-router-redux'
 import AppRouter from './router'
 import './setupTests'
@@ -17,10 +17,10 @@ describe('AppRouter', () => {
   })
 
   it('should have a predefined number of routes', () => {
-    expect(component.children().children().length).toBe(3)
+    expect(component.children().children().children().length).toBe(4)
   })
 
   it('should have proper type Route', () => {
-    expect(component.children().children().at(0).type()).toBe(Route)
+    expect(component.children().children().at(0).type()).toBe(Switch)
   })
 })

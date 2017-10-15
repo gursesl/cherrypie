@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppHeader:index renders itself into the DOM with the correct shallowComponent styles 1`] = `
+<div>
+  <div>
+    <div
+      className="ui inverted vertical center aligned segment"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui large inverted pointing secondary menu"
+        >
+          <a
+            aria-current={false}
+            className="item"
+            href="/"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Home
+          </a>
+          <a
+            aria-current={false}
+            className="item"
+            href="/users"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Users
+          </a>
+          <a
+            aria-current={false}
+            className="item"
+            href="/counter"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Counter
+          </a>
+          <a
+            aria-current={false}
+            className="item"
+            href="/weather"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Weather
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

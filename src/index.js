@@ -3,6 +3,7 @@ import 'semantic-ui-css/semantic.min.css'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+// import { createHashHistory } from 'history'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
@@ -15,7 +16,15 @@ import AppRouter from './router'
 
 const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //eslint-disable-line
+
+// create history
+// const history = createHashHistory({
+//   basname: '',
+//   hashType: 'slash',
+// })
+
 const history = createHistory()
+
 const rMiddleware = routerMiddleware(history)
 const combinedReducers = combineReducers({
   ...reducers,
