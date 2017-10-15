@@ -5,7 +5,6 @@ import webpack from 'webpack'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import chalk from 'chalk'
-import fallback from 'express-history-api-fallback'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import config from '../webpack.config.dev'
 
@@ -15,10 +14,6 @@ const compiler = webpack(config)
 
 dotenv.config()
 app.use(cors())
-
-// const root = config.output.publicPath
-// app.use(express.static(root))
-// app.use(fallback('../src/index.html', { root }))
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
