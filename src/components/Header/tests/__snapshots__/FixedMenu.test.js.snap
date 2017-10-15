@@ -1,0 +1,539 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FixedMenu renders itself into the DOM with the correct shallowComponent styles 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FixedMenu />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "class",
+    "props": Object {
+      "children": <Container>
+        <MenuItem
+          as={[Function]}
+          exact={true}
+          to="/"
+        >
+          Home
+        </MenuItem>
+        <MenuItem
+          as={[Function]}
+          to="/users"
+        >
+          Users
+        </MenuItem>
+        <MenuItem
+          as={[Function]}
+          to="/counter"
+        >
+          Counter
+        </MenuItem>
+        <MenuItem
+          as={[Function]}
+          to="/weather"
+        >
+          Weather
+        </MenuItem>
+        <MenuMenu
+          position="right"
+        >
+          <MenuItem
+            className="item"
+          >
+            <Button
+              as="a"
+            >
+              Log in
+            </Button>
+          </MenuItem>
+          <MenuItem>
+            <Button
+              as="a"
+              primary={true}
+            >
+              Sign Up
+            </Button>
+          </MenuItem>
+        </MenuMenu>
+      </Container>,
+      "fixed": "top",
+      "size": "large",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <MenuItem
+            as={[Function]}
+            exact={true}
+            to="/"
+          >
+            Home
+          </MenuItem>,
+          <MenuItem
+            as={[Function]}
+            to="/users"
+          >
+            Users
+          </MenuItem>,
+          <MenuItem
+            as={[Function]}
+            to="/counter"
+          >
+            Counter
+          </MenuItem>,
+          <MenuItem
+            as={[Function]}
+            to="/weather"
+          >
+            Weather
+          </MenuItem>,
+          <MenuMenu
+            position="right"
+          >
+            <MenuItem
+              className="item"
+            >
+              <Button
+                as="a"
+              >
+                Log in
+              </Button>
+            </MenuItem>
+            <MenuItem>
+              <Button
+                as="a"
+                primary={true}
+              >
+                Sign Up
+              </Button>
+            </MenuItem>
+          </MenuMenu>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "as": [Function],
+            "children": "Home",
+            "exact": true,
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": "Home",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "as": [Function],
+            "children": "Users",
+            "to": "/users",
+          },
+          "ref": null,
+          "rendered": "Users",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "as": [Function],
+            "children": "Counter",
+            "to": "/counter",
+          },
+          "ref": null,
+          "rendered": "Counter",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "as": [Function],
+            "children": "Weather",
+            "to": "/weather",
+          },
+          "ref": null,
+          "rendered": "Weather",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <MenuItem
+                className="item"
+              >
+                <Button
+                  as="a"
+                >
+                  Log in
+                </Button>
+              </MenuItem>,
+              <MenuItem>
+                <Button
+                  as="a"
+                  primary={true}
+                >
+                  Sign Up
+                </Button>
+              </MenuItem>,
+            ],
+            "position": "right",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Button
+                  as="a"
+                >
+                  Log in
+                </Button>,
+                "className": "item",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "a",
+                  "children": "Log in",
+                },
+                "ref": null,
+                "rendered": "Log in",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Button
+                  as="a"
+                  primary={true}
+                >
+                  Sign Up
+                </Button>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "a",
+                  "children": "Sign Up",
+                  "primary": true,
+                },
+                "ref": null,
+                "rendered": "Sign Up",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Container>
+          <MenuItem
+            as={[Function]}
+            exact={true}
+            to="/"
+          >
+            Home
+          </MenuItem>
+          <MenuItem
+            as={[Function]}
+            to="/users"
+          >
+            Users
+          </MenuItem>
+          <MenuItem
+            as={[Function]}
+            to="/counter"
+          >
+            Counter
+          </MenuItem>
+          <MenuItem
+            as={[Function]}
+            to="/weather"
+          >
+            Weather
+          </MenuItem>
+          <MenuMenu
+            position="right"
+          >
+            <MenuItem
+              className="item"
+            >
+              <Button
+                as="a"
+              >
+                Log in
+              </Button>
+            </MenuItem>
+            <MenuItem>
+              <Button
+                as="a"
+                primary={true}
+              >
+                Sign Up
+              </Button>
+            </MenuItem>
+          </MenuMenu>
+        </Container>,
+        "fixed": "top",
+        "size": "large",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <MenuItem
+              as={[Function]}
+              exact={true}
+              to="/"
+            >
+              Home
+            </MenuItem>,
+            <MenuItem
+              as={[Function]}
+              to="/users"
+            >
+              Users
+            </MenuItem>,
+            <MenuItem
+              as={[Function]}
+              to="/counter"
+            >
+              Counter
+            </MenuItem>,
+            <MenuItem
+              as={[Function]}
+              to="/weather"
+            >
+              Weather
+            </MenuItem>,
+            <MenuMenu
+              position="right"
+            >
+              <MenuItem
+                className="item"
+              >
+                <Button
+                  as="a"
+                >
+                  Log in
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button
+                  as="a"
+                  primary={true}
+                >
+                  Sign Up
+                </Button>
+              </MenuItem>
+            </MenuMenu>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "as": [Function],
+              "children": "Home",
+              "exact": true,
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": "Home",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "as": [Function],
+              "children": "Users",
+              "to": "/users",
+            },
+            "ref": null,
+            "rendered": "Users",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "as": [Function],
+              "children": "Counter",
+              "to": "/counter",
+            },
+            "ref": null,
+            "rendered": "Counter",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "as": [Function],
+              "children": "Weather",
+              "to": "/weather",
+            },
+            "ref": null,
+            "rendered": "Weather",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <MenuItem
+                  className="item"
+                >
+                  <Button
+                    as="a"
+                  >
+                    Log in
+                  </Button>
+                </MenuItem>,
+                <MenuItem>
+                  <Button
+                    as="a"
+                    primary={true}
+                  >
+                    Sign Up
+                  </Button>
+                </MenuItem>,
+              ],
+              "position": "right",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <Button
+                    as="a"
+                  >
+                    Log in
+                  </Button>,
+                  "className": "item",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "a",
+                    "children": "Log in",
+                  },
+                  "ref": null,
+                  "rendered": "Log in",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <Button
+                    as="a"
+                    primary={true}
+                  >
+                    Sign Up
+                  </Button>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "a",
+                    "children": "Sign Up",
+                    "primary": true,
+                  },
+                  "ref": null,
+                  "rendered": "Sign Up",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
