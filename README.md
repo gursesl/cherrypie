@@ -4,6 +4,8 @@
 
 
 # Live links
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/gursesl/cherrypie.svg)](https://greenkeeper.io/)
 - Surge (Static front-end): http://cherrypie.surge.sh
 - Heroku (API and front-end): https://cherrypieapp.herokuapp.com
 
