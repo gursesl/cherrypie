@@ -13,20 +13,6 @@
   - [x] Nested routes
 - [ ] Heroku env variable for API key
 
-## Top nav component
-- [ ] Reducer test
-  - [ ] Reducer
-- [ ] Actions test
-  - [ ] Actions
-- [ ] Sagas test
-  - [ ] Sagas
-- [ ] Selectors test
-  - [ ] Selectors
-- [ ] Container test
-  - [ ] Container
-- [ ] Component test
-  - [ ] Component
-
 ## Weather component
 - [ ] New route test
   - [ ] New route
