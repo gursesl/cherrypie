@@ -9,7 +9,7 @@ describe('App:reducers:rootReducer', () => {
 
   it('we should have two keys (reducers) defined', () => {
     expect(reducers).toBeDefined()
-    expect(Object.keys(reducers).length).toBe(2)
+    expect(Object.keys(reducers).length).toBe(3)
   })
 
   it('usersContainer should be defined', () => {

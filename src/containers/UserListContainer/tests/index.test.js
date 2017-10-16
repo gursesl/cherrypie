@@ -31,7 +31,6 @@ const component = (
   </Provider>
 )
 
-
 describe('UserListContainer:index', () => {
   const container = mount(component)
 

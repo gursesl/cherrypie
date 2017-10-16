@@ -17,7 +17,6 @@ import CounterContainer from '../../containers/CounterContainer'
 export default class Home extends Component {
   render() {
     return (
-
       <div>
         <Visibility
           onBottomPassed={this.showFixedMenu}
@@ -340,6 +339,6 @@ export default class Home extends Component {
         <CherryPieHeader />
         <CounterContainer />
       </div>
-    );
+    )
   }
 }

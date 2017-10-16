@@ -1,6 +1,7 @@
 import { fromJS } from 'immutable'
 import { SELECTOR_COUNT, SELECTOR_COUNT_VALUE } from './containers/CounterContainer/constants'
 import { SELECTOR_USERS, SELECTOR_USERS_USERS, SELECTOR_USERS_ERROR, SELECTOR_USERS_ISLOADING } from './containers/UserListContainer/constants'
+import { SELECTOR_WEATHER, SELECTOR_WEATHER_ZIP } from './containers/WeatherContainer/constants'
 
 export default fromJS({
   [SELECTOR_USERS]: {
@@ -23,5 +24,8 @@ export default fromJS({
   },
   [SELECTOR_COUNT]: {
     [SELECTOR_COUNT_VALUE]: 10,
+  },
+  [SELECTOR_WEATHER]: {
+    [SELECTOR_WEATHER_ZIP]: '20165',
   },
 })

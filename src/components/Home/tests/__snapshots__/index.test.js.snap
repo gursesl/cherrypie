@@ -759,33 +759,6 @@ exports[`Home:index renders itself into the DOM with the correct shallowComponen
     <h1>
       Counter
     </h1>
-    <a
-      aria-current={false}
-      className={undefined}
-      href="/"
-      onClick={[Function]}
-      style={undefined}
-    >
-      Home
-    </a>
-    <a
-      aria-current={false}
-      className={undefined}
-      href="/counter"
-      onClick={[Function]}
-      style={undefined}
-    >
-      Counter
-    </a>
-    <a
-      aria-current={false}
-      className={undefined}
-      href="/users"
-      onClick={[Function]}
-      style={undefined}
-    >
-      Users
-    </a>
     <div>
       <button
         onClick={[Function]}
