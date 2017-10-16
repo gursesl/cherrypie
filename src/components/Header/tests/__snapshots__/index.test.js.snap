@@ -48,6 +48,34 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
           >
             Weather
           </a>
+          <div
+            className="right item"
+            onClick={[Function]}
+          >
+            <a
+              className="ui inverted button"
+              disabled={undefined}
+              onClick={[Function]}
+              role="button"
+              tabIndex={undefined}
+            >
+              Log in
+            </a>
+            <a
+              className="ui inverted button"
+              disabled={undefined}
+              onClick={[Function]}
+              role="button"
+              style={
+                Object {
+                  "marginLeft": "0.5em",
+                }
+              }
+              tabIndex={undefined}
+            >
+              Sign Up
+            </a>
+          </div>
         </div>
       </div>
     </div>
