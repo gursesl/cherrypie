@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/gursesl/cherrypie.svg?branch=master)](https://travis-ci.org/gursesl/cherrypie)
-
-[![Coverage Status](https://coveralls.io/repos/github/gursesl/cherrypie/badge.svg)](https://coveralls.io/github/gursesl/cherrypie)
-
+[![Build Status](https://travis-ci.org/gursesl/cherrypie.svg?branch=master)](https://travis-ci.org/gursesl/cherrypie) [![Coverage Status](https://coveralls.io/repos/github/gursesl/cherrypie/badge.svg)](https://coveralls.io/github/gursesl/cherrypie) [![Greenkeeper badge](https://badges.greenkeeper.io/gursesl/cherrypie.svg)](https://greenkeeper.io/) [![Known Vulnerabilities](https://snyk.io/test/github/gursesl/cherrypie/badge.svg)](https://snyk.io/test/github/gursesl/cherrypie)
 
 # Live links
+
 - Surge (Static front-end): http://cherrypie.surge.sh
 - Heroku (API and front-end): https://cherrypieapp.herokuapp.com
 
