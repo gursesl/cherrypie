@@ -1,0 +1,8 @@
+export const WEATHER_DATA_FETCH_START = 'app/WeatherContainer/WEATHER_DATA_FETCH_START'
+export const WEATHER_DATA_FETCH_SUCCESS = 'app/WeatherContainer/WEATHER_DATA_FETCH_SUCCESS'
+export const WEATHER_DATA_FETCH_FAILURE = 'app/WeatherContainer/WEATHER_DATA_FETCH_FAILURE'
+export const SELECTOR_WEATHER = 'app/WeatherContainer/SELECTOR_WEATHER'
+export const SELECTOR_WEATHER_ZIP = 'app/WeatherContainer/SELECTOR_WEATHER_ZIP'
+export const SELECTOR_WEATHER_CITY = 'app/WeatherContainer/SELECTOR_WEATHER_CITY'
+export const SELECTOR_WEATHER_RESULTS = 'app/WeatherContainer/SELECTOR_WEATHER_RESULTS'
+export const SELECTOR_WEATHER_ERROR = 'app/WeatherContainer/SELECTOR_WEATHER_ERROR'

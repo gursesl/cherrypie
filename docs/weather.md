@@ -32,7 +32,7 @@
 ## Plan of action
 - [ ] Create first component similar to https://openweathermap.org/find?q=20165
 - [x] Design container/component - https://mockflow.com/app/#Wireframe
-- ![alt text](./images/weather-comp-mockup.jpg "Weather component mockup")
+![alt text](./images/weather-comp-mockup.jpg "Weather component mockup")
 - Write component tests
 - Create components
 - Design state
