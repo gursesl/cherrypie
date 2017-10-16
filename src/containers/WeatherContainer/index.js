@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import * as a from './actions'
 import * as s from './selectors'
+import WeatherSearchBox from '../../components/WeatherSearchBox'
+import WeatherSearchResultList from '../../components/WeatherSearchResultList'
 
 class WeatherContainer extends Component {
   componentWillMount() {
@@ -14,6 +16,8 @@ class WeatherContainer extends Component {
     return (
       <div>
         <h2>Weather in your city</h2>
+        <WeatherSearchBox {...this.props} />
+        <WeatherSearchResultList {...this.props} />
       </div>
     )
   }
