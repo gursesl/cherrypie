@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WatherContainer:selectors handles the SELECTOR_WEATHER_CITY snapshot 1`] = `"Sterling"`;
+
+exports[`WatherContainer:selectors handles the SELECTOR_WEATHER_ERROR snapshot 1`] = `"Load error"`;
+
+exports[`WatherContainer:selectors handles the SELECTOR_WEATHER_RESULTS snapshot 1`] = `Immutable.Map {}`;
+
+exports[`WatherContainer:selectors handles the SELECTOR_WEATHER_ZIP snapshot 1`] = `"20165"`;
+
+exports[`WatherContainer:selectors handles the rootSelector snapshot 1`] = `
+Immutable.Map {
+  "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
+  "app/WeatherContainer/SELECTOR_WEATHER_CITY": "Sterling",
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_ERROR": "Load error",
+}
+`;

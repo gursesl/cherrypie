@@ -8,23 +8,9 @@ import {
   usersFetchStart,
   usersFetchSuccess,
   usersFetchFailure } from '../actions'
+import * as m from './mockdata'
 
 const mockStore = configureStore()
-const mockUsers = [
-  {
-    id: 95617189,
-    firstName: 'Elfrieda',
-    lastName: 'Frank',
-    email: 'Ada20@hotmail.com',
-  },
-  {
-    id: 95617188,
-    firstName: 'Jim',
-    lastName: 'Smith',
-    email: 'jsmith@mail.com',
-  },
-]
-const mockErr = { type: 1, message: 'An error occurred.' }
 let store
 let actions
 
@@ -33,24 +19,24 @@ describe('UserListContainer:actions', () => {
     store = mockStore({})
   })
 
-  it('should be able to dispatch usersFetchStart action', () => {
+  it('should dispatch usersFetchStart action', () => {
     store.dispatch(usersFetchStart())
     actions = store.getActions()
     const expectedPayload = { type: USERS_FETCH_START }
     expect(actions).toEqual([expectedPayload])
   })
 
-  it('should be able to dispatch usersFetchSuccess action', () => {
-    store.dispatch(usersFetchSuccess(mockUsers))
+  it('should dispatch usersFetchSuccess action', () => {
+    store.dispatch(usersFetchSuccess(m.mockUsers))
     actions = store.getActions()
-    const expectedPayload = { type: USERS_FETCH_SUCCESS, payload: mockUsers }
+    const expectedPayload = { type: USERS_FETCH_SUCCESS, payload: m.mockUsers }
     expect(actions).toEqual([expectedPayload])
   })
 
-  it('should be able to dispatch usersFetchFailure action', () => {
-    store.dispatch(usersFetchFailure(mockErr))
+  it('should dispatch usersFetchFailure action', () => {
+    store.dispatch(usersFetchFailure(m.mockError))
     actions = store.getActions()
-    const expectedPayload = { type: USERS_FETCH_FAILURE, error: mockErr }
+    const expectedPayload = { type: USERS_FETCH_FAILURE, error: m.mockError }
     expect(actions).toEqual([expectedPayload])
   })
 })

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherContainer:reducer handles the weatherDataFetchFailure action snapshot 1`] = `
+Immutable.Map {
+  "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
+  "app/WeatherContainer/SELECTOR_WEATHER_CITY": "Sterling",
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_ERROR": Immutable.Map {
+    "type": 1,
+    "message": "An error occurred.",
+  },
+}
+`;
+
+exports[`WeatherContainer:reducer handles the weatherDataFetchStart action snapshot 1`] = `Object {}`;
+
+exports[`WeatherContainer:reducer handles the weatherDataFetchSuccess action snapshot 1`] = `
+Immutable.Map {
+  "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
+  "app/WeatherContainer/SELECTOR_WEATHER_CITY": "Sterling",
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_ERROR": "Load error",
+}
+`;
