@@ -7,6 +7,7 @@ import '../../../setupTests';
 import initialState from '../initialState'
 import { SELECTOR_WEATHER } from '../constants'
 import WeatherContainer from '../'
+import WeatherSearchBox from '../../../components/WeatherSearchBox'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
@@ -38,7 +39,17 @@ describe('WeatherContainer:index', () => {
     expect(deepContainer.find(Provider).length).toBe(1)
   })
 
+  it('should render a child <WeatherSearchBox /> component', () => {
+    expect(deepContainer.find(WeatherSearchBox).length).toBe(1)
+  });
+
   it('should match the snapshot', () => {
-    expect(deepContainer).toMatchSnapshot()
+    const tree = deepContainer.render()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should match the snapshot', () => {
+    const tree = deepContainer.find(WeatherSearchBox).render()
+    expect(tree).toMatchSnapshot()
   })
 })
