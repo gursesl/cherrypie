@@ -15,4 +15,8 @@ module.exports = {
     '!src/index.js',
   ],
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)(spec|test).js?(x)'],
+  globals: {
+    ENABLE_MOCK_API: true,
+  },
+  automock: false,
 };

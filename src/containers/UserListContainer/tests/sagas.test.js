@@ -4,22 +4,8 @@ import sagaHelper from 'redux-saga-testing'
 import { watchUsersFetchSaga, usersFetchSaga } from '../sagas'
 import * as c from '../constants'
 import * as a from '../actions'
-import { getUsers } from '../../../api/userApi'
-
-const mockUsers = [
-  {
-    id: '95617189',
-    firstName: 'Elfrieda',
-    lastName: 'Frank',
-    email: 'Ada20@hotmail.com',
-  },
-  {
-    id: '95617188',
-    firstName: 'Jim',
-    lastName: 'Smith',
-    email: 'jsmith@mail.com',
-  },
-]
+import { getUsers } from '../api'
+import { mockUsers } from './mockdata'
 
 const MOCK_RESPONSE = {
   users: mockUsers,

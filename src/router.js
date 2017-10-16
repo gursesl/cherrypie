@@ -6,6 +6,7 @@ import App from './components/App'
 import Home from './components/Home'
 import UserListContainer from './containers/UserListContainer'
 import CounterContainer from './containers/CounterContainer'
+import WeatherContainer from './containers/WeatherContainer'
 
 const history = createHistory()
 
@@ -16,7 +17,7 @@ const AppRouter = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/counter" component={CounterContainer} />
         <Route path="/users" component={UserListContainer} />
-        <Route path="/careers" component={Home} />
+        <Route path="/weather" component={WeatherContainer} />
       </Switch>
     </App>
   </Router>
