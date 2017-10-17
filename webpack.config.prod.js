@@ -64,7 +64,10 @@ export default {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('css-loader?sourceMap'),
+      },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         loader: 'url-loader',

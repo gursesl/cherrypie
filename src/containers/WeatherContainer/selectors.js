@@ -12,22 +12,22 @@ const selectWeather = state => state.get(SELECTOR_WEATHER)
 
 const makeSelectZip = () => createSelector(
   selectWeather,
-  zipState => zipState.get(SELECTOR_WEATHER_ZIP)
+  state => state.get(SELECTOR_WEATHER_ZIP)
 )
 
 const makeSelectCity = () => createSelector(
   selectWeather,
-  cityState => cityState.get(SELECTOR_WEATHER_CITY)
+  state => state.get(SELECTOR_WEATHER_CITY)
 )
 
 const makeSelectResults = () => createSelector(
   selectWeather,
-  resultsState => resultsState.get(SELECTOR_WEATHER_RESULTS)
+  state => state.get(SELECTOR_WEATHER_RESULTS)
 )
 
 const makeSelectError = () => createSelector(
   selectWeather,
-  errorState => errorState.get(SELECTOR_WEATHER_ERROR)
+  state => state.get(SELECTOR_WEATHER_ERROR)
 )
 
 export {

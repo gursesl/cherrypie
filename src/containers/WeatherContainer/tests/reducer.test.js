@@ -16,6 +16,34 @@ describe('WeatherContainer:reducer', () => {
     expect(weatherContainerReducer(state, a.weatherDataFetchStart())).toEqual(state)
   })
 
+  it('should handle search by zip code', () => {
+    expect(weatherContainerReducer(
+      state.set(c.SELECTOR_WEATHER_ZIP, ''),
+      a.weatherDataFetchStart('20002')
+    )).toEqual(state.set(c.SELECTOR_WEATHER_ZIP, '20002'))
+  })
+
+  it('should handle search by empty zip code', () => {
+    expect(weatherContainerReducer(
+      state.set(c.SELECTOR_WEATHER_ZIP, ''),
+      a.weatherDataFetchStart('')
+    )).toEqual(state.set(c.SELECTOR_WEATHER_ZIP, ''))
+  })
+
+  it('should handle search by city name', () => {
+    expect(weatherContainerReducer(
+      state.set(c.SELECTOR_WEATHER_CITY, ''),
+      a.weatherDataFetchStart('Washington, DC')
+    )).toEqual(state.set(c.SELECTOR_WEATHER_CITY, 'Washington, DC'))
+  })
+
+  it('should handle search by empty city name', () => {
+    expect(weatherContainerReducer(
+      state.set(c.SELECTOR_WEATHER_CITY, ''),
+      a.weatherDataFetchStart('')
+    )).toEqual(state.set(c.SELECTOR_WEATHER_CITY, ''))
+  })
+
   it('should handle weatherDataFetchSuccess action correctly with a payload', () => {
     const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, m.mockData)
     expect(weatherContainerReducer(
@@ -43,7 +71,10 @@ describe('WeatherContainer:reducer', () => {
   })
 
   it('handles the weatherDataFetchStart action snapshot', () => {
-    expect(weatherContainerReducer({}, a.weatherDataFetchStart())).toMatchSnapshot()
+    expect(weatherContainerReducer(state, a.weatherDataFetchStart(fromJS({
+      type: c.WEATHER_DATA_FETCH_START,
+      payload: 'Sterling',
+    })))).toMatchSnapshot()
   })
 
   it('handles the weatherDataFetchSuccess action snapshot', () => {

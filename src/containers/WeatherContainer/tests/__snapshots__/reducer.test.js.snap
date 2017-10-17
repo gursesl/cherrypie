@@ -12,7 +12,17 @@ Immutable.Map {
 }
 `;
 
-exports[`WeatherContainer:reducer handles the weatherDataFetchStart action snapshot 1`] = `Object {}`;
+exports[`WeatherContainer:reducer handles the weatherDataFetchStart action snapshot 1`] = `
+Immutable.Map {
+  "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
+  "app/WeatherContainer/SELECTOR_WEATHER_CITY": Immutable.Map {
+    "type": "app/WeatherContainer/WEATHER_DATA_FETCH_START",
+    "payload": "Sterling",
+  },
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_ERROR": "Load error",
+}
+`;
 
 exports[`WeatherContainer:reducer handles the weatherDataFetchSuccess action snapshot 1`] = `
 Immutable.Map {
