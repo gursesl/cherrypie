@@ -1,108 +1,154 @@
 export default {
   type: 'object',
   properties: {
-    cities: {
-      type: 'array',
-      minItems: 1,
-      maxItems: 10,
-      items: {
-        type: 'object',
-        properties: {
-          id: {
-            type: 'number',
-            unique: true,
-            minimum: 100000,
+    searchByCityName: {
+      type: 'object',
+      properties: {
+        cod: {
+          type: 'integer',
+          minimum: 1,
+          maximum: 500,
+        },
+        message: {
+          type: 'number',
+          minimum: 1,
+          maximum: 3,
+        },
+        cnt: {
+          type: 'integer',
+          minimum: 1,
+          maximum: 40,
+        },
+        list: {
+          type: 'array',
+          minItems: 1,
+          maxItems: 40,
+          items: {
+            type: 'object',
+            properties: {
+              dt: {
+                type: 'number',
+                unique: true,
+                minimum: 100000,
+              },
+              main: {
+                temp: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+                temp_min: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+                temp_max: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+                pressure: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+                sea_level: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+                grnd_level: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+                humidity: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+                temp_kf: {
+                  type: 'number',
+                  faker: 'random.number',
+                },
+              },
+              weather: {
+                type: 'array',
+                minItems: 1,
+                maxItems: 3,
+                items: {
+                  type: 'object',
+                  properties: {
+                    id: {
+                      type: 'number',
+                      unique: true,
+                      minimum: 100000,
+                    },
+                    main: {
+                      type: 'string',
+                      faker: 'lorem.word',
+                    },
+                    description: {
+                      type: 'string',
+                      faker: 'lorem.words',
+                    },
+                    icon: '01d',
+                  },
+                },
+              },
+              clouds: {
+                type: 'number',
+                minimum: 0,
+                maximum: 2,
+              },
+              wind: {
+                type: 'object',
+                properties: {
+                  speed: {
+                    type: 'number',
+                    minimum: 5,
+                    maximum: 40,
+                  },
+                  deg: {
+                    type: 'number',
+                    minimum: 1,
+                    maximum: 360,
+                  },
+                },
+              },
+              sys: {
+                type: 'object',
+                properties: {
+                  pod: 'd',
+                },
+              },
+              dt_txt: {
+                type: 'string',
+                faker: 'date.recent',
+              },
+            },
           },
-          name: {
-            type: 'string',
-            faker: 'address.city',
-          },
-          coord: {
-            lat: {
+        },
+        city: {
+          type: 'object',
+          properties: {
+            id: {
               type: 'number',
-              faker: 'address.latitude',
+              unique: true,
+              minimum: 100000,
             },
-            lon: {
-              type: 'number',
-              faker: 'address.longitude',
+            name: {
+              type: 'string',
+              faker: 'address.city',
             },
-          },
-          main: {
-            temp: {
-              type: 'number',
-              faker: 'random.number',
+            coord: {
+              lat: {
+                type: 'number',
+                faker: 'address.latitude',
+              },
+              lon: {
+                type: 'number',
+                faker: 'address.longitude',
+              },
             },
-            pressure: {
-              type: 'number',
-              faker: 'random.number',
-            },
-            humidity: {
-              type: 'number',
-              faker: 'random.number',
-            },
-            temp_min: {
-              type: 'number',
-              faker: 'random.number',
-            },
-            temp_max: {
-              type: 'number',
-              faker: 'random.number',
-            },
-          },
-          dt: {
-            type: 'number',
-            minimum: 100000,
-          },
-          wind: {
-            speed: {
-              type: 'number',
-              minimum: 1,
-            },
-            deg: {
-              type: 'number',
-              minimum: 0,
-            },
-            gust: {
-              type: 'number',
-            },
-          },
-          sys: {
             country: 'US',
           },
-          rain: null,
-          snow: null,
-          clouds: {
-            all: 1,
-          },
-          weather: [
-            {
-              id: {
-                type: 'number',
-              },
-              main: 'Clear',
-              description: {
-                type: 'string',
-                faker: 'lorem.words',
-              },
-              icon: '01d',
-            },
-          ],
         },
-        required: [
-          'id',
-          'name',
-          'coord',
-          'main',
-          'dt',
-          'wind',
-          'sys',
-          'rain',
-          'snow',
-          'clouds',
-          'weatjer',
-        ],
       },
     },
   },
-  required: ['cities'],
+  required: ['searchByCityName'],
 }

@@ -2,6 +2,7 @@ import { delay } from 'redux-saga'
 import { put, all, call } from 'redux-saga/effects'
 import { watchIncrementAsync } from './containers/CounterContainer/sagas'
 import { watchUsersFetchSaga } from './containers/UserListContainer/sagas'
+import { watchWeatherFetchSaga } from './containers/WeatherContainer/sagas'
 
 // Hello saga
 export function* helloSaga() {
@@ -14,5 +15,6 @@ export default function* rootSaga() {
     helloSaga(),
     watchIncrementAsync(),
     watchUsersFetchSaga(),
+    watchWeatherFetchSaga(),
   ])
 }
