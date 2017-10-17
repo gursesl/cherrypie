@@ -1,11 +1,12 @@
 import { fromJS } from 'immutable'
 import initialState from './initialState'
+import * as g from './../../utils/geoUtils'
 import * as c from './constants'
 
 function weatherContainerReducer(state = initialState, action) {
   switch (action.type) {
     case c.WEATHER_DATA_FETCH_START:
-      if (action.payload && /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(action.payload)) {
+      if (action.payload && g.matchZipCode(action.payload)) {
         return state.set(
           c.SELECTOR_WEATHER_ZIP,
           action.payload
