@@ -9,7 +9,7 @@ jsf.extend('faker', () => faker)
 
 const schemaJson = {
   users: jsf(usersSchema).users,
-  cities: jsf(citiesSchema).cities,
+  searchByCityName: jsf(citiesSchema).searchByCityName,
   profile: { name: 'typicode' },
 }
 
