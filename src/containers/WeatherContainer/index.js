@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
+import {
+  Header,
+  Icon,
+} from 'semantic-ui-react'
+import styled from 'styled-components'
 import * as a from './actions'
 import * as s from './selectors'
 import WeatherSearchBox from '../../components/WeatherSearchBox'
 import WeatherSearchResultList from '../../components/WeatherSearchResultList'
+
+const PushDownDiv = styled.div`
+  padding: 40px 0
+`
 
 class WeatherContainer extends Component {
   componentWillMount() {
@@ -15,9 +25,19 @@ class WeatherContainer extends Component {
   render() {
     return (
       <div>
-        <h2>Weather in your city</h2>
-        <WeatherSearchBox {...this.props} />
-        <WeatherSearchResultList {...this.props} />
+        <PushDownDiv className="ui container">
+          <Header as="h2">
+            <Icon name="sun" />
+            <Header.Content>
+              Weather in your city
+            </Header.Content>
+          </Header>
+        </PushDownDiv>
+        <WeatherSearchBox onSubmit={this.props.weatherDataFetchStart} {...this.props} />
+
+        <PushDownDiv className="ui container">
+          <WeatherSearchResultList {...this.props} />
+        </PushDownDiv>
       </div>
     )
   }
@@ -35,8 +55,14 @@ const mapStateToProps = createSelector(
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    onFetchZip: a.zipFetchStart,
+    weatherDataFetchStart: a.weatherDataFetchStart,
+    weatherDataFetchSuccess: a.weatherDataFetchSuccess,
+    weatherDataFetchFailure: a.weatherDataFetchFailure,
   }, dispatch)
+}
+
+WeatherContainer.propTypes = {
+  weatherDataFetchStart: PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(WeatherContainer)

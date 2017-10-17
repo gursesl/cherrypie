@@ -1,19 +1,22 @@
 import * as c from './constants'
 
-export function weatherDataFetchStart() {
-  return { type: c.WEATHER_DATA_FETCH_START }
-}
-
-export function weatherDataFetchSuccess(cities) {
+export function weatherDataFetchStart(payload) {
   return {
-    type: c.WEATHER_DATA_FETCH_SUCCESS,
-    payload: cities,
+    type: c.WEATHER_DATA_FETCH_START,
+    payload,
   }
 }
 
-export function weatherDataFetchFailure(err) {
+export function weatherDataFetchSuccess(payload) {
+  return {
+    type: c.WEATHER_DATA_FETCH_SUCCESS,
+    payload,
+  }
+}
+
+export function weatherDataFetchFailure(error) {
   return {
     type: c.WEATHER_DATA_FETCH_FAILURE,
-    error: err,
+    error,
   }
 }

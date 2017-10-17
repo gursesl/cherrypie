@@ -16,28 +16,29 @@
 ## Weather component
 - [x] New route test
   - [x] New route
-- [ ] Selectors test
-  - [ ] Selectors
-- [ ] Reducer test
-  - [ ] Reducer
-- [ ] Actions test
-  - [ ] Actions
+- [x] Selectors test
+  - [x] Selectors
+- [x] Reducer test
+  - [x] Reducer
+- [x] Actions test
+  - [x] Actions
 - [ ] Sagas test
   - [ ] Sagas
-- [ ] Container test
-  - [ ] Container
-- [ ] Component test
-  - [ ] Component
+- [x] Container test
+  - [x] Container
+- [x] Component test
+  - [x] Component
 
 ## Plan of action
 - [ ] Create first component similar to https://openweathermap.org/find?q=20165
 - [x] Design container/component - https://mockflow.com/app/#Wireframe
 ![alt text](./images/weather-comp-mockup.jpg "Weather component mockup")
-- [ ] Write container tests
-- [ ] Create container code
-- [ ] Write component tests
-- [ ] Create components
-- Design state
+- [x] Create mock API
+- [x] Write container tests
+- [x] Create container code
+- [x] Write component tests
+- [x] Create components
+- [x] Design state
   - zip
   - city
   - results
@@ -48,5 +49,9 @@
     - desc_long
     - geo_coord
   - error
-- Selector test
-- Selector
+- [x] Selector test
+  - [x] Selector
+- [ ] Sagas test
+  - [ ] Sagas
+- [ ] Enhance components
+- [ ] Real API
