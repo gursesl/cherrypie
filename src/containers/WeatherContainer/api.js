@@ -1,5 +1,5 @@
 import 'whatwg-fetch'
-import { getSearchUrl } from '../../utils/baseUrlWeather'
+import getSearchUrl from '../../utils/baseUrlWeather'
 
 function onSuccess(response) {
   return response.json()
