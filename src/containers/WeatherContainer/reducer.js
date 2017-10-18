@@ -3,6 +3,26 @@ import initialState from './initialState'
 import * as g from './../../utils/geoUtils'
 import * as c from './constants'
 
+export function processResultData(data) {
+  return data.list.map((city) => {
+    return {
+      id: city.id,
+      name: city.name,
+      country: 'US',
+      coord: city.coord,
+      temp: (city.main.temp - 273.15).toFixed(2),
+      pressure: city.main.pressure,
+      humidity: city.main.humidity,
+      temp_min: (city.main.temp_min - 273.15).toFixed(2),
+      temp_max: (city.main.temp_max - 273.15).toFixed(2),
+      wind: city.wind.speed,
+      clouds: city.clouds.all,
+      description: city.weather[0].description,
+      icon: `http://openweathermap.org/img/w/${city.weather[0].icon}.png`,
+    }
+  })
+}
+
 function weatherContainerReducer(state = initialState, action) {
   // TODO: Refactor this method, complexity is 18. Move action logic to selectors
   switch (action.type) {
@@ -20,7 +40,10 @@ function weatherContainerReducer(state = initialState, action) {
       }
       return state
     case c.WEATHER_DATA_FETCH_SUCCESS:
-      return state.set(c.SELECTOR_WEATHER_RESULTS, fromJS(action.payload) || fromJS({}))
+      if (action.payload) {
+        return state.set(c.SELECTOR_WEATHER_RESULTS, processResultData(action.payload))
+      }
+      return state
     case c.WEATHER_DATA_FETCH_FAILURE:
       return state.set(c.SELECTOR_WEATHER_ERROR, fromJS(action.error) || '')
     default:

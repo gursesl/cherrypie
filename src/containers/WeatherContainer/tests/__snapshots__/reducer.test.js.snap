@@ -4,7 +4,7 @@ exports[`WeatherContainer:reducer handles the weatherDataFetchFailure action sna
 Immutable.Map {
   "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
   "app/WeatherContainer/SELECTOR_WEATHER_CITY": "Sterling",
-  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.List [],
   "app/WeatherContainer/SELECTOR_WEATHER_ERROR": Immutable.Map {
     "type": 1,
     "message": "An error occurred.",
@@ -19,7 +19,7 @@ Immutable.Map {
     "type": "app/WeatherContainer/WEATHER_DATA_FETCH_START",
     "payload": "Sterling",
   },
-  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.List [],
   "app/WeatherContainer/SELECTOR_WEATHER_ERROR": "Load error",
 }
 `;
@@ -28,7 +28,62 @@ exports[`WeatherContainer:reducer handles the weatherDataFetchSuccess action sna
 Immutable.Map {
   "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
   "app/WeatherContainer/SELECTOR_WEATHER_CITY": "Sterling",
-  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Array [
+    Object {
+      "clouds": 1,
+      "coord": Object {
+        "lat": 39.0409,
+        "lon": -77.4136,
+      },
+      "country": "US",
+      "description": "sky is clear",
+      "humidity": 36,
+      "icon": "http://openweathermap.org/img/w/01d.png",
+      "id": 4754219,
+      "name": "Countryside",
+      "pressure": 1026,
+      "temp": "15.67",
+      "temp_max": "17.00",
+      "temp_min": "14.00",
+      "wind": 1.91,
+    },
+    Object {
+      "clouds": 1,
+      "coord": Object {
+        "lat": 41.7828,
+        "lon": -87.8782,
+      },
+      "country": "US",
+      "description": "sky is clear",
+      "humidity": 37,
+      "icon": "http://openweathermap.org/img/w/01d.png",
+      "id": 4888906,
+      "name": "Countryside",
+      "pressure": 1021,
+      "temp": "20.67",
+      "temp_max": "21.00",
+      "temp_min": "20.00",
+      "wind": 2.6,
+    },
+    Object {
+      "clouds": 1,
+      "coord": Object {
+        "lat": 39.8858,
+        "lon": -105.1195,
+      },
+      "country": "US",
+      "description": "sky is clear",
+      "humidity": 7,
+      "icon": "http://openweathermap.org/img/w/01d.png",
+      "id": 7150586,
+      "name": "Countryside",
+      "pressure": 1021,
+      "temp": "24.66",
+      "temp_max": "27.00",
+      "temp_min": "23.00",
+      "wind": 2.6,
+    },
+  ],
   "app/WeatherContainer/SELECTOR_WEATHER_ERROR": "Load error",
 }
 `;

@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable'
 import initialState from '../initialState'
-import weatherContainerReducer from '../reducer'
+import weatherContainerReducer, { processResultData } from '../reducer'
 import * as a from '../actions'
 import * as c from '../constants'
 import * as m from './mockdata'
@@ -45,15 +45,15 @@ describe('WeatherContainer:reducer', () => {
   })
 
   it('should handle weatherDataFetchSuccess action correctly with a payload', () => {
-    const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, m.mockData)
+    const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, processResultData(m.mockData.toJS()))
     expect(weatherContainerReducer(
       state,
-      a.weatherDataFetchSuccess(m.mockData)
+      a.weatherDataFetchSuccess(m.mockData.toJS())
     )).toEqual(expectedState)
   })
 
   it('should handle weatherDataFetchSuccess action correctly w/o a payload', () => {
-    const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, fromJS({}))
+    const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, fromJS([]))
     expect(weatherContainerReducer(state, a.weatherDataFetchSuccess())).toEqual(expectedState)
   })
 
@@ -70,6 +70,12 @@ describe('WeatherContainer:reducer', () => {
     expect(weatherContainerReducer(state, a.weatherDataFetchFailure(''))).toEqual(expectedState)
   })
 
+  // Data processor test
+  it('should process result data correctly', () => {
+    expect(processResultData(m.mockData.toJS())).toEqual(m.processedMockData)
+  })
+
+  // Snapshot tests
   it('handles the weatherDataFetchStart action snapshot', () => {
     expect(weatherContainerReducer(state, a.weatherDataFetchStart(fromJS({
       type: c.WEATHER_DATA_FETCH_START,
@@ -78,7 +84,7 @@ describe('WeatherContainer:reducer', () => {
   })
 
   it('handles the weatherDataFetchSuccess action snapshot', () => {
-    expect(weatherContainerReducer(state, a.weatherDataFetchSuccess(m.mockUsers))).toMatchSnapshot()
+    expect(weatherContainerReducer(state, a.weatherDataFetchSuccess(m.mockData.toJS()))).toMatchSnapshot()
   })
 
   it('handles the weatherDataFetchFailure action snapshot', () => {

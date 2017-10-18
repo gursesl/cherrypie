@@ -26,6 +26,26 @@ export default {
           items: {
             type: 'object',
             properties: {
+              id: {
+                type: 'number',
+                unique: true,
+                minimum: 100000,
+              },
+              name: {
+                type: 'string',
+                faker: 'address.city',
+              },
+              coord: {
+                lat: {
+                  type: 'number',
+                  faker: 'address.latitude',
+                },
+                lon: {
+                  type: 'number',
+                  faker: 'address.longitude',
+                },
+              },
+              country: 'US',
               dt: {
                 type: 'number',
                 unique: true,
@@ -120,31 +140,6 @@ export default {
                 faker: 'date.recent',
               },
             },
-          },
-        },
-        city: {
-          type: 'object',
-          properties: {
-            id: {
-              type: 'number',
-              unique: true,
-              minimum: 100000,
-            },
-            name: {
-              type: 'string',
-              faker: 'address.city',
-            },
-            coord: {
-              lat: {
-                type: 'number',
-                faker: 'address.latitude',
-              },
-              lon: {
-                type: 'number',
-                faker: 'address.longitude',
-              },
-            },
-            country: 'US',
           },
         },
       },
