@@ -5,6 +5,10 @@ import chalk from 'chalk'
 import usersSchema from './mockSchemaUsers'
 import citiesSchema from './mockSchemaCities'
 
+jsf.option({
+  alwaysFakeOptionals: true,
+});
+
 jsf.extend('faker', () => faker)
 
 const schemaJson = {
