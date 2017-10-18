@@ -26,26 +26,6 @@ export default {
           items: {
             type: 'object',
             properties: {
-              id: {
-                type: 'number',
-                unique: true,
-                minimum: 100000,
-              },
-              name: {
-                type: 'string',
-                faker: 'address.city',
-              },
-              coord: {
-                lat: {
-                  type: 'number',
-                  faker: 'address.latitude',
-                },
-                lon: {
-                  type: 'number',
-                  faker: 'address.longitude',
-                },
-              },
-              country: 'US',
               dt: {
                 type: 'number',
                 unique: true,
@@ -54,19 +34,23 @@ export default {
               main: {
                 temp: {
                   type: 'number',
-                  faker: 'random.number',
+                  minimum: 273,
+                  maximum: 300,
                 },
                 temp_min: {
                   type: 'number',
-                  faker: 'random.number',
+                  minimum: 273,
+                  maximum: 300,
                 },
                 temp_max: {
                   type: 'number',
-                  faker: 'random.number',
+                  minimum: 273,
+                  maximum: 300,
                 },
                 pressure: {
                   type: 'number',
-                  faker: 'random.number',
+                  minimum: 800,
+                  maximum: 1500,
                 },
                 sea_level: {
                   type: 'number',
@@ -105,7 +89,24 @@ export default {
                       type: 'string',
                       faker: 'lorem.words',
                     },
-                    icon: '01d',
+                    icon: {
+                      type: 'string',
+                      chance: {
+                        pickone: [
+                          [
+                            '01d',
+                            '02d',
+                            '03d',
+                            '04d',
+                            '09d',
+                            '10d',
+                            '11d',
+                            '13d',
+                            '50d',
+                          ],
+                        ],
+                      },
+                    },
                   },
                 },
               },
@@ -142,9 +143,32 @@ export default {
             },
           },
         },
+        city: {
+          type: 'object',
+          properties: {
+            id: {
+              type: 'number',
+              unique: true,
+              minimum: 100000,
+            },
+            name: {
+              type: 'string',
+              faker: 'address.city',
+            },
+            coord: {
+              lat: {
+                type: 'number',
+                faker: 'address.latitude',
+              },
+              lon: {
+                type: 'number',
+                faker: 'address.longitude',
+              },
+            },
+            country: 'US',
+          },
+        },
       },
-      required: ['cod', 'message', 'cnt', 'list', 'city'],
     },
   },
-  required: ['searchByCityName'],
 }
