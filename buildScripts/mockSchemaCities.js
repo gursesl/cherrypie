@@ -148,6 +148,7 @@ export default {
           },
         },
       },
+      required: ['cod', 'message', 'cnt', 'list', 'city'],
     },
   },
   required: ['searchByCityName'],
