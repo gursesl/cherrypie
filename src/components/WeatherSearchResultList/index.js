@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ImmutablePropTypes from 'react-immutable-proptypes'
+import { Card, Feed } from 'semantic-ui-react'
 import WeatherSearchResultItem from '../WeatherSearchResultItem'
 
 class WeatherSearchResultList extends Component {
@@ -7,12 +8,14 @@ class WeatherSearchResultList extends Component {
     const items = this.props.results.toJS()
     if (items && items.list && items.list.length > 0) {
       return items.list.map(item => (
-        <li key={item.dt}>
-          <WeatherSearchResultItem
-            name={items.name}
-            city={item}
-          />
-        </li>))
+        <WeatherSearchResultItem
+          name={items.name}
+          lat={items.coord.lat}
+          lon={items.coord.lon}
+          city={item}
+          key={item.dt}
+        />
+      ))
     }
     return (
       <p>No items</p>
@@ -22,9 +25,19 @@ class WeatherSearchResultList extends Component {
   render() {
     return (
       <div>
-        <h2>WeatherSearchResultList</h2>
-        <h3>{this.props.results.toJS().name}</h3>
-        <ul>{this.renderItems()}</ul>
+
+        <Card fluid>
+          <Card.Content>
+            <Card.Header>
+              Search Results: {this.props.results.toJS().name}
+            </Card.Header>
+          </Card.Content>
+          <Card.Content>
+            <Feed>
+              {this.renderItems()}
+            </Feed>
+          </Card.Content>
+        </Card>
       </div>
     )
   }
