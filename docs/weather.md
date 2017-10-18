@@ -22,8 +22,8 @@
   - [x] Reducer
 - [x] Actions test
   - [x] Actions
-- [ ] Sagas test
-  - [ ] Sagas
+- [x] Sagas test
+  - [x] Sagas
 - [x] Container test
   - [x] Container
 - [x] Component test
@@ -51,7 +51,7 @@
   - error
 - [x] Selector test
   - [x] Selector
-- [ ] Sagas test
-  - [ ] Sagas
-- [ ] Enhance components
-- [ ] Real API
+- [x] Sagas test
+  - [x] Sagas
+- [x] Enhance components
+- [x] Real API
