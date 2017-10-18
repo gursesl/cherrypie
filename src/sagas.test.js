@@ -4,6 +4,7 @@ import sagaHelper from 'redux-saga-testing'
 import rootSaga, * as s from './sagas'
 import { watchIncrementAsync } from './containers/CounterContainer/sagas'
 import { watchUsersFetchSaga } from './containers/UserListContainer/sagas'
+import { watchWeatherFetchSaga } from './containers/WeatherContainer/sagas'
 
 describe('App:sagas:helloSaga', () => {
   const it = sagaHelper(s.helloSaga())
@@ -28,7 +29,11 @@ describe('App:sagas:rootSaga', () => {
   const it = sagaHelper(rootSaga())
   // STEP 1: Call delay
   it('should be watching', (result) => {
-    expect((result)).toEqual(all([s.helloSaga(), watchIncrementAsync(), watchUsersFetchSaga()]))
+    expect((result)).toEqual(all([
+      s.helloSaga(),
+      watchIncrementAsync(),
+      watchUsersFetchSaga(),
+      watchWeatherFetchSaga()]))
   })
   // STEP 2: Be done
   it('and then nothing', (result) => {

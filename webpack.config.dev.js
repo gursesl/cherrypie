@@ -1,5 +1,7 @@
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
 
 const imgQuery = {
   bypassOnDebug: true,
@@ -9,13 +11,20 @@ const imgQuery = {
   gifsicle: {
     interlaced: false,
   },
-};
-
+}
 
 const SRC_DIR = path.resolve(__dirname, 'src')
+// const DIST_DIR = path.resolve(__dirname, 'dist')
 
-export default {
+module.exports = {
   devtool: 'inline-source-map',
+  devServer: {
+    historyApiFallback: true,
+    // contentBase: DIST_DIR,
+    compress: true,
+    hot: true,
+    port: process.env.PORT || 5000,
+  },
   entry: [
     path.resolve(__dirname, `${SRC_DIR}/index.js`),
   ],
@@ -31,6 +40,11 @@ export default {
       template: 'src/index.html',
       inject: true,
     }),
+    new Dotenv({
+      path: './.env', // Path to .env file (this is the default)
+      safe: false, // load .env.example (defaults to "false" which does not use dotenv-safe)
+    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     loaders: [
@@ -41,7 +55,10 @@ export default {
         exclude: /node_modules/,
         query: { presets: ['es2015', 'react', 'stage-2'] },
       },
-      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
+      {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader'],
+      },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         loader: 'url-loader',
@@ -55,4 +72,4 @@ export default {
       },
     ],
   },
-};
+}

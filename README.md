@@ -25,8 +25,8 @@ Tech Todo
   - [x] Test Redux
   - [x] Add actions and action creators
   - [x] Solidify reducers
-- [ ] React router
-  - [ ] Test react router
+- [x] React router
+  - [x] Test react router
 - [ ] Styled components
   - [ ] Test styled components
 - [ ] Apollo server
@@ -36,8 +36,8 @@ Tech Todo
   - [ ] Test Apollo client
   - [ ] Solidify central api calling script
 - [x] Add Proptypes
-  - [ ] Test Proptypes
-  - [ ] Refactor client/server scrips
+  - [x] Test Proptypes
+  - [x] Refactor client/server scrips
 - [x] Add Redux Sagas
   - [x] Test sagas
 - [x] Reselect for Redux
@@ -51,6 +51,7 @@ Tech Todo
 
 Functional Todo
 ==
+- [ ] [Create a weather route/container/component](./docs/weather.md)
 - [ ] User sign-up
   - [ ] Test user sign-up
 - [ ] User sign-in

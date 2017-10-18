@@ -1,5 +1,5 @@
 import { takeEvery, call, put } from 'redux-saga/effects'
-import { getUsers } from '../../api/userApi'
+import { getUsers } from './api'
 import * as c from './constants'
 import * as a from './actions'
 

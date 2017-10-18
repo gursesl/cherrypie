@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherContainer:reducer handles the weatherDataFetchFailure action snapshot 1`] = `
+Immutable.Map {
+  "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
+  "app/WeatherContainer/SELECTOR_WEATHER_CITY": "Sterling",
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_ERROR": Immutable.Map {
+    "type": 1,
+    "message": "An error occurred.",
+  },
+}
+`;
+
+exports[`WeatherContainer:reducer handles the weatherDataFetchStart action snapshot 1`] = `
+Immutable.Map {
+  "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
+  "app/WeatherContainer/SELECTOR_WEATHER_CITY": Immutable.Map {
+    "type": "app/WeatherContainer/WEATHER_DATA_FETCH_START",
+    "payload": "Sterling",
+  },
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {},
+  "app/WeatherContainer/SELECTOR_WEATHER_ERROR": "Load error",
+}
+`;
+
+exports[`WeatherContainer:reducer handles the weatherDataFetchSuccess action snapshot 1`] = `
+Immutable.Map {
+  "app/WeatherContainer/SELECTOR_WEATHER_ZIP": "20165",
+  "app/WeatherContainer/SELECTOR_WEATHER_CITY": "Sterling",
+  "app/WeatherContainer/SELECTOR_WEATHER_RESULTS": Immutable.Map {
+    "id": 4754219,
+    "name": "Countryside",
+    "coord": Immutable.Map {
+      "lat": 39.0409,
+      "lon": -77.4136,
+    },
+    "country": "US",
+    "list": Immutable.List [
+      Immutable.Map {
+        "pressure": 1027.23,
+        "temp_min": "3.08",
+        "wind": 205.503,
+        "dt": 1508306400,
+        "humidity": 73,
+        "temp": "3.08",
+        "icon": "http://openweathermap.org/img/w/01n.png",
+        "temp_max": "4.75",
+        "description": "clear sky",
+        "clouds": 0,
+      },
+    ],
+  },
+  "app/WeatherContainer/SELECTOR_WEATHER_ERROR": "Load error",
+}
+`;

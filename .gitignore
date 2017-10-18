@@ -58,7 +58,7 @@ yarn.lock
 # dotenv environment variables file
 .env
 
-src/api/db.json
+src/utils/db.json
 package-lock.json
 
 dist

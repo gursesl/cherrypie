@@ -8,7 +8,7 @@
         "type": "chrome",
         "name": "Chrome",
         "request": "launch",
-        "url": "http://localhost:5000/?useMockApi=true",
+        "url": "http://localhost:5000",
         "webRoot": "${workspaceRoot}/src",
       },
       {

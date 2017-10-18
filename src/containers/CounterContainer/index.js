@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
