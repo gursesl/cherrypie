@@ -45,7 +45,10 @@ describe('WeatherContainer:reducer', () => {
   })
 
   it('should handle weatherDataFetchSuccess action correctly with a payload', () => {
-    const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, processResultData(m.mockData.toJS()))
+    const expectedState = state.set(
+      c.SELECTOR_WEATHER_RESULTS,
+      processResultData(m.mockData.toJS())
+    )
     expect(weatherContainerReducer(
       state,
       a.weatherDataFetchSuccess(m.mockData.toJS())
@@ -53,7 +56,7 @@ describe('WeatherContainer:reducer', () => {
   })
 
   it('should handle weatherDataFetchSuccess action correctly w/o a payload', () => {
-    const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, fromJS([]))
+    const expectedState = state.set(c.SELECTOR_WEATHER_RESULTS, fromJS({}))
     expect(weatherContainerReducer(state, a.weatherDataFetchSuccess())).toEqual(expectedState)
   })
 
@@ -71,8 +74,12 @@ describe('WeatherContainer:reducer', () => {
   })
 
   // Data processor test
-  it('should process result data correctly', () => {
+  it('should process result data correctly with a load', () => {
     expect(processResultData(m.mockData.toJS())).toEqual(m.processedMockData)
+  })
+
+  it('should return empty without a load', () => {
+    expect(processResultData()).toEqual(fromJS({}))
   })
 
   // Snapshot tests
@@ -84,7 +91,10 @@ describe('WeatherContainer:reducer', () => {
   })
 
   it('handles the weatherDataFetchSuccess action snapshot', () => {
-    expect(weatherContainerReducer(state, a.weatherDataFetchSuccess(m.mockData.toJS()))).toMatchSnapshot()
+    expect(weatherContainerReducer(
+      state,
+      a.weatherDataFetchSuccess(m.mockData.toJS())
+    )).toMatchSnapshot()
   })
 
   it('handles the weatherDataFetchFailure action snapshot', () => {

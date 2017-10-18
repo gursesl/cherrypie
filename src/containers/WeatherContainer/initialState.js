@@ -9,7 +9,7 @@ import {
 const initialState = fromJS({
   [SELECTOR_WEATHER_ZIP]: '20165',
   [SELECTOR_WEATHER_CITY]: 'Sterling',
-  [SELECTOR_WEATHER_RESULTS]: [],
+  [SELECTOR_WEATHER_RESULTS]: {},
   [SELECTOR_WEATHER_ERROR]: 'Load error',
 })
 

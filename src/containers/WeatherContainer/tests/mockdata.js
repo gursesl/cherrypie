@@ -19,128 +19,75 @@ export const mockedState = fromJS({
 });
 
 export const mockData = fromJS({
-  message: 'accurate',
   cod: '200',
-  count: 3,
+  message: 0.004,
+  cnt: 38,
   list: [
     {
-      id: 4754219,
-      name: 'Countryside',
-      coord: { lat: 39.0409, lon: -77.4136 },
+      dt: 1508306400,
       main: {
-        temp: 288.82,
-        pressure: 1026,
-        humidity: 36,
-        temp_min: 287.15,
-        temp_max: 290.15,
+        temp: 276.23,
+        temp_min: 276.23,
+        temp_max: 277.899,
+        pressure: 1027.23,
+        sea_level: 1040.82,
+        grnd_level: 1027.23,
+        humidity: 73,
+        temp_kf: -1.67,
       },
-      dt: 1508277900,
-      wind: { speed: 1.91, deg: 319.002 },
-      sys: { country: 'US' },
-      rain: null,
-      snow: null,
-      clouds: { all: 1 },
       weather: [
         {
-          id: 800, main: 'Clear', description: 'sky is clear', icon: '01d',
+          id: 800,
+          main: 'Clear',
+          description: 'clear sky',
+          icon: '01n',
         },
       ],
-    },
-    {
-      id: 4888906,
-      name: 'Countryside',
-      coord: { lat: 41.7828, lon: -87.8782 },
-      main: {
-        temp: 293.82,
-        pressure: 1021,
-        humidity: 37,
-        temp_min: 293.15,
-        temp_max: 294.15,
+      clouds: {
+        all: 0,
       },
-      dt: 1508278500,
-      wind: { speed: 2.6, deg: 220, gust: 4.1 },
-      sys: { country: 'US' },
-      rain: null,
-      snow: null,
-      clouds: { all: 1 },
-      weather: [
-        {
-          id: 800, main: 'Clear', description: 'sky is clear', icon: '01d',
-        },
-      ],
-    },
-    {
-      id: 7150586,
-      name: 'Countryside',
-      coord: { lat: 39.8858, lon: -105.1195 },
-      main: {
-        temp: 297.81,
-        pressure: 1021,
-        humidity: 7,
-        temp_min: 296.15,
-        temp_max: 300.15,
+      wind: {
+        speed: 205.503,
       },
-      dt: 1508277480,
-      wind: { speed: 2.6, deg: 210 },
-      sys: { country: 'US' },
-      rain: null,
-      snow: null,
-      clouds: { all: 1 },
-      weather: [
-        {
-          id: 800, main: 'Clear', description: 'sky is clear', icon: '01d',
-        },
-      ],
+      sys: {
+        pod: 'n',
+      },
+      dt_txt: '2017-10-18 06:00:00',
     },
   ],
-});
-
-export const processedMockData = [
-  {
+  city: {
     id: 4754219,
     name: 'Countryside',
+    coord: {
+      lat: 39.0409,
+      lon: -77.4136,
+    },
     country: 'US',
-    coord: { lat: 39.0409, lon: -77.4136 },
-    temp: '15.67',
-    pressure: 1026,
-    humidity: 36,
-    temp_min: '14.00',
-    temp_max: '17.00',
-    wind: 1.91,
-    clouds: 1,
-    description: 'sky is clear',
-    icon: 'http://openweathermap.org/img/w/01d.png',
   },
-  {
-    id: 4888906,
-    name: 'Countryside',
-    country: 'US',
-    coord: { lat: 41.7828, lon: -87.8782 },
-    temp: '20.67',
-    pressure: 1021,
-    humidity: 37,
-    temp_min: '20.00',
-    temp_max: '21.00',
-    wind: 2.6,
-    clouds: 1,
-    description: 'sky is clear',
-    icon: 'http://openweathermap.org/img/w/01d.png',
+})
+
+export const processedMockData = fromJS({
+  id: 4754219,
+  name: 'Countryside',
+  coord: {
+    lat: 39.0409,
+    lon: -77.4136,
   },
-  {
-    id: 7150586,
-    name: 'Countryside',
-    country: 'US',
-    coord: { lat: 39.8858, lon: -105.1195 },
-    temp: '24.66',
-    pressure: 1021,
-    humidity: 7,
-    temp_min: '23.00',
-    temp_max: '27.00',
-    wind: 2.6,
-    clouds: 1,
-    description: 'sky is clear',
-    icon: 'http://openweathermap.org/img/w/01d.png',
-  },
-]
+  country: 'US',
+  list: [
+    {
+      dt: 1508306400,
+      temp: (276.23 - 273.15).toFixed(2),
+      pressure: 1027.23,
+      humidity: 73,
+      temp_min: (276.23 - 273.15).toFixed(2),
+      temp_max: (277.899 - 273.15).toFixed(2),
+      wind: 205.503,
+      clouds: 0,
+      description: 'clear sky',
+      icon: 'http://openweathermap.org/img/w/01n.png',
+    },
+  ],
+})
 
 export const mockError = fromJS({ type: 1, message: 'An error occurred.' });
