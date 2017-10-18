@@ -37,7 +37,7 @@ UserList.propTypes = {
   })).isRequired,
   error: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
-};
+}
 
 
 export default UserList
