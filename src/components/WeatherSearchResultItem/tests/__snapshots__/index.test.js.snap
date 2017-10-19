@@ -14,7 +14,7 @@ initialize {
         "children": Array [
           Object {
             "attribs": Object {
-              "src": "http://openweathermap.org/img/w/01n.png",
+              "src": "https://openweathermap.org/img/w/01n.png",
             },
             "children": Array [],
             "name": "img",
@@ -2583,7 +2583,7 @@ initialize {
           "children": Array [
             Object {
               "attribs": Object {
-                "src": "http://openweathermap.org/img/w/01n.png",
+                "src": "https://openweathermap.org/img/w/01n.png",
               },
               "children": Array [],
               "name": "img",

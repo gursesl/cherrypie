@@ -85,7 +85,7 @@ export const processedMockData = fromJS({
       wind: 205.503,
       clouds: 0,
       description: 'clear sky',
-      icon: 'http://openweathermap.org/img/w/01n.png',
+      icon: 'https://openweathermap.org/img/w/01n.png',
     },
   ],
 })
