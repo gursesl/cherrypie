@@ -1,4 +1,5 @@
 import express from 'express'
+import request from 'request'
 import path from 'path'
 import open from 'open'
 import webpack from 'webpack'
@@ -21,8 +22,8 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }))
 
-app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, '../src/index.html'))
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../src/index.html'))
 })
 
 app.get('/users', (req, res) => {
@@ -37,6 +38,23 @@ app.get('/users', (req, res) => {
       id: 3, firstName: 'Bob2', lastName: 'Smith3', email: 'bob2@rmail.com',
     },
   ])
+})
+
+app.get('/cityWeather', (req, res) => {
+  const qs = {
+    APPID: process.env.OWM_API_KEY,
+    q: req.query.q,
+  }
+
+  const url = 'https://api.openweathermap.org/data/2.5/forecast'
+
+  request({ url, qs }, (err, response, body) => {
+    if (err) {
+      return
+    }
+    // console.log(`Get response: ${response.statusCode}`)
+    res.send(body)
+  })
 })
 
 app.listen(process.env.PORT || port, (err) => {

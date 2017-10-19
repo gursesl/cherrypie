@@ -31,7 +31,6 @@ const props = {
 }
 
 const component = shallow(<UserComponent {...props} />)
-// console.log(component.debug())
 
 describe('UserComponent:index', () => {
   it('should be available', () => {

@@ -13,7 +13,6 @@ const component = (
 )
 
 describe('WeatherSearchBox:index', () => {
-  // const shallowContainer = shallow(component)
   const renderedComponent = shallow(component)
   const onChangeSpy = jest.fn(renderedComponent.instance().handleChange)
 
@@ -22,7 +21,6 @@ describe('WeatherSearchBox:index', () => {
   })
 
   it('should not blow up', () => {
-    // console.log(shallowContainer.debug())
     expect(renderedComponent).toBeDefined()
   })
 

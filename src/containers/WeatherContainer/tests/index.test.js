@@ -26,16 +26,13 @@ const component = (
 )
 
 describe('WeatherContainer:index', () => {
-  // const shallowContainer = shallow(component)
   const deepContainer = mount(component)
 
   it('should not blow up', () => {
-    // console.log(shallowContainer.debug())
     expect(deepContainer).toBeDefined()
   })
 
   it('should be a connected component i.e. container', () => {
-    // console.log(deepContainer.find(Provider).debug())
     expect(deepContainer.find(Provider).length).toBe(1)
   })
 
