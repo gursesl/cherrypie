@@ -16,7 +16,7 @@ export function processResultData(data) {
         wind: city.wind.speed,
         clouds: city.clouds.all,
         description: city.weather[0].description,
-        icon: `http://openweathermap.org/img/w/${city.weather[0].icon}.png`,
+        icon: `https://openweathermap.org/img/w/${city.weather[0].icon}.png`,
       }
     })
 
