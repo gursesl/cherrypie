@@ -1,37 +1,18 @@
 // REFERENCE: SAGAS TEST
-/* eslint-disable no-unused-vars */
-import { createStore, applyMiddleware } from 'redux'
-import createSagaMiddleware, { runSaga } from 'redux-saga'
-import { put, take, takeLatest, takeEvery, call } from 'redux-saga/effects'
+import { put, takeEvery, call } from 'redux-saga/effects'
 import sagaHelper from 'redux-saga-testing'
 import { watchUsersFetchSaga, usersFetchSaga } from '../sagas'
 import * as c from '../constants'
 import * as a from '../actions'
-import { getUsers } from '../../../api/userApi'
-
-const mockUsers = [
-  {
-    id: '95617189',
-    firstName: 'Elfrieda',
-    lastName: 'Frank',
-    email: 'Ada20@hotmail.com',
-  },
-  {
-    id: '95617188',
-    firstName: 'Jim',
-    lastName: 'Smith',
-    email: 'jsmith@mail.com',
-  },
-]
+import { getUsers } from '../api'
+import { mockUsers } from './mockdata'
 
 const MOCK_RESPONSE = {
   users: mockUsers,
 }
 
-
 describe('UserListContainer:sagas', () => {
   const genWatch = watchUsersFetchSaga()
-  const genFetch = usersFetchSaga()
 
   // STEP 1: WATCH
   it('should watch for a USERS_FETCH_START action', () => {
@@ -41,7 +22,7 @@ describe('UserListContainer:sagas', () => {
 
   describe('Scenario 2: The API returns expected data', () => {
     const it = sagaHelper(usersFetchSaga())
-    const api = jest.fn()
+    jest.fn()
 
     it('should have called the mock API first, which we are going to specify the results of', (result) => {
       expect(result).toEqual(call(getUsers));
@@ -63,7 +44,7 @@ describe('UserListContainer:sagas', () => {
 
   describe('Scenario 3: The API throws an exception', () => {
     const it = sagaHelper(usersFetchSaga())
-    const api = jest.fn()
+    jest.fn()
 
     it('should have called the mock API first, which we are going to specify the results of', (result) => {
       expect(result).toEqual(call(getUsers));

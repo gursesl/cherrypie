@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/gursesl/cherrypie.svg?branch=master)](https://travis-ci.org/gursesl/cherrypie)
-
-[![Coverage Status](https://coveralls.io/repos/github/gursesl/cherrypie/badge.svg)](https://coveralls.io/github/gursesl/cherrypie)
-
+[![Build Status](https://travis-ci.org/gursesl/cherrypie.svg?branch=master)](https://travis-ci.org/gursesl/cherrypie) [![Coverage Status](https://coveralls.io/repos/github/gursesl/cherrypie/badge.svg)](https://coveralls.io/github/gursesl/cherrypie) [![Greenkeeper badge](https://badges.greenkeeper.io/gursesl/cherrypie.svg)](https://greenkeeper.io/) [![Known Vulnerabilities](https://snyk.io/test/github/gursesl/cherrypie/badge.svg)](https://snyk.io/test/github/gursesl/cherrypie)
 
 # Live links
+
 - Surge (Static front-end): http://cherrypie.surge.sh
 - Heroku (API and front-end): https://cherrypieapp.herokuapp.com
 
@@ -27,10 +25,10 @@ Tech Todo
   - [x] Test Redux
   - [x] Add actions and action creators
   - [x] Solidify reducers
-- [x] React-redux router
-  - [ ] Separate router file
-  - [ ] Test react-redux router
-- [ ] Refactor client/server folders/scrips
+- [x] React router
+  - [x] Test react router
+- [ ] Styled components
+  - [ ] Test styled components
 - [ ] Apollo server
   - [ ] Apollo mock server
   - [ ] Test Apollo server
@@ -40,7 +38,8 @@ Tech Todo
 - [ ] Styled components
   - [ ] Test styled components
 - [x] Add Proptypes
-  - [ ] Test Proptypes
+  - [x] Test Proptypes
+  - [x] Refactor client/server scrips
 - [x] Add Redux Sagas
   - [x] Test sagas
 - [x] Reselect for Redux
@@ -54,6 +53,7 @@ Tech Todo
 
 Functional Todo
 ==
+- [ ] [Create a weather route/container/component](./docs/weather.md)
 - [ ] User sign-up
   - [ ] Test user sign-up
 - [ ] User sign-in

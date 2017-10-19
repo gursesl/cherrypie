@@ -4,30 +4,12 @@ import initialState from '../initialState'
 import userListContainerReducer from '../reducer'
 import * as a from '../actions'
 import * as c from '../constants'
+import * as m from './mockdata'
 
 const state = initialState
-const mockUsers = fromJS([
-  {
-    id: 95617189,
-    firstName: 'Elfrieda',
-    lastName: 'Frank',
-    email: 'Ada20@hotmail.com',
-  },
-  {
-    id: 95617188,
-    firstName: 'Jim',
-    lastName: 'Smith',
-    email: 'jsmith@mail.com',
-  },
-])
-
-const mockError = fromJS({ type: 1, message: 'An error occurred.' })
 
 describe('UserListContainer:reducer', () => {
-  beforeEach(() => {
-  })
-
-  it('sould return the initial state', () => {
+  it('should return the initial state', () => {
     expect(userListContainerReducer(undefined, {})).toEqual(initialState)
   })
 
@@ -36,8 +18,8 @@ describe('UserListContainer:reducer', () => {
   })
 
   it('should handle usersFetchSuccess action correctly with a payload', () => {
-    const expectedState = state.set(c.SELECTOR_USERS_USERS, mockUsers)
-    expect(userListContainerReducer(state, a.usersFetchSuccess(mockUsers))).toEqual(expectedState)
+    const expectedState = state.set(c.SELECTOR_USERS_USERS, m.mockUsers)
+    expect(userListContainerReducer(state, a.usersFetchSuccess(m.mockUsers))).toEqual(expectedState)
   })
 
   it('should handle usersFetchSuccess action correctly w/o a payload', () => {
@@ -46,8 +28,8 @@ describe('UserListContainer:reducer', () => {
   })
 
   it('should handle usersFetchFailure action correctly with a load', () => {
-    const expectedState = state.set(c.SELECTOR_USERS_ERROR, mockError)
-    expect(userListContainerReducer(state, a.usersFetchFailure(mockError))).toEqual(expectedState)
+    const expectedState = state.set(c.SELECTOR_USERS_ERROR, m.mockError)
+    expect(userListContainerReducer(state, a.usersFetchFailure(m.mockError))).toEqual(expectedState)
   })
 
   it('should handle usersFetchFailure action correctly w/o a load', () => {
@@ -56,14 +38,14 @@ describe('UserListContainer:reducer', () => {
   })
 
   it('handles the usersFetchStart action snapshot', () => {
-    expect(userListContainerReducer({}, a.usersFetchStart())).toMatchSnapshot();
-  });
+    expect(userListContainerReducer({}, a.usersFetchStart())).toMatchSnapshot()
+  })
 
   it('handles the usersFetchSuccess action snapshot', () => {
-    expect(userListContainerReducer(state, a.usersFetchSuccess(mockUsers))).toMatchSnapshot();
-  });
+    expect(userListContainerReducer(state, a.usersFetchSuccess(m.mockUsers))).toMatchSnapshot()
+  })
 
   it('handles the usersFetchFailure action snapshot', () => {
-    expect(userListContainerReducer(state, a.usersFetchFailure(mockError))).toMatchSnapshot();
-  });
+    expect(userListContainerReducer(state, a.usersFetchFailure(m.mockError))).toMatchSnapshot()
+  })
 })

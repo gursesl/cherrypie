@@ -1,8 +1,8 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import WebpackMd5Hash from 'webpack-md5-hash';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import path from 'path'
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import WebpackMd5Hash from 'webpack-md5-hash'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 const imgQuery = {
   bypassOnDebug: true,
@@ -12,7 +12,7 @@ const imgQuery = {
   gifsicle: {
     interlaced: false,
   },
-};
+}
 
 export default {
   devtool: 'source-map',
@@ -60,11 +60,17 @@ export default {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
     }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+    }),
   ],
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader?sourceMap') },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('css-loader?sourceMap'),
+      },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         loader: 'url-loader',
@@ -78,4 +84,4 @@ export default {
       },
     ],
   },
-};
+}

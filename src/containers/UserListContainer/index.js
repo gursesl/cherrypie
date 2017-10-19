@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react' // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { createSelector } from 'reselect'
 import * as a from './actions'
@@ -31,4 +32,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserListContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserListContainer))

@@ -1,4 +1,4 @@
-import { take, takeEvery, takeLatest, put } from 'redux-saga/effects' //eslint-disable-line
+import { takeLatest, put } from 'redux-saga/effects'
 
 const CHOOSE_COLOR = 'CHOOSE_COLOR'
 const CHANGE_UI = 'CHANGE_UI'
@@ -18,7 +18,6 @@ const changeUI = color => ({
 })
 
 function* changeColorSaga() {
-  // console.log("changeColorSaga:changeColorSaga:changeColorSaga")
   const action = yield takeLatest(CHOOSE_COLOR)
   yield put(changeUI(action.payload.color))
 }
