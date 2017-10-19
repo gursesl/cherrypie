@@ -5,7 +5,9 @@ cache: false
 jobs:
   include:
   - stage: test
-    script: npm run test
+    script:
+      - touch ./node_modules/react-router-redux/selectors.js
+      - npm run test
   - stage: heroku
     script: skip
     deploy:
