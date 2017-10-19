@@ -19,4 +19,17 @@ module.exports = {
     ENABLE_MOCK_API: true,
   },
   automock: false,
-};
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+  },
+  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  bail: false,
+  coverageThreshold: {
+    global: {
+      branches: 50,
+      functions: 50,
+      lines: 50,
+      statements: 50,
+    },
+  },
+}
