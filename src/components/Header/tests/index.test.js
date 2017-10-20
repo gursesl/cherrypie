@@ -44,7 +44,7 @@ describe('AppHeader:index', () => {
   });
 
   it('should have a predefined number of nested menu items', () => {
-    expect(deepComponent.find(MenuItem).length).toBe(5)
+    expect(deepComponent.find(MenuItem).length).toBe(6)
   })
 
   it('should render a child <FixedMenu /> component', () => {

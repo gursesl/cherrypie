@@ -43,6 +43,7 @@ class AppHeader extends Component {
               <Menu inverted pointing secondary size="large">
                 <Menu.Item as={NavLink} to="/" exact>Home</Menu.Item>
                 <Menu.Item as={NavLink} to="/users">Users</Menu.Item>
+                <Menu.Item as={NavLink} to="/gqlusers">GQL Users</Menu.Item>
                 <Menu.Item as={NavLink} to="/counter">Counter</Menu.Item>
                 <Menu.Item as={NavLink} to="/weather">Weather</Menu.Item>
                 <Menu.Item position="right">

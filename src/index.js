@@ -2,8 +2,7 @@ import 'regenerator-runtime/runtime'
 import 'semantic-ui-css/semantic.min.css'
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-// import { createHashHistory } from 'history'
+import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
@@ -14,14 +13,18 @@ import rootSaga from './sagas'
 import './index.css'
 import AppRouter from './router'
 
+// Apollo network interface
+const networkInterface = createNetworkInterface({
+  uri: 'http://localhost:4000/graphql',
+})
+
 const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //eslint-disable-line
 
-// create history
-// const history = createHashHistory({
-//   basname: '',
-//   hashType: 'slash',
-// })
+const client = new ApolloClient({
+  networkInterface,
+  reduxRootSelector: state => state.get('apollo'), // apollo reducer key
+})
 
 const history = createHistory()
 
@@ -29,18 +32,19 @@ const rMiddleware = routerMiddleware(history)
 const combinedReducers = combineReducers({
   ...reducers,
   router: routerReducer,
+  apollo: client.reducer(),
 })
 
 const store = createStore(
   combinedReducers, /* preloadedState, */
-  composeEnhancers(applyMiddleware(sagaMiddleware, rMiddleware))
+  composeEnhancers(applyMiddleware(client.middleware(), sagaMiddleware, rMiddleware))
 )
 
 sagaMiddleware.run(rootSaga)
 
 render(
-  <Provider store={store}>
+  <ApolloProvider store={store} client={client}>
     <AppRouter />
-  </Provider>
+  </ApolloProvider>
   , document.getElementById('root')
 );

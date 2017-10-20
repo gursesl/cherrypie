@@ -33,6 +33,12 @@ ShallowWrapper {
         </MenuItem>
         <MenuItem
           as={[Function]}
+          to="/gqlusers"
+        >
+          GQL Users
+        </MenuItem>
+        <MenuItem
+          as={[Function]}
           to="/counter"
         >
           Counter
@@ -76,6 +82,12 @@ ShallowWrapper {
             to="/users"
           >
             Users
+          </MenuItem>,
+          <MenuItem
+            as={[Function]}
+            to="/gqlusers"
+          >
+            GQL Users
           </MenuItem>,
           <MenuItem
             as={[Function]}
@@ -128,6 +140,19 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": "Users",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "as": [Function],
+            "children": "GQL Users",
+            "to": "/gqlusers",
+          },
+          "ref": null,
+          "rendered": "GQL Users",
           "type": [Function],
         },
         Object {
@@ -233,6 +258,12 @@ ShallowWrapper {
           </MenuItem>
           <MenuItem
             as={[Function]}
+            to="/gqlusers"
+          >
+            GQL Users
+          </MenuItem>
+          <MenuItem
+            as={[Function]}
             to="/counter"
           >
             Counter
@@ -276,6 +307,12 @@ ShallowWrapper {
               to="/users"
             >
               Users
+            </MenuItem>,
+            <MenuItem
+              as={[Function]}
+              to="/gqlusers"
+            >
+              GQL Users
             </MenuItem>,
             <MenuItem
               as={[Function]}
@@ -328,6 +365,19 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": "Users",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "as": [Function],
+              "children": "GQL Users",
+              "to": "/gqlusers",
+            },
+            "ref": null,
+            "rendered": "GQL Users",
             "type": [Function],
           },
           Object {

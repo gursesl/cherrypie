@@ -33,6 +33,15 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
           <a
             aria-current={false}
             className="item"
+            href="/gqlusers"
+            onClick={[Function]}
+            style={undefined}
+          >
+            GQL Users
+          </a>
+          <a
+            aria-current={false}
+            className="item"
             href="/counter"
             onClick={[Function]}
             style={undefined}
