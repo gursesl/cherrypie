@@ -52,29 +52,36 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
             className="right item"
             onClick={[Function]}
           >
-            <a
-              className="ui inverted button"
-              disabled={undefined}
-              onClick={[Function]}
-              role="button"
-              tabIndex={undefined}
-            >
-              Log in
-            </a>
-            <a
-              className="ui inverted button"
-              disabled={undefined}
-              onClick={[Function]}
-              role="button"
-              style={
-                Object {
-                  "marginLeft": "0.5em",
-                }
-              }
-              tabIndex={undefined}
-            >
-              Sign Up
-            </a>
+            <div>
+              <button
+                className="ui primary button"
+                disabled={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                role="button"
+                tabIndex={undefined}
+              >
+                Login
+              </button>
+            </div>
+            <div>
+              <button
+                className="ui button"
+                disabled={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                role="button"
+                tabIndex={undefined}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </div>

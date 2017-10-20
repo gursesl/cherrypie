@@ -62,3 +62,6 @@ src/utils/db.json
 package-lock.json
 
 dist
+
+# Webstorm files
+.idea

@@ -26,7 +26,7 @@ exports[`Home:index renders itself into the DOM with the correct shallowComponen
             }
           }
         >
-          Imagine-a-Company
+          Imagine a Cherry Pie
         </h1>
         <h2
           className="ui inverted header"
@@ -37,16 +37,16 @@ exports[`Home:index renders itself into the DOM with the correct shallowComponen
             }
           }
         >
-          Do whatever you want when you want to.
+          So great that it would make you think twice
         </h2>
         <button
-          className="ui huge primary button"
+          className="ui teal huge button"
           disabled={undefined}
           onClick={[Function]}
           role="button"
           tabIndex={undefined}
         >
-          Get Started
+          Why, You Say?
           <i
             aria-hidden="true"
             className="right arrow icon"

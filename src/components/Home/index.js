@@ -33,7 +33,7 @@ export default class Home extends Component {
             <Container text>
               <Header
                 as="h1"
-                content="Imagine-a-Company"
+                content="Imagine a Cherry Pie"
                 inverted
                 style={{
                   fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em',
@@ -41,12 +41,12 @@ export default class Home extends Component {
               />
               <Header
                 as="h2"
-                content="Do whatever you want when you want to."
+                content="So great that it would make you think twice"
                 inverted
                 style={{ fontSize: '1.7em', fontWeight: 'normal' }}
               />
-              <Button primary size="huge">
-                Get Started
+              <Button color="teal" size="huge">
+                Why, You Say?
                 <Icon name="right arrow" />
               </Button>
             </Container>
