@@ -40,7 +40,7 @@ class LogoutModal extends Component {
             >
               <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as='h2' color='teal' textAlign='center'>
-                  <Image src='/src/components/LogoutModal/logo.png' />
+                  <Image src={'/img/logo.png'} />
                   {' '}Log-in to your account
                 </Header>
                 <Form size='large'>

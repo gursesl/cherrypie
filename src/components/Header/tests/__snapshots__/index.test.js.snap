@@ -54,7 +54,7 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
           >
             <div>
               <button
-                className="ui primary button"
+                className="ui teal button"
                 disabled={undefined}
                 onBlur={[Function]}
                 onClick={[Function]}

@@ -16,7 +16,7 @@ class LoginModal extends Component {
 
     return (
       <div>
-        <Popup trigger={<Button primary onClick={this.show(true)}>Login</Button>}>
+        <Popup trigger={<Button color="teal" onClick={this.show(true)}>Login</Button>}>
           <Popup.Header>Login details</Popup.Header>
           <Popup.Content>
             Use your email or username to login to Cherrypie
