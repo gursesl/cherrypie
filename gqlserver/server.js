@@ -5,12 +5,11 @@ import chalk from 'chalk'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import { schema } from './src/schema'
 
-const myGraphQlSchema = schema
 const PORT = process.env.GRAPHQL_PORT || 4000
 const server = express()
 server.use('*', cors({ origin: '*' }))
 
-server.use('/graphql', bodyParser.json(), graphqlExpress({ schema: myGraphQlSchema }))
+server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
 server.use('/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/graphql' }))
 
 server.listen(PORT, () => {

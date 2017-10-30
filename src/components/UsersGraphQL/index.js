@@ -1,7 +1,9 @@
 import React from 'react'
-import { gql, graphql } from 'react-apollo'
+import PropTypes from 'prop-types'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
-const UsersGraphQL = ({ data: {loading, error, users }}) => {
+const UsersGraphQL = ({ data: { loading, error, users } }) => {
   if (loading) {
     return (
       <p>Loading...</p>
@@ -35,4 +37,13 @@ export const usersListQuery = gql`
   }
 `
 
+UsersGraphQL.propTypes = {
+  data: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    error: PropTypes.object,
+    users: PropTypes.object,
+  }).isRequired,
+}
+
 export default graphql(usersListQuery)(UsersGraphQL)
+// export default UsersGraphQL

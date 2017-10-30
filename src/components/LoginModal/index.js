@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Popup, Button, Header, Image, Modal, Form, Checkbox } from 'semantic-ui-react'
+import { Popup, Button, Modal, Form, Checkbox } from 'semantic-ui-react'
 
 class LoginModal extends Component {
   state = { open: false }
@@ -8,7 +8,7 @@ class LoginModal extends Component {
   close = () => this.setState({ open: false })
   success = () => {
     this.setState({ open: false })
-    alert('Login successful!')
+    // alert('Login successful!')
   }
 
   render() {
@@ -28,17 +28,17 @@ class LoginModal extends Component {
           <Modal.Content image>
             <Modal.Description>
               <Form>
-                <Form.Input label='Username' type='text' />
-                <Form.Input label='Password' type='password' />
+                <Form.Input label="Username" type="text" />
+                <Form.Input label="Password" type="password" />
                 <Form.Field>
-                  <Checkbox label='Remember me for 30 days' />
+                  <Checkbox label="Remember me for 30 days" />
                 </Form.Field>
               </Form>
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button basic color='red' onClick={this.close}>Cancel</Button>
-            <Button positive icon='sign in' labelPosition='right' content="Login" onClick={this.success} />
+            <Button basic color="red" onClick={this.close}>Cancel</Button>
+            <Button positive icon="sign in" labelPosition="right" content="Login" onClick={this.success} />
           </Modal.Actions>
         </Modal>
       </div>

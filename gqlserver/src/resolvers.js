@@ -57,8 +57,10 @@ const users = [
   },
 ]
 
-export const resolvers = {
+const resolvers = {
   Query: {
     users: () => users,
   },
 }
+
+export default resolvers

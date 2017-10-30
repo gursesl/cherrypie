@@ -1,5 +1,5 @@
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools'
-import { resolvers } from './resolvers'
+import resolvers from './resolvers'
 
 const typeDefs = `
   type User {
@@ -23,6 +23,6 @@ const typeDefs = `
 `
 
 const schema = makeExecutableSchema({ typeDefs, resolvers })
-// addMockFunctionsToSchema({ schema })
+// // addMockFunctionsToSchema({ schema })
 
-export { schema }
+export { schema, typeDefs }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { withRouter, NavLink } from 'react-router-dom'
 import {
-  Button,
   Container,
   Menu,
 } from 'semantic-ui-react'

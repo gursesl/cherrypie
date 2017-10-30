@@ -5,7 +5,6 @@ import {
   Menu,
   Segment,
   Visibility,
-  Button,
 } from 'semantic-ui-react'
 import FixedMenu from './FixedMenu'
 import LoginModal from '../LoginModal'
