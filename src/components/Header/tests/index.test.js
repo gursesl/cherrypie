@@ -41,7 +41,7 @@ describe('AppHeader:index', () => {
 
   it('should render a Visibility element', () => {
     expect(deepComponent.find(Menu).length).toBe(1)
-  });
+  })
 
   it('should have a predefined number of nested menu items', () => {
     expect(deepComponent.find(MenuItem).length).toBe(6)
@@ -49,12 +49,12 @@ describe('AppHeader:index', () => {
 
   it('should render a child <FixedMenu /> component', () => {
     expect(shallowComponent.find('FixedMenu').exists()).toBe(false)
-  });
+  })
 
   it('renders itself into the DOM with the correct shallowComponent styles', () => {
-    const wrapper = renderer.create(component);
-    expect(wrapper).toMatchSnapshot();
-  });
+    const wrapper = renderer.create(component)
+    expect(wrapper).toMatchSnapshot()
+  })
 
   // TODO: Implement scroll simulation and assert FixedMenu found
   it('should have FixedMenu visible if state visible parameter is set to true', () => {

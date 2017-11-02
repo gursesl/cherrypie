@@ -1,61 +1,66 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
-import { fromJS } from 'immutable'
-import { shallow, mount } from 'enzyme'
-// import ApolloClient, { ApolloProvider } from 'react-apollo'
-// import gql from 'graphql-tag'
-// import { mockServer, makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools'
-// import { mockNetworkInterfaceWithSchema } from 'apollo-test-utils'
-// import configureStore from 'redux-mock-store'
-// import '../../../setupTests'
-// import UsersGraphQL, { usersListQuery } from '..'
-// import { typeDefs } from '../../../../gqlserver/src/schema'
+import { shallow } from 'enzyme'
 
-// const middlewares = []
-// const mockStore = configureStore(middlewares)
-// const store = mockStore(fromJS({}))
+// Apollo
+import { ApolloLink, Observable, execute } from 'apollo-link'
+import '../../../setupTests'
+import { UsersGraphQL as PureUsersGraphQL } from '..'
+import { typeDefs } from '../../../../gqlserver/src/schema'
+import { users } from '../../../../gqlserver/src/resolvers'
 
-// const myMockServer = mockServer(typeDefs)
-// myMockServer.query(usersListQuery)
+class MockLink extends ApolloLink {
+  constructor(data) {
+    super()
+    this.data = data
+  }
 
+  request() {
+    return new Observable((observer) => {
+      observer.next(this.data)
+      observer.complete()
+    })
+  }
+}
 
-// const typeDefs = `
-//   type User {
-//     id: Int
-//     name: String
-//     email: String
-//   }
+const link = new MockLink({
+  users,
+  loading: false,
+})
 
-//   type Query {
-//     user: User
-//   }
-// `
-
-// const schema = makeExecutableSchema({ typeDefs })
-// addMockFunctionsToSchema({ schema })
-
-// const mockNetworkInterface = mockNetworkInterfaceWithSchema({ schema })
-
-// const client = new ApolloClient({
-//   networkInterface: mockNetworkInterface,
-// })
-
-// client.query({
-//   query: gql`{ user { id
-//     name
-//     email } }`,
-// })
-
-// const component = (
-//   <ApolloProvider store={store} client={client}>
-//     <UsersGraphQL />
-//   </ApolloProvider>
-// )
+const operation = { query: typeDefs }
 
 describe('UserGraphQL component', () => {
-  it('Should render correctly', () => {
-    // console.log(mount(component))
-    // console.log(mount(component).instance().props)
-    // console.log(mount(component).instance().props.client.store.getState().apollo.data)
+  it('Should receive data', () => {
+    // execute returns an Observable so it can be subscribed to
+    /* eslint-disable no-console */
+    execute(link, operation).subscribe({
+      next: data => console.log(`received data ${JSON.stringify(data.users)}`),
+      error: error => console.log(`received error ${error}`),
+      complete: () => console.log('complete'),
+    })
+  })
+
+  it('Should render loading state', () => {
+    const cmp = (
+      <PureUsersGraphQL data={{ loading: true, error: null, users }} />
+    )
+    expect(shallow(cmp).find('p').text()).toBe('Loading...')
+    expect(cmp).toMatchSnapshot()
+  })
+
+  it('Should render error state', () => {
+    const cmp = (
+      <PureUsersGraphQL data={{ loading: false, error: { message: 'Error Message' }, users }} />
+    )
+    expect(shallow(cmp).find('p').text()).toBe('Error Message')
+    expect(cmp).toMatchSnapshot()
+  })
+
+  it('Should render users correctly', () => {
+    const cmp = (
+      <PureUsersGraphQL data={{ loading: false, error: null, users }} />
+    )
+    expect(shallow(cmp).find('li').length).toBe(4)
+    expect(cmp).toMatchSnapshot()
   })
 })

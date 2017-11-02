@@ -7,7 +7,7 @@ import Home from './components/Home'
 import UserListContainer from './containers/UserListContainer'
 import CounterContainer from './containers/CounterContainer'
 import WeatherContainer from './containers/WeatherContainer'
-import UsersGraphQL from './components/UsersGraphQL'
+import UsersGraphQL from './components/UsersGraphQL' //eslint-disable-line
 
 const history = createHistory()
 
