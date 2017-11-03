@@ -9,11 +9,6 @@ class LogoutModal extends Component {
 
   handleClose = () => this.setState({ modalOpen: false })
 
-  success = () => {
-    // this.setState({ open: false })
-    // alert('Login successful!')
-  }
-
   render() {
     // const { open, dimmer } = this.state
 

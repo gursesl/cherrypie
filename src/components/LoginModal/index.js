@@ -8,7 +8,6 @@ class LoginModal extends Component {
   close = () => this.setState({ open: false })
   success = () => {
     this.setState({ open: false })
-    // alert('Login successful!')
   }
 
   render() {

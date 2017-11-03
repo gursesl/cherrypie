@@ -13,6 +13,7 @@ module.exports = {
     '!webpack.*.js',
     '!**/vendor.*',
     '!src/index.js',
+    '!gqlserver/server.js',
   ],
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)(spec|test).js?(x)'],
   globals: {
