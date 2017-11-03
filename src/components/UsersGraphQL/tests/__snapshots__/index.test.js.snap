@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserGraphQL component Should render error state 1`] = `
+<Unknown
+  data={
+    Object {
+      "error": Object {
+        "message": "Error Message",
+      },
+      "loading": false,
+      "users": Array [
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "wer@email.com",
+          "firstName": "Wera",
+          "id": "1",
+          "lastName": "Andersen",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "weraa",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Smith",
+          "id": "2",
+          "lastName": "Johnson",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "weraa2",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Angle",
+          "id": "3",
+          "lastName": "Lamar",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "angel23",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Wera",
+          "id": "4",
+          "lastName": "Jeromski",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "wera44",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`UserGraphQL component Should render loading state 1`] = `
+<Unknown
+  data={
+    Object {
+      "error": null,
+      "loading": true,
+      "users": Array [
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "wer@email.com",
+          "firstName": "Wera",
+          "id": "1",
+          "lastName": "Andersen",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "weraa",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Smith",
+          "id": "2",
+          "lastName": "Johnson",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "weraa2",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Angle",
+          "id": "3",
+          "lastName": "Lamar",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "angel23",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Wera",
+          "id": "4",
+          "lastName": "Jeromski",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "wera44",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+      ],
+    }
+  }
+/>
+`;
+
+exports[`UserGraphQL component Should render users correctly 1`] = `
+<Unknown
+  data={
+    Object {
+      "error": null,
+      "loading": false,
+      "users": Array [
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "wer@email.com",
+          "firstName": "Wera",
+          "id": "1",
+          "lastName": "Andersen",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "weraa",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Smith",
+          "id": "2",
+          "lastName": "Johnson",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "weraa2",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Angle",
+          "id": "3",
+          "lastName": "Lamar",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "angel23",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+        Object {
+          "address": "123 Maple St.",
+          "address2": "Unit 320",
+          "city": "Maperville",
+          "email": "weraa@email.com",
+          "firstName": "Wera",
+          "id": "4",
+          "lastName": "Jeromski",
+          "password": "passw0rd",
+          "state": "IL",
+          "userName": "wera44",
+          "userType": "caregiver",
+          "zip": "22902",
+        },
+      ],
+    }
+  }
+/>
+`;

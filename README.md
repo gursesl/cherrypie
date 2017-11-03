@@ -27,14 +27,8 @@ Tech Todo
   - [x] Solidify reducers
 - [x] React router
   - [x] Test react router
-- [ ] Styled components
-  - [ ] Test styled components
-- [ ] Apollo server
-  - [ ] Apollo mock server
-  - [ ] Test Apollo server
-- [ ] Apollo client
-  - [ ] Test Apollo client
-  - [ ] Solidify central api calling script
+- [x] Styled components
+  - [x] Test styled components
 - [x] Add Proptypes
   - [x] Test Proptypes
   - [x] Refactor client/server scrips
@@ -51,13 +45,10 @@ Tech Todo
 
 Functional Todo
 ==
-- [ ] [Create a weather route/container/component](./docs/weather.md)
+- [x] [Create a weather component](./docs/weather.md)
+- [ ] [Create a login modal component](./docs/login.md)
 - [ ] User sign-up
   - [ ] Test user sign-up
-- [ ] User sign-in
-  - [ ] Test user sign-in
-- [ ] User sign-out
-  - [ ] Test user sign-out
 - [ ] Sign-up with Google
   - [ ] Test user sign-up
 - [ ] Sign-up with Facebook

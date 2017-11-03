@@ -13,6 +13,9 @@ const port = 5000
 const app = express()
 const compiler = webpack(config)
 
+// Serve static assets from /public
+app.use(express.static('public'))
+
 dotenv.config()
 app.use(cors())
 

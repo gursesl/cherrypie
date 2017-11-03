@@ -33,6 +33,12 @@ ShallowWrapper {
         </MenuItem>
         <MenuItem
           as={[Function]}
+          to="/gqlusers"
+        >
+          GQL Users
+        </MenuItem>
+        <MenuItem
+          as={[Function]}
           to="/counter"
         >
           Counter
@@ -47,21 +53,10 @@ ShallowWrapper {
           position="right"
         >
           <MenuItem
-            className="item"
+            position="right"
           >
-            <Button
-              as="a"
-            >
-              Log in
-            </Button>
-          </MenuItem>
-          <MenuItem>
-            <Button
-              as="a"
-              primary={true}
-            >
-              Sign Up
-            </Button>
+            <LoginModal />
+            <LogoutModal />
           </MenuItem>
         </MenuMenu>
       </Container>,
@@ -90,6 +85,12 @@ ShallowWrapper {
           </MenuItem>,
           <MenuItem
             as={[Function]}
+            to="/gqlusers"
+          >
+            GQL Users
+          </MenuItem>,
+          <MenuItem
+            as={[Function]}
             to="/counter"
           >
             Counter
@@ -104,21 +105,10 @@ ShallowWrapper {
             position="right"
           >
             <MenuItem
-              className="item"
+              position="right"
             >
-              <Button
-                as="a"
-              >
-                Log in
-              </Button>
-            </MenuItem>
-            <MenuItem>
-              <Button
-                as="a"
-                primary={true}
-              >
-                Sign Up
-              </Button>
+              <LoginModal />
+              <LogoutModal />
             </MenuItem>
           </MenuMenu>,
         ],
@@ -158,6 +148,19 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "as": [Function],
+            "children": "GQL Users",
+            "to": "/gqlusers",
+          },
+          "ref": null,
+          "rendered": "GQL Users",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "as": [Function],
             "children": "Counter",
             "to": "/counter",
           },
@@ -183,85 +186,49 @@ ShallowWrapper {
           "key": null,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <MenuItem
-                className="item"
-              >
-                <Button
-                  as="a"
-                >
-                  Log in
-                </Button>
-              </MenuItem>,
-              <MenuItem>
-                <Button
-                  as="a"
-                  primary={true}
-                >
-                  Sign Up
-                </Button>
-              </MenuItem>,
-            ],
+            "children": <MenuItem
+              position="right"
+            >
+              <LoginModal />
+              <LogoutModal />
+            </MenuItem>,
             "position": "right",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": null,
-              "nodeType": "class",
-              "props": Object {
-                "children": <Button
-                  as="a"
-                >
-                  Log in
-                </Button>,
-                "className": "item",
-              },
-              "ref": null,
-              "rendered": Object {
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <LoginModal />,
+                <LogoutModal />,
+              ],
+              "position": "right",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
                 "instance": null,
                 "key": null,
                 "nodeType": "class",
-                "props": Object {
-                  "as": "a",
-                  "children": "Log in",
-                },
+                "props": Object {},
                 "ref": null,
-                "rendered": "Log in",
+                "rendered": null,
                 "type": [Function],
               },
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": null,
-              "nodeType": "class",
-              "props": Object {
-                "children": <Button
-                  as="a"
-                  primary={true}
-                >
-                  Sign Up
-                </Button>,
-              },
-              "ref": null,
-              "rendered": Object {
+              Object {
                 "instance": null,
                 "key": null,
                 "nodeType": "class",
-                "props": Object {
-                  "as": "a",
-                  "children": "Sign Up",
-                  "primary": true,
-                },
+                "props": Object {},
                 "ref": null,
-                "rendered": "Sign Up",
+                "rendered": null,
                 "type": [Function],
               },
-              "type": [Function],
-            },
-          ],
+            ],
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
@@ -291,6 +258,12 @@ ShallowWrapper {
           </MenuItem>
           <MenuItem
             as={[Function]}
+            to="/gqlusers"
+          >
+            GQL Users
+          </MenuItem>
+          <MenuItem
+            as={[Function]}
             to="/counter"
           >
             Counter
@@ -305,21 +278,10 @@ ShallowWrapper {
             position="right"
           >
             <MenuItem
-              className="item"
+              position="right"
             >
-              <Button
-                as="a"
-              >
-                Log in
-              </Button>
-            </MenuItem>
-            <MenuItem>
-              <Button
-                as="a"
-                primary={true}
-              >
-                Sign Up
-              </Button>
+              <LoginModal />
+              <LogoutModal />
             </MenuItem>
           </MenuMenu>
         </Container>,
@@ -348,6 +310,12 @@ ShallowWrapper {
             </MenuItem>,
             <MenuItem
               as={[Function]}
+              to="/gqlusers"
+            >
+              GQL Users
+            </MenuItem>,
+            <MenuItem
+              as={[Function]}
               to="/counter"
             >
               Counter
@@ -362,21 +330,10 @@ ShallowWrapper {
               position="right"
             >
               <MenuItem
-                className="item"
+                position="right"
               >
-                <Button
-                  as="a"
-                >
-                  Log in
-                </Button>
-              </MenuItem>
-              <MenuItem>
-                <Button
-                  as="a"
-                  primary={true}
-                >
-                  Sign Up
-                </Button>
+                <LoginModal />
+                <LogoutModal />
               </MenuItem>
             </MenuMenu>,
           ],
@@ -416,6 +373,19 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "as": [Function],
+              "children": "GQL Users",
+              "to": "/gqlusers",
+            },
+            "ref": null,
+            "rendered": "GQL Users",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "as": [Function],
               "children": "Counter",
               "to": "/counter",
             },
@@ -441,85 +411,49 @@ ShallowWrapper {
             "key": null,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <MenuItem
-                  className="item"
-                >
-                  <Button
-                    as="a"
-                  >
-                    Log in
-                  </Button>
-                </MenuItem>,
-                <MenuItem>
-                  <Button
-                    as="a"
-                    primary={true}
-                  >
-                    Sign Up
-                  </Button>
-                </MenuItem>,
-              ],
+              "children": <MenuItem
+                position="right"
+              >
+                <LoginModal />
+                <LogoutModal />
+              </MenuItem>,
               "position": "right",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": null,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <Button
-                    as="a"
-                  >
-                    Log in
-                  </Button>,
-                  "className": "item",
-                },
-                "ref": null,
-                "rendered": Object {
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <LoginModal />,
+                  <LogoutModal />,
+                ],
+                "position": "right",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
                   "instance": null,
                   "key": null,
                   "nodeType": "class",
-                  "props": Object {
-                    "as": "a",
-                    "children": "Log in",
-                  },
+                  "props": Object {},
                   "ref": null,
-                  "rendered": "Log in",
+                  "rendered": null,
                   "type": [Function],
                 },
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": null,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <Button
-                    as="a"
-                    primary={true}
-                  >
-                    Sign Up
-                  </Button>,
-                },
-                "ref": null,
-                "rendered": Object {
+                Object {
                   "instance": null,
                   "key": null,
                   "nodeType": "class",
-                  "props": Object {
-                    "as": "a",
-                    "children": "Sign Up",
-                    "primary": true,
-                  },
+                  "props": Object {},
                   "ref": null,
-                  "rendered": "Sign Up",
+                  "rendered": null,
                   "type": [Function],
                 },
-                "type": [Function],
-              },
-            ],
+              ],
+              "type": [Function],
+            },
             "type": [Function],
           },
         ],

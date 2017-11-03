@@ -5,9 +5,10 @@ import {
   Menu,
   Segment,
   Visibility,
-  Button,
 } from 'semantic-ui-react'
 import FixedMenu from './FixedMenu'
+import LoginModal from '../LoginModal'
+import LogoutModal from '../LogoutModal'
 
 class AppHeader extends Component {
   constructor(props) {
@@ -41,11 +42,12 @@ class AppHeader extends Component {
               <Menu inverted pointing secondary size="large">
                 <Menu.Item as={NavLink} to="/" exact>Home</Menu.Item>
                 <Menu.Item as={NavLink} to="/users">Users</Menu.Item>
+                <Menu.Item as={NavLink} to="/gqlusers">GQL Users</Menu.Item>
                 <Menu.Item as={NavLink} to="/counter">Counter</Menu.Item>
                 <Menu.Item as={NavLink} to="/weather">Weather</Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted>Log in</Button>
-                  <Button as="a" inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
+                  <LoginModal />
+                  <LogoutModal />
                 </Menu.Item>
               </Menu>
             </Container>

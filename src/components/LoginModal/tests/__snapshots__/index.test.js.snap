@@ -1,0 +1,885 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginModal:index should be available 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginModal />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Popup
+          on="hover"
+          position="top left"
+          trigger={
+            <Button
+              as="button"
+              color="teal"
+              onClick={[Function]}
+            >
+              Login
+            </Button>
+          }
+        >
+          <PopupHeader>
+            Login details
+          </PopupHeader>
+          <PopupContent>
+            Use your email or username to login to Cherrypie
+          </PopupContent>
+        </Popup>,
+        <Modal
+          closeOnDimmerClick={true}
+          closeOnDocumentClick={false}
+          dimmer={true}
+          eventPool="Modal"
+          onClose={[Function]}
+          open={false}
+        >
+          <ModalHeader>
+            Login
+          </ModalHeader>
+          <ModalContent
+            image={true}
+          >
+            <ModalDescription>
+              <Form
+                as="form"
+              >
+                <FormInput
+                  as={[Function]}
+                  control={[Function]}
+                  label="Username"
+                  type="text"
+                />
+                <FormInput
+                  as={[Function]}
+                  control={[Function]}
+                  label="Password"
+                  type="password"
+                />
+                <FormField>
+                  <Checkbox
+                    label="Remember me for 30 days"
+                    type="checkbox"
+                  />
+                </FormField>
+              </Form>
+            </ModalDescription>
+          </ModalContent>
+          <ModalActions>
+            <Button
+              as="button"
+              basic={true}
+              color="red"
+              onClick={[Function]}
+            >
+              Cancel
+            </Button>
+            <Button
+              as="button"
+              content="Login"
+              icon="sign in"
+              labelPosition="right"
+              onClick={[Function]}
+              positive={true}
+            />
+          </ModalActions>
+        </Modal>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <PopupHeader>
+              Login details
+            </PopupHeader>,
+            <PopupContent>
+              Use your email or username to login to Cherrypie
+            </PopupContent>,
+          ],
+          "on": "hover",
+          "position": "top left",
+          "trigger": <Button
+            as="button"
+            color="teal"
+            onClick={[Function]}
+          >
+            Login
+          </Button>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Login details",
+            },
+            "ref": null,
+            "rendered": "Login details",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Use your email or username to login to Cherrypie",
+            },
+            "ref": null,
+            "rendered": "Use your email or username to login to Cherrypie",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <ModalHeader>
+              Login
+            </ModalHeader>,
+            <ModalContent
+              image={true}
+            >
+              <ModalDescription>
+                <Form
+                  as="form"
+                >
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Username"
+                    type="text"
+                  />
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Password"
+                    type="password"
+                  />
+                  <FormField>
+                    <Checkbox
+                      label="Remember me for 30 days"
+                      type="checkbox"
+                    />
+                  </FormField>
+                </Form>
+              </ModalDescription>
+            </ModalContent>,
+            <ModalActions>
+              <Button
+                as="button"
+                basic={true}
+                color="red"
+                onClick={[Function]}
+              >
+                Cancel
+              </Button>
+              <Button
+                as="button"
+                content="Login"
+                icon="sign in"
+                labelPosition="right"
+                onClick={[Function]}
+                positive={true}
+              />
+            </ModalActions>,
+          ],
+          "closeOnDimmerClick": true,
+          "closeOnDocumentClick": false,
+          "dimmer": true,
+          "eventPool": "Modal",
+          "onClose": [Function],
+          "open": false,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Login",
+            },
+            "ref": null,
+            "rendered": "Login",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "function",
+            "props": Object {
+              "children": <ModalDescription>
+                <Form
+                  as="form"
+                >
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Username"
+                    type="text"
+                  />
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Password"
+                    type="password"
+                  />
+                  <FormField>
+                    <Checkbox
+                      label="Remember me for 30 days"
+                      type="checkbox"
+                    />
+                  </FormField>
+                </Form>
+              </ModalDescription>,
+              "image": true,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "children": <Form
+                  as="form"
+                >
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Username"
+                    type="text"
+                  />
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Password"
+                    type="password"
+                  />
+                  <FormField>
+                    <Checkbox
+                      label="Remember me for 30 days"
+                      type="checkbox"
+                    />
+                  </FormField>
+                </Form>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "form",
+                  "children": Array [
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Username"
+                      type="text"
+                    />,
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Password"
+                      type="password"
+                    />,
+                    <FormField>
+                      <Checkbox
+                        label="Remember me for 30 days"
+                        type="checkbox"
+                      />
+                    </FormField>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": [Function],
+                      "control": [Function],
+                      "label": "Username",
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": [Function],
+                      "control": [Function],
+                      "label": "Password",
+                      "type": "password",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <Checkbox
+                        label="Remember me for 30 days"
+                        type="checkbox"
+                      />,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "class",
+                      "props": Object {
+                        "label": "Remember me for 30 days",
+                        "type": "checkbox",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Button
+                  as="button"
+                  basic={true}
+                  color="red"
+                  onClick={[Function]}
+                >
+                  Cancel
+                </Button>,
+                <Button
+                  as="button"
+                  content="Login"
+                  icon="sign in"
+                  labelPosition="right"
+                  onClick={[Function]}
+                  positive={true}
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "button",
+                  "basic": true,
+                  "children": "Cancel",
+                  "color": "red",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Cancel",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "button",
+                  "content": "Login",
+                  "icon": "sign in",
+                  "labelPosition": "right",
+                  "onClick": [Function],
+                  "positive": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Popup
+            on="hover"
+            position="top left"
+            trigger={
+              <Button
+                as="button"
+                color="teal"
+                onClick={[Function]}
+              >
+                Login
+              </Button>
+            }
+          >
+            <PopupHeader>
+              Login details
+            </PopupHeader>
+            <PopupContent>
+              Use your email or username to login to Cherrypie
+            </PopupContent>
+          </Popup>,
+          <Modal
+            closeOnDimmerClick={true}
+            closeOnDocumentClick={false}
+            dimmer={true}
+            eventPool="Modal"
+            onClose={[Function]}
+            open={false}
+          >
+            <ModalHeader>
+              Login
+            </ModalHeader>
+            <ModalContent
+              image={true}
+            >
+              <ModalDescription>
+                <Form
+                  as="form"
+                >
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Username"
+                    type="text"
+                  />
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    label="Password"
+                    type="password"
+                  />
+                  <FormField>
+                    <Checkbox
+                      label="Remember me for 30 days"
+                      type="checkbox"
+                    />
+                  </FormField>
+                </Form>
+              </ModalDescription>
+            </ModalContent>
+            <ModalActions>
+              <Button
+                as="button"
+                basic={true}
+                color="red"
+                onClick={[Function]}
+              >
+                Cancel
+              </Button>
+              <Button
+                as="button"
+                content="Login"
+                icon="sign in"
+                labelPosition="right"
+                onClick={[Function]}
+                positive={true}
+              />
+            </ModalActions>
+          </Modal>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <PopupHeader>
+                Login details
+              </PopupHeader>,
+              <PopupContent>
+                Use your email or username to login to Cherrypie
+              </PopupContent>,
+            ],
+            "on": "hover",
+            "position": "top left",
+            "trigger": <Button
+              as="button"
+              color="teal"
+              onClick={[Function]}
+            >
+              Login
+            </Button>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Login details",
+              },
+              "ref": null,
+              "rendered": "Login details",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Use your email or username to login to Cherrypie",
+              },
+              "ref": null,
+              "rendered": "Use your email or username to login to Cherrypie",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <ModalHeader>
+                Login
+              </ModalHeader>,
+              <ModalContent
+                image={true}
+              >
+                <ModalDescription>
+                  <Form
+                    as="form"
+                  >
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Username"
+                      type="text"
+                    />
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Password"
+                      type="password"
+                    />
+                    <FormField>
+                      <Checkbox
+                        label="Remember me for 30 days"
+                        type="checkbox"
+                      />
+                    </FormField>
+                  </Form>
+                </ModalDescription>
+              </ModalContent>,
+              <ModalActions>
+                <Button
+                  as="button"
+                  basic={true}
+                  color="red"
+                  onClick={[Function]}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  as="button"
+                  content="Login"
+                  icon="sign in"
+                  labelPosition="right"
+                  onClick={[Function]}
+                  positive={true}
+                />
+              </ModalActions>,
+            ],
+            "closeOnDimmerClick": true,
+            "closeOnDocumentClick": false,
+            "dimmer": true,
+            "eventPool": "Modal",
+            "onClose": [Function],
+            "open": false,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Login",
+              },
+              "ref": null,
+              "rendered": "Login",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "function",
+              "props": Object {
+                "children": <ModalDescription>
+                  <Form
+                    as="form"
+                  >
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Username"
+                      type="text"
+                    />
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Password"
+                      type="password"
+                    />
+                    <FormField>
+                      <Checkbox
+                        label="Remember me for 30 days"
+                        type="checkbox"
+                      />
+                    </FormField>
+                  </Form>
+                </ModalDescription>,
+                "image": true,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <Form
+                    as="form"
+                  >
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Username"
+                      type="text"
+                    />
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      label="Password"
+                      type="password"
+                    />
+                    <FormField>
+                      <Checkbox
+                        label="Remember me for 30 days"
+                        type="checkbox"
+                      />
+                    </FormField>
+                  </Form>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "form",
+                    "children": Array [
+                      <FormInput
+                        as={[Function]}
+                        control={[Function]}
+                        label="Username"
+                        type="text"
+                      />,
+                      <FormInput
+                        as={[Function]}
+                        control={[Function]}
+                        label="Password"
+                        type="password"
+                      />,
+                      <FormField>
+                        <Checkbox
+                          label="Remember me for 30 days"
+                          type="checkbox"
+                        />
+                      </FormField>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": [Function],
+                        "control": [Function],
+                        "label": "Username",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": [Function],
+                        "control": [Function],
+                        "label": "Password",
+                        "type": "password",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": <Checkbox
+                          label="Remember me for 30 days"
+                          type="checkbox"
+                        />,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "class",
+                        "props": Object {
+                          "label": "Remember me for 30 days",
+                          "type": "checkbox",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Button
+                    as="button"
+                    basic={true}
+                    color="red"
+                    onClick={[Function]}
+                  >
+                    Cancel
+                  </Button>,
+                  <Button
+                    as="button"
+                    content="Login"
+                    icon="sign in"
+                    labelPosition="right"
+                    onClick={[Function]}
+                    positive={true}
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "button",
+                    "basic": true,
+                    "children": "Cancel",
+                    "color": "red",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Cancel",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "button",
+                    "content": "Login",
+                    "icon": "sign in",
+                    "labelPosition": "right",
+                    "onClick": [Function],
+                    "positive": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
