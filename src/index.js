@@ -14,14 +14,15 @@ import { Provider } from 'react-redux'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import { combineReducers } from 'redux-immutable'
+import { reducer as formReducer } from 'redux-form'
 import createSagaMiddleware from 'redux-saga'
-import { reducers } from './reducers';
+import { reducers } from './reducers'
 import rootSaga from './sagas'
 import './index.css'
 import AppRouter from './router'
 
 const sagaMiddleware = createSagaMiddleware()
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //eslint-disable-line
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose //eslint-disable-line
 
 const link = createHttpLink({
   uri: 'http://localhost:4000/graphql',
@@ -36,7 +37,7 @@ const client = new ApolloClient({
   ssrForceFetchDelay: 100,
   connectToDevTools: true,
   queryDeduplication: true,
-});
+})
 
 const history = createHistory()
 
@@ -44,7 +45,7 @@ const rMiddleware = routerMiddleware(history)
 const combinedReducers = combineReducers({
   ...reducers,
   router: routerReducer,
-  // apollo: client.reducer(),
+  form: formReducer,
 })
 
 const store = createStore(
@@ -62,4 +63,4 @@ render(
     </Provider>
   </ApolloProvider>
   , document.getElementById('root')
-);
+)

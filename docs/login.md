@@ -6,14 +6,7 @@
 - [x] Apollo server
 - [x] Apollo mock data server
 - [x] Apollo client
-- [ ] Refactor client/server folder structure
-- [ ] Test Apollo server
-- [ ] Test Apollo client
-- [ ] Solidify central api calling script
-- [ ] MongoDB
-  - [ ] Local setup
-  - [ ] mLabs setup, env key for Heroku
-- [ ] Test login modal
-  - [ ] Login modal
-- [ ] Test logout modal
-  - [ ] Logout modal
+- [x] Refactor client/server folder structure
+- [x] Test Apollo server
+- [x] Test Apollo client
+- [x] Solidify central api calling script

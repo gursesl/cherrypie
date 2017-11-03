@@ -37,21 +37,12 @@ Tech Todo
 - [x] Reselect for Redux
   - [x] Test restate
 - [x] Container/component template w/ Redux
-- [ ] React Forms
-  - Test forms
-- [ ] Semantic UI main App layout component
-  - [ ] Test Semantic UI layout component
+- [x] Semantic UI main App layout component
+  - [x] Test Semantic UI layout component
 
 
 Functional Todo
 ==
 - [x] [Create a weather component](./docs/weather.md)
-- [ ] [Create a login modal component](./docs/login.md)
-- [ ] User sign-up
-  - [ ] Test user sign-up
-- [ ] Sign-up with Google
-  - [ ] Test user sign-up
-- [ ] Sign-up with Facebook
-  - [ ] Test user sign-up
-- [ ] Sign-up with Twitter
-  - [ ] Test user sign-up
+- [x] [Create a login modal component](./docs/login.md)
+- [x] [Add authentication](./docs/auth.md)
