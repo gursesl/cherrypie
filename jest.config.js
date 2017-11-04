@@ -14,6 +14,7 @@ module.exports = {
     '!**/vendor.*',
     '!src/index.js',
     '!gqlserver/server.js',
+    '!gqlserver/src/lib/**',
   ],
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)(spec|test).js?(x)'],
   globals: {

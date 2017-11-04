@@ -60,6 +60,12 @@ export const users = [
 const resolvers = {
   Query: {
     users: () => users,
+    getUsers: (parent, args, { models }) => models.User.find({}),
+    getUser: (parent, { id }, { models }) => models.User.findOne({ where: { id } }),
+  },
+
+  Mutation: {
+    createUser: (parent, args, { models }) => models.User.create(args),
   },
 }
 

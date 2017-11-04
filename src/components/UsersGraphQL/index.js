@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-export const UsersGraphQL = ({ data: { loading, error, users } }) => {
+export const UsersGraphQL = ({ data: { loading, error, getUsers } }) => {
   // console.log(`loading: ${loading} error: ${error} users: ${users}`)
   if (loading) {
     return (
@@ -17,23 +17,30 @@ export const UsersGraphQL = ({ data: { loading, error, users } }) => {
     )
   }
 
+  if (getUsers.length === 0) {
+    return (
+      <p>No users found.</p>
+    )
+  }
+
   return (
     <ul>
-      { users.map(user =>
+      { getUsers.map(user =>
         <li key={user.id}>{user.firstName} {user.lastName} ({user.email})</li>)}
     </ul>
   )
 }
 
 export const usersListQuery = gql`
-  query UsersQuery {
-    users {
+  query {
+    getUsers {
       id
       userName
       password
       firstName
       lastName
       email
+      userType
     }
   }
 `
@@ -42,7 +49,7 @@ UsersGraphQL.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
     error: PropTypes.object,
-    users: PropTypes.array,
+    getUsers: PropTypes.array,
   }).isRequired,
 }
 

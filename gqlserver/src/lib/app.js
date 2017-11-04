@@ -5,6 +5,7 @@ import cors from 'cors'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import errorHandler from './errorHandler'
 import { schema } from '../schema'
+import models from '../models'
 
 // const createAuth = require('./auth/ensure-auth')
 const app = express()
@@ -15,7 +16,12 @@ app.use(bodyParser.json())
 // const ensureAuth = createAuth()
 
 app.use('*', cors({ origin: '*' }))
-app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
+app.use('/graphql', bodyParser.json(), graphqlExpress({
+  schema,
+  context: {
+    models,
+  },
+}))
 app.use('/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/graphql' }))
 
 // const auth = require('./routes/auth')

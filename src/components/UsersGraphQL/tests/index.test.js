@@ -6,7 +6,7 @@ import { ApolloLink, Observable, execute } from 'apollo-link'
 import '../../../setupTests'
 import { UsersGraphQL as PureUsersGraphQL } from '..'
 import { typeDefs } from '../../../../gqlserver/src/schema'
-import { users } from '../../../../gqlserver/src/resolvers'
+import { users } from '../../../../gqlserver/src/resolvers/userResolvers'
 
 class MockLink extends ApolloLink {
   constructor(data) {
@@ -56,11 +56,19 @@ describe('UserGraphQL component', () => {
     expect(cmp).toMatchSnapshot()
   })
 
-  it('Should render users correctly', () => {
+  it('Should render users correctly with data', () => {
     const cmp = (
-      <PureUsersGraphQL data={{ loading: false, error: null, users }} />
+      <PureUsersGraphQL data={{ loading: false, error: null, getUsers: users }} />
     )
     expect(shallow(cmp).find('li').length).toBe(4)
+    expect(cmp).toMatchSnapshot()
+  })
+
+  it('Should render users correctly without data', () => {
+    const cmp = (
+      <PureUsersGraphQL data={{ loading: false, error: null, getUsers: [] }} />
+    )
+    expect(shallow(cmp).find('p').text()).toBe('No users found.')
     expect(cmp).toMatchSnapshot()
   })
 })

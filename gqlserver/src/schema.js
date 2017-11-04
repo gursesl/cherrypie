@@ -1,26 +1,12 @@
-import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools'
-import resolvers from './resolvers'
+import path from 'path'
+import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas'
+import { makeExecutableSchema } from 'graphql-tools'
 
-const typeDefs = `
-  type User {
-    id: ID!
-    userName: String!
-    password: String!
-    email: String!
-    firstName: String
-    lastName: String
-    address: String
-    address2: String
-    city: String
-    state: String
-    zip: String
-    userType: String!
-  }
+const typesArray = fileLoader(path.join(__dirname, './types'))
+const resolversArray = fileLoader(path.join(__dirname, './resolvers'), { extensions: ['.js'] });
 
-  type Query {
-    users: [User]
-  }
-`
+const typeDefs = mergeTypes(typesArray)
+const resolvers = mergeResolvers(resolversArray)
 
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 // // addMockFunctionsToSchema({ schema })

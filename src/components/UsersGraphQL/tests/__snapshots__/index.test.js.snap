@@ -140,13 +140,12 @@ exports[`UserGraphQL component Should render loading state 1`] = `
 />
 `;
 
-exports[`UserGraphQL component Should render users correctly 1`] = `
+exports[`UserGraphQL component Should render users correctly with data 1`] = `
 <Unknown
   data={
     Object {
       "error": null,
-      "loading": false,
-      "users": Array [
+      "getUsers": Array [
         Object {
           "address": "123 Maple St.",
           "address2": "Unit 320",
@@ -204,6 +203,19 @@ exports[`UserGraphQL component Should render users correctly 1`] = `
           "zip": "22902",
         },
       ],
+      "loading": false,
+    }
+  }
+/>
+`;
+
+exports[`UserGraphQL component Should render users correctly without data 1`] = `
+<Unknown
+  data={
+    Object {
+      "error": null,
+      "getUsers": Array [],
+      "loading": false,
     }
   }
 />

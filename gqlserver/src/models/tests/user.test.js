@@ -13,19 +13,19 @@ describe('User:model', () => {
     db.disconnect(done);
   })
 
-  beforeEach((done) => {
-    User.remove((err) => {
-      expect(err).toBeNull()
-      done()
-    })
-  })
+  // beforeEach((done) => {
+  //   User.remove((err) => {
+  //     expect(err).toBeNull()
+  //     done()
+  //   })
+  // })
 
-  afterEach((done) => {
-    User.remove((err) => {
-      expect(err).toBeNull()
-      done()
-    })
-  })
+  // afterEach((done) => {
+  //   User.remove((err) => {
+  //     expect(err).toBeNull()
+  //     done()
+  //   })
+  // })
 
   it('should not create without username', (done) => {
     User.create({ firstName: 'Jane', lastName: 'Doe' }, (err) => {
@@ -37,7 +37,7 @@ describe('User:model', () => {
   it('should remove trailing spaces from username', async (done) => {
     try {
       const result = await User.create({
-        userName: 'username   ',
+        userName: 'username9p8234o2634o1872364o8172346   ',
         password: 'passw0rd',
         email: 'wer@email.com',
         firstName: 'Wera',
@@ -50,7 +50,10 @@ describe('User:model', () => {
         userType: 'caregiver',
       })
 
-      expect(result.userName).toBe('username')
+      expect(result.userName).toBe('username9p8234o2634o1872364o8172346')
+
+      const deleted = await User.remove({ userName: 'username9p8234o2634o1872364o8172346' })
+      expect(deleted.result).toEqual({ n: 1, ok: 1 })
       done()
     } catch (err) {
       done(err)
