@@ -1,17 +1,16 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
 import chalk from 'chalk'
-import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
-import { schema } from './src/schema'
+import http from 'http'
+import config from './src/lib/config'
+import app from './src/lib/app'
+import db from './src/lib/db'
 
 const PORT = process.env.GRAPHQL_PORT || 4000
-const server = express()
-server.use('*', cors({ origin: '*' }))
 
-server.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
-server.use('/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/graphql' }))
+// MongoDB
+db.connect(config.dbUri)
 
+// Express
+const server = http.createServer(app)
 server.listen(PORT, () => {
-  console.log(chalk.green(`GraphQL server is running on port ${PORT}`)) // eslint-disable-line no-console
+  console.log(chalk.green(`GraphQL server started on port ${PORT}`)) // eslint-disable-line no-console
 })
