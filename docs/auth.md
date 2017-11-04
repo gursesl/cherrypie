@@ -4,6 +4,8 @@
 
 - [x] Redux Form
   - [x] Install Redux Form
+  - [x] Apollo client setup
+  - [ ] Reset store on logout - https://www.apollographql.com/docs/react/recipes/authentication.html
 
 - [ ] User sign-up
   - [ ] Sign-up menu item
