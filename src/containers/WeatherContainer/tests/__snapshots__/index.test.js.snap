@@ -145,7 +145,7 @@ initialize {
                       "children": Array [
                         Object {
                           "attribs": Object {
-                            "placeholder": "City or ZIP",
+                            "placeholder": "Enter City or ZIP",
                             "value": "Sterling",
                           },
                           "children": Array [],
@@ -216,7 +216,7 @@ initialize {
                           "parent": [Circular],
                           "prev": Object {
                             "attribs": Object {
-                              "placeholder": "City or ZIP",
+                              "placeholder": "Enter City or ZIP",
                               "value": "Sterling",
                             },
                             "children": Array [],
@@ -586,7 +586,7 @@ initialize {
                     "children": Array [
                       Object {
                         "attribs": Object {
-                          "placeholder": "City or ZIP",
+                          "placeholder": "Enter City or ZIP",
                           "value": "Sterling",
                         },
                         "children": Array [],
@@ -657,7 +657,7 @@ initialize {
                         "parent": [Circular],
                         "prev": Object {
                           "attribs": Object {
-                            "placeholder": "City or ZIP",
+                            "placeholder": "Enter City or ZIP",
                             "value": "Sterling",
                           },
                           "children": Array [],
@@ -1392,7 +1392,7 @@ initialize {
                       "children": Array [
                         Object {
                           "attribs": Object {
-                            "placeholder": "City or ZIP",
+                            "placeholder": "Enter City or ZIP",
                             "value": "Sterling",
                           },
                           "children": Array [],
@@ -1463,7 +1463,7 @@ initialize {
                           "parent": [Circular],
                           "prev": Object {
                             "attribs": Object {
-                              "placeholder": "City or ZIP",
+                              "placeholder": "Enter City or ZIP",
                               "value": "Sterling",
                             },
                             "children": Array [],
@@ -1743,7 +1743,7 @@ initialize {
                 "children": Array [
                   Object {
                     "attribs": Object {
-                      "placeholder": "City or ZIP",
+                      "placeholder": "Enter City or ZIP",
                       "value": "Sterling",
                     },
                     "children": Array [],
@@ -1814,7 +1814,7 @@ initialize {
                     "parent": [Circular],
                     "prev": Object {
                       "attribs": Object {
-                        "placeholder": "City or ZIP",
+                        "placeholder": "Enter City or ZIP",
                         "value": "Sterling",
                       },
                       "children": Array [],
