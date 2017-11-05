@@ -116,9 +116,8 @@ exports[`Home:index renders itself into the DOM with the correct shallowComponen
         >
           <img
             alt={undefined}
-            className="ui large bordered image"
+            className="ui large bordered rounded image"
             height={undefined}
-            rounded="10"
             src="https://react.semantic-ui.com/assets/images/wireframe/white-image.png"
             width={undefined}
           />
