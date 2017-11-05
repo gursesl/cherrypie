@@ -70,7 +70,7 @@ const resolvers = {
     registerUser: (parent, { password, ...otherArgs }, { models }) => {
       try {
         const hashedPassword = bcrypt.hashSync(password, 12)
-        return models.User.create({ ...otherArgs, hashedPassword })
+        return models.User.create({ ...otherArgs, password: hashedPassword })
       } catch (error) {
         console.log(error) //eslint-disable-line
         return {}

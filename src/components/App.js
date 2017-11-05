@@ -6,7 +6,6 @@ import Footer from './Footer'
 
 class App extends Component {
   componentDidMount() {
-    // console.log('Component did mount!');
   }
 
   render() {

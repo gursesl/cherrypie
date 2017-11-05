@@ -42,7 +42,7 @@ describe('User:model', () => {
     try {
       const result = await User.create({
         userName: 'username9p8234o2634o1872364o8172346   ',
-        hashedPassword: bcrypt.hashSync('passw0rd', 12),
+        password: bcrypt.hashSync('passw0rd', 12),
         email: 'wer@email.com',
         firstName: 'Wera',
         lastName: 'Andersen',
@@ -55,7 +55,7 @@ describe('User:model', () => {
       })
 
       expect(result.userName).toBe('username9p8234o2634o1872364o8172346')
-      expect(bcrypt.compareSync('passw0rd', result.hashedPassword)).toBeTruthy()
+      expect(bcrypt.compareSync('passw0rd', result.password)).toBeTruthy()
 
       const deleted = await User.remove({ userName: 'username9p8234o2634o1872364o8172346' })
       expect(deleted.result.n).toEqual(1)

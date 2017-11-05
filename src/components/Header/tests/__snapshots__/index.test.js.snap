@@ -91,6 +91,21 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
                 Logout
               </button>
             </div>
+            <div>
+              <button
+                className="ui button"
+                disabled={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                role="button"
+                tabIndex={undefined}
+              >
+                Sign up
+              </button>
+            </div>
           </div>
         </div>
       </div>

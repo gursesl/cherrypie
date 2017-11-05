@@ -9,6 +9,7 @@ import {
 import FixedMenu from './FixedMenu'
 import LoginModal from '../LoginModal'
 import LogoutModal from '../LogoutModal'
+import RegisterModal from '../RegisterModal'
 
 class AppHeader extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class AppHeader extends Component {
                 <Menu.Item position="right">
                   <LoginModal />
                   <LogoutModal />
+                  <RegisterModal />
                 </Menu.Item>
               </Menu>
             </Container>

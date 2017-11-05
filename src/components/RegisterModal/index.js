@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Popup, Button, Header, Image, Modal, Form, Checkbox, Grid, Message, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-class LogoutModal extends Component {
+class RegisterModal extends Component {
   state = { modalOpen: false }
 
   handleOpen = () => this.setState({ modalOpen: true })
@@ -15,10 +15,10 @@ class LogoutModal extends Component {
 
     return (
       <div>
-        <Popup trigger={<Button onClick={this.handleOpen}>Logout</Button>}>
-          <Popup.Header>Logout details</Popup.Header>
+        <Popup trigger={<Button onClick={this.handleOpen}>Sign up</Button>}>
+          <Popup.Header>Registration details</Popup.Header>
           <Popup.Content>
-            Click here to logout
+            Click here to sign up
           </Popup.Content>
         </Popup>
 
@@ -38,10 +38,16 @@ class LogoutModal extends Component {
               <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as="h2" color="teal" textAlign="center">
                   <Image src="/img/logo.png" />
-                  {' '}Log-in to your account
+                  {' '}Sign up for a new account
                 </Header>
                 <Form size="large">
                   <Segment stacked>
+                    <Form.Input
+                      fluid
+                      icon="user"
+                      iconPosition="left"
+                      placeholder="Full name"
+                    />
                     <Form.Input
                       fluid
                       icon="user"
@@ -55,15 +61,23 @@ class LogoutModal extends Component {
                       placeholder="Password"
                       type="password"
                     />
-                    <Form.Field width="8">
-                      <Checkbox label="Remember me for 30 days" />
+
+                    <Form.Field label="Account type" control="select">
+                      <option value="user">Regular User</option>
+                      <option value="family">Family Member</option>
+                      <option value="caregiver">Caregiver</option>
+                      <option value="provider">Provider</option>
                     </Form.Field>
 
-                    <Button color="teal" fluid size="large" onClick={this.handleClose}>Login</Button>
+                    <Form.Field width="10">
+                      <Checkbox label="I agree with the terms &amp; conditions" />
+                    </Form.Field>
+
+                    <Button color="teal" fluid size="large" onClick={this.handleClose}>Create Account</Button>
                   </Segment>
                 </Form>
                 <Message>
-                  Don&quot;t have an account? <Link to="/" onClick={this.handleClose}>Sign up</Link>
+                  Already have an account? <Link to="/" onClick={this.handleClose}>Sign in</Link>
                 </Message>
               </Grid.Column>
             </Grid>
@@ -75,4 +89,4 @@ class LogoutModal extends Component {
   }
 }
 
-export default LogoutModal
+export default RegisterModal
