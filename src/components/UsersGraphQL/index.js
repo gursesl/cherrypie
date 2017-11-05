@@ -1,13 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { Container, Card, Image, Button, Segment, Dimmer, Loader } from 'semantic-ui-react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
+const PushDownDiv = styled.div`
+  padding: 40px 0
+`
 export const UsersGraphQL = ({ data: { loading, error, getUsers } }) => {
   // console.log(`loading: ${loading} error: ${error} users: ${users}`)
   if (loading) {
     return (
-      <p>Loading...</p>
+      <PushDownDiv className="ui container">
+        <Container>
+          <Segment>
+            <Dimmer active>
+              <Loader content="Loading" />
+            </Dimmer>
+            <Image src="/img/short-paragraph.png" />
+          </Segment>
+        </Container>
+      </PushDownDiv>
     )
   }
 
@@ -24,10 +38,35 @@ export const UsersGraphQL = ({ data: { loading, error, getUsers } }) => {
   }
 
   return (
-    <ul>
-      { getUsers.map(user =>
-        <li key={user.id}>{user.firstName} {user.lastName} ({user.email})</li>)}
-    </ul>
+    <PushDownDiv className="ui container">
+      <Container>
+        <Card.Group>
+          {getUsers.map(user =>
+            (
+              <Card key={user.id}>
+                <Card.Content>
+                  <Image floated="right" size="mini" src="/img/matthew.png" />
+                  <Card.Header>
+                    {user.firstName} {user.lastName}
+                  </Card.Header>
+                  <Card.Meta>
+                    {user.email}
+                  </Card.Meta>
+                  <Card.Description>
+                    {user.address}
+                  </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <div className="ui two buttons">
+                    <Button basic color="green">Follow</Button>
+                    <Button basic color="red">Block</Button>
+                  </div>
+                </Card.Content>
+              </Card>))
+        }
+        </Card.Group>
+      </Container>
+    </PushDownDiv>
   )
 }
 
@@ -39,6 +78,7 @@ export const usersListQuery = gql`
       password
       firstName
       lastName
+      address
       email
       userType
     }

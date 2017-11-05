@@ -44,7 +44,7 @@ describe('UserGraphQL component', () => {
     const cmp = (
       <PureUsersGraphQL data={{ loading: true, error: null, users }} />
     )
-    expect(shallow(cmp).find('p').text()).toBe('Loading...')
+    expect(shallow(cmp).find('Loader').props().content).toBe('Loading')
     expect(cmp).toMatchSnapshot()
   })
 
@@ -60,7 +60,7 @@ describe('UserGraphQL component', () => {
     const cmp = (
       <PureUsersGraphQL data={{ loading: false, error: null, getUsers: users }} />
     )
-    expect(shallow(cmp).find('li').length).toBe(4)
+    expect(shallow(cmp).find('Card').length).toBe(4)
     expect(cmp).toMatchSnapshot()
   })
 

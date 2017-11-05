@@ -27,7 +27,7 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
-app.use(express.static('../../../public'))
+app.use(express.static('./public'))
 // app.use(express.static('./public'))
 // const ensureAuth = createAuth()
 
