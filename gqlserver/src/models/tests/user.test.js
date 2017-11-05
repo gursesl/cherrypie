@@ -1,6 +1,9 @@
+import dotenv from 'dotenv'
 import User from '../user'
 import config from '../../lib/config'
 import db from '../../lib/db'
+
+dotenv.config()
 
 describe('User:model', () => {
   beforeAll(() => {
