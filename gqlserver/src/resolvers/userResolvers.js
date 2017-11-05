@@ -1,3 +1,5 @@
+import bcrypt from 'bcrypt'
+
 export const users = [
   {
     id: '1',
@@ -65,7 +67,15 @@ const resolvers = {
   },
 
   Mutation: {
-    createUser: (parent, args, { models }) => models.User.create(args),
+    registerUser: (parent, { password, ...otherArgs }, { models }) => {
+      try {
+        const hashedPassword = bcrypt.hashSync(password, 12)
+        return models.User.create({ ...otherArgs, hashedPassword })
+      } catch (error) {
+        console.log(error) //eslint-disable-line
+        return {}
+      }
+    },
   },
 }
 

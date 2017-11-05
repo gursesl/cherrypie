@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import bcrypt from 'bcrypt'
 import User from '../user'
 import config from '../../lib/config'
 import db from '../../lib/db'
@@ -41,7 +42,7 @@ describe('User:model', () => {
     try {
       const result = await User.create({
         userName: 'username9p8234o2634o1872364o8172346   ',
-        password: 'passw0rd',
+        hashedPassword: bcrypt.hashSync('passw0rd', 12),
         email: 'wer@email.com',
         firstName: 'Wera',
         lastName: 'Andersen',
@@ -54,6 +55,7 @@ describe('User:model', () => {
       })
 
       expect(result.userName).toBe('username9p8234o2634o1872364o8172346')
+      expect(bcrypt.compareSync('passw0rd', result.hashedPassword)).toBeTruthy()
 
       const deleted = await User.remove({ userName: 'username9p8234o2634o1872364o8172346' })
       expect(deleted.result.n).toEqual(1)

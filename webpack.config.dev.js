@@ -63,6 +63,7 @@ module.exports = {
           'apollo-server-express',
           'autodll-webpack-plugin',
           'babel-eslint',
+          'bcrypt',
           'body-parser',
           'chalk',
           'cloc',

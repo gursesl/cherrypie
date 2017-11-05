@@ -47,6 +47,7 @@
     "apollo-server-express": "^1.2.0",
     "autodll-webpack-plugin": "^0.3.3",
     "babel-eslint": "^8.0.1",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "chalk": "^2.1.0",
     "cloc": "^2.3.2",
