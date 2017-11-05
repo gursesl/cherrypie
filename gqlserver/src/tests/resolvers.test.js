@@ -10,6 +10,10 @@ describe('Resolvers', () => {
     expect(resolvers.Query.users().length).toBe(4)
   })
 
+  it('should return data', () => {
+    expect(resolvers.Query.getUsers).toBeDefined()
+  })
+
   it('should check mock data', () => {
     expect(users.length).toBe(4)
   })

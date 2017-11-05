@@ -20,6 +20,7 @@ import { reducer as formReducer } from 'redux-form'
 import createSagaMiddleware from 'redux-saga'
 import { reducers } from './reducers'
 import rootSaga from './sagas'
+import getBaseUrl from './utils/baseUrl'
 import './index.css'
 import AppRouter from './router'
 
@@ -39,7 +40,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: `${getBaseUrl()}/graphql`,
 })
 
 const client = new ApolloClient({

@@ -37,11 +37,11 @@ module.exports = {
   plugins: [
     // Create HTML file with references to bundled JS
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: `${SRC_DIR}/index.html`,
       inject: true,
     }),
     new Dotenv({
-      path: './.env', // Path to .env file (this is the default)
+      path: `${__dirname}/.env`, // Path to .env file (this is the default)
       safe: false, // load .env.example (defaults to "false" which does not use dotenv-safe)
     }),
     new webpack.HotModuleReplacementPlugin(),

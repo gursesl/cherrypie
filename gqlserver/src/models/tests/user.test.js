@@ -53,7 +53,8 @@ describe('User:model', () => {
       expect(result.userName).toBe('username9p8234o2634o1872364o8172346')
 
       const deleted = await User.remove({ userName: 'username9p8234o2634o1872364o8172346' })
-      expect(deleted.result).toEqual({ n: 1, ok: 1 })
+      expect(deleted.result.n).toEqual(1)
+      expect(deleted.result.ok).toEqual(1)
       done()
     } catch (err) {
       done(err)
