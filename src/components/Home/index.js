@@ -72,7 +72,7 @@ export default class Home extends Component {
               <Grid.Column floated="right" width={6}>
                 <Image
                   bordered
-                  rounded="10"
+                  rounded
                   size="large"
                   src="https://react.semantic-ui.com/assets/images/wireframe/white-image.png"
                 />

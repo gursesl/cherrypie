@@ -56,7 +56,7 @@ export const users = [
     userType: 'caregiver',
   },
 ]
-
+// Resolvers
 const resolvers = {
   Query: {
     users: () => users,

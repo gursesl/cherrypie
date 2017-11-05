@@ -33,7 +33,7 @@ class WeatherSearchBox extends Component {
           <Form onSubmit={this.handleSubmit}>
             <Form.Field inline>
               <input
-                placeholder="City or ZIP"
+                placeholder="Enter City or ZIP"
                 value={this.state.search}
                 onChange={this.handleChange}
               />

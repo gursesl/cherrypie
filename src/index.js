@@ -23,6 +23,7 @@ import rootSaga from './sagas'
 import getBaseUrl from './utils/baseUrl'
 import './index.css'
 import AppRouter from './router'
+// import vendor_lib from '../dist/vendor.bundle'
 
 const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose //eslint-disable-line
