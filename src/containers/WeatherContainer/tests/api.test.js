@@ -21,7 +21,7 @@ describe('API:Users', () => {
     })
   })
 
-  it('should handle errors gracefully w/o nock', (done) => {
+  it('should handle errors gracefully', (done) => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.reject(new Error('Some critical error')))
 
