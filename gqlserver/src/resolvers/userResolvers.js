@@ -76,6 +76,8 @@ const resolvers = {
         return {}
       }
     },
+    deleteUser: (parent, { id }, { models }) => models.User.findByIdAndRemove(id)
+    ,
   },
 }
 

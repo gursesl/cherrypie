@@ -32,5 +32,6 @@ export default `
       state: String,
       zip: String,
       userType: String!): User!
+    deleteUser(_id: String!): Boolean!
   }
 `
