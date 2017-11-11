@@ -16,7 +16,7 @@ import { Provider } from 'react-redux'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import { combineReducers } from 'redux-immutable'
-import { reducer as formReducer } from 'redux-form'
+import { reducer as form } from 'redux-form/immutable'
 import createSagaMiddleware from 'redux-saga'
 import { reducers } from './reducers'
 import rootSaga from './sagas'
@@ -60,7 +60,7 @@ const rMiddleware = routerMiddleware(history)
 const combinedReducers = combineReducers({
   ...reducers,
   router: routerReducer,
-  form: formReducer,
+  form,
 })
 
 const store = createStore(

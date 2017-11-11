@@ -9,7 +9,7 @@ dotenv.config()
 describe('User:model', () => {
   beforeAll(() => {
     db.connect(config.dbUri)
-    const query = User.findOne({ userName: 'John' })
+    const query = User.findOne({ email: 'john@john.com' })
     expect(query.exec().constructor).toBe(Promise)
   })
 
@@ -32,7 +32,7 @@ describe('User:model', () => {
   // })
 
   it('should not create without username', (done) => {
-    User.create({ firstName: 'Jane', lastName: 'Doe' }, (err) => {
+    User.create({ fullName: 'Jane Joe' }, (err) => {
       expect(err).toBeDefined()
       done()
     })
@@ -41,11 +41,9 @@ describe('User:model', () => {
   it('should remove trailing spaces from username', async (done) => {
     try {
       const result = await User.create({
-        userName: 'username9p8234o2634o1872364o8172346   ',
+        email: 'wesdfsdf234234234rs@sdfsdf334242email.com        ',
         password: bcrypt.hashSync('passw0rd', 12),
-        email: 'wer@email.com',
-        firstName: 'Wera',
-        lastName: 'Andersen',
+        fullName: 'Wera Wang Jr.',
         address: '123 Maple St.',
         address2: 'Unit 320',
         city: 'Maperville',
@@ -54,10 +52,10 @@ describe('User:model', () => {
         userType: 'caregiver',
       })
 
-      expect(result.userName).toBe('username9p8234o2634o1872364o8172346')
+      expect(result.email).toBe('wesdfsdf234234234rs@sdfsdf334242email.com')
       expect(bcrypt.compareSync('passw0rd', result.password)).toBeTruthy()
 
-      const deleted = await User.remove({ userName: 'username9p8234o2634o1872364o8172346' })
+      const deleted = await User.remove({ email: 'wesdfsdf234234234rs@sdfsdf334242email.com' })
       expect(deleted.result.n).toEqual(1)
       expect(deleted.result.ok).toEqual(1)
       done()

@@ -1,18 +1,32 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
-import { Popup, Button, Header, Image, Modal, Form, Checkbox, Grid, Message, Segment } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
+import { Popup, Button, Header, Image, Modal, Grid, Message } from 'semantic-ui-react'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 import { Link } from 'react-router-dom'
+import RegisterForm from './registerForm'
+import RegistrationSuccessModal from './registrationSuccessModal'
 
 class RegisterModal extends Component {
-  state = { modalOpen: false }
+  state = {
+    successModalOpen: false,
+  }
 
-  handleOpen = () => this.setState({ modalOpen: true })
+  handleOpen = () => this.setState({ modalOpen: true, successModalOpen: false })
+  handleClose = () => this.setState({ modalOpen: false, successModalOpen: false })
+  handleSuccess = () => this.setState({ modalOpen: false, successModalOpen: true })
+  handleFailure = (error) => console.log('there was an error sending the query', error) //eslint-disable-line
 
-  handleClose = () => this.setState({ modalOpen: false })
+  handleRegister = (values) => {
+    const variables = values.toJS()
+    this.props.mutate({
+      variables,
+    }).then(() => this.handleSuccess())
+      .catch(error => this.handleFailure(error))
+  }
 
   render() {
-    // const { open, dimmer } = this.state
-
     return (
       <div>
         <Popup trigger={<Button onClick={this.handleOpen}>Sign up</Button>}>
@@ -29,7 +43,6 @@ class RegisterModal extends Component {
           size="small"
         >
           <Modal.Content>
-
             <Grid
               textAlign="center"
               style={{ height: '100%' }}
@@ -40,42 +53,7 @@ class RegisterModal extends Component {
                   <Image src="/img/logo.png" />
                   {' '}Sign up for a new account
                 </Header>
-                <Form size="large">
-                  <Segment stacked>
-                    <Form.Input
-                      fluid
-                      icon="user"
-                      iconPosition="left"
-                      placeholder="Full name"
-                    />
-                    <Form.Input
-                      fluid
-                      icon="user"
-                      iconPosition="left"
-                      placeholder="E-mail address"
-                    />
-                    <Form.Input
-                      fluid
-                      icon="lock"
-                      iconPosition="left"
-                      placeholder="Password"
-                      type="password"
-                    />
-
-                    <Form.Field label="Account type" control="select">
-                      <option value="user">Regular User</option>
-                      <option value="family">Family Member</option>
-                      <option value="caregiver">Caregiver</option>
-                      <option value="provider">Provider</option>
-                    </Form.Field>
-
-                    <Form.Field width="10">
-                      <Checkbox label="I agree with the terms &amp; conditions" />
-                    </Form.Field>
-
-                    <Button color="teal" fluid size="large" onClick={this.handleClose}>Create Account</Button>
-                  </Segment>
-                </Form>
+                <RegisterForm {...this.props} onSubmit={this.handleRegister} />
                 <Message>
                   Already have an account? <Link to="/" onClick={this.handleClose}>Sign in</Link>
                 </Message>
@@ -84,9 +62,45 @@ class RegisterModal extends Component {
 
           </Modal.Content>
         </Modal>
+        <RegistrationSuccessModal
+          successModalOpen={this.state.successModalOpen}
+          handleClose={this.handleClose}
+        />
       </div>
     )
   }
 }
 
-export default RegisterModal
+const registerMutation = gql`
+  mutation registerUser(
+    $password: String!,
+    $fullName: String!,
+    $email: String!,
+    $address:String,
+    $address2: String,
+    $city: String,
+    $state: String,
+    $zip: String,
+    $userType: String!) {
+    registerUser(
+      password: $password,
+      fullName: $fullName,
+      email: $email,
+      address: $address,
+      address2: $address2,
+      city: $city,
+      state: $state,
+      zip: $zip,
+      userType: $userType
+    )
+    {
+      id
+    }
+  }
+`
+
+RegisterModal.propTypes = {
+  mutate: PropTypes.func.isRequired,
+}
+
+export default graphql(registerMutation)(RegisterModal)

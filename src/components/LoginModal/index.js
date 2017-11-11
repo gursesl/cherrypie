@@ -18,7 +18,7 @@ class LoginModal extends Component {
         <Popup trigger={<Button color="teal" onClick={this.show(true)}>Login</Button>}>
           <Popup.Header>Login details</Popup.Header>
           <Popup.Content>
-            Use your email or username to login to Cherrypie
+            Use your email to login to Cherrypie
           </Popup.Content>
         </Popup>
 
@@ -27,7 +27,7 @@ class LoginModal extends Component {
           <Modal.Content image>
             <Modal.Description>
               <Form>
-                <Form.Input label="Username" type="text" />
+                <Form.Input label="Email" type="text" />
                 <Form.Input label="Password" type="password" />
                 <Form.Field>
                   <Checkbox label="Remember me for 30 days" />

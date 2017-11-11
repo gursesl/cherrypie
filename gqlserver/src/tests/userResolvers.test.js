@@ -11,7 +11,7 @@ dotenv.config()
 describe('Resolvers', () => {
   beforeAll(() => {
     db.connect(config.dbUri)
-    const query = User.findOne({ userName: 'John' })
+    const query = User.findOne({ email: 'John' })
     expect(query.exec().constructor).toBe(Promise)
   })
 
@@ -40,11 +40,9 @@ describe('Resolvers', () => {
   describe('Mutations', () => {
     it('should return an object when args supplied', async (done) => {
       const args = {
-        userName: 'wera44',
         password: 'passw0rd',
         email: 'weraa@email.com',
-        firstName: 'Wera',
-        lastName: 'Jeromski',
+        fullName: 'Wera Wang Jr.',
         address: '123 Maple St.',
         address2: 'Unit 320',
         city: 'Maperville',

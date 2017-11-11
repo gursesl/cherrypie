@@ -18,19 +18,21 @@
   - [x] Define user query + mutations
   - [x] Define user resolvers
 
-- [ ] Test login modal
-  - [ ] Login modal
+- [x] Test login modal
+  - [x] Login modal
 - [ ] Test logout modal
   - [ ] Logout modal
+
 - [ ] User sign-up
-  - [ ] Sign-up menu item
-  - [ ] Sign-up modal
-  - [ ] Sign-up form
-  - [ ] Action, reducer, saga
-  - [ ] Apollo mutatation
-  - [ ] Apollo resolver
-  - [ ] MongoDB collection
-  - [ ] Test user sign-up
+  - [x] Sign-up menu item
+  - [x] Sign-up modal
+  - [x] Sign-up form
+    - [ ] Form validations
+  - [x] Apollo mutatation
+  - [x] Apollo resolver
+  - [x] MongoDB collection
+  - [x] Test user sign-up
+
 - [ ] OAuth
   - [ ] Sign-up with Google
     - [ ] Test user sign-up

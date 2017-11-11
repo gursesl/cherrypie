@@ -35,7 +35,7 @@ ShallowWrapper {
             Login details
           </PopupHeader>
           <PopupContent>
-            Use your email or username to login to Cherrypie
+            Use your email to login to Cherrypie
           </PopupContent>
         </Popup>,
         <Modal
@@ -59,7 +59,7 @@ ShallowWrapper {
                 <FormInput
                   as={[Function]}
                   control={[Function]}
-                  label="Username"
+                  label="Email"
                   type="text"
                 />
                 <FormInput
@@ -110,7 +110,7 @@ ShallowWrapper {
               Login details
             </PopupHeader>,
             <PopupContent>
-              Use your email or username to login to Cherrypie
+              Use your email to login to Cherrypie
             </PopupContent>,
           ],
           "on": "hover",
@@ -141,10 +141,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "Use your email or username to login to Cherrypie",
+              "children": "Use your email to login to Cherrypie",
             },
             "ref": null,
-            "rendered": "Use your email or username to login to Cherrypie",
+            "rendered": "Use your email to login to Cherrypie",
             "type": [Function],
           },
         ],
@@ -169,7 +169,7 @@ ShallowWrapper {
                   <FormInput
                     as={[Function]}
                     control={[Function]}
-                    label="Username"
+                    label="Email"
                     type="text"
                   />
                   <FormInput
@@ -238,7 +238,7 @@ ShallowWrapper {
                   <FormInput
                     as={[Function]}
                     control={[Function]}
-                    label="Username"
+                    label="Email"
                     type="text"
                   />
                   <FormInput
@@ -269,7 +269,7 @@ ShallowWrapper {
                   <FormInput
                     as={[Function]}
                     control={[Function]}
-                    label="Username"
+                    label="Email"
                     type="text"
                   />
                   <FormInput
@@ -297,7 +297,7 @@ ShallowWrapper {
                     <FormInput
                       as={[Function]}
                       control={[Function]}
-                      label="Username"
+                      label="Email"
                       type="text"
                     />,
                     <FormInput
@@ -323,7 +323,7 @@ ShallowWrapper {
                     "props": Object {
                       "as": [Function],
                       "control": [Function],
-                      "label": "Username",
+                      "label": "Email",
                       "type": "text",
                     },
                     "ref": null,
@@ -466,7 +466,7 @@ ShallowWrapper {
               Login details
             </PopupHeader>
             <PopupContent>
-              Use your email or username to login to Cherrypie
+              Use your email to login to Cherrypie
             </PopupContent>
           </Popup>,
           <Modal
@@ -490,7 +490,7 @@ ShallowWrapper {
                   <FormInput
                     as={[Function]}
                     control={[Function]}
-                    label="Username"
+                    label="Email"
                     type="text"
                   />
                   <FormInput
@@ -541,7 +541,7 @@ ShallowWrapper {
                 Login details
               </PopupHeader>,
               <PopupContent>
-                Use your email or username to login to Cherrypie
+                Use your email to login to Cherrypie
               </PopupContent>,
             ],
             "on": "hover",
@@ -572,10 +572,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": "Use your email or username to login to Cherrypie",
+                "children": "Use your email to login to Cherrypie",
               },
               "ref": null,
-              "rendered": "Use your email or username to login to Cherrypie",
+              "rendered": "Use your email to login to Cherrypie",
               "type": [Function],
             },
           ],
@@ -600,7 +600,7 @@ ShallowWrapper {
                     <FormInput
                       as={[Function]}
                       control={[Function]}
-                      label="Username"
+                      label="Email"
                       type="text"
                     />
                     <FormInput
@@ -669,7 +669,7 @@ ShallowWrapper {
                     <FormInput
                       as={[Function]}
                       control={[Function]}
-                      label="Username"
+                      label="Email"
                       type="text"
                     />
                     <FormInput
@@ -700,7 +700,7 @@ ShallowWrapper {
                     <FormInput
                       as={[Function]}
                       control={[Function]}
-                      label="Username"
+                      label="Email"
                       type="text"
                     />
                     <FormInput
@@ -728,7 +728,7 @@ ShallowWrapper {
                       <FormInput
                         as={[Function]}
                         control={[Function]}
-                        label="Username"
+                        label="Email"
                         type="text"
                       />,
                       <FormInput
@@ -754,7 +754,7 @@ ShallowWrapper {
                       "props": Object {
                         "as": [Function],
                         "control": [Function],
-                        "label": "Username",
+                        "label": "Email",
                         "type": "text",
                       },
                       "ref": null,

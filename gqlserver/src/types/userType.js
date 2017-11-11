@@ -1,11 +1,9 @@
 export default `
   type User {
     id: ID!
-    userName: String!
-    password: String!
     email: String!
-    firstName: String!
-    lastName: String!
+    password: String!
+    fullName: String!
     address: String
     address2: String
     city: String
@@ -21,11 +19,10 @@ export default `
   }
 
   type Mutation {
-    registerUser(userName: String!,
-      password: String!,
+    registerUser(
       email: String!,
-      firstName: String,
-      lastName: String,
+      password: String!,
+      fullName: String,
       address: String,
       address2: String,
       city: String,

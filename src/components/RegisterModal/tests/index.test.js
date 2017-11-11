@@ -5,13 +5,14 @@ import '../../../setupTests'
 import RegisterModal from '..'
 import Footer from '../../Footer'
 
-const component = shallow(<RegisterModal />)
+const component = shallow(<RegisterModal />).dive()
 
 describe('RegisterModal:index', () => {
   it('should be available', () => {
     expect(component.state().modalOpen).toBeFalsy()
     expect(component.find('Modal').length).toBe(1)
-    expect(component.find('Button').length).toBe(1)
+    expect(component.find('ReduxForm').length).toBe(1)
+    expect(component.find('RegistrationSuccessModal').length).toBe(1)
   })
 
   it('should hover correctly', () => {
@@ -57,9 +58,10 @@ describe('RegisterModal:index', () => {
     expect(component).toMatchSnapshot()
   })
 
-  it('should be hidden when the Form Login button is clicked', () => {
+  // TODO: Move this to test Redux Form
+  xit('should be hidden when the Form Login button is clicked', () => {
     const modal = component.find('Modal')
-    const cancelButton = component.find('Modal').find('Button').at(0)
+    const cancelButton = component.find('ReduxForm').find('Button').at(0)
     expect(modal.props().modalOpen).toBeFalsy()
 
     cancelButton.simulate('click')
@@ -82,5 +84,31 @@ describe('RegisterModal:index', () => {
     }, 0)
 
     expect(component).toMatchSnapshot()
+  })
+
+  it('should be an instance of redux-form HOC', () => {
+
+  })
+
+  it('should have four form fields', () => {
+    // Full name
+    // Email address
+    // Password
+    // Account type
+    // Agree checkbox
+    // Submit button
+  })
+
+  it('should validate the form', () => {
+    // Full name
+    // Email address
+    // Password
+    // Account type
+    // Agree checkbox
+    // Submit button
+  })
+
+  it('should submit the form', () => {
+
   })
 })

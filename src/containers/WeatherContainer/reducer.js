@@ -32,7 +32,6 @@ export function processResultData(data) {
 }
 
 function weatherContainerReducer(state = initialState, action) {
-  // TODO: Refactor this method, complexity is 18. Move action logic to selectors
   switch (action.type) {
     case c.WEATHER_DATA_FETCH_START:
       if (action.payload && g.matchZipCode(action.payload)) {

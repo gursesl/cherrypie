@@ -47,7 +47,7 @@ export const UsersGraphQL = ({ data: { loading, error, getUsers } }) => {
                 <Card.Content>
                   <Image floated="right" size="mini" src="/img/matthew.png" />
                   <Card.Header>
-                    {user.firstName} {user.lastName}
+                    {user.fullName}
                   </Card.Header>
                   <Card.Meta>
                     {user.email}
@@ -74,12 +74,10 @@ export const usersListQuery = gql`
   query {
     getUsers {
       id
-      userName
-      password
-      firstName
-      lastName
-      address
       email
+      password
+      fullName
+      address
       userType
     }
   }
