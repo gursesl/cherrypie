@@ -22,7 +22,13 @@ class RegisterModal extends Component {
     const variables = values.toJS()
     this.props.mutate({
       variables,
-    }).then(() => this.handleSuccess())
+    }).then((data) => {
+      if (data.data.registerUser.id) {
+        this.handleSuccess()
+      } else {
+        this.handleFailure('There was an error with your registration.')
+      }
+    })
       .catch(error => this.handleFailure(error))
   }
 
