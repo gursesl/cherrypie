@@ -7,29 +7,41 @@ import gql from 'graphql-tag'
 import { Link } from 'react-router-dom'
 import RegisterForm from './registerForm'
 import RegistrationSuccessModal from './registrationSuccessModal'
+import RegistrationFailureModal from './registrationFailureModal'
 
 class RegisterModal extends Component {
   state = {
     successModalOpen: false,
+    failureModalOpen: false,
+    errors: [],
   }
 
-  handleOpen = () => this.setState({ modalOpen: true, successModalOpen: false })
-  handleClose = () => this.setState({ modalOpen: false, successModalOpen: false })
+  handleOpen = () => this.setState({ modalOpen: true, successModalOpen: false, failureModalOpen: false })
+  handleClose = () => this.setState({ modalOpen: false, successModalOpen: false, failureModalOpen: false })
   handleSuccess = () => this.setState({ modalOpen: false, successModalOpen: true })
-  handleFailure = (error) => console.log('there was an error sending the query', error) //eslint-disable-line
+  handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
 
   handleRegister = (values) => {
     const variables = values.toJS()
     this.props.mutate({
       variables,
-    }).then((data) => {
-      if (data.data.registerUser.id) {
-        this.handleSuccess()
-      } else {
-        this.handleFailure('There was an error with your registration.')
-      }
     })
-      .catch(error => this.handleFailure(error))
+      .then((data, errors) => {
+        debugger
+        if (data.data.registerUser.id) {
+          this.handleSuccess()
+        } else {
+          this.handleFailure(errors)
+        }
+      })
+      .catch((errors) => {
+        debugger
+        if (errors.message) {
+          this.handleFailure([{ message: errors.message, path: 'NetworkError' }])
+        } else {
+          this.handleFailure(errors.graphQLErrors)
+        }
+      })
   }
 
   render() {
@@ -70,6 +82,11 @@ class RegisterModal extends Component {
         </Modal>
         <RegistrationSuccessModal
           successModalOpen={this.state.successModalOpen}
+          handleClose={this.handleClose}
+        />
+        <RegistrationFailureModal
+          successModalOpen={this.state.failureModalOpen}
+          errors={this.state.errors}
           handleClose={this.handleClose}
         />
       </div>
