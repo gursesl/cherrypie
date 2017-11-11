@@ -16,8 +16,16 @@ class RegisterModal extends Component {
     errors: [],
   }
 
-  handleOpen = () => this.setState({ modalOpen: true, successModalOpen: false, failureModalOpen: false })
-  handleClose = () => this.setState({ modalOpen: false, successModalOpen: false, failureModalOpen: false })
+  handleOpen = () => this.setState({
+    modalOpen: true,
+    successModalOpen: false,
+    failureModalOpen: false,
+  })
+  handleClose = () => this.setState({
+    modalOpen: false,
+    successModalOpen: false,
+    failureModalOpen: false,
+  })
   handleSuccess = () => this.setState({ modalOpen: false, successModalOpen: true })
   handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
 
@@ -27,7 +35,6 @@ class RegisterModal extends Component {
       variables,
     })
       .then((data, errors) => {
-        debugger
         if (data.data.registerUser.id) {
           this.handleSuccess()
         } else {
@@ -35,7 +42,6 @@ class RegisterModal extends Component {
         }
       })
       .catch((errors) => {
-        debugger
         if (errors.message) {
           this.handleFailure([{ message: errors.message, path: 'NetworkError' }])
         } else {
