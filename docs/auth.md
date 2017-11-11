@@ -27,7 +27,13 @@
   - [x] Sign-up menu item
   - [x] Sign-up modal
   - [x] Sign-up form
+    - [x] Success message modal
+    - [ ] Client error handling
+    - [ ] Server error handling
     - [ ] Form validations
+      - [ ] Client-side validation
+      - [ ] Server validation
+        - [ ] Unique email address
   - [x] Apollo mutatation
   - [x] Apollo resolver
   - [x] MongoDB collection
