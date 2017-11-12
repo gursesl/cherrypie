@@ -15,7 +15,6 @@ class RegisterModal extends Component {
     failureModalOpen: false,
     errors: [],
   }
-
   handleOpen = () => this.setState({
     modalOpen: true,
     successModalOpen: false,
@@ -28,7 +27,6 @@ class RegisterModal extends Component {
   })
   handleSuccess = () => this.setState({ modalOpen: false, successModalOpen: true })
   handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
-
   handleRegister = (values) => {
     const variables = values.toJS()
     this.props.mutate({

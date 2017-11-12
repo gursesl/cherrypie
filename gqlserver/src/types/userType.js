@@ -15,7 +15,8 @@ export default `
   type Query {
     users: [User!]!
     getUsers: [User!]!
-    getUser(id: Int!): User!
+    getUser(id: Int!): User
+    findUserByEmail(email: String!): User
   }
 
   type Mutation {

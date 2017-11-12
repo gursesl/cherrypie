@@ -55,7 +55,8 @@ const resolvers = {
   Query: {
     users: () => users,
     getUsers: (parent, args, { models }) => models.User.find({}),
-    getUser: (parent, { id }, { models }) => models.User.findOne({ where: { id } }),
+    getUser: (parent, { id }, { models }) => models.User.findOne({ id }),
+    findUserByEmail: (parent, { email }, { models }) => models.User.findOne({ email }),
   },
 
   Mutation: {

@@ -46,10 +46,10 @@ class RegistrationFailureModal extends Component {
 RegistrationFailureModal.propTypes = {
   successModalOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  errors: PropTypes.shape({
+  errors: PropTypes.arrayOf(PropTypes.shape({
     message: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
-  }).isRequired,
+  })).isRequired,
 }
 
 export default RegistrationFailureModal
