@@ -29,7 +29,7 @@ export default `
       city: String,
       state: String,
       zip: String,
-      userType: String!): User!
-    deleteUser(_id: String!): Boolean!
+      userType: String!): User
+    deleteUser(id: ID!): User
   }
 `
