@@ -1,5 +1,10 @@
+/* eslint-disable func-names */
+/* eslint-disable  no-use-before-define */
+/* eslint-disable  consistent-return */
+
 import mongoose from 'mongoose'
 import validator from 'validator'
+import bcrypt from 'bcrypt'
 
 const { Schema } = mongoose
 
@@ -21,6 +26,10 @@ const UserSchema = new Schema({
     type: String,
     required: true,
     trim: true,
+    validate: {
+      validator: password => validator.isLength(password, 3),
+      message: 'Password must be longer than 3 characters.',
+    },
   },
   fullName: { type: String, required: true, trim: true },
   address: { type: String, trim: true },
@@ -33,6 +42,50 @@ const UserSchema = new Schema({
     trim: true,
     required: [true, 'User type is required'],
   },
+  profile: {
+    name: { type: String, default: '' },
+    gender: { type: String, default: '' },
+    location: { type: String, default: '' },
+    website: { type: String, default: '' },
+    picture: { type: String, default: '' },
+  },
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
 })
 
-export default mongoose.model('User', UserSchema)
+UserSchema.statics = {
+  makeSalt() {
+    return bcrypt.genSaltSync(10)
+  },
+  encryptPassword(password) {
+    return bcrypt.hashSync(password, User.makeSalt())
+  },
+  register(email, password, cb) {
+    const user = new User({
+      email,
+      password,
+    })
+    user.save((err) => {
+      cb(err, user)
+    })
+  },
+}
+
+UserSchema.pre('save', function (next) {
+  if (!this.isModified('password')) {
+    return next()
+  }
+  // If user changed their password, rehash
+  this.password = User.encryptPassword(this.password)
+  next()
+})
+
+UserSchema.methods = {
+  validPassport: password => bcrypt.compareSync(password, this.password),
+}
+
+const User = mongoose.model('User', UserSchema)
+
+export default User

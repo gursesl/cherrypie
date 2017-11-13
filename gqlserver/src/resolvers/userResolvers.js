@@ -1,5 +1,3 @@
-import bcrypt from 'bcrypt'
-
 export const users = [
   {
     id: '1',
@@ -60,17 +58,15 @@ const resolvers = {
   },
 
   Mutation: {
-    registerUser: (parent, { password, ...otherArgs }, { models }) => {
+    registerUser: (parent, args, { models }) => {
       try {
-        const hashedPassword = bcrypt.hashSync(password, 12)
-        return models.User.create({ ...otherArgs, password: hashedPassword })
+        return models.User.create(args)
       } catch (error) {
         console.log(error) //eslint-disable-line
         return {}
       }
     },
-    deleteUser: (parent, { id }, { models }) => models.User.findByIdAndRemove(id)
-    ,
+    deleteUser: (parent, { id }, { models }) => models.User.findByIdAndRemove(id),
   },
 }
 

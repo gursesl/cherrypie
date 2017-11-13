@@ -7,14 +7,17 @@ import db from '../../lib/db'
 dotenv.config()
 
 describe('User:model', () => {
-  beforeAll(() => {
+  beforeAll((done) => {
     db.connect(config.dbUri)
     const query = User.findOne({ email: 'john@john.com' })
     expect(query.exec().constructor).toBe(Promise)
+    User.remove({ email: 'wesdfsdf234234234rs@sdfsdf334242email.com' }, () => {
+      done()
+    })
   })
 
   afterAll((done) => {
-    db.disconnect(done);
+    db.disconnect(done)
   })
 
   // beforeEach((done) => {
@@ -38,11 +41,11 @@ describe('User:model', () => {
     })
   })
 
-  it('should remove trailing spaces from username', async (done) => {
+  it('should trim email', async (done) => {
     try {
       const result = await User.create({
         email: 'wesdfsdf234234234rs@sdfsdf334242email.com        ',
-        password: bcrypt.hashSync('passw0rd', 12),
+        password: 'passw0rd',
         fullName: 'Wera Wang Jr.',
         address: '123 Maple St.',
         address2: 'Unit 320',
@@ -62,5 +65,10 @@ describe('User:model', () => {
     } catch (err) {
       done(err)
     }
+  })
+
+  it('should have static methods', () => {
+    const encryptPassword = User.encryptPassword('')
+    expect(bcrypt.compareSync('', encryptPassword)).toBeTruthy()
   })
 })

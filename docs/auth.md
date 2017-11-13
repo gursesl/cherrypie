@@ -9,6 +9,7 @@
 
 - [x] MongoDB
   - [x] Mongoose
+  - [ ] PassportJS
   - [x] Local setup
   - [x] mLabs setup, env key for Heroku
 

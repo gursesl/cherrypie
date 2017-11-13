@@ -8,19 +8,13 @@ import client from '../../apolloClient'
 
 const nameField = field => (
   <div>
-    <Form.Input
-      {...field.input}
-      fluid
-      icon="user"
-      iconPosition="left"
-      placeholder="Full name"
-    />
-    {
-      field.meta.touched && field.meta.error &&
-      <Message size="mini" negative visible={false}>
-        <Message.Header>{field.meta.error}</Message.Header>
-      </Message>
-    }
+    <Form.Input {...field.input} fluid icon="user" iconPosition="left" placeholder="Full name" />
+    {field.meta.touched &&
+      field.meta.error && (
+        <Message size="mini" negative visible={false}>
+          <Message.Header>{field.meta.error}</Message.Header>
+        </Message>
+      )}
   </div>
 )
 
@@ -32,13 +26,14 @@ const emailField = field => (
       icon="envelope"
       iconPosition="left"
       placeholder="Email address"
+      loading={field.meta.asyncValidating}
     />
-    {
-      field.meta.touched && field.meta.error &&
-      <Message size="mini" negative visible={false}>
-        <Message.Header>{field.meta.error}</Message.Header>
-      </Message>
-    }
+    {field.meta.touched &&
+      field.meta.error && (
+        <Message size="mini" negative visible={false}>
+          <Message.Header>{field.meta.error}</Message.Header>
+        </Message>
+      )}
   </div>
 )
 
@@ -52,12 +47,12 @@ const passwordField = field => (
       placeholder="Password"
       type="password"
     />
-    {
-      field.meta.touched && field.meta.error &&
-      <Message size="mini" negative visible={false}>
-        <Message.Header>{field.meta.error}</Message.Header>
-      </Message>
-    }
+    {field.meta.touched &&
+      field.meta.error && (
+        <Message size="mini" negative visible={false}>
+          <Message.Header>{field.meta.error}</Message.Header>
+        </Message>
+      )}
   </div>
 )
 
@@ -70,12 +65,12 @@ const userTypeField = field => (
       <option value="caregiver">Caregiver</option>
       <option value="provider">Provider</option>
     </Form.Field>
-    {
-      field.meta.touched && field.meta.error &&
-      <Message size="mini" negative visible={false}>
-        <Message.Header>{field.meta.error}</Message.Header>
-      </Message>
-    }
+    {field.meta.touched &&
+      field.meta.error && (
+        <Message size="mini" negative visible={false}>
+          <Message.Header>{field.meta.error}</Message.Header>
+        </Message>
+      )}
   </div>
 )
 
@@ -87,13 +82,19 @@ const agreeField = field => (
 
 const validate = (values) => {
   const errors = {}
-  if (!values.get('fullName') || !validator.isLength(values.get('fullName'), { min: 3, max: 100 })) {
+  if (
+    !values.get('fullName') ||
+    !validator.isLength(values.get('fullName'), { min: 3, max: 100 })
+  ) {
     errors.fullName = 'Please enter your full name.'
   }
   if (!values.get('email') || !validator.isEmail(values.get('email'))) {
     errors.email = 'A valid email address is required.'
   }
-  if (!values.get('password') || !validator.isLength(values.get('password'), { min: 3, max: 100 })) {
+  if (
+    !values.get('password') ||
+    !validator.isLength(values.get('password'), { min: 3, max: 100 })
+  ) {
     errors.password = 'A valid password between 3-100 characters is required.'
   }
   if (!values.get('userType')) {
@@ -103,31 +104,28 @@ const validate = (values) => {
 }
 
 const asyncValidate = values =>
-  client.query({
-    query: gql`
-      query findUserByEmail(
-        $email: String!) {
-        findUserByEmail(
-          email: $email
-        )
-        {
-          id
+  client
+    .query({
+      query: gql`
+        query findUserByEmail($email: String!) {
+          findUserByEmail(email: $email) {
+            id
+          }
         }
+      `,
+      variables: {
+        email: values.get('email'),
+      },
+    })
+    .then((response) => {
+      console.log(response)
+      if (response.data.findUserByEmail) {
+        throw { email: `${values.get('email')} has already been used.` } //eslint-disable-line
       }
-    `,
-    variables: {
-      email: values.get('email'),
-    },
-  }).then((response) => {
-    if (response.data.findUserByEmail) {
-      throw {email: `${values.get('email')} has already been used.` } //eslint-disable-line
-    }
-  })
+    })
 
 const RegisterForm = (props) => {
-  const {
-    handleSubmit, pristine, submitting,
-  } = props
+  const { handleSubmit, pristine, submitting } = props
 
   return (
     <Form size="large" onSubmit={handleSubmit}>
@@ -137,7 +135,9 @@ const RegisterForm = (props) => {
         <Field name="password" component={passwordField} />
         <Field name="userType" component={userTypeField} />
         <Field name="agree" component={agreeField} />
-        <Button color="teal" fluid size="large" type="submit" disabled={pristine || submitting}>Create Account</Button>
+        <Button color="teal" fluid size="large" type="submit" disabled={pristine || submitting}>
+          Create Account
+        </Button>
       </Segment>
     </Form>
   )
