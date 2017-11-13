@@ -3,11 +3,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Popup, Button, Header, Image, Modal, Grid, Message } from 'semantic-ui-react'
 import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
 import { Link } from 'react-router-dom'
 import RegisterForm from './registerForm'
 import RegistrationSuccessModal from './registrationSuccessModal'
 import RegistrationFailureModal from './registrationFailureModal'
+import usersListQuery from '../../graphql/queries/usersListQuery'
+import registerMutation from '../../graphql/mutations/registerMutation'
 
 class RegisterModal extends Component {
   state = {
@@ -34,6 +35,7 @@ class RegisterModal extends Component {
     this.props
       .mutate({
         variables,
+        refetchQueries: [{ query: usersListQuery }],
       })
       .then((data, errors) => {
         if (data.data.registerUser.id) {
@@ -90,34 +92,6 @@ class RegisterModal extends Component {
     )
   }
 }
-
-const registerMutation = gql`
-  mutation registerUser(
-    $password: String!
-    $fullName: String!
-    $email: String!
-    $address: String
-    $address2: String
-    $city: String
-    $state: String
-    $zip: String
-    $userType: String!
-  ) {
-    registerUser(
-      password: $password
-      fullName: $fullName
-      email: $email
-      address: $address
-      address2: $address2
-      city: $city
-      state: $state
-      zip: $zip
-      userType: $userType
-    ) {
-      id
-    }
-  }
-`
 
 RegisterModal.propTypes = {
   mutate: PropTypes.func.isRequired,

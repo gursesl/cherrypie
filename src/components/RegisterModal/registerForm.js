@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Button, Form, Checkbox, Segment, Message } from 'semantic-ui-react'
 import { Field, reduxForm } from 'redux-form/immutable'
 import validator from 'validator'
-import gql from 'graphql-tag'
 import client from '../../apolloClient'
+import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
 
 const nameField = field => (
   <div>
@@ -106,19 +106,13 @@ const validate = (values) => {
 const asyncValidate = values =>
   client
     .query({
-      query: gql`
-        query findUserByEmail($email: String!) {
-          findUserByEmail(email: $email) {
-            id
-          }
-        }
-      `,
+      query: findUserByEmailQuery,
       variables: {
         email: values.get('email'),
       },
     })
     .then((response) => {
-      console.log(response)
+      // console.log(response)
       if (response.data.findUserByEmail) {
         throw { email: `${values.get('email')} has already been used.` } //eslint-disable-line
       }
