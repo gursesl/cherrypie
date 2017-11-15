@@ -1,48 +1,98 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
-import { Popup, Button, Modal, Form, Checkbox } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
+import { Popup, Button, Header, Image, Modal, Grid, Message } from 'semantic-ui-react'
+import { graphql } from 'react-apollo'
+import { Link } from 'react-router-dom'
+import LoginForm from './loginForm'
+import LoginSuccessModal from './loginSuccessModal'
+import LoginFailureModal from './loginFailureModal'
+import loginMutation from '../../graphql/mutations/loginMutation'
 
 class LoginModal extends Component {
-  state = { open: false }
-
-  show = dimmer => () => this.setState({ dimmer, open: true })
-  close = () => this.setState({ open: false })
-  success = () => {
-    this.setState({ open: false })
+  state = {
+    successModalOpen: false,
+    failureModalOpen: false,
+    errors: [],
+  }
+  handleOpen = () =>
+    this.setState({
+      modalOpen: true,
+      successModalOpen: false,
+      failureModalOpen: false,
+    })
+  handleClose = () =>
+    this.setState({
+      modalOpen: false,
+      successModalOpen: false,
+      failureModalOpen: false,
+    })
+  handleSuccess = () => this.setState({ modalOpen: false, successModalOpen: true })
+  handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
+  handleLogin = (values) => {
+    const variables = values.toJS()
+    this.props
+      .mutate({
+        variables,
+      })
+      .then((data) => {
+        if (data.data.loginUser.ok) {
+          this.handleSuccess()
+        } else {
+          this.handleFailure(data.data.loginUser.errors)
+        }
+      })
+      .catch((errors) => {
+        if (errors.message) {
+          this.handleFailure([{ message: errors.message, path: 'NetworkError' }])
+        } else {
+          this.handleFailure(errors.graphQLErrors)
+        }
+      })
   }
 
   render() {
-    const { open, dimmer } = this.state
-
     return (
       <div>
-        <Popup trigger={<Button color="teal" onClick={this.show(true)}>Login</Button>}>
-          <Popup.Header>Login details</Popup.Header>
-          <Popup.Content>
-            Use your email to login to Cherrypie
-          </Popup.Content>
+        <Popup trigger={<Button onClick={this.handleOpen}>Sign in</Button>}>
+          <Popup.Header>Sign in details</Popup.Header>
+          <Popup.Content>Click here to sign in</Popup.Content>
         </Popup>
 
-        <Modal dimmer={dimmer} open={open} onClose={this.close}>
-          <Modal.Header>Login</Modal.Header>
-          <Modal.Content image>
-            <Modal.Description>
-              <Form>
-                <Form.Input label="Email" type="text" />
-                <Form.Input label="Password" type="password" />
-                <Form.Field>
-                  <Checkbox label="Remember me for 30 days" />
-                </Form.Field>
-              </Form>
-            </Modal.Description>
+        <Modal open={this.state.modalOpen} onClose={this.handleClose} basic size="small">
+          <Modal.Content>
+            <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
+              <Grid.Column style={{ maxWidth: 450 }}>
+                <Header as="h2" color="teal" textAlign="center">
+                  <Image src="/img/logo.png" /> Sign in
+                </Header>
+                <LoginForm {...this.props} onSubmit={this.handleLogin} />
+                <Message>
+                  Don&#39;t have an account?{' '}
+                  <Link to="/" onClick={this.handleClose}>
+                    Sign up
+                  </Link>
+                </Message>
+              </Grid.Column>
+            </Grid>
           </Modal.Content>
-          <Modal.Actions>
-            <Button basic color="red" onClick={this.close}>Cancel</Button>
-            <Button positive icon="sign in" labelPosition="right" content="Login" onClick={this.success} />
-          </Modal.Actions>
         </Modal>
+        <LoginSuccessModal
+          successModalOpen={this.state.successModalOpen}
+          handleClose={this.handleClose}
+        />
+        <LoginFailureModal
+          successModalOpen={this.state.failureModalOpen}
+          errors={this.state.errors}
+          handleClose={this.handleClose}
+        />
       </div>
     )
   }
 }
 
-export default LoginModal
+LoginModal.propTypes = {
+  mutate: PropTypes.func.isRequired,
+}
+
+export default graphql(loginMutation)(LoginModal)

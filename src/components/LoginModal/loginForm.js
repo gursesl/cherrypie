@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Button, Form, Segment, Message } from 'semantic-ui-react'
 import styled from 'styled-components'
-import { Button, Form, Checkbox, Segment, Message } from 'semantic-ui-react'
 import { Field, reduxForm } from 'redux-form/immutable'
 import validator from 'validator'
 import client from '../../apolloClient'
@@ -9,23 +9,10 @@ import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
 
 const StyledInputDiv = styled.div`margin: 10px 0;`
 
-const nameField = field => (
-  <StyledInputDiv>
-    <Form.Input {...field.input} fluid icon="user" iconPosition="left" placeholder="Full name" />
-    {field.meta.touched &&
-      field.meta.error && (
-        <Message size="mini" negative visible={false}>
-          <Message.Header>{field.meta.error}</Message.Header>
-        </Message>
-      )}
-  </StyledInputDiv>
-)
-
 const emailField = field => (
   <StyledInputDiv>
     <Form.Input
       {...field.input}
-      fluid
       icon="envelope"
       iconPosition="left"
       placeholder="Email address"
@@ -41,7 +28,7 @@ const emailField = field => (
 )
 
 const passwordField = field => (
-  <div>
+  <StyledInputDiv>
     <Form.Input
       {...field.input}
       fluid
@@ -56,41 +43,11 @@ const passwordField = field => (
           <Message.Header>{field.meta.error}</Message.Header>
         </Message>
       )}
-  </div>
-)
-
-const userTypeField = field => (
-  <StyledInputDiv>
-    <Form.Field label="Account type" control="select" {...field.input}>
-      <option value="">Select account type...</option>
-      <option value="user">Regular</option>
-      <option value="family">Family Member</option>
-      <option value="caregiver">Caregiver</option>
-      <option value="provider">Provider</option>
-    </Form.Field>
-    {field.meta.touched &&
-      field.meta.error && (
-        <Message size="mini" negative visible={false}>
-          <Message.Header>{field.meta.error}</Message.Header>
-        </Message>
-      )}
   </StyledInputDiv>
-)
-
-const agreeField = field => (
-  <Form.Field width="10" {...field.input}>
-    <Checkbox label="I agree with the terms &amp; conditions" />
-  </Form.Field>
 )
 
 const validate = (values) => {
   const errors = {}
-  if (
-    !values.get('fullName') ||
-    !validator.isLength(values.get('fullName'), { min: 3, max: 100 })
-  ) {
-    errors.fullName = 'Please enter your full name.'
-  }
   if (!values.get('email') || !validator.isEmail(values.get('email'))) {
     errors.email = 'A valid email address is required.'
   }
@@ -99,9 +56,6 @@ const validate = (values) => {
     !validator.isLength(values.get('password'), { min: 3, max: 100 })
   ) {
     errors.password = 'A valid password between 3-100 characters is required.'
-  }
-  if (!values.get('userType')) {
-    errors.userType = 'Please select a user type.'
   }
   return errors
 }
@@ -116,8 +70,8 @@ const asyncValidate = values =>
     })
     .then((response) => {
       // console.log(response)
-      if (response.data.findUserByEmail) {
-        throw { email: `${values.get('email')} has already been used.` } //eslint-disable-line
+      if (!response.data.findUserByEmail) {
+        throw { email: `${values.get('email')} is not registered.` } //eslint-disable-line
       }
     })
 
@@ -125,18 +79,15 @@ const RegisterForm = (props) => {
   const { handleSubmit, pristine, submitting } = props
 
   return (
-    <Form size="large" onSubmit={handleSubmit}>
-      <Segment stacked>
-        <Field name="fullName" component={nameField} />
+    <Segment padded>
+      <Form onSubmit={handleSubmit}>
         <Field name="email" component={emailField} />
         <Field name="password" component={passwordField} />
-        <Field name="userType" component={userTypeField} />
-        <Field name="agree" component={agreeField} />
         <Button color="teal" fluid size="large" type="submit" disabled={pristine || submitting}>
-          Create Account
+          Sign in
         </Button>
-      </Segment>
-    </Form>
+      </Form>
+    </Segment>
   )
 }
 
@@ -147,7 +98,7 @@ RegisterForm.propTypes = {
 }
 
 export default reduxForm({
-  form: 'registrationForm',
+  form: 'loginForm',
   validate,
   asyncValidate,
 })(RegisterForm)

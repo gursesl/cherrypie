@@ -31,7 +31,15 @@ const UserSchema = new Schema({
       message: 'Password must be longer than 3 characters.',
     },
   },
-  fullName: { type: String, required: true, trim: true },
+  fullName: {
+    type: String,
+    required: true,
+    trim: true,
+    validate: {
+      validator: name => validator.isLength(name, 3),
+      message: 'Full name must be longer than 3 characters.',
+    },
+  },
   address: { type: String, trim: true },
   address2: { type: String, trim: true },
   city: { type: String, trim: true },

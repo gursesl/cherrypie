@@ -63,7 +63,7 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
           >
             <div>
               <button
-                className="ui teal button"
+                className="ui button"
                 disabled={undefined}
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -73,7 +73,7 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
                 role="button"
                 tabIndex={undefined}
               >
-                Login
+                Sign in
               </button>
             </div>
             <div>

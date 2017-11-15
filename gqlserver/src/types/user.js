@@ -19,6 +19,19 @@ export default `
     findUserByEmail(email: String!): User
   }
 
+  type RegisterResponse {
+    ok: Boolean!
+    user: User
+    errors: [Error!]
+  }
+
+  type LoginResponse {
+    ok: Boolean!
+    token: String
+    refreshToken: String
+    errors: [Error!]
+  }
+
   type Mutation {
     registerUser(
       email: String!,
@@ -29,7 +42,8 @@ export default `
       city: String,
       state: String,
       zip: String,
-      userType: String!): User
+      userType: String!): RegisterResponse!
+    loginUser(email: String!, password: String!): LoginResponse!
     deleteUser(id: ID!): User
   }
 `

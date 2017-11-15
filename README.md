@@ -39,7 +39,7 @@ Tech Todo
 - [x] Container/component template w/ Redux
 - [x] Semantic UI main App layout component
   - [x] Test Semantic UI layout component
-
+- [ ] React router modal - https://github.com/davidmfoley/react-router-modal
 
 Functional Todo
 ==

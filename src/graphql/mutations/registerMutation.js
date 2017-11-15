@@ -2,9 +2,9 @@ import gql from 'graphql-tag'
 
 const registerMutation = gql`
   mutation registerUser(
+    $email: String!
     $password: String!
     $fullName: String!
-    $email: String!
     $address: String
     $address2: String
     $city: String
@@ -13,9 +13,9 @@ const registerMutation = gql`
     $userType: String!
   ) {
     registerUser(
+      email: $email
       password: $password
       fullName: $fullName
-      email: $email
       address: $address
       address2: $address2
       city: $city
@@ -23,7 +23,13 @@ const registerMutation = gql`
       zip: $zip
       userType: $userType
     ) {
-      id
+      user {
+        id
+      }
+      errors {
+        message
+        path
+      }
     }
   }
 `

@@ -13,6 +13,9 @@ import errorHandler from './errorHandler'
 import { schema } from '../schema'
 import models from '../models'
 
+const SECRET = 'sdfg89sdfg986.9sadf6ASDasd7f.6asd7f6asd87f'
+const SECRET2 = 'l8sdfsWWE4242FSDF.32sdfDC234.werEO922kdD2Q'
+
 dotenv.config()
 
 // const createAuth = require('./auth/ensure-auth')
@@ -33,12 +36,21 @@ app.use(express.static('./public'))
 
 app.use('*', cors({ origin: '*' }))
 
-app.use('/graphql', bodyParser.json(), graphqlExpress({
-  schema,
-  context: {
-    models,
-  },
-}))
+app.use(
+  '/graphql',
+  bodyParser.json(),
+  graphqlExpress({
+    schema,
+    context: {
+      models,
+      user: {
+        id: 1,
+      },
+      SECRET,
+      SECRET2,
+    },
+  })
+)
 app.use('/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/graphql' }))
 
 app.get('/', (req, res) => {
@@ -48,13 +60,22 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
   res.json([
     {
-      id: 1, firstName: 'Bob', lastName: 'Smith', email: 'bob@rmail.com',
+      id: 1,
+      firstName: 'Bob',
+      lastName: 'Smith',
+      email: 'bob@rmail.com',
     },
     {
-      id: 2, firstName: 'Bob1', lastName: 'Smith2', email: 'bob1@rmail.com',
+      id: 2,
+      firstName: 'Bob1',
+      lastName: 'Smith2',
+      email: 'bob1@rmail.com',
     },
     {
-      id: 3, firstName: 'Bob2', lastName: 'Smith3', email: 'bob2@rmail.com',
+      id: 3,
+      firstName: 'Bob2',
+      lastName: 'Smith3',
+      email: 'bob2@rmail.com',
     },
   ])
 })
@@ -75,7 +96,6 @@ app.get('/cityWeather', (req, res) => {
     res.send(body)
   })
 })
-
 
 // const auth = require('./routes/auth')
 // const pets = require('./routes/pets')

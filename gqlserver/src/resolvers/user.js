@@ -1,3 +1,18 @@
+import _ from 'lodash'
+import { login } from '../auth'
+
+const formatErrors = (e, models) => {
+  // If validation errors
+  if (e.name === 'ValidationError') {
+    //  _.pick({a: 1, b: 2}, 'a') => {a: 1}
+    return _.values(e.errors).map(x => _.pick(x, ['path', 'message']))
+  } else if (e.errmsg) {
+    return [{ path: 'MongoError', message: e.errmsg }]
+  }
+
+  return [{ path: 'name', message: 'something went wrong' }]
+}
+
 export const users = [
   {
     id: '1',
@@ -58,12 +73,17 @@ const resolvers = {
   },
 
   Mutation: {
-    registerUser: (parent, args, { models }) => {
+    loginUser: (parent, { email, password }, { models, SECRET, SECRET2 }) =>
+      login(email, password, models, SECRET, SECRET2),
+    registerUser: async (parent, args, { models }) => {
       try {
-        return models.User.create(args)
+        const user = await models.User.create(args)
+        return { ok: true, user }
       } catch (error) {
-        console.log(error) //eslint-disable-line
-        return {}
+        return {
+          ok: false,
+          errors: formatErrors(error, models),
+        }
       }
     },
     deleteUser: (parent, { id }, { models }) => models.User.findByIdAndRemove(id),

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Header, Modal, Icon } from 'semantic-ui-react'
 
-class RegistrationSuccessModal extends Component {
+class LoginSuccessModal extends Component {
   state = {
     modalOpen: false,
   }
@@ -19,9 +19,9 @@ class RegistrationSuccessModal extends Component {
   render() {
     return (
       <Modal open={this.state.modalOpen} onClose={this.props.handleClose} basic size="small">
-        <Header icon="user" content="Congratulations!" />
+        <Header icon="user" content="Hooray!" />
         <Modal.Content>
-          <h3>Your account has been created succcessfully.</h3>
+          <h3>You have been logged in succcessfully.</h3>
         </Modal.Content>
         <Modal.Actions>
           <Button color="green" onClick={this.props.handleClose} inverted>
@@ -33,9 +33,9 @@ class RegistrationSuccessModal extends Component {
   }
 }
 
-RegistrationSuccessModal.propTypes = {
+LoginSuccessModal.propTypes = {
   successModalOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
 }
 
-export default RegistrationSuccessModal
+export default LoginSuccessModal

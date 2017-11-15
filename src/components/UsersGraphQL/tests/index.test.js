@@ -6,7 +6,7 @@ import { ApolloLink, Observable, execute } from 'apollo-link'
 import '../../../setupTests'
 import { UsersGraphQL as PureUsersGraphQL } from '..'
 import { typeDefs } from '../../../../gqlserver/src/schema'
-import { users } from '../../../../gqlserver/src/resolvers/userResolvers'
+import { users } from '../../../../gqlserver/src/resolvers/user'
 
 class MockLink extends ApolloLink {
   constructor(data) {
@@ -41,10 +41,10 @@ describe('UserGraphQL component', () => {
   })
 
   it('Should render loading state', () => {
-    const cmp = (
-      <PureUsersGraphQL data={{ loading: true, error: null, users }} />
-    )
-    expect(shallow(cmp).find('Loader').props().content).toBe('Loading')
+    const cmp = <PureUsersGraphQL data={{ loading: true, error: null, users }} />
+    expect(shallow(cmp)
+      .find('Loader')
+      .props().content).toBe('Loading')
     expect(cmp).toMatchSnapshot()
   })
 
@@ -52,23 +52,23 @@ describe('UserGraphQL component', () => {
     const cmp = (
       <PureUsersGraphQL data={{ loading: false, error: { message: 'Error Message' }, users }} />
     )
-    expect(shallow(cmp).find('p').text()).toBe('Error Message')
+    expect(shallow(cmp)
+      .find('p')
+      .text()).toBe('Error Message')
     expect(cmp).toMatchSnapshot()
   })
 
   it('Should render users correctly with data', () => {
-    const cmp = (
-      <PureUsersGraphQL data={{ loading: false, error: null, getUsers: users }} />
-    )
+    const cmp = <PureUsersGraphQL data={{ loading: false, error: null, getUsers: users }} />
     expect(shallow(cmp).find('Card').length).toBe(4)
     expect(cmp).toMatchSnapshot()
   })
 
   it('Should render users correctly without data', () => {
-    const cmp = (
-      <PureUsersGraphQL data={{ loading: false, error: null, getUsers: [] }} />
-    )
-    expect(shallow(cmp).find('p').text()).toBe('No users found.')
+    const cmp = <PureUsersGraphQL data={{ loading: false, error: null, getUsers: [] }} />
+    expect(shallow(cmp)
+      .find('p')
+      .text()).toBe('No users found.')
     expect(cmp).toMatchSnapshot()
   })
 })

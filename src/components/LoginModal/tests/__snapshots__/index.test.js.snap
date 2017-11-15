@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginModal:index should be available 1`] = `
+exports[`LoginModal:index should be hidden when clicked outside the modal 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LoginModal />,
+  Symbol(enzyme.__unrendered__): <LoginModal
+    mutate={[Function]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -24,78 +26,86 @@ ShallowWrapper {
           trigger={
             <Button
               as="button"
-              color="teal"
               onClick={[Function]}
             >
-              Login
+              Sign in
             </Button>
           }
         >
           <PopupHeader>
-            Login details
+            Sign in details
           </PopupHeader>
           <PopupContent>
-            Use your email to login to Cherrypie
+            Click here to sign in
           </PopupContent>
         </Popup>,
         <Modal
+          basic={true}
           closeOnDimmerClick={true}
           closeOnDocumentClick={false}
           dimmer={true}
           eventPool="Modal"
           onClose={[Function]}
-          open={false}
+          open={undefined}
+          size="small"
         >
-          <ModalHeader>
-            Login
-          </ModalHeader>
-          <ModalContent
-            image={true}
-          >
-            <ModalDescription>
-              <Form
-                as="form"
-              >
-                <FormInput
-                  as={[Function]}
-                  control={[Function]}
-                  label="Email"
-                  type="text"
-                />
-                <FormInput
-                  as={[Function]}
-                  control={[Function]}
-                  label="Password"
-                  type="password"
-                />
-                <FormField>
-                  <Checkbox
-                    label="Remember me for 30 days"
-                    type="checkbox"
-                  />
-                </FormField>
-              </Form>
-            </ModalDescription>
-          </ModalContent>
-          <ModalActions>
-            <Button
-              as="button"
-              basic={true}
-              color="red"
-              onClick={[Function]}
+          <ModalContent>
+            <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
             >
-              Cancel
-            </Button>
-            <Button
-              as="button"
-              content="Login"
-              icon="sign in"
-              labelPosition="right"
-              onClick={[Function]}
-              positive={true}
-            />
-          </ModalActions>
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>
+          </ModalContent>
         </Modal>,
+        <LoginSuccessModal
+          handleClose={[Function]}
+          successModalOpen={false}
+        />,
+        <LoginFailureModal
+          errors={Array []}
+          handleClose={[Function]}
+          successModalOpen={false}
+        />,
       ],
     },
     "ref": null,
@@ -107,20 +117,19 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <PopupHeader>
-              Login details
+              Sign in details
             </PopupHeader>,
             <PopupContent>
-              Use your email to login to Cherrypie
+              Click here to sign in
             </PopupContent>,
           ],
           "on": "hover",
           "position": "top left",
           "trigger": <Button
             as="button"
-            color="teal"
             onClick={[Function]}
           >
-            Login
+            Sign in
           </Button>,
         },
         "ref": null,
@@ -130,10 +139,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "Login details",
+              "children": "Sign in details",
             },
             "ref": null,
-            "rendered": "Login details",
+            "rendered": "Sign in details",
             "type": [Function],
           },
           Object {
@@ -141,10 +150,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "Use your email to login to Cherrypie",
+              "children": "Click here to sign in",
             },
             "ref": null,
-            "rendered": "Use your email to login to Cherrypie",
+            "rendered": "Click here to sign in",
             "type": [Function],
           },
         ],
@@ -155,107 +164,160 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <ModalHeader>
-              Login
-            </ModalHeader>,
-            <ModalContent
-              image={true}
+          "basic": true,
+          "children": <ModalContent>
+            <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
             >
-              <ModalDescription>
-                <Form
-                  as="form"
-                >
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Email"
-                    type="text"
-                  />
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Password"
-                    type="password"
-                  />
-                  <FormField>
-                    <Checkbox
-                      label="Remember me for 30 days"
-                      type="checkbox"
-                    />
-                  </FormField>
-                </Form>
-              </ModalDescription>
-            </ModalContent>,
-            <ModalActions>
-              <Button
-                as="button"
-                basic={true}
-                color="red"
-                onClick={[Function]}
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
               >
-                Cancel
-              </Button>
-              <Button
-                as="button"
-                content="Login"
-                icon="sign in"
-                labelPosition="right"
-                onClick={[Function]}
-                positive={true}
-              />
-            </ModalActions>,
-          ],
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>
+          </ModalContent>,
           "closeOnDimmerClick": true,
           "closeOnDocumentClick": false,
           "dimmer": true,
           "eventPool": "Modal",
           "onClose": [Function],
-          "open": false,
+          "open": undefined,
+          "size": "small",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": "Login",
-            },
-            "ref": null,
-            "rendered": "Login",
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <ModalDescription>
-                <Form
-                  as="form"
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
                 >
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Email"
-                    type="text"
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
                   />
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Password"
-                    type="password"
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
                   />
-                  <FormField>
-                    <Checkbox
-                      label="Remember me for 30 days"
-                      type="checkbox"
-                    />
-                  </FormField>
-                </Form>
-              </ModalDescription>,
-              "image": true,
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>,
+              "style": Object {
+                "height": "100%",
+              },
+              "textAlign": "center",
+              "verticalAlign": "middle",
             },
             "ref": null,
             "rendered": Object {
@@ -263,180 +325,159 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": <Form
-                  as="form"
-                >
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Email"
-                    type="text"
-                  />
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Password"
-                    type="password"
-                  />
-                  <FormField>
-                    <Checkbox
-                      label="Remember me for 30 days"
-                      type="checkbox"
+                "children": Array [
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
                     />
-                  </FormField>
-                </Form>,
+                     Sign in
+                  </Header>,
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />,
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>,
+                ],
+                "style": Object {
+                  "maxWidth": 450,
+                },
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "as": "form",
-                  "children": Array [
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Email"
-                      type="text"
-                    />,
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Password"
-                      type="password"
-                    />,
-                    <FormField>
-                      <Checkbox
-                        label="Remember me for 30 days"
-                        type="checkbox"
-                      />
-                    </FormField>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "as": [Function],
-                      "control": [Function],
-                      "label": "Email",
-                      "type": "text",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "as": [Function],
-                      "control": [Function],
-                      "label": "Password",
-                      "type": "password",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": <Checkbox
-                        label="Remember me for 30 days"
-                        type="checkbox"
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "h2",
+                    "children": Array [
+                      <Image
+                        as="img"
+                        src="/img/logo.png"
+                        ui={true}
                       />,
-                    },
-                    "ref": null,
-                    "rendered": Object {
+                      " Sign in",
+                    ],
+                    "color": "teal",
+                    "textAlign": "center",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
                       "instance": null,
                       "key": undefined,
-                      "nodeType": "class",
+                      "nodeType": "function",
                       "props": Object {
-                        "label": "Remember me for 30 days",
-                        "type": "checkbox",
+                        "as": "img",
+                        "src": "/img/logo.png",
+                        "ui": true,
                       },
                       "ref": null,
                       "rendered": null,
                       "type": [Function],
                     },
-                    "type": [Function],
+                    " Sign in",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "mutate": [Function],
+                    "onSubmit": [Function],
                   },
-                ],
-                "type": [Function],
-              },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Don't have an account?",
+                      " ",
+                      <Link
+                        onClick={[Function]}
+                        replace={false}
+                        to="/"
+                      >
+                        Sign up
+                      </Link>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Don't have an account?",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Sign up",
+                        "onClick": [Function],
+                        "replace": false,
+                        "to": "/",
+                      },
+                      "ref": null,
+                      "rendered": "Sign up",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": [Function],
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <Button
-                  as="button"
-                  basic={true}
-                  color="red"
-                  onClick={[Function]}
-                >
-                  Cancel
-                </Button>,
-                <Button
-                  as="button"
-                  content="Login"
-                  icon="sign in"
-                  labelPosition="right"
-                  onClick={[Function]}
-                  positive={true}
-                />,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "as": "button",
-                  "basic": true,
-                  "children": "Cancel",
-                  "color": "red",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Cancel",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "as": "button",
-                  "content": "Login",
-                  "icon": "sign in",
-                  "labelPosition": "right",
-                  "onClick": [Function],
-                  "positive": true,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-        ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handleClose": [Function],
+          "successModalOpen": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "errors": Array [],
+          "handleClose": [Function],
+          "successModalOpen": false,
+        },
+        "ref": null,
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -455,78 +496,86 @@ ShallowWrapper {
             trigger={
               <Button
                 as="button"
-                color="teal"
                 onClick={[Function]}
               >
-                Login
+                Sign in
               </Button>
             }
           >
             <PopupHeader>
-              Login details
+              Sign in details
             </PopupHeader>
             <PopupContent>
-              Use your email to login to Cherrypie
+              Click here to sign in
             </PopupContent>
           </Popup>,
           <Modal
+            basic={true}
             closeOnDimmerClick={true}
             closeOnDocumentClick={false}
             dimmer={true}
             eventPool="Modal"
             onClose={[Function]}
-            open={false}
+            open={undefined}
+            size="small"
           >
-            <ModalHeader>
-              Login
-            </ModalHeader>
-            <ModalContent
-              image={true}
-            >
-              <ModalDescription>
-                <Form
-                  as="form"
-                >
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Email"
-                    type="text"
-                  />
-                  <FormInput
-                    as={[Function]}
-                    control={[Function]}
-                    label="Password"
-                    type="password"
-                  />
-                  <FormField>
-                    <Checkbox
-                      label="Remember me for 30 days"
-                      type="checkbox"
-                    />
-                  </FormField>
-                </Form>
-              </ModalDescription>
-            </ModalContent>
-            <ModalActions>
-              <Button
-                as="button"
-                basic={true}
-                color="red"
-                onClick={[Function]}
+            <ModalContent>
+              <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
               >
-                Cancel
-              </Button>
-              <Button
-                as="button"
-                content="Login"
-                icon="sign in"
-                labelPosition="right"
-                onClick={[Function]}
-                positive={true}
-              />
-            </ModalActions>
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>
+            </ModalContent>
           </Modal>,
+          <LoginSuccessModal
+            handleClose={[Function]}
+            successModalOpen={false}
+          />,
+          <LoginFailureModal
+            errors={Array []}
+            handleClose={[Function]}
+            successModalOpen={false}
+          />,
         ],
       },
       "ref": null,
@@ -538,20 +587,19 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <PopupHeader>
-                Login details
+                Sign in details
               </PopupHeader>,
               <PopupContent>
-                Use your email to login to Cherrypie
+                Click here to sign in
               </PopupContent>,
             ],
             "on": "hover",
             "position": "top left",
             "trigger": <Button
               as="button"
-              color="teal"
               onClick={[Function]}
             >
-              Login
+              Sign in
             </Button>,
           },
           "ref": null,
@@ -561,10 +609,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": "Login details",
+                "children": "Sign in details",
               },
               "ref": null,
-              "rendered": "Login details",
+              "rendered": "Sign in details",
               "type": [Function],
             },
             Object {
@@ -572,10 +620,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": "Use your email to login to Cherrypie",
+                "children": "Click here to sign in",
               },
               "ref": null,
-              "rendered": "Use your email to login to Cherrypie",
+              "rendered": "Click here to sign in",
               "type": [Function],
             },
           ],
@@ -586,107 +634,160 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <ModalHeader>
-                Login
-              </ModalHeader>,
-              <ModalContent
-                image={true}
+            "basic": true,
+            "children": <ModalContent>
+              <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
               >
-                <ModalDescription>
-                  <Form
-                    as="form"
-                  >
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Email"
-                      type="text"
-                    />
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Password"
-                      type="password"
-                    />
-                    <FormField>
-                      <Checkbox
-                        label="Remember me for 30 days"
-                        type="checkbox"
-                      />
-                    </FormField>
-                  </Form>
-                </ModalDescription>
-              </ModalContent>,
-              <ModalActions>
-                <Button
-                  as="button"
-                  basic={true}
-                  color="red"
-                  onClick={[Function]}
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
                 >
-                  Cancel
-                </Button>
-                <Button
-                  as="button"
-                  content="Login"
-                  icon="sign in"
-                  labelPosition="right"
-                  onClick={[Function]}
-                  positive={true}
-                />
-              </ModalActions>,
-            ],
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>
+            </ModalContent>,
             "closeOnDimmerClick": true,
             "closeOnDocumentClick": false,
             "dimmer": true,
             "eventPool": "Modal",
             "onClose": [Function],
-            "open": false,
+            "open": undefined,
+            "size": "small",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "Login",
-              },
-              "ref": null,
-              "rendered": "Login",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": <ModalDescription>
-                  <Form
-                    as="form"
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
+              >
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
                   >
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Email"
-                      type="text"
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
                     />
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Password"
-                      type="password"
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
                     />
-                    <FormField>
-                      <Checkbox
-                        label="Remember me for 30 days"
-                        type="checkbox"
-                      />
-                    </FormField>
-                  </Form>
-                </ModalDescription>,
-                "image": true,
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>,
+                "style": Object {
+                  "height": "100%",
+                },
+                "textAlign": "center",
+                "verticalAlign": "middle",
               },
               "ref": null,
               "rendered": Object {
@@ -694,56 +795,551 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": <Form
-                    as="form"
-                  >
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Email"
-                      type="text"
-                    />
-                    <FormInput
-                      as={[Function]}
-                      control={[Function]}
-                      label="Password"
-                      type="password"
-                    />
-                    <FormField>
-                      <Checkbox
-                        label="Remember me for 30 days"
-                        type="checkbox"
+                  "children": Array [
+                    <Header
+                      as="h2"
+                      color="teal"
+                      textAlign="center"
+                    >
+                      <Image
+                        as="img"
+                        src="/img/logo.png"
+                        ui={true}
                       />
-                    </FormField>
-                  </Form>,
+                       Sign in
+                    </Header>,
+                    <ReduxForm
+                      mutate={[Function]}
+                      onSubmit={[Function]}
+                    />,
+                    <Message>
+                      Don't have an account?
+                       
+                      <Link
+                        onClick={[Function]}
+                        replace={false}
+                        to="/"
+                      >
+                        Sign up
+                      </Link>
+                    </Message>,
+                  ],
+                  "style": Object {
+                    "maxWidth": 450,
+                  },
                 },
                 "ref": null,
-                "rendered": Object {
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "h2",
+                      "children": Array [
+                        <Image
+                          as="img"
+                          src="/img/logo.png"
+                          ui={true}
+                        />,
+                        " Sign in",
+                      ],
+                      "color": "teal",
+                      "textAlign": "center",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "img",
+                          "src": "/img/logo.png",
+                          "ui": true,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      " Sign in",
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "mutate": [Function],
+                      "onSubmit": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        "Don't have an account?",
+                        " ",
+                        <Link
+                          onClick={[Function]}
+                          replace={false}
+                          to="/"
+                        >
+                          Sign up
+                        </Link>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Don't have an account?",
+                      " ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Sign up",
+                          "onClick": [Function],
+                          "replace": false,
+                          "to": "/",
+                        },
+                        "ref": null,
+                        "rendered": "Sign up",
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handleClose": [Function],
+            "successModalOpen": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "errors": Array [],
+            "handleClose": [Function],
+            "successModalOpen": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`LoginModal:index should be visible when the NavBar Login button is clicked 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginModal
+    mutate={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Popup
+          on="hover"
+          position="top left"
+          trigger={
+            <Button
+              as="button"
+              onClick={[Function]}
+            >
+              Sign in
+            </Button>
+          }
+        >
+          <PopupHeader>
+            Sign in details
+          </PopupHeader>
+          <PopupContent>
+            Click here to sign in
+          </PopupContent>
+        </Popup>,
+        <Modal
+          basic={true}
+          closeOnDimmerClick={true}
+          closeOnDocumentClick={false}
+          dimmer={true}
+          eventPool="Modal"
+          onClose={[Function]}
+          open={undefined}
+          size="small"
+        >
+          <ModalContent>
+            <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>
+          </ModalContent>
+        </Modal>,
+        <LoginSuccessModal
+          handleClose={[Function]}
+          successModalOpen={false}
+        />,
+        <LoginFailureModal
+          errors={Array []}
+          handleClose={[Function]}
+          successModalOpen={false}
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <PopupHeader>
+              Sign in details
+            </PopupHeader>,
+            <PopupContent>
+              Click here to sign in
+            </PopupContent>,
+          ],
+          "on": "hover",
+          "position": "top left",
+          "trigger": <Button
+            as="button"
+            onClick={[Function]}
+          >
+            Sign in
+          </Button>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Sign in details",
+            },
+            "ref": null,
+            "rendered": "Sign in details",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Click here to sign in",
+            },
+            "ref": null,
+            "rendered": "Click here to sign in",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "basic": true,
+          "children": <ModalContent>
+            <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>
+          </ModalContent>,
+          "closeOnDimmerClick": true,
+          "closeOnDocumentClick": false,
+          "dimmer": true,
+          "eventPool": "Modal",
+          "onClose": [Function],
+          "open": undefined,
+          "size": "small",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>,
+              "style": Object {
+                "height": "100%",
+              },
+              "textAlign": "center",
+              "verticalAlign": "middle",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>,
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />,
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>,
+                ],
+                "style": Object {
+                  "maxWidth": 450,
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
-                    "as": "form",
+                    "as": "h2",
                     "children": Array [
-                      <FormInput
-                        as={[Function]}
-                        control={[Function]}
-                        label="Email"
-                        type="text"
+                      <Image
+                        as="img"
+                        src="/img/logo.png"
+                        ui={true}
                       />,
-                      <FormInput
-                        as={[Function]}
-                        control={[Function]}
-                        label="Password"
-                        type="password"
-                      />,
-                      <FormField>
-                        <Checkbox
-                          label="Remember me for 30 days"
-                          type="checkbox"
-                        />
-                      </FormField>,
+                      " Sign in",
                     ],
+                    "color": "teal",
+                    "textAlign": "center",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -752,100 +1348,980 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "function",
                       "props": Object {
-                        "as": [Function],
-                        "control": [Function],
-                        "label": "Email",
-                        "type": "text",
+                        "as": "img",
+                        "src": "/img/logo.png",
+                        "ui": true,
                       },
                       "ref": null,
                       "rendered": null,
                       "type": [Function],
                     },
+                    " Sign in",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "mutate": [Function],
+                    "onSubmit": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Don't have an account?",
+                      " ",
+                      <Link
+                        onClick={[Function]}
+                        replace={false}
+                        to="/"
+                      >
+                        Sign up
+                      </Link>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Don't have an account?",
+                    " ",
                     Object {
                       "instance": null,
                       "key": undefined,
-                      "nodeType": "function",
+                      "nodeType": "class",
                       "props": Object {
-                        "as": [Function],
-                        "control": [Function],
-                        "label": "Password",
-                        "type": "password",
+                        "children": "Sign up",
+                        "onClick": [Function],
+                        "replace": false,
+                        "to": "/",
                       },
                       "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "function",
-                      "props": Object {
-                        "children": <Checkbox
-                          label="Remember me for 30 days"
-                          type="checkbox"
-                        />,
-                      },
-                      "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "class",
-                        "props": Object {
-                          "label": "Remember me for 30 days",
-                          "type": "checkbox",
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
+                      "rendered": "Sign up",
                       "type": [Function],
                     },
                   ],
                   "type": [Function],
                 },
-                "type": [Function],
+              ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handleClose": [Function],
+          "successModalOpen": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "errors": Array [],
+          "handleClose": [Function],
+          "successModalOpen": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Popup
+            on="hover"
+            position="top left"
+            trigger={
+              <Button
+                as="button"
+                onClick={[Function]}
+              >
+                Sign in
+              </Button>
+            }
+          >
+            <PopupHeader>
+              Sign in details
+            </PopupHeader>
+            <PopupContent>
+              Click here to sign in
+            </PopupContent>
+          </Popup>,
+          <Modal
+            basic={true}
+            closeOnDimmerClick={true}
+            closeOnDocumentClick={false}
+            dimmer={true}
+            eventPool="Modal"
+            onClose={[Function]}
+            open={undefined}
+            size="small"
+          >
+            <ModalContent>
+              <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
+              >
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>
+            </ModalContent>
+          </Modal>,
+          <LoginSuccessModal
+            handleClose={[Function]}
+            successModalOpen={false}
+          />,
+          <LoginFailureModal
+            errors={Array []}
+            handleClose={[Function]}
+            successModalOpen={false}
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <PopupHeader>
+                Sign in details
+              </PopupHeader>,
+              <PopupContent>
+                Click here to sign in
+              </PopupContent>,
+            ],
+            "on": "hover",
+            "position": "top left",
+            "trigger": <Button
+              as="button"
+              onClick={[Function]}
+            >
+              Sign in
+            </Button>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Sign in details",
               },
+              "ref": null,
+              "rendered": "Sign in details",
               "type": [Function],
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
+              "props": Object {
+                "children": "Click here to sign in",
+              },
+              "ref": null,
+              "rendered": "Click here to sign in",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "basic": true,
+            "children": <ModalContent>
+              <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
+              >
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>
+            </ModalContent>,
+            "closeOnDimmerClick": true,
+            "closeOnDocumentClick": false,
+            "dimmer": true,
+            "eventPool": "Modal",
+            "onClose": [Function],
+            "open": undefined,
+            "size": "small",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
+              >
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>,
+                "style": Object {
+                  "height": "100%",
+                },
+                "textAlign": "center",
+                "verticalAlign": "middle",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <Header
+                      as="h2"
+                      color="teal"
+                      textAlign="center"
+                    >
+                      <Image
+                        as="img"
+                        src="/img/logo.png"
+                        ui={true}
+                      />
+                       Sign in
+                    </Header>,
+                    <ReduxForm
+                      mutate={[Function]}
+                      onSubmit={[Function]}
+                    />,
+                    <Message>
+                      Don't have an account?
+                       
+                      <Link
+                        onClick={[Function]}
+                        replace={false}
+                        to="/"
+                      >
+                        Sign up
+                      </Link>
+                    </Message>,
+                  ],
+                  "style": Object {
+                    "maxWidth": 450,
+                  },
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "h2",
+                      "children": Array [
+                        <Image
+                          as="img"
+                          src="/img/logo.png"
+                          ui={true}
+                        />,
+                        " Sign in",
+                      ],
+                      "color": "teal",
+                      "textAlign": "center",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "img",
+                          "src": "/img/logo.png",
+                          "ui": true,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      " Sign in",
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "mutate": [Function],
+                      "onSubmit": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        "Don't have an account?",
+                        " ",
+                        <Link
+                          onClick={[Function]}
+                          replace={false}
+                          to="/"
+                        >
+                          Sign up
+                        </Link>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Don't have an account?",
+                      " ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Sign up",
+                          "onClick": [Function],
+                          "replace": false,
+                          "to": "/",
+                        },
+                        "ref": null,
+                        "rendered": "Sign up",
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handleClose": [Function],
+            "successModalOpen": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "errors": Array [],
+            "handleClose": [Function],
+            "successModalOpen": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`LoginModal:index should hover correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LoginModal
+    mutate={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Popup
+          on="hover"
+          position="top left"
+          trigger={
+            <Button
+              as="button"
+              onClick={[Function]}
+            >
+              Sign in
+            </Button>
+          }
+        >
+          <PopupHeader>
+            Sign in details
+          </PopupHeader>
+          <PopupContent>
+            Click here to sign in
+          </PopupContent>
+        </Popup>,
+        <Modal
+          basic={true}
+          closeOnDimmerClick={true}
+          closeOnDocumentClick={false}
+          dimmer={true}
+          eventPool="Modal"
+          onClose={[Function]}
+          open={undefined}
+          size="small"
+        >
+          <ModalContent>
+            <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>
+          </ModalContent>
+        </Modal>,
+        <LoginSuccessModal
+          handleClose={[Function]}
+          successModalOpen={false}
+        />,
+        <LoginFailureModal
+          errors={Array []}
+          handleClose={[Function]}
+          successModalOpen={false}
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <PopupHeader>
+              Sign in details
+            </PopupHeader>,
+            <PopupContent>
+              Click here to sign in
+            </PopupContent>,
+          ],
+          "on": "hover",
+          "position": "top left",
+          "trigger": <Button
+            as="button"
+            onClick={[Function]}
+          >
+            Sign in
+          </Button>,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Sign in details",
+            },
+            "ref": null,
+            "rendered": "Sign in details",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Click here to sign in",
+            },
+            "ref": null,
+            "rendered": "Click here to sign in",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "basic": true,
+          "children": <ModalContent>
+            <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>
+          </ModalContent>,
+          "closeOnDimmerClick": true,
+          "closeOnDocumentClick": false,
+          "dimmer": true,
+          "eventPool": "Modal",
+          "onClose": [Function],
+          "open": undefined,
+          "size": "small",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Grid
+              style={
+                Object {
+                  "height": "100%",
+                }
+              }
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>
+            </Grid>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <GridColumn
+                style={
+                  Object {
+                    "maxWidth": 450,
+                  }
+                }
+              >
+                <Header
+                  as="h2"
+                  color="teal"
+                  textAlign="center"
+                >
+                  <Image
+                    as="img"
+                    src="/img/logo.png"
+                    ui={true}
+                  />
+                   Sign in
+                </Header>
+                <ReduxForm
+                  mutate={[Function]}
+                  onSubmit={[Function]}
+                />
+                <Message>
+                  Don't have an account?
+                   
+                  <Link
+                    onClick={[Function]}
+                    replace={false}
+                    to="/"
+                  >
+                    Sign up
+                  </Link>
+                </Message>
+              </GridColumn>,
+              "style": Object {
+                "height": "100%",
+              },
+              "textAlign": "center",
+              "verticalAlign": "middle",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
               "props": Object {
                 "children": Array [
-                  <Button
-                    as="button"
-                    basic={true}
-                    color="red"
-                    onClick={[Function]}
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
                   >
-                    Cancel
-                  </Button>,
-                  <Button
-                    as="button"
-                    content="Login"
-                    icon="sign in"
-                    labelPosition="right"
-                    onClick={[Function]}
-                    positive={true}
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>,
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
                   />,
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>,
                 ],
+                "style": Object {
+                  "maxWidth": 450,
+                },
               },
               "ref": null,
               "rendered": Array [
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "class",
+                  "nodeType": "function",
                   "props": Object {
-                    "as": "button",
-                    "basic": true,
-                    "children": "Cancel",
-                    "color": "red",
-                    "onClick": [Function],
+                    "as": "h2",
+                    "children": Array [
+                      <Image
+                        as="img"
+                        src="/img/logo.png"
+                        ui={true}
+                      />,
+                      " Sign in",
+                    ],
+                    "color": "teal",
+                    "textAlign": "center",
                   },
                   "ref": null,
-                  "rendered": "Cancel",
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "as": "img",
+                        "src": "/img/logo.png",
+                        "ui": true,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    " Sign in",
+                  ],
                   "type": [Function],
                 },
                 Object {
@@ -853,21 +2329,553 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "as": "button",
-                    "content": "Login",
-                    "icon": "sign in",
-                    "labelPosition": "right",
-                    "onClick": [Function],
-                    "positive": true,
+                    "mutate": [Function],
+                    "onSubmit": [Function],
                   },
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Don't have an account?",
+                      " ",
+                      <Link
+                        onClick={[Function]}
+                        replace={false}
+                        to="/"
+                      >
+                        Sign up
+                      </Link>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Don't have an account?",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Sign up",
+                        "onClick": [Function],
+                        "replace": false,
+                        "to": "/",
+                      },
+                      "ref": null,
+                      "rendered": "Sign up",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
               ],
               "type": [Function],
             },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "handleClose": [Function],
+          "successModalOpen": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "errors": Array [],
+          "handleClose": [Function],
+          "successModalOpen": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Popup
+            on="hover"
+            position="top left"
+            trigger={
+              <Button
+                as="button"
+                onClick={[Function]}
+              >
+                Sign in
+              </Button>
+            }
+          >
+            <PopupHeader>
+              Sign in details
+            </PopupHeader>
+            <PopupContent>
+              Click here to sign in
+            </PopupContent>
+          </Popup>,
+          <Modal
+            basic={true}
+            closeOnDimmerClick={true}
+            closeOnDocumentClick={false}
+            dimmer={true}
+            eventPool="Modal"
+            onClose={[Function]}
+            open={undefined}
+            size="small"
+          >
+            <ModalContent>
+              <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
+              >
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>
+            </ModalContent>
+          </Modal>,
+          <LoginSuccessModal
+            handleClose={[Function]}
+            successModalOpen={false}
+          />,
+          <LoginFailureModal
+            errors={Array []}
+            handleClose={[Function]}
+            successModalOpen={false}
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <PopupHeader>
+                Sign in details
+              </PopupHeader>,
+              <PopupContent>
+                Click here to sign in
+              </PopupContent>,
+            ],
+            "on": "hover",
+            "position": "top left",
+            "trigger": <Button
+              as="button"
+              onClick={[Function]}
+            >
+              Sign in
+            </Button>,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Sign in details",
+              },
+              "ref": null,
+              "rendered": "Sign in details",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Click here to sign in",
+              },
+              "ref": null,
+              "rendered": "Click here to sign in",
+              "type": [Function],
+            },
           ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "basic": true,
+            "children": <ModalContent>
+              <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
+              >
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>
+            </ModalContent>,
+            "closeOnDimmerClick": true,
+            "closeOnDocumentClick": false,
+            "dimmer": true,
+            "eventPool": "Modal",
+            "onClose": [Function],
+            "open": undefined,
+            "size": "small",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <Grid
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
+                textAlign="center"
+                verticalAlign="middle"
+              >
+                <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>
+              </Grid>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <GridColumn
+                  style={
+                    Object {
+                      "maxWidth": 450,
+                    }
+                  }
+                >
+                  <Header
+                    as="h2"
+                    color="teal"
+                    textAlign="center"
+                  >
+                    <Image
+                      as="img"
+                      src="/img/logo.png"
+                      ui={true}
+                    />
+                     Sign in
+                  </Header>
+                  <ReduxForm
+                    mutate={[Function]}
+                    onSubmit={[Function]}
+                  />
+                  <Message>
+                    Don't have an account?
+                     
+                    <Link
+                      onClick={[Function]}
+                      replace={false}
+                      to="/"
+                    >
+                      Sign up
+                    </Link>
+                  </Message>
+                </GridColumn>,
+                "style": Object {
+                  "height": "100%",
+                },
+                "textAlign": "center",
+                "verticalAlign": "middle",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <Header
+                      as="h2"
+                      color="teal"
+                      textAlign="center"
+                    >
+                      <Image
+                        as="img"
+                        src="/img/logo.png"
+                        ui={true}
+                      />
+                       Sign in
+                    </Header>,
+                    <ReduxForm
+                      mutate={[Function]}
+                      onSubmit={[Function]}
+                    />,
+                    <Message>
+                      Don't have an account?
+                       
+                      <Link
+                        onClick={[Function]}
+                        replace={false}
+                        to="/"
+                      >
+                        Sign up
+                      </Link>
+                    </Message>,
+                  ],
+                  "style": Object {
+                    "maxWidth": 450,
+                  },
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": "h2",
+                      "children": Array [
+                        <Image
+                          as="img"
+                          src="/img/logo.png"
+                          ui={true}
+                        />,
+                        " Sign in",
+                      ],
+                      "color": "teal",
+                      "textAlign": "center",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "as": "img",
+                          "src": "/img/logo.png",
+                          "ui": true,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      " Sign in",
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "mutate": [Function],
+                      "onSubmit": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        "Don't have an account?",
+                        " ",
+                        <Link
+                          onClick={[Function]}
+                          replace={false}
+                          to="/"
+                        >
+                          Sign up
+                        </Link>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Don't have an account?",
+                      " ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Sign up",
+                          "onClick": [Function],
+                          "replace": false,
+                          "to": "/",
+                        },
+                        "ref": null,
+                        "rendered": "Sign up",
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "handleClose": [Function],
+            "successModalOpen": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "errors": Array [],
+            "handleClose": [Function],
+            "successModalOpen": false,
+          },
+          "ref": null,
+          "rendered": null,
           "type": [Function],
         },
       ],

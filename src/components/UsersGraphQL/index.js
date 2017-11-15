@@ -97,7 +97,6 @@ export class UsersGraphQL extends Component {
                     <Card.Header>{user.fullName}</Card.Header>
                     <Card.Meta>{user.email}</Card.Meta>
                     <Card.Description>{user.address}</Card.Description>
-                    <Card.Description>{user.id}</Card.Description>
                   </Card.Content>
                   <Card.Content extra>
                     <div className="ui two buttons">

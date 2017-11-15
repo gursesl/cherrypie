@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import { fail } from 'assert'
-import resolvers, { users } from '../resolvers/userResolvers'
+import resolvers, { users } from '../resolvers/user'
 import models from '../models'
 import User from '../models/user'
 import config from '../lib/config'
@@ -63,7 +63,7 @@ describe('UserResolvers', () => {
 
   describe('Mutations', () => {
     it('should return an object when args supplied', async (done) => {
-      const user = await resolvers.Mutation.registerUser(
+      const userResponse = await resolvers.Mutation.registerUser(
         undefined,
         {
           password: args.password,
@@ -71,7 +71,7 @@ describe('UserResolvers', () => {
         },
         { models }
       )
-      const { id } = user
+      const { id } = userResponse.user
       const removed = await resolvers.Mutation.deleteUser(undefined, { id }, { models })
 
       if (removed) {

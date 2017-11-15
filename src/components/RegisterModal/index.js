@@ -8,6 +8,7 @@ import RegisterForm from './registerForm'
 import RegistrationSuccessModal from './registrationSuccessModal'
 import RegistrationFailureModal from './registrationFailureModal'
 import usersListQuery from '../../graphql/queries/usersListQuery'
+import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
 import registerMutation from '../../graphql/mutations/registerMutation'
 
 class RegisterModal extends Component {
@@ -35,13 +36,13 @@ class RegisterModal extends Component {
     this.props
       .mutate({
         variables,
-        refetchQueries: [{ query: usersListQuery }],
+        refetchQueries: [{ query: usersListQuery }, { query: findUserByEmailQuery, variables }],
       })
-      .then((data, errors) => {
-        if (data.data.registerUser.id) {
+      .then((data) => {
+        if (data.data.registerUser.user) {
           this.handleSuccess()
         } else {
-          this.handleFailure(errors)
+          this.handleFailure(data.data.registerUser.errors)
         }
       })
       .catch((errors) => {

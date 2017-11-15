@@ -10,6 +10,7 @@
 - [x] MongoDB
   - [x] Mongoose
   - [ ] PassportJS
+  - [ ] Express session - https://github.com/graphql/express-graphql
   - [x] Local setup
   - [x] mLabs setup, env key for Heroku
 
@@ -24,21 +25,63 @@
 - [ ] Test logout modal
   - [ ] Logout modal
 
-- [ ] User sign-up
+- [x] User sign-up
   - [x] Sign-up menu item
   - [x] Sign-up modal
   - [x] Sign-up form
     - [x] Success message modal
+    - [x] Client error handling
+    - [x] Server error handling
+    - [x] Form validations
+      - [x] Client-side validation
+      - [x] Server validation
+        - [x] Unique email address
+  - [x] Apollo mutatation
+  - [x] Apollo resolver
+  - [x] MongoDB collection
+  - [x] Test user sign-up
+  - [ ] Redirect user
+
+- [ ] User login
+  - [x] Login menu item
+  - [x] Login modal
+  - [x] Login form
+    - [x] Success message modal
+    - [x] Client error handling
+    - [x] Server error handling
+    - [x] Form validations
+      - [x] Client-side validation
+      - [x] Server validation
+  - [x] Apollo mutatation
+  - [x] Apollo resolver
+  - [x] Test user login
+  - [ ] Redirect user
+
+- [ ] User logout
+  - [ ] Logout menu item
+  - [ ] Logout modal
+  - [ ] Logout form
+    - [ ] Success message modal
     - [ ] Client error handling
     - [ ] Server error handling
     - [ ] Form validations
       - [ ] Client-side validation
       - [ ] Server validation
         - [ ] Unique email address
-  - [x] Apollo mutatation
-  - [x] Apollo resolver
-  - [x] MongoDB collection
-  - [x] Test user sign-up
+  - [ ] Apollo mutatation
+  - [ ] Apollo resolver
+  - [ ] Test user logout
+  - [ ] Redirect user
+
+- [ ] Show/Hide buttons based on user auth status
+
+- [ ] Protected routes
+  - [ ] HOC for protected routes
+  - [ ] Users - /users
+  - [ ] GraphQL users - /gqlusers
+  - [ ] Role-based routing
+    - [ ] Caregiver
+    - [ ] User
 
 - [ ] OAuth
   - [ ] Sign-up with Google
