@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Popup, Button, Header, Image, Modal, Grid, Message } from 'semantic-ui-react'
 import { graphql } from 'react-apollo'
 import { Link } from 'react-router-dom'
+import localforage from 'localforage'
 import LoginForm from './loginForm'
 import LoginSuccessModal from './loginSuccessModal'
 import LoginFailureModal from './loginFailureModal'
@@ -14,6 +15,16 @@ class LoginModal extends Component {
     successModalOpen: false,
     failureModalOpen: false,
     errors: [],
+  }
+  saveToken = (key, value) => {
+    localforage
+      .setItem(key, value)
+      .then((item) => {
+        console.log(item)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
   handleOpen = () =>
     this.setState({
@@ -31,15 +42,21 @@ class LoginModal extends Component {
   handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
   handleLogin = (values) => {
     const variables = values.toJS()
+
     this.props
       .mutate({
         variables,
       })
-      .then((data) => {
-        if (data.data.loginUser.ok) {
+      .then((response) => {
+        const {
+          ok, token, refreshToken, errors,
+        } = response.data.loginUser
+        if (ok) {
+          this.saveToken('token', token)
+          this.saveToken('refreshToken', refreshToken)
           this.handleSuccess()
         } else {
-          this.handleFailure(data.data.loginUser.errors)
+          this.handleFailure(errors)
         }
       })
       .catch((errors) => {

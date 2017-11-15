@@ -40,7 +40,8 @@
   - [x] Apollo resolver
   - [x] MongoDB collection
   - [x] Test user sign-up
-  - [ ] Redirect user
+  - [ ] Login user after successful registration
+  - [ ] Redirect user (Optional?)
 
 - [ ] User login
   - [x] Login menu item
