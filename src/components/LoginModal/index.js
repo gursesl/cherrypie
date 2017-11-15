@@ -19,11 +19,11 @@ class LoginModal extends Component {
   saveToken = (key, value) => {
     localforage
       .setItem(key, value)
-      .then((item) => {
-        console.log(item)
+      .then(() => {
+        // console.log(item)
       })
-      .catch((err) => {
-        console.log(err)
+      .catch(() => {
+        // console.log(err)
       })
   }
   handleOpen = () =>
