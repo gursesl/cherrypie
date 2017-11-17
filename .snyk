@@ -1,0 +1,12 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.8.0
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:jquery:20170829':
+    - semantic-ui-css > jquery:
+        reason: None given
+        expires: '2017-12-17T18:25:50.760Z'
+    - semantic-ui-less > jquery:
+        reason: None given
+        expires: '2017-12-17T18:25:50.760Z'
+patch: {}
