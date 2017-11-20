@@ -3,12 +3,16 @@ import gql from 'graphql-tag'
 const usersListQuery = gql`
   query {
     getUsers {
-      id
-      email
-      password
-      fullName
-      address
-      userType
+      ok
+      users {
+        id
+        fullName
+        email
+      }
+      errors {
+        path
+        message
+      }
     }
   }
 `

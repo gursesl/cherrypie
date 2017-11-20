@@ -1,5 +1,6 @@
 import _ from 'lodash'
-import { login } from '../auth'
+import { login, logout } from '../auth'
+import { requiresAuth, requiresAdmin } from '../permissions'
 
 const formatErrors = (e, models) => {
   // If validation errors
@@ -13,61 +14,21 @@ const formatErrors = (e, models) => {
   return [{ path: 'name', message: 'something went wrong' }]
 }
 
-export const users = [
-  {
-    id: '1',
-    password: 'passw0rd',
-    email: 'wer@email.com',
-    fullName: 'Wera George',
-    address: '123 Maple St.',
-    address2: 'Unit 320',
-    city: 'Maperville',
-    state: 'IL',
-    zip: '22902',
-    userType: 'caregiver',
-  },
-  {
-    id: '2',
-    password: 'passw0rd',
-    email: 'weraa@email.com',
-    fullName: 'Smit Georgeh',
-    address: '123 Maple St.',
-    address2: 'Unit 320',
-    city: 'Maperville',
-    state: 'IL',
-    zip: '22902',
-    userType: 'caregiver',
-  },
-  {
-    id: '3',
-    password: 'passw0rd',
-    email: 'weraa@email.com',
-    fullName: 'Angl Georgee',
-    address: '123 Maple St.',
-    address2: 'Unit 320',
-    city: 'Maperville',
-    state: 'IL',
-    zip: '22902',
-    userType: 'caregiver',
-  },
-  {
-    id: '4',
-    password: 'passw0rd',
-    email: 'weraa@email.com',
-    fullName: 'Wera George',
-    address: '123 Maple St.',
-    address2: 'Unit 320',
-    city: 'Maperville',
-    state: 'IL',
-    zip: '22902',
-    userType: 'caregiver',
-  },
-]
 // Resolvers
 const resolvers = {
   Query: {
-    users: () => users,
-    getUsers: (parent, args, { models }) => models.User.find({}),
+    getUsers: (parent, args, { models, user }) => {
+      if (!user) {
+        return {
+          ok: false,
+          errors: [{ message: 'You need to be logeed in to access this view', path: '/gqlusers' }],
+        }
+      }
+      return {
+        ok: true,
+        users: models.User.find({ owner: user.id }),
+      }
+    },
     getUser: (parent, { id }, { models }) => models.User.findOne({ id }),
     findUserByEmail: (parent, { email }, { models }) => models.User.findOne({ email }),
   },
@@ -75,10 +36,11 @@ const resolvers = {
   Mutation: {
     loginUser: (parent, { email, password }, { models, SECRET, SECRET2 }) =>
       login(email, password, models, SECRET, SECRET2),
-    registerUser: async (parent, args, { models }) => {
+    logoutUser: (parent, args, { user, SECRET, SECRET2 }) => logout(user, SECRET, SECRET2),
+    registerUser: async (parent, args, { models, user }) => {
       try {
-        const user = await models.User.create(args)
-        return { ok: true, user }
+        const createdUser = await models.User.create({ ...args, owner: user.id })
+        return { ok: true, user: createdUser }
       } catch (error) {
         return {
           ok: false,

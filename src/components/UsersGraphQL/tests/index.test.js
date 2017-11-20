@@ -6,7 +6,6 @@ import { ApolloLink, Observable, execute } from 'apollo-link'
 import '../../../setupTests'
 import { UsersGraphQL as PureUsersGraphQL } from '..'
 import { typeDefs } from '../../../../gqlserver/src/schema'
-import { users } from '../../../../gqlserver/src/resolvers/user'
 
 class MockLink extends ApolloLink {
   constructor(data) {
@@ -20,6 +19,62 @@ class MockLink extends ApolloLink {
       observer.complete()
     })
   }
+}
+
+const users = [
+  {
+    id: '1',
+    password: 'passw0rd',
+    email: 'wer@email.com',
+    fullName: 'Wera George',
+    address: '123 Maple St.',
+    address2: 'Unit 320',
+    city: 'Maperville',
+    state: 'IL',
+    zip: '22902',
+    userType: 'caregiver',
+  },
+  {
+    id: '2',
+    password: 'passw0rd',
+    email: 'weraa@email.com',
+    fullName: 'Smit Georgeh',
+    address: '123 Maple St.',
+    address2: 'Unit 320',
+    city: 'Maperville',
+    state: 'IL',
+    zip: '22902',
+    userType: 'caregiver',
+  },
+  {
+    id: '3',
+    password: 'passw0rd',
+    email: 'weraa@email.com',
+    fullName: 'Angl Georgee',
+    address: '123 Maple St.',
+    address2: 'Unit 320',
+    city: 'Maperville',
+    state: 'IL',
+    zip: '22902',
+    userType: 'caregiver',
+  },
+  {
+    id: '4',
+    password: 'passw0rd',
+    email: 'weraa@email.com',
+    fullName: 'Wera George',
+    address: '123 Maple St.',
+    address2: 'Unit 320',
+    city: 'Maperville',
+    state: 'IL',
+    zip: '22902',
+    userType: 'caregiver',
+  },
+]
+
+const getUsers = {
+  ok: true,
+  users,
 }
 
 const link = new MockLink({
@@ -52,23 +107,21 @@ describe('UserGraphQL component', () => {
     const cmp = (
       <PureUsersGraphQL data={{ loading: false, error: { message: 'Error Message' }, users }} />
     )
-    expect(shallow(cmp)
-      .find('p')
-      .text()).toBe('Error Message')
+    expect(shallow(cmp).find('Message').length).toBe(1)
     expect(cmp).toMatchSnapshot()
   })
 
   it('Should render users correctly with data', () => {
-    const cmp = <PureUsersGraphQL data={{ loading: false, error: null, getUsers: users }} />
+    const cmp = <PureUsersGraphQL data={{ loading: false, error: null, getUsers }} />
     expect(shallow(cmp).find('Card').length).toBe(4)
     expect(cmp).toMatchSnapshot()
   })
 
   it('Should render users correctly without data', () => {
-    const cmp = <PureUsersGraphQL data={{ loading: false, error: null, getUsers: [] }} />
-    expect(shallow(cmp)
-      .find('p')
-      .text()).toBe('No users found.')
+    const cmp = (
+      <PureUsersGraphQL data={{ loading: false, error: null, getUsers: { ok: true, users: [] } }} />
+    )
+    expect(shallow(cmp).find('Message').length).toBe(1)
     expect(cmp).toMatchSnapshot()
   })
 })

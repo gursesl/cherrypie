@@ -1,3 +1,19 @@
+// Get users
+query {
+  getUsers {
+    ok
+    users{
+      id
+      fullName
+      email
+    }
+    errors {
+      path
+      message
+    }
+  }
+}
+
 // Login user
 mutation {
   login(email: "levent@movel.co", password: "password") {

@@ -1,9 +1,21 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 import styled from 'styled-components'
-import { Container, Card, Image, Button, Segment, Dimmer, Loader, Confirm } from 'semantic-ui-react'
+import {
+  Container,
+  Card,
+  Image,
+  Button,
+  Segment,
+  Dimmer,
+  Loader,
+  Confirm,
+  Message,
+} from 'semantic-ui-react'
 import { graphql } from 'react-apollo'
 import client from '../../apolloClient'
+import { QUERY_POLL_INTERVAL as pollInterval } from '../../graphql/constants'
 import query from '../../graphql/queries/usersListQuery'
 import deleteUserMutation from '../../graphql/mutations/deleteUserMutation'
 
@@ -50,71 +62,104 @@ export class UsersGraphQL extends Component {
   }
 
   render() {
-    const { loading, error, getUsers } = this.props.data
+    try {
+      const { loading, error, getUsers } = this.props.data
+      if (loading) {
+        return (
+          <PushDownDiv className="ui container">
+            <Container>
+              <Segment>
+                <Dimmer active>
+                  <Loader content="Loading" />
+                </Dimmer>
+                <Image src="/img/short-paragraph.png" />
+              </Segment>
+            </Container>
+          </PushDownDiv>
+        )
+      }
 
-    if (loading) {
+      // General errors
+      if (error) {
+        return (
+          <PushDownDiv className="ui container">
+            <Container>
+              <Message error header={{ error }} />
+            </Container>
+          </PushDownDiv>
+        )
+      }
+
+      // Formatting errors
+      if (!getUsers.ok) {
+        return (
+          <PushDownDiv className="ui container">
+            <Container>
+              <Message error header="Access message" list={_.map(getUsers.errors, 'message')} />
+            </Container>
+          </PushDownDiv>
+        )
+      }
+
+      if (getUsers.users.length === 0) {
+        return (
+          <PushDownDiv className="ui container">
+            <Container>
+              <Message color="red">No users found.</Message>
+            </Container>
+          </PushDownDiv>
+        )
+      }
+
+      const promptUserContent = this.state.user ? this.state.user.fullName : 'this user'
+      const promptContent = `Are you sure you want to delete ${promptUserContent}?`
+
+      return (
+        <div>
+          <PushDownDiv className="ui container">
+            <Confirm
+              header="Confirm Delete"
+              content={promptContent}
+              open={this.state.confirmOpen}
+              onConfirm={this.confirmDeleteHandler}
+              onCancel={this.cancelDeleteHandler}
+            />
+            <Container>
+              <Card.Group>
+                {getUsers.users.map(user => (
+                  <Card key={user.id}>
+                    <Card.Content>
+                      <Image floated="right" size="mini" src="/img/matthew.png" />
+                      <Card.Header>{user.fullName}</Card.Header>
+                      <Card.Meta>{user.email}</Card.Meta>
+                      <Card.Description>{user.address}</Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                      <div className="ui two buttons">
+                        <Button basic color="green">
+                          Edit
+                        </Button>
+                        <Button basic color="red" onClick={() => this.deleteUser(user)}>
+                          Delete
+                        </Button>
+                      </div>
+                    </Card.Content>
+                  </Card>
+                ))}
+              </Card.Group>
+            </Container>
+          </PushDownDiv>
+        </div>
+      )
+    } catch (error) {
       return (
         <PushDownDiv className="ui container">
           <Container>
-            <Segment>
-              <Dimmer active>
-                <Loader content="Loading" />
-              </Dimmer>
-              <Image src="/img/short-paragraph.png" />
-            </Segment>
+            <Message error header={{ error }} />
           </Container>
         </PushDownDiv>
       )
     }
-
-    if (error) {
-      return <p>{error.message}</p>
-    }
-
-    if (getUsers.length === 0) {
-      return <p>No users found.</p>
-    }
-
-    const promptUserContent = this.state.user ? this.state.user.fullName : 'this user'
-    const promptContent = `Are you sure you want to delete ${promptUserContent}?`
-
-    return (
-      <div>
-        <PushDownDiv className="ui container">
-          <Confirm
-            header="Confirm Delete"
-            content={promptContent}
-            open={this.state.confirmOpen}
-            onConfirm={this.confirmDeleteHandler}
-            onCancel={this.cancelDeleteHandler}
-          />
-          <Container>
-            <Card.Group>
-              {getUsers.map(user => (
-                <Card key={user.id}>
-                  <Card.Content>
-                    <Image floated="right" size="mini" src="/img/matthew.png" />
-                    <Card.Header>{user.fullName}</Card.Header>
-                    <Card.Meta>{user.email}</Card.Meta>
-                    <Card.Description>{user.address}</Card.Description>
-                  </Card.Content>
-                  <Card.Content extra>
-                    <div className="ui two buttons">
-                      <Button basic color="green">
-                        Edit
-                      </Button>
-                      <Button basic color="red" onClick={() => this.deleteUser(user)}>
-                        Delete
-                      </Button>
-                    </div>
-                  </Card.Content>
-                </Card>
-              ))}
-            </Card.Group>
-          </Container>
-        </PushDownDiv>
-      </div>
-    )
   }
 }
 
@@ -122,8 +167,16 @@ UsersGraphQL.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
     error: PropTypes.object,
-    getUsers: PropTypes.array,
+    getUsers: PropTypes.shape({
+      ok: PropTypes.bool.isRequired,
+      errors: PropTypes.array,
+      users: PropTypes.array,
+    }),
   }).isRequired,
 }
 
-export default graphql(query)(UsersGraphQL)
+const options = {
+  options: { pollInterval },
+}
+
+export default graphql(query, options)(UsersGraphQL)

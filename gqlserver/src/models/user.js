@@ -57,6 +57,10 @@ const UserSchema = new Schema({
     website: { type: String, default: '' },
     picture: { type: String, default: '' },
   },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
   created_at: {
     type: Date,
     default: Date.now,

@@ -1,4 +1,5 @@
 import express from 'express'
+import jwt from 'jsonwebtoken'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import cors from 'cors'
@@ -7,11 +8,13 @@ import webpack from 'webpack'
 import path from 'path'
 import dotenv from 'dotenv'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
+import { formatError } from 'apollo-errors'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import config from '../../../webpack.config.dev'
 import errorHandler from './errorHandler'
 import { schema } from '../schema'
 import models from '../models'
+import { refreshTokens } from '../auth'
 
 const SECRET = 'sdfg89sdfg986.9sadf6ASDasd7f.6asd7f6asd87f'
 const SECRET2 = 'l8sdfsWWE4242FSDF.32sdfDC234.werEO922kdD2Q'
@@ -36,20 +39,41 @@ app.use(express.static('./public'))
 
 app.use('*', cors({ origin: '*' }))
 
+const addUser = async (req, res, next) => {
+  const token = req.headers['x-token']
+  if (token) {
+    try {
+      const { user } = jwt.verify(token, SECRET)
+      req.user = user
+    } catch (err) {
+      const refreshToken = req.headers['x-refresh-token']
+      const newTokens = await refreshTokens(token, refreshToken, models, SECRET, SECRET2)
+      if (newTokens.token && newTokens.refreshToken) {
+        res.set('Access-Control-Expose-Headers', 'x-token, x-refresh-token')
+        res.setHeader('x-token', newTokens.token)
+        res.setHeader('x-refresh-token', newTokens.refreshToken)
+      }
+      req.user = newTokens.user
+    }
+  }
+  next()
+}
+
+app.use(addUser)
+
 app.use(
   '/graphql',
   bodyParser.json(),
-  graphqlExpress({
+  graphqlExpress(req => ({
     schema,
+    formatError,
     context: {
       models,
-      user: {
-        id: 1,
-      },
+      user: req.user,
       SECRET,
       SECRET2,
     },
-  })
+  }))
 )
 app.use('/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/graphql' }))
 

@@ -1,10 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Feed,
-  Flag,
-  Label,
-} from 'semantic-ui-react'
+import { Feed, Flag, Label } from 'semantic-ui-react'
 
 const WeatherSearchResultItem = props => (
   <Feed.Event>
@@ -17,17 +13,17 @@ const WeatherSearchResultItem = props => (
       </Feed>
       <Feed.Extra text>
         <Label>{props.city.temp} &#8451;</Label>
-          From {props.city.temp_min} &#8451; to {props.city.temp_max} &#8451;,
-          wind {props.city.wind} m/s, clouds {props.city.clouds}%, {props.city.pressure} hpa
-          <br />
-          Geo coordinates
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`https://openweathermap.org/weathermap?zoom=12&lat=${props.lat}&lon=${props.lon}`}
-          >
+        From {props.city.temp_min} &#8451; to {props.city.temp_max} &#8451;, wind {props.city.wind}{' '}
+        m/s, clouds {props.city.clouds}%, {props.city.pressure} hpa
+        <br />
+        Geo coordinates
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://openweathermap.org/weathermap?zoom=12&lat=${props.lat}&lon=${props.lon}`}
+        >
           &nbsp;[{props.lat}, {props.lon}]
-          </a>
+        </a>
       </Feed.Extra>
     </Feed.Content>
   </Feed.Event>

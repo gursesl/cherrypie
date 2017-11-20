@@ -10,11 +10,18 @@ export default `
     state: String
     zip: String
     userType: String!
+    owner: User!
+  }
+
+  type UserListResponse {
+    ok: Boolean!
+    users: [User!]
+    errors: [Error!]
   }
 
   type Query {
     users: [User!]!
-    getUsers: [User!]!
+    getUsers: UserListResponse!
     getUser(id: Int!): User
     findUserByEmail(email: String!): User
   }
@@ -44,6 +51,7 @@ export default `
       zip: String,
       userType: String!): RegisterResponse!
     loginUser(email: String!, password: String!): LoginResponse!
+    logoutUser: LoginResponse!
     deleteUser(id: ID!): User
   }
 `

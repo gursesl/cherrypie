@@ -56,7 +56,7 @@ ShallowWrapper {
             position="right"
           >
             <Apollo(LoginModal) />
-            <LogoutModal />
+            <Apollo(LogoutModal) />
           </MenuItem>
         </MenuMenu>
       </Container>,
@@ -108,7 +108,7 @@ ShallowWrapper {
               position="right"
             >
               <Apollo(LoginModal) />
-              <LogoutModal />
+              <Apollo(LogoutModal) />
             </MenuItem>
           </MenuMenu>,
         ],
@@ -190,7 +190,7 @@ ShallowWrapper {
               position="right"
             >
               <Apollo(LoginModal) />
-              <LogoutModal />
+              <Apollo(LogoutModal) />
             </MenuItem>,
             "position": "right",
           },
@@ -202,7 +202,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Apollo(LoginModal) />,
-                <LogoutModal />,
+                <Apollo(LogoutModal) />,
               ],
               "position": "right",
             },
@@ -281,7 +281,7 @@ ShallowWrapper {
               position="right"
             >
               <Apollo(LoginModal) />
-              <LogoutModal />
+              <Apollo(LogoutModal) />
             </MenuItem>
           </MenuMenu>
         </Container>,
@@ -333,7 +333,7 @@ ShallowWrapper {
                 position="right"
               >
                 <Apollo(LoginModal) />
-                <LogoutModal />
+                <Apollo(LogoutModal) />
               </MenuItem>
             </MenuMenu>,
           ],
@@ -415,7 +415,7 @@ ShallowWrapper {
                 position="right"
               >
                 <Apollo(LoginModal) />
-                <LogoutModal />
+                <Apollo(LogoutModal) />
               </MenuItem>,
               "position": "right",
             },
@@ -427,7 +427,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <Apollo(LoginModal) />,
-                  <LogoutModal />,
+                  <Apollo(LogoutModal) />,
                 ],
                 "position": "right",
               },

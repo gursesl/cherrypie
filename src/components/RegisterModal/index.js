@@ -36,7 +36,10 @@ class RegisterModal extends Component {
     this.props
       .mutate({
         variables,
-        refetchQueries: [{ query: usersListQuery }, { query: findUserByEmailQuery, variables }],
+        refetchQueries: [
+          { query: usersListQuery, variables },
+          { query: findUserByEmailQuery, variables },
+        ],
       })
       .then((data) => {
         if (data.data.registerUser.user) {
