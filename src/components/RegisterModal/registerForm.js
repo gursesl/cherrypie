@@ -6,6 +6,7 @@ import { Field, reduxForm } from 'redux-form/immutable'
 import validator from 'validator'
 import client from '../../apolloClient'
 import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
+import * as c from '../../../gqlserver/src/constants'
 
 const StyledInputDiv = styled.div`margin: 10px 0;`
 
@@ -63,10 +64,10 @@ const userTypeField = field => (
   <StyledInputDiv>
     <Form.Field label="Account type" control="select" {...field.input}>
       <option value="">Select account type...</option>
-      <option value="user">Regular</option>
-      <option value="family">Family Member</option>
-      <option value="caregiver">Caregiver</option>
-      <option value="provider">Provider</option>
+      <option value={c.USER_TYPE_REGULAR}>Regular</option>
+      <option value={c.USER_TYPE_FAMILY}>Family Member</option>
+      <option value={c.USER_TYPE_CAREGIVER}>Caregiver</option>
+      <option value={c.USER_TYPE_PROVIDER}>Provider</option>
     </Form.Field>
     {field.meta.touched &&
       field.meta.error && (

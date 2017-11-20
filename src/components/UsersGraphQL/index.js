@@ -84,7 +84,7 @@ export class UsersGraphQL extends Component {
         return (
           <PushDownDiv className="ui container">
             <Container>
-              <Message error header={{ error }} />
+              <Message error header="Authentication Error" content={error.message} />
             </Container>
           </PushDownDiv>
         )
@@ -176,7 +176,10 @@ UsersGraphQL.propTypes = {
 }
 
 const options = {
-  options: { pollInterval },
+  options: {
+    pollInterval,
+    notifyOnNetworkStatusChange: true,
+  },
 }
 
 export default graphql(query, options)(UsersGraphQL)

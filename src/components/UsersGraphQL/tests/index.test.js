@@ -6,6 +6,7 @@ import { ApolloLink, Observable, execute } from 'apollo-link'
 import '../../../setupTests'
 import { UsersGraphQL as PureUsersGraphQL } from '..'
 import { typeDefs } from '../../../../gqlserver/src/schema'
+import * as c from '../../../../gqlserver/src/constants'
 
 class MockLink extends ApolloLink {
   constructor(data) {
@@ -32,7 +33,7 @@ const users = [
     city: 'Maperville',
     state: 'IL',
     zip: '22902',
-    userType: 'caregiver',
+    userType: c.USER_TYPE_CAREGIVER,
   },
   {
     id: '2',
@@ -44,7 +45,7 @@ const users = [
     city: 'Maperville',
     state: 'IL',
     zip: '22902',
-    userType: 'caregiver',
+    userType: c.USER_TYPE_CAREGIVER,
   },
   {
     id: '3',
@@ -56,7 +57,7 @@ const users = [
     city: 'Maperville',
     state: 'IL',
     zip: '22902',
-    userType: 'caregiver',
+    userType: c.USER_TYPE_CAREGIVER,
   },
   {
     id: '4',
@@ -68,7 +69,7 @@ const users = [
     city: 'Maperville',
     state: 'IL',
     zip: '22902',
-    userType: 'caregiver',
+    userType: c.USER_TYPE_CAREGIVER,
   },
 ]
 

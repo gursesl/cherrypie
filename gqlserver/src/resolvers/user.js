@@ -1,8 +1,8 @@
 import _ from 'lodash'
 import { login, logout } from '../auth'
-import { requiresAuth, requiresAdmin } from '../permissions'
+import { requiresAdmin } from '../permissions'
 
-const formatErrors = (e, models) => {
+const formatErrors = (e) => {
   // If validation errors
   if (e.name === 'ValidationError') {
     //  _.pick({a: 1, b: 2}, 'a') => {a: 1}
@@ -17,18 +17,18 @@ const formatErrors = (e, models) => {
 // Resolvers
 const resolvers = {
   Query: {
-    getUsers: (parent, args, { models, user }) => {
+    getUsers: requiresAdmin.createResolver((parent, args, { models, user }) => {
       if (!user) {
         return {
           ok: false,
-          errors: [{ message: 'You need to be logeed in to access this view', path: '/gqlusers' }],
+          errors: [{ message: 'You need to log in to access this view', path: '/gqlusers' }],
         }
       }
       return {
         ok: true,
         users: models.User.find({ owner: user.id }),
       }
-    },
+    }),
     getUser: (parent, { id }, { models }) => models.User.findOne({ id }),
     findUserByEmail: (parent, { email }, { models }) => models.User.findOne({ email }),
   },

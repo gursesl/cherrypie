@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt'
 import User from '../user'
 import config from '../../lib/config'
 import db from '../../lib/db'
+import * as c from '../../constants'
 
 dotenv.config()
 
@@ -52,7 +53,7 @@ describe('User:model', () => {
         city: 'Maperville',
         state: 'IL',
         zip: '22902',
-        userType: 'caregiver',
+        userType: c.USER_TYPE_CAREGIVER,
       })
 
       expect(result.email).toBe('wesdfsdf234234234rs@sdfsdf334242email.com')

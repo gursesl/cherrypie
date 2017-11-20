@@ -1,10 +1,11 @@
 import dotenv from 'dotenv'
 import { fail } from 'assert'
-import resolvers, { users } from '../resolvers/user'
+import resolvers from '../resolvers/user'
 import models from '../models'
 import User from '../models/user'
 import config from '../lib/config'
 import db from '../lib/db'
+import * as c from '../constants'
 
 dotenv.config()
 
@@ -17,7 +18,7 @@ const args = {
   city: 'Maperville',
   state: 'IL',
   zip: '22902',
-  userType: 'caregiver',
+  userType: c.USER_TYPE_CAREGIVER,
 }
 
 const user = {
@@ -43,7 +44,7 @@ describe('UserResolvers', () => {
 
   describe('Query', () => {
     it('getUsers should be defined', () => {
-      expect(resolvers.Query.getUsers(undefined, null, { models, user })).toBeDefined()
+      expect(resolvers.Query.getUsers.name).toBe('baseResolver')
     })
 
     it('getUser should be defined', () => {

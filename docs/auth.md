@@ -41,7 +41,6 @@
   - [x] MongoDB collection
   - [x] Test user sign-up
   - [ ] Login user after successful registration
-  - [ ] Redirect user (Optional?)
 
 - [ ] User login
   - [x] Login menu item
@@ -59,9 +58,9 @@
   - [ ] Redirect user
 
 - [ ] User logout
-  - [ ] Logout menu item
-  - [ ] Logout modal
-  - [ ] Logout form
+  - [x] Logout menu item
+  - [x] Logout modal
+  - [x] Logout form
     - [ ] Success message modal
     - [ ] Client error handling
     - [ ] Server error handling
@@ -76,13 +75,21 @@
 
 - [ ] Show/Hide buttons based on user auth status
 
-- [ ] Protected routes
+- [ ] Protected routes - React Router
+  - [ ] Redirect user (Optional?)
+  - [ ] Login separate route
+  - [ ] Register separate route
   - [ ] HOC for protected routes
   - [ ] Users - /users
   - [ ] GraphQL users - /gqlusers
   - [ ] Role-based routing
     - [ ] Caregiver
     - [ ] User
+
+- [ ] Protected routes - GraphQL server
+  - [x] HOC with chaining for protected routes
+  - [x] Throw error with path if user not authenticated or belonging to a role
+  - [ ] Handle error on client and redirect to /login with proper path
 
 - [ ] OAuth
   - [ ] Sign-up with Google

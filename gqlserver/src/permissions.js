@@ -1,11 +1,12 @@
 import { createResolver } from 'apollo-resolvers'
-import { createError, isInstance } from 'apollo-errors'
+import { isInstance } from 'apollo-errors'
 import {
   UnknownError,
   UnauthorizedError,
   AlreadyAuthenticatedError,
   ForbiddenError,
 } from './errors'
+import * as c from './constants'
 
 const baseResolver = createResolver(null, (root, args, context, err) => {
   if (isInstance(err)) {
@@ -19,30 +20,52 @@ const baseResolver = createResolver(null, (root, args, context, err) => {
 })
 
 export const requiresAuth = baseResolver.createResolver((root, args, { user }) => {
-  console.log(root)
-  console.log(args)
   if (!user) {
     throw new UnauthorizedError({
       data: {
-        path: 'asdasdasd',
+        path: '/login',
       },
     })
   }
 })
 
-// const isNotAuthenticatedResolver = baseResolver.createResolver(
-//   (root, args, context) => {
-//     const { user } = context
-
-//     if (user) throw new AlreadyAuthenticatedError()
-//   }
-// )
-
-export const requiresAdmin = requiresAuth.createResolver((root, args, { user }) => {
-  if (!user.isAdmin) throw new ForbiddenError()
+export const isNotAuthenticatedResolver = baseResolver.createResolver((root, args, { user }) => {
+  if (user) throw new AlreadyAuthenticatedError()
 })
 
-// const createResolver = (resolver) => {
+export const requiresAdmin = requiresAuth.createResolver((root, args, { user }) => {
+  if (!user.isAdmin) {
+    throw new ForbiddenError({
+      data: {
+        path: '/login',
+      },
+    })
+  }
+})
+
+export const requiresProvider = requiresAuth.createResolver((root, args, { user }) => {
+  if (!user.userType === c.USER_TYPE_PROVIDER) {
+    throw new ForbiddenError({
+      data: {
+        path: '/login',
+        message: 'You need to be a provider to access this view',
+      },
+    })
+  }
+})
+
+export const requiresCaregiver = requiresAuth.createResolver((root, args, { user }) => {
+  if (!user.userType === c.USER_TYPE_CAREGIVER) {
+    throw new ForbiddenError({
+      data: {
+        path: '/login',
+        message: 'You need to be a provider to access this view',
+      },
+    })
+  }
+})
+
+// const rootResolver = (resolver) => {
 //   const baseResolver = resolver
 //   baseResolver.createResolver = (childResolver) => {
 //     const newResolver = async (parent, args, context, info) => {
@@ -54,14 +77,14 @@ export const requiresAdmin = requiresAuth.createResolver((root, args, { user }) 
 //   return baseResolver
 // }
 
-// export const requiresAuth = createResolver((parent, args, { user }) => {
+// export const requiresAuth = rootResolver((parent, args, { user }) => {
 //   if (!user || !user.id) {
 //     throw new UnauthorizedError()
 //   }
 // })
 
-// export const requiresAdmin = requiresAuth.createResolver((parent, args, context) => {
-//   if (!context.user.isAdmin) {
+// export const requiresAdmin = requiresAuth.createResolver((parent, args, { user }) => {
+//   if (!user.isAdmin) {
 //     throw new ForbiddenError()
 //   }
 // })

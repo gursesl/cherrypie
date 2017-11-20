@@ -54,17 +54,33 @@ const tokenAfterwareLink = new ApolloLink((operation, forward) =>
     return response
   }))
 
-const errorLink = onError(({ graphQLErrors, networkError }) => {
+// const errorLink = onError(({ graphQLErrors, networkError }) => {
+//   if (graphQLErrors) {
+//     graphQLErrors.map(({ message, locations, path }) =>
+//       // eslint-disable-next-line
+//       console.log(
+//         `[GraphQL error]: Message: ${message},
+// Location: ${JSON.stringify(locations)}, Path: ${path}`))
+//   }
+
+//   if (networkError) {
+//     console.log(`[Network error]: ${networkError}`) //eslint-disable-line
+//   }
+// })
+
+const errorLink = onError(({
+  graphQLErrors, networkError, operation, response,
+}) => {
   if (graphQLErrors) {
+    // eslint-disable-next-line
+    console.log(
+      `[GraphQL error]: Operation: ${JSON.stringify(operation)}, Response: ${JSON.stringify(response)}`)
     graphQLErrors.map(({ message, locations, path }) =>
       // eslint-disable-next-line
-      console.log(
-        `[GraphQL error]: Message: ${message}, Location: ${JSON.stringify(locations)}, Path: ${path}`))
+      console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`))
   }
 
-  if (networkError) {
-    console.log(`[Network error]: ${networkError}`) //eslint-disable-line
-  }
+  if (networkError) console.log(`[Network error]: ${networkError}`) // eslint-disable-line
 })
 
 const link = ApolloLink.from([errorLink, tokenAfterwareLink, authLink, httpLink])
@@ -72,15 +88,15 @@ const cache = new InMemoryCache({ dataIdFromObject: o => o.id })
 const defaultOptions = {
   watchQuery: {
     fetchPolicy: 'network-only',
-    errorPolicy: 'all',
+    errorPolicy: 'none',
   },
   query: {
     fetchPolicy: 'network-only',
-    errorPolicy: 'all',
+    errorPolicy: 'none',
   },
   mutate: {
     fetchPolicy: 'network-only',
-    errorPolicy: 'all',
+    errorPolicy: 'none',
   },
 }
 

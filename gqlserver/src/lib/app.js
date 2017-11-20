@@ -44,7 +44,10 @@ const addUser = async (req, res, next) => {
   if (token) {
     try {
       const { user } = jwt.verify(token, SECRET)
-      req.user = user
+      const userModel = await models.User.findById(user)
+      if (userModel) {
+        req.user = userModel
+      }
     } catch (err) {
       const refreshToken = req.headers['x-refresh-token']
       const newTokens = await refreshTokens(token, refreshToken, models, SECRET, SECRET2)
@@ -53,7 +56,11 @@ const addUser = async (req, res, next) => {
         res.setHeader('x-token', newTokens.token)
         res.setHeader('x-refresh-token', newTokens.refreshToken)
       }
-      req.user = newTokens.user
+      const userModel = await models.User.findById(newTokens.user)
+      if (userModel) {
+        req.user = userModel
+      }
+      // req.user = newTokens.user
     }
   }
   next()

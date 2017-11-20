@@ -61,6 +61,10 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
+  isAdmin: {
+    type: Boolean,
+    default: true,
+  },
   created_at: {
     type: Date,
     default: Date.now,
