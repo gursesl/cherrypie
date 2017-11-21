@@ -9,6 +9,20 @@ import usersListQuery from '../../graphql/queries/usersListQuery'
 
 class LogoutModal extends Component {
   state = { modalOpen: false }
+
+  componentWillMount() {
+    if (this.props.location && this.props.location.state) {
+      const { modalOpen } = this.props.location.state
+      this.setState({ modalOpen })
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location && nextProps.location.state) {
+      this.setState({ modalOpen: true })
+    }
+  }
+
   removeToken = (key) => {
     localforage
       .removeItem(key)
@@ -21,6 +35,10 @@ class LogoutModal extends Component {
   }
 
   handleOpen = () => this.setState({ modalOpen: true })
+  handleClose = () =>
+    this.setState({
+      modalOpen: false,
+    })
 
   handleLogout = () => {
     this.removeToken('token')
@@ -85,6 +103,19 @@ class LogoutModal extends Component {
 
 LogoutModal.propTypes = {
   mutate: PropTypes.func.isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      modalOpen: PropTypes.bool,
+    }),
+  }),
+}
+
+LogoutModal.defaultProps = {
+  location: {
+    state: {
+      modalOpen: false,
+    },
+  },
 }
 
 export default graphql(logoutMutation)(LogoutModal)

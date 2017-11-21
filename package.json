@@ -9,25 +9,34 @@
   "scripts": {
     "clean": "rm -rf node_modules && yarn install",
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "NODE_ENV=development npm-run-all --parallel server lint:watch start-mockapi",
+    "start":
+      "NODE_ENV=development npm-run-all --parallel server lint:watch start-mockapi",
     "webpack": "webpack-dev-server --open --config webpack.config.dev.js",
-    "start:dev": "NODE_ENV=development npm-run-all --parallel lint:watch start-mockapi webpack",
+    "start:dev":
+      "NODE_ENV=development npm-run-all --parallel lint:watch start-mockapi webpack",
     "generate-mock-data": "babel-node buildScripts/generateMockData",
     "prestart-mockapi": "npm run generate-mock-data",
     "start-mockapi": "json-server --watch src/utils/db.json --port 3001",
     "debug": "babel-node --inspect-brk=9229 buildScripts/srcServer.js",
-    "server": "nodemon ./buildScripts/srcServer.js --exec babel-node -e js --watch gqlserver",
+    "server":
+      "nodemon ./buildScripts/srcServer.js --exec babel-node -e js --watch gqlserver",
     "lint": "esw webpack.config.* src buildScripts",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000 --subdomain levent",
     "share": "npm-run-all --parallel server localtunnel",
-    "mocha": "mocha --reporter progress -r jsdom-global/register -w buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "jest": "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
-    "test": "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 jest",
-    "test:debug": "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 node --debug-brk --inspect ./node_modules/jest/bin/jest -i",
-    "test:watch": "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 yarn test --watch",
-    "test:coverage": "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 npm run test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "mocha":
+      "mocha --reporter progress -r jsdom-global/register -w buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "jest":
+      "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
+    "test":
+      "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 jest",
+    "test:debug":
+      "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 node --debug-brk --inspect ./node_modules/jest/bin/jest -i",
+    "test:watch":
+      "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 yarn test --watch",
+    "test:coverage":
+      "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 npm run test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist",
     "build": "NODE_ENV=production babel-node buildScripts/build.js",
@@ -92,6 +101,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+
     "react-router-redux": "^5.0.0-alpha.6",
     "react-test-renderer": "^16.1.1",
     "redux": "^3.7.2",

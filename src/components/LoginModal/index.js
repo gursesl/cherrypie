@@ -18,6 +18,20 @@ class LoginModal extends Component {
     failureModalOpen: false,
     errors: [],
   }
+
+  componentWillMount() {
+    if (this.props.location && this.props.location.state) {
+      const { modalOpen } = this.props.location.state
+      this.setState({ modalOpen })
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location && nextProps.location.state) {
+      this.setState({ modalOpen: true })
+    }
+  }
+
   saveToken = (key, value) => {
     localforage
       .setItem(key, value)
@@ -44,7 +58,6 @@ class LoginModal extends Component {
   handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
   handleLogin = (values) => {
     const variables = values.toJS()
-
     this.props
       .mutate({
         variables,
@@ -92,7 +105,13 @@ class LoginModal extends Component {
                 <LoginForm {...this.props} onSubmit={this.handleLogin} />
                 <Message>
                   Don&#39;t have an account?{' '}
-                  <Link to="/" onClick={this.handleClose}>
+                  <Link
+                    href="/register"
+                    to={{
+                      pathname: '/register',
+                      state: { modalOpen: true },
+                    }}
+                  >
                     Sign up
                   </Link>
                 </Message>
@@ -116,6 +135,19 @@ class LoginModal extends Component {
 
 LoginModal.propTypes = {
   mutate: PropTypes.func.isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      modalOpen: PropTypes.bool,
+    }),
+  }),
+}
+
+LoginModal.defaultProps = {
+  location: {
+    state: {
+      modalOpen: false,
+    },
+  },
 }
 
 export default graphql(loginMutation)(LoginModal)

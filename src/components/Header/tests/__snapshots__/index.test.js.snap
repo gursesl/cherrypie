@@ -58,6 +58,39 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
             Weather
           </a>
           <div
+            className="item"
+            onClick={[Function]}
+          >
+            <a
+              href="/profile"
+              onClick={[Function]}
+            >
+              Profile
+            </a>
+          </div>
+          <div
+            className="item"
+            onClick={[Function]}
+          >
+            <a
+              href="/login"
+              onClick={[Function]}
+            >
+              Login
+            </a>
+          </div>
+          <div
+            className="item"
+            onClick={[Function]}
+          >
+            <a
+              href="/logout"
+              onClick={[Function]}
+            >
+              Logout
+            </a>
+          </div>
+          <div
             className="right item"
             onClick={[Function]}
           >

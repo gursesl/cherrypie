@@ -28,8 +28,7 @@ describe('AppHeader:index', () => {
   const shallowComponent = shallow(<AppHeader.WrappedComponent />)
   const deepComponent = mount(component)
 
-  beforeEach(() => {
-  })
+  beforeEach(() => {})
 
   it('should render without blowing up', () => {
     expect(shallowComponent).toBeDefined()
@@ -44,7 +43,7 @@ describe('AppHeader:index', () => {
   })
 
   it('should have a predefined number of nested menu items', () => {
-    expect(deepComponent.find(MenuItem).length).toBe(6)
+    expect(deepComponent.find(MenuItem).length).toBe(9)
   })
 
   it('should render a child <FixedMenu /> component', () => {

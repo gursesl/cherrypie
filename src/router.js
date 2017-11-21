@@ -8,6 +8,10 @@ import UserListContainer from './containers/UserListContainer'
 import CounterContainer from './containers/CounterContainer'
 import WeatherContainer from './containers/WeatherContainer'
 import UsersGraphQL from './components/UsersGraphQL' //eslint-disable-line
+import Profile from './components/Profile'
+import LoginModal from './components/LoginModal'
+import LogoutModal from './components/LogoutModal'
+import RegisterModal from './components/RegisterModal'
 
 const history = createHistory()
 
@@ -20,6 +24,10 @@ const AppRouter = () => (
         <Route path="/users" component={UserListContainer} />
         <Route path="/gqlusers" component={UsersGraphQL} />
         <Route path="/weather" component={WeatherContainer} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/login" component={LoginModal} />
+        <Route path="/logout" component={LogoutModal} />
+        <Route path="/register" component={RegisterModal} />
       </Switch>
     </App>
   </Router>

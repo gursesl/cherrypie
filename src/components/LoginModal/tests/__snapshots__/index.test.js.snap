@@ -5,6 +5,13 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <LoginModal
+    location={
+      Object {
+        "state": Object {
+          "modalOpen": false,
+        },
+      }
+    }
     mutate={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -46,7 +53,7 @@ ShallowWrapper {
           dimmer={true}
           eventPool="Modal"
           onClose={[Function]}
-          open={undefined}
+          open={false}
           size="small"
         >
           <ModalContent>
@@ -79,6 +86,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -86,9 +100,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -195,6 +216,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -202,9 +230,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -217,7 +252,7 @@ ShallowWrapper {
           "dimmer": true,
           "eventPool": "Modal",
           "onClose": [Function],
-          "open": undefined,
+          "open": false,
           "size": "small",
         },
         "ref": null,
@@ -255,6 +290,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -262,9 +304,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -298,6 +347,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -305,9 +361,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -339,6 +402,13 @@ ShallowWrapper {
                      Sign in
                   </Header>,
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />,
@@ -346,9 +416,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -401,6 +478,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
+                    "location": Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    },
                     "mutate": [Function],
                     "onSubmit": [Function],
                   },
@@ -417,9 +499,16 @@ ShallowWrapper {
                       "Don't have an account?",
                       " ",
                       <Link
-                        onClick={[Function]}
+                        href="/register"
                         replace={false}
-                        to="/"
+                        to={
+                          Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          }
+                        }
                       >
                         Sign up
                       </Link>,
@@ -435,9 +524,14 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": "Sign up",
-                        "onClick": [Function],
+                        "href": "/register",
                         "replace": false,
-                        "to": "/",
+                        "to": Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        },
                       },
                       "ref": null,
                       "rendered": "Sign up",
@@ -516,7 +610,7 @@ ShallowWrapper {
             dimmer={true}
             eventPool="Modal"
             onClose={[Function]}
-            open={undefined}
+            open={false}
             size="small"
           >
             <ModalContent>
@@ -549,6 +643,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -556,9 +657,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -665,6 +773,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -672,9 +787,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -687,7 +809,7 @@ ShallowWrapper {
             "dimmer": true,
             "eventPool": "Modal",
             "onClose": [Function],
-            "open": undefined,
+            "open": false,
             "size": "small",
           },
           "ref": null,
@@ -725,6 +847,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -732,9 +861,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -768,6 +904,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -775,9 +918,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -809,6 +959,13 @@ ShallowWrapper {
                        Sign in
                     </Header>,
                     <ReduxForm
+                      location={
+                        Object {
+                          "state": Object {
+                            "modalOpen": false,
+                          },
+                        }
+                      }
                       mutate={[Function]}
                       onSubmit={[Function]}
                     />,
@@ -816,9 +973,16 @@ ShallowWrapper {
                       Don't have an account?
                        
                       <Link
-                        onClick={[Function]}
+                        href="/register"
                         replace={false}
-                        to="/"
+                        to={
+                          Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          }
+                        }
                       >
                         Sign up
                       </Link>
@@ -871,6 +1035,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
+                      "location": Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      },
                       "mutate": [Function],
                       "onSubmit": [Function],
                     },
@@ -887,9 +1056,16 @@ ShallowWrapper {
                         "Don't have an account?",
                         " ",
                         <Link
-                          onClick={[Function]}
+                          href="/register"
                           replace={false}
-                          to="/"
+                          to={
+                            Object {
+                              "pathname": "/register",
+                              "state": Object {
+                                "modalOpen": true,
+                              },
+                            }
+                          }
                         >
                           Sign up
                         </Link>,
@@ -905,9 +1081,14 @@ ShallowWrapper {
                         "nodeType": "class",
                         "props": Object {
                           "children": "Sign up",
-                          "onClick": [Function],
+                          "href": "/register",
                           "replace": false,
-                          "to": "/",
+                          "to": Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          },
                         },
                         "ref": null,
                         "rendered": "Sign up",
@@ -969,6 +1150,13 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <LoginModal
+    location={
+      Object {
+        "state": Object {
+          "modalOpen": false,
+        },
+      }
+    }
     mutate={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -1010,7 +1198,7 @@ ShallowWrapper {
           dimmer={true}
           eventPool="Modal"
           onClose={[Function]}
-          open={undefined}
+          open={false}
           size="small"
         >
           <ModalContent>
@@ -1043,6 +1231,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -1050,9 +1245,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -1159,6 +1361,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -1166,9 +1375,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -1181,7 +1397,7 @@ ShallowWrapper {
           "dimmer": true,
           "eventPool": "Modal",
           "onClose": [Function],
-          "open": undefined,
+          "open": false,
           "size": "small",
         },
         "ref": null,
@@ -1219,6 +1435,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -1226,9 +1449,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -1262,6 +1492,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -1269,9 +1506,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -1303,6 +1547,13 @@ ShallowWrapper {
                      Sign in
                   </Header>,
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />,
@@ -1310,9 +1561,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -1365,6 +1623,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
+                    "location": Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    },
                     "mutate": [Function],
                     "onSubmit": [Function],
                   },
@@ -1381,9 +1644,16 @@ ShallowWrapper {
                       "Don't have an account?",
                       " ",
                       <Link
-                        onClick={[Function]}
+                        href="/register"
                         replace={false}
-                        to="/"
+                        to={
+                          Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          }
+                        }
                       >
                         Sign up
                       </Link>,
@@ -1399,9 +1669,14 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": "Sign up",
-                        "onClick": [Function],
+                        "href": "/register",
                         "replace": false,
-                        "to": "/",
+                        "to": Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        },
                       },
                       "ref": null,
                       "rendered": "Sign up",
@@ -1480,7 +1755,7 @@ ShallowWrapper {
             dimmer={true}
             eventPool="Modal"
             onClose={[Function]}
-            open={undefined}
+            open={false}
             size="small"
           >
             <ModalContent>
@@ -1513,6 +1788,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -1520,9 +1802,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -1629,6 +1918,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -1636,9 +1932,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -1651,7 +1954,7 @@ ShallowWrapper {
             "dimmer": true,
             "eventPool": "Modal",
             "onClose": [Function],
-            "open": undefined,
+            "open": false,
             "size": "small",
           },
           "ref": null,
@@ -1689,6 +1992,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -1696,9 +2006,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -1732,6 +2049,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -1739,9 +2063,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -1773,6 +2104,13 @@ ShallowWrapper {
                        Sign in
                     </Header>,
                     <ReduxForm
+                      location={
+                        Object {
+                          "state": Object {
+                            "modalOpen": false,
+                          },
+                        }
+                      }
                       mutate={[Function]}
                       onSubmit={[Function]}
                     />,
@@ -1780,9 +2118,16 @@ ShallowWrapper {
                       Don't have an account?
                        
                       <Link
-                        onClick={[Function]}
+                        href="/register"
                         replace={false}
-                        to="/"
+                        to={
+                          Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          }
+                        }
                       >
                         Sign up
                       </Link>
@@ -1835,6 +2180,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
+                      "location": Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      },
                       "mutate": [Function],
                       "onSubmit": [Function],
                     },
@@ -1851,9 +2201,16 @@ ShallowWrapper {
                         "Don't have an account?",
                         " ",
                         <Link
-                          onClick={[Function]}
+                          href="/register"
                           replace={false}
-                          to="/"
+                          to={
+                            Object {
+                              "pathname": "/register",
+                              "state": Object {
+                                "modalOpen": true,
+                              },
+                            }
+                          }
                         >
                           Sign up
                         </Link>,
@@ -1869,9 +2226,14 @@ ShallowWrapper {
                         "nodeType": "class",
                         "props": Object {
                           "children": "Sign up",
-                          "onClick": [Function],
+                          "href": "/register",
                           "replace": false,
-                          "to": "/",
+                          "to": Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          },
                         },
                         "ref": null,
                         "rendered": "Sign up",
@@ -1933,6 +2295,13 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <LoginModal
+    location={
+      Object {
+        "state": Object {
+          "modalOpen": false,
+        },
+      }
+    }
     mutate={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -1974,7 +2343,7 @@ ShallowWrapper {
           dimmer={true}
           eventPool="Modal"
           onClose={[Function]}
-          open={undefined}
+          open={false}
           size="small"
         >
           <ModalContent>
@@ -2007,6 +2376,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -2014,9 +2390,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -2123,6 +2506,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -2130,9 +2520,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -2145,7 +2542,7 @@ ShallowWrapper {
           "dimmer": true,
           "eventPool": "Modal",
           "onClose": [Function],
-          "open": undefined,
+          "open": false,
           "size": "small",
         },
         "ref": null,
@@ -2183,6 +2580,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -2190,9 +2594,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -2226,6 +2637,13 @@ ShallowWrapper {
                    Sign in
                 </Header>
                 <ReduxForm
+                  location={
+                    Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    }
+                  }
                   mutate={[Function]}
                   onSubmit={[Function]}
                 />
@@ -2233,9 +2651,16 @@ ShallowWrapper {
                   Don't have an account?
                    
                   <Link
-                    onClick={[Function]}
+                    href="/register"
                     replace={false}
-                    to="/"
+                    to={
+                      Object {
+                        "pathname": "/register",
+                        "state": Object {
+                          "modalOpen": true,
+                        },
+                      }
+                    }
                   >
                     Sign up
                   </Link>
@@ -2267,6 +2692,13 @@ ShallowWrapper {
                      Sign in
                   </Header>,
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />,
@@ -2274,9 +2706,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -2329,6 +2768,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
+                    "location": Object {
+                      "state": Object {
+                        "modalOpen": false,
+                      },
+                    },
                     "mutate": [Function],
                     "onSubmit": [Function],
                   },
@@ -2345,9 +2789,16 @@ ShallowWrapper {
                       "Don't have an account?",
                       " ",
                       <Link
-                        onClick={[Function]}
+                        href="/register"
                         replace={false}
-                        to="/"
+                        to={
+                          Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          }
+                        }
                       >
                         Sign up
                       </Link>,
@@ -2363,9 +2814,14 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": "Sign up",
-                        "onClick": [Function],
+                        "href": "/register",
                         "replace": false,
-                        "to": "/",
+                        "to": Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        },
                       },
                       "ref": null,
                       "rendered": "Sign up",
@@ -2444,7 +2900,7 @@ ShallowWrapper {
             dimmer={true}
             eventPool="Modal"
             onClose={[Function]}
-            open={undefined}
+            open={false}
             size="small"
           >
             <ModalContent>
@@ -2477,6 +2933,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -2484,9 +2947,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -2593,6 +3063,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -2600,9 +3077,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -2615,7 +3099,7 @@ ShallowWrapper {
             "dimmer": true,
             "eventPool": "Modal",
             "onClose": [Function],
-            "open": undefined,
+            "open": false,
             "size": "small",
           },
           "ref": null,
@@ -2653,6 +3137,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -2660,9 +3151,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -2696,6 +3194,13 @@ ShallowWrapper {
                      Sign in
                   </Header>
                   <ReduxForm
+                    location={
+                      Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      }
+                    }
                     mutate={[Function]}
                     onSubmit={[Function]}
                   />
@@ -2703,9 +3208,16 @@ ShallowWrapper {
                     Don't have an account?
                      
                     <Link
-                      onClick={[Function]}
+                      href="/register"
                       replace={false}
-                      to="/"
+                      to={
+                        Object {
+                          "pathname": "/register",
+                          "state": Object {
+                            "modalOpen": true,
+                          },
+                        }
+                      }
                     >
                       Sign up
                     </Link>
@@ -2737,6 +3249,13 @@ ShallowWrapper {
                        Sign in
                     </Header>,
                     <ReduxForm
+                      location={
+                        Object {
+                          "state": Object {
+                            "modalOpen": false,
+                          },
+                        }
+                      }
                       mutate={[Function]}
                       onSubmit={[Function]}
                     />,
@@ -2744,9 +3263,16 @@ ShallowWrapper {
                       Don't have an account?
                        
                       <Link
-                        onClick={[Function]}
+                        href="/register"
                         replace={false}
-                        to="/"
+                        to={
+                          Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          }
+                        }
                       >
                         Sign up
                       </Link>
@@ -2799,6 +3325,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
+                      "location": Object {
+                        "state": Object {
+                          "modalOpen": false,
+                        },
+                      },
                       "mutate": [Function],
                       "onSubmit": [Function],
                     },
@@ -2815,9 +3346,16 @@ ShallowWrapper {
                         "Don't have an account?",
                         " ",
                         <Link
-                          onClick={[Function]}
+                          href="/register"
                           replace={false}
-                          to="/"
+                          to={
+                            Object {
+                              "pathname": "/register",
+                              "state": Object {
+                                "modalOpen": true,
+                              },
+                            }
+                          }
                         >
                           Sign up
                         </Link>,
@@ -2833,9 +3371,14 @@ ShallowWrapper {
                         "nodeType": "class",
                         "props": Object {
                           "children": "Sign up",
-                          "onClick": [Function],
+                          "href": "/register",
                           "replace": false,
-                          "to": "/",
+                          "to": Object {
+                            "pathname": "/register",
+                            "state": Object {
+                              "modalOpen": true,
+                            },
+                          },
                         },
                         "ref": null,
                         "rendered": "Sign up",
