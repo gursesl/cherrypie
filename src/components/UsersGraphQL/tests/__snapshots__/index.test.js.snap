@@ -10,6 +10,7 @@ exports[`UserGraphQL component Should render error state 1`] = `
       "loading": false,
       "users": Array [
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -22,6 +23,7 @@ exports[`UserGraphQL component Should render error state 1`] = `
           "zip": "22902",
         },
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -34,6 +36,7 @@ exports[`UserGraphQL component Should render error state 1`] = `
           "zip": "22902",
         },
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -46,6 +49,7 @@ exports[`UserGraphQL component Should render error state 1`] = `
           "zip": "22902",
         },
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -71,6 +75,7 @@ exports[`UserGraphQL component Should render loading state 1`] = `
       "loading": true,
       "users": Array [
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -83,6 +88,7 @@ exports[`UserGraphQL component Should render loading state 1`] = `
           "zip": "22902",
         },
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -95,6 +101,7 @@ exports[`UserGraphQL component Should render loading state 1`] = `
           "zip": "22902",
         },
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -107,6 +114,7 @@ exports[`UserGraphQL component Should render loading state 1`] = `
           "zip": "22902",
         },
         Object {
+          "__typename": "User",
           "address": "123 Maple St.",
           "address2": "Unit 320",
           "city": "Maperville",
@@ -133,6 +141,7 @@ exports[`UserGraphQL component Should render users correctly with data 1`] = `
         "ok": true,
         "users": Array [
           Object {
+            "__typename": "User",
             "address": "123 Maple St.",
             "address2": "Unit 320",
             "city": "Maperville",
@@ -145,6 +154,7 @@ exports[`UserGraphQL component Should render users correctly with data 1`] = `
             "zip": "22902",
           },
           Object {
+            "__typename": "User",
             "address": "123 Maple St.",
             "address2": "Unit 320",
             "city": "Maperville",
@@ -157,6 +167,7 @@ exports[`UserGraphQL component Should render users correctly with data 1`] = `
             "zip": "22902",
           },
           Object {
+            "__typename": "User",
             "address": "123 Maple St.",
             "address2": "Unit 320",
             "city": "Maperville",
@@ -169,6 +180,7 @@ exports[`UserGraphQL component Should render users correctly with data 1`] = `
             "zip": "22902",
           },
           Object {
+            "__typename": "User",
             "address": "123 Maple St.",
             "address2": "Unit 320",
             "city": "Maperville",
