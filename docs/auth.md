@@ -20,8 +20,8 @@
   - [x] Define user query + mutations
   - [x] Define user resolvers
 
-- [x] Test login modal
-  - [x] Login modal
+- [ ] Test login modal
+  - [ ] Login modal
 - [ ] Test logout modal
   - [ ] Logout modal
 
@@ -52,6 +52,15 @@
     - [x] Form validations
       - [x] Client-side validation
       - [x] Server validation
+    - [ ] Redux
+      - [ ] Selectors
+      - [ ] Actions
+      - [ ] Reducers
+      - [ ] Sagas
+  - [ ] Menu update
+    - [ ] Profile name, thumb pic - https://react.semantic-ui.com/modules/dropdown
+    - [ ] Profile dropdown
+    - [ ] Show/hide buttons/manu options based on user's auth state in the Redux store
   - [x] Apollo mutatation
   - [x] Apollo resolver
   - [x] Test user login
@@ -71,6 +80,21 @@
   - [ ] Apollo mutatation
   - [ ] Apollo resolver
   - [ ] Test user logout
+  - [ ] Redirect user
+
+- [ ] Forgot password
+  - [x] Forgot password modal
+  - [x] Forgot password form
+    - [ ] Success message modal
+    - [ ] Client error handling
+    - [ ] Server error handling
+    - [ ] Form validations
+      - [ ] Client-side validation
+      - [ ] Server validation
+        - [ ] Unique email address
+  - [ ] Apollo mutatation
+  - [ ] Apollo resolver
+  - [ ] Test forgot password
   - [ ] Redirect user
 
 - [ ] Show/Hide buttons based on user auth status
