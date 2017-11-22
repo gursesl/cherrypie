@@ -34,6 +34,7 @@ const users = [
     state: 'IL',
     zip: '22902',
     userType: c.USER_TYPE_CAREGIVER,
+    __typename: 'User',
   },
   {
     id: '2',
@@ -46,6 +47,7 @@ const users = [
     state: 'IL',
     zip: '22902',
     userType: c.USER_TYPE_CAREGIVER,
+    __typename: 'User',
   },
   {
     id: '3',
@@ -58,6 +60,7 @@ const users = [
     state: 'IL',
     zip: '22902',
     userType: c.USER_TYPE_CAREGIVER,
+    __typename: 'User',
   },
   {
     id: '4',
@@ -70,6 +73,7 @@ const users = [
     state: 'IL',
     zip: '22902',
     userType: c.USER_TYPE_CAREGIVER,
+    __typename: 'User',
   },
 ]
 
@@ -78,10 +82,12 @@ const getUsers = {
   users,
 }
 
-const link = new MockLink({
-  users,
-  loading: false,
-})
+// const link = new MockLink({
+//   users,
+//   loading: false,
+// })
+
+const link = new MockLink({ data: { users }, loading: false })
 
 const operation = { query: typeDefs }
 
