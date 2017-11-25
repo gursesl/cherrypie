@@ -9,7 +9,7 @@ import RegistrationSuccessModal from './registrationSuccessModal'
 import RegistrationFailureModal from './registrationFailureModal'
 import usersListQuery from '../../graphql/queries/usersListQuery'
 import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
-import loginMutation from '../../graphql/mutations/loginMutation'
+import registerMutation from '../../graphql/mutations/registerMutation'
 
 class RegisterModal extends Component {
   state = {
@@ -134,4 +134,4 @@ RegisterModal.defaultProps = {
   },
 }
 
-export default graphql(loginMutation)(RegisterModal)
+export default graphql(registerMutation)(RegisterModal)
