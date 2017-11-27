@@ -1,13 +1,16 @@
 // REFERENCE: COMPONENT TEST WITH REACT-ROUTER 4
 import React from 'react'
 import { Provider } from 'react-redux'
-import { ConnectedRouter as Router } from 'react-router-redux'
+import { ConnectedRouter } from 'react-router-redux'
+// Apollo client
+import { ApolloProvider } from 'react-apollo'
 import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import Immutable from 'immutable'
 import configureStore from 'redux-mock-store'
 import createHistory from 'history/createBrowserHistory'
 import { Menu, MenuItem } from 'semantic-ui-react'
+import client from '../../../apolloClient'
 import '../../../setupTests'
 import initialState from '../../../initialState'
 import AppHeader from '../'
@@ -17,15 +20,28 @@ const mockStore = configureStore(middlewares)
 const store = mockStore(Immutable.fromJS(initialState))
 const history = createHistory()
 const component = (
-  <Provider store={store}>
-    <Router history={history}>
-      <AppHeader />
-    </Router>
-  </Provider>
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <AppHeader />
+      </ConnectedRouter>
+    </Provider>
+  </ApolloProvider>
 )
 
+const props = {
+  data: {
+    loading: false,
+    getCurrentUser: {
+      id: 123,
+      email: 'email@email.com',
+      fullName: 'John Smith',
+    },
+  },
+}
+
 describe('AppHeader:index', () => {
-  const shallowComponent = shallow(<AppHeader.WrappedComponent />)
+  const shallowComponent = shallow(<AppHeader.WrappedComponent {...props} />)
   const deepComponent = mount(component)
 
   beforeEach(() => {})
@@ -43,7 +59,7 @@ describe('AppHeader:index', () => {
   })
 
   it('should have a predefined number of nested menu items', () => {
-    expect(deepComponent.find(MenuItem).length).toBe(9)
+    expect(deepComponent.find(MenuItem).length).toBe(8)
   })
 
   it('should render a child <FixedMenu /> component', () => {

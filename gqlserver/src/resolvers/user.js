@@ -29,7 +29,8 @@ const resolvers = {
         users: models.User.find({ owner: user.id }),
       }
     }),
-    getUser: (parent, { id }, { models }) => models.User.findOne({ id }),
+    getUserById: (parent, { id }, { models }) => models.User.findOne({ id }),
+    getCurrentUser: (parent, args, { user }) => user,
     findUserByEmail: (parent, { email }, { models }) => models.User.findOne({ email }),
   },
 

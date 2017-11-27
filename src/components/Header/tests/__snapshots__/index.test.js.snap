@@ -90,56 +90,7 @@ exports[`AppHeader:index renders itself into the DOM with the correct shallowCom
               Logout
             </a>
           </div>
-          <div
-            className="right item"
-            onClick={[Function]}
-          >
-            <div>
-              <button
-                className="ui button"
-                disabled={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                role="button"
-                tabIndex={undefined}
-              >
-                Sign in
-              </button>
-            </div>
-            <div>
-              <button
-                className="ui button"
-                disabled={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                role="button"
-                tabIndex={undefined}
-              >
-                Logout
-              </button>
-            </div>
-            <div>
-              <button
-                className="ui button"
-                disabled={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                role="button"
-                tabIndex={undefined}
-              >
-                Sign up
-              </button>
-            </div>
-          </div>
+          <div />
         </div>
       </div>
     </div>

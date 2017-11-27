@@ -61,6 +61,9 @@ export class UsersGraphQL extends Component {
     })
   }
 
+  renderErrors = errors =>
+    errors.map(({ name, message }) => <Message error header={name} content={message} />)
+
   render() {
     try {
       const { loading, error, getUsers } = this.props.data
@@ -85,6 +88,17 @@ export class UsersGraphQL extends Component {
           <PushDownDiv className="ui container">
             <Container>
               <Message error header="Authentication Error" content={error.message} />
+            </Container>
+          </PushDownDiv>
+        )
+      }
+
+      // Data errors
+      if (getUsers.errors) {
+        return (
+          <PushDownDiv className="ui container">
+            <Container>
+              {this.renderErrors(getUsers.errors)}
             </Container>
           </PushDownDiv>
         )

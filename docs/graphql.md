@@ -16,7 +16,7 @@ query {
 
 // Login user
 mutation {
-  login(email: "levent@movel.co", password: "password") {
+  ç(email: "levent@movel.co", password: "password") {
     ok,
     errors {
       message
@@ -27,7 +27,7 @@ mutation {
 }
 
 mutation ($email: String!, $password: String!) {
-  login(email: $email, password: $password) {
+  loginUser(email: $email, password: $password) {
   ok
   errors {
     path

@@ -4,10 +4,10 @@ import {
   Container,
   Menu,
 } from 'semantic-ui-react'
-import LoginModal from '../LoginModal'
-import LogoutModal from '../LogoutModal'
+import renderButtons from './renderButtons'
 
-const FixedMenu = () => (
+
+const FixedMenu = data => (
   <Menu fixed="top" size="large">
     <Container>
       <Menu.Item as={NavLink} to="/" exact>Home</Menu.Item>
@@ -16,10 +16,7 @@ const FixedMenu = () => (
       <Menu.Item as={NavLink} to="/counter">Counter</Menu.Item>
       <Menu.Item as={NavLink} to="/weather">Weather</Menu.Item>
       <Menu.Menu position="right">
-        <Menu.Item position="right">
-          <LoginModal />
-          <LogoutModal />
-        </Menu.Item>
+        {renderButtons(data)}
       </Menu.Menu>
     </Container>
   </Menu>

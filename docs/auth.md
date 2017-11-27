@@ -97,13 +97,13 @@
   - [ ] Test forgot password
   - [ ] Redirect user
 
-- [ ] Show/Hide buttons based on user auth status
+- [x] Show/Hide buttons based on user auth status
 
 - [ ] Protected routes - React Router
   - [ ] Redirect user (Optional?)
   - [ ] Login separate route
   - [ ] Register separate route
-  - [ ] HOC for protected routes
+  - [x] HOC for protected routes
   - [ ] Users - /users
   - [ ] GraphQL users - /gqlusers
   - [ ] Role-based routing

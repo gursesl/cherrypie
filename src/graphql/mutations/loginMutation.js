@@ -10,6 +10,7 @@ const loginMutation = gql`
       }
       token
       refreshToken
+      id
     }
   }
 `

@@ -55,11 +55,11 @@ class RegisterModal extends Component {
           { query: findUserByEmailQuery, variables },
         ],
       })
-      .then((data) => {
-        if (data.data.loginUser.user) {
+      .then(({ data }) => {
+        if (data.registerUser.user) {
           this.handleSuccess()
         } else {
-          this.handleFailure(data.data.loginUser.errors)
+          this.handleFailure(data.registerUser.errors)
         }
       })
       .catch((errors) => {

@@ -68,13 +68,10 @@ const tokenAfterwareLink = new ApolloLink((operation, forward) =>
 //   }
 // })
 
-const errorLink = onError(({
-  graphQLErrors, networkError, operation, response,
-}) => {
+const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     // eslint-disable-next-line
-    console.log(
-      `[GraphQL error]: Operation: ${JSON.stringify(operation)}, Response: ${JSON.stringify(response)}`)
+    // console.log(`[GraphQL error]: Operation: ${JSON.stringify(operation)}, Response: ${JSON.stringify(response)}`)
     graphQLErrors.map(({ message, locations, path }) =>
       // eslint-disable-next-line
       console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`))
@@ -88,15 +85,15 @@ const cache = new InMemoryCache({ dataIdFromObject: o => o.id })
 const defaultOptions = {
   watchQuery: {
     fetchPolicy: 'network-only',
-    errorPolicy: 'none',
+    errorPolicy: 'all',
   },
   query: {
     fetchPolicy: 'network-only',
-    errorPolicy: 'none',
+    errorPolicy: 'all',
   },
   mutate: {
     fetchPolicy: 'network-only',
-    errorPolicy: 'none',
+    errorPolicy: 'all',
   },
 }
 

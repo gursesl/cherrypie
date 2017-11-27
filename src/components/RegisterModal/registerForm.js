@@ -151,4 +151,5 @@ export default reduxForm({
   form: 'registrationForm',
   validate,
   asyncValidate,
+  asyncBlurFields: ['email'],
 })(RegisterForm)

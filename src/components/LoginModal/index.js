@@ -10,7 +10,8 @@ import LoginSuccessModal from './loginSuccessModal'
 import LoginFailureModal from './loginFailureModal'
 import loginMutation from '../../graphql/mutations/loginMutation'
 import usersListQuery from '../../graphql/queries/usersListQuery'
-import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
+import currentUserQuery from '../../graphql/queries/currentUserQuery'
+// import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
 
 class LoginModal extends Component {
   state = {
@@ -63,7 +64,8 @@ class LoginModal extends Component {
         variables,
         refetchQueries: [
           { query: usersListQuery, variables },
-          { query: findUserByEmailQuery, variables },
+          { query: currentUserQuery },
+          // { query: findUserByEmailQuery, variables },
         ],
       })
       .then((response) => {

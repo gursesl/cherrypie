@@ -48,7 +48,7 @@ describe('UserResolvers', () => {
     })
 
     it('getUser should be defined', () => {
-      expect(resolvers.Query.getUser(undefined, { id: 1 }, { models })).toBeDefined()
+      expect(resolvers.Query.getUserById(undefined, { id: 1 }, { models })).toBeDefined()
     })
 
     it('findUserByEmail should be defined', async (done) => {

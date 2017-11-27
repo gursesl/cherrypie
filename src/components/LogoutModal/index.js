@@ -6,6 +6,7 @@ import { graphql } from 'react-apollo'
 import { Popup, Button, Header, Image, Modal, Form, Grid, Segment } from 'semantic-ui-react'
 import logoutMutation from '../../graphql/mutations/logoutMutation'
 import usersListQuery from '../../graphql/queries/usersListQuery'
+import currentUserQuery from '../../graphql/queries/currentUserQuery'
 
 class LogoutModal extends Component {
   state = { modalOpen: false }
@@ -45,8 +46,8 @@ class LogoutModal extends Component {
     this.removeToken('refreshToken')
     this.props
       .mutate({
-        variables: {},
-        refetchQueries: [{ query: usersListQuery }],
+        // variables: {},
+        refetchQueries: [{ query: usersListQuery }, { query: currentUserQuery }],
       })
       .then((response) => {
         const { ok } = response.data.logoutUser

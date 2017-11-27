@@ -4,6 +4,7 @@ import { ConnectedRouter as Router } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import App from './components/App'
 import Home from './components/Home'
+import requireAuth from './components/requireAuth'
 import UserListContainer from './containers/UserListContainer'
 import CounterContainer from './containers/CounterContainer'
 import WeatherContainer from './containers/WeatherContainer'
@@ -20,9 +21,9 @@ const AppRouter = () => (
     <App>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/counter" component={CounterContainer} />
+        <Route exact path="/counter" component={requireAuth(CounterContainer)} />
         <Route path="/users" component={UserListContainer} />
-        <Route path="/gqlusers" component={UsersGraphQL} />
+        <Route path="/gqlusers" component={requireAuth(UsersGraphQL)} />
         <Route path="/weather" component={WeatherContainer} />
         <Route path="/profile" component={Profile} />
         <Route path="/login" component={LoginModal} />

@@ -4,7 +4,17 @@ import '../../../setupTests'
 import FixedMenu from '../FixedMenu'
 
 describe('FixedMenu', () => {
-  const container = shallow(<FixedMenu.WrappedComponent />)
+  const props = {
+    data: {
+      loading: false,
+      getCurrentUser: {
+        id: 123,
+        email: 'email@email.com',
+        fullName: 'John Smith',
+      },
+    },
+  }
+  const container = shallow(<FixedMenu.WrappedComponent {...props} />)
   it('should render without blowing up', () => {
     expect(container).toBeDefined()
   })

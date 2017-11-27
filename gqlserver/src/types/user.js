@@ -22,7 +22,8 @@ export default `
   type Query {
     users: [User!]!
     getUsers: UserListResponse!
-    getUser(id: Int!): User
+    getCurrentUser: User
+    getUserById(id: Int!): User
     findUserByEmail(email: String!): User
   }
 
@@ -36,6 +37,7 @@ export default `
     ok: Boolean!
     token: String
     refreshToken: String
+    id: ID
     errors: [Error!]
   }
 
