@@ -51,8 +51,8 @@ class RegisterModal extends Component {
       .mutate({
         variables,
         refetchQueries: [
-          { query: usersListQuery, variables },
-          { query: findUserByEmailQuery, variables },
+          // { query: usersListQuery, variables },
+          // { query: findUserByEmailQuery, variables },
         ],
       })
       .then(({ data }) => {

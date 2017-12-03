@@ -22,7 +22,7 @@ const AppRouter = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/counter" component={requireAuth(CounterContainer)} />
-        <Route path="/users" component={UserListContainer} />
+        <Route path="/users" component={requireAuth(UserListContainer)} />
         <Route path="/gqlusers" component={requireAuth(UsersGraphQL)} />
         <Route path="/weather" component={WeatherContainer} />
         <Route path="/profile" component={Profile} />
@@ -35,3 +35,4 @@ const AppRouter = () => (
 )
 
 export default AppRouter
+// export default graphql(query)(AppRouter)

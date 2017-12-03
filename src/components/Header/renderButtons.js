@@ -1,17 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Menu } from 'semantic-ui-react'
 import LoginModal from '../LoginModal'
 import LogoutModal from '../LogoutModal'
 import RegisterModal from '../RegisterModal'
 
-const renderButtons = (props) => {
-  const { loading, getCurrentUser } = props.data
+const renderButtons = (loading, user) => {
   if (loading) return <div />
 
-  if (getCurrentUser) {
+  if (user) {
     return (
       <Menu.Item position="right">
+        <RegisterModal />
         <LogoutModal />
       </Menu.Item>
     )
@@ -22,10 +21,6 @@ const renderButtons = (props) => {
       <RegisterModal />
     </Menu.Item>
   )
-}
-
-renderButtons.propTypes = {
-  data: PropTypes.shape.isRequired,
 }
 
 export default renderButtons

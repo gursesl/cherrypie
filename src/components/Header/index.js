@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { Container, Menu, Segment, Visibility } from 'semantic-ui-react'
-import { graphql } from 'react-apollo'
 import FixedMenu from './FixedMenu'
 import renderButtons from './renderButtons'
-import query from '../../graphql/queries/currentUserQuery'
 
 class AppHeader extends Component {
   constructor(props) {
@@ -24,6 +22,7 @@ class AppHeader extends Component {
 
   render() {
     const { visible } = this.state
+    const { loading, getCurrentUser } = this.props
     const fixedMenu = visible ? <FixedMenu {...this.props} /> : null
     return (
       <div>
@@ -84,7 +83,7 @@ class AppHeader extends Component {
                     Logout
                   </Link>
                 </Menu.Item>
-                {renderButtons(this.props)}
+                {renderButtons(loading, getCurrentUser)}
               </Menu>
             </Container>
           </Segment>
@@ -95,4 +94,5 @@ class AppHeader extends Component {
 }
 
 // export default withRouter(AppHeader)
-export default graphql(query)(AppHeader)
+// export default graphql(query)(AppHeader)
+export default AppHeader

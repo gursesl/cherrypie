@@ -1,5 +1,6 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
+import proxy from 'http-proxy-middleware'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import cors from 'cors'
@@ -9,6 +10,7 @@ import path from 'path'
 import dotenv from 'dotenv'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import { formatError } from 'apollo-errors'
+import { PubSub } from 'graphql-subscriptions'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import config from '../../../webpack.config.dev'
 import errorHandler from './errorHandler'
@@ -16,6 +18,7 @@ import { schema } from '../schema'
 import models from '../models'
 import { refreshTokens } from '../auth'
 
+const PORT = process.env.PORT || 5000
 const SECRET = 'sdfg89sdfg986.9sadf6ASDasd7f.6asd7f6asd87f'
 const SECRET2 = 'l8sdfsWWE4242FSDF.32sdfDC234.werEO922kdD2Q'
 
@@ -36,6 +39,17 @@ app.use(bodyParser.json())
 app.use(express.static('./public'))
 // app.use(express.static('./public'))
 // const ensureAuth = createAuth()
+
+// API Proxy
+// const API_HOST =
+//   process.env.NODE_ENV !== 'production'
+//     ? `http://localhost:${PORT}`
+//     : 'https://cherrypieapp.herokuapp.com'
+// const apiProxy = proxy({ target: API_HOST, changeOrigin: true })
+// app.use('/graphql', apiProxy)
+// app.use('/graphiql', apiProxy)
+// app.use('/cityWeather', apiProxy)
+// app.use('/users', apiProxy)
 
 app.use('*', cors({ origin: '*' }))
 
@@ -82,7 +96,15 @@ app.use(
     },
   }))
 )
-app.use('/graphiql', bodyParser.json(), graphiqlExpress({ endpointURL: '/graphql' }))
+
+app.use(
+  '/graphiql',
+  bodyParser.json(),
+  graphiqlExpress({
+    endpointURL: '/graphql',
+    subscriptionsEndpoint: `ws://localhost:${PORT}/subscriptions`,
+  })
+)
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../../src/index.html'))

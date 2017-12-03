@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import _ from 'lodash'
 import styled from 'styled-components'
+import _ from 'lodash'
 import {
   Container,
   Card,
@@ -16,16 +16,195 @@ import {
 import { graphql } from 'react-apollo'
 import client from '../../apolloClient'
 import { QUERY_POLL_INTERVAL as pollInterval } from '../../graphql/constants'
-import query from '../../graphql/queries/usersListQuery'
+import usersListQuery from '../../graphql/queries/usersListQuery'
 import deleteUserMutation from '../../graphql/mutations/deleteUserMutation'
+import userAddSubscription from '../../graphql/subscriptions/userAddSubscription'
+import userDeleteSubscription from '../../graphql/subscriptions/userDeleteSubscription'
 
-const PushDownDiv = styled.div`padding: 40px 0;`
+const PushDownDiv = styled.div`
+  padding: 40px 0;
+`
 
 export class UsersGraphQL extends Component {
-  state = {
-    confirmOpen: false,
-    user: null,
+  constructor(props) {
+    super(props)
+    this.state = {
+      confirmOpen: false,
+      user: null,
+    }
+
+    // keep track of subscription handle to not subscribe twice.
+    // we don't need to unsubscribe on unmount, because the subscription
+    // gets stopped when the query stops.
+    this.subscription = null
   }
+
+  // componentWillMount() {
+  //   console.log(JSON.stringify(this.props))
+  //   this.props.data.subscribeToMore({
+  //     document: userAddSubscription,
+  //     variables: {
+  //       owner: '5a0fca5babfda727ba81626d',
+  //     },
+  //     updateQuery: (prev, { subscriptionData }) => {
+  //       console.log(`prev: ${JSON.stringify(prev)}`)
+  //       console.log(`subscriptionData: ${JSON.stringify(subscriptionData)}`)
+
+  //       if (!subscriptionData.data) {
+  //         return prev
+  //       }
+
+  //       return {
+  //         ...prev,
+  //         getUsers: [...prev.getUsers.users, subscriptionData.userAdded],
+  //       }
+  //     },
+  //   })
+  // }
+
+  // componentWillMount() {
+  // Add Subscription
+  // this.unsubscribe = this.subscribeAddUser(this.props.ownerId)
+  // console.log(JSON.stringify(this.props.owner))
+  // console.log(JSON.stringify(this.props.user.data.getCurrentUser.id))
+  // Delete Subscription
+  // this.props.data.subscribeToMore({
+  //   document: userDeleteSubscription,
+  //   variables: {},
+  //   updateQuery: (prev, { subscriptionData }) => {
+  //     console.log(`Delete:updateQuery:prev: ${JSON.stringify(prev)}`)
+  //     console.log(`Delete:updateQuery:subscriptionData: ${JSON.stringify(subscriptionData)}`)
+  //     if (!subscriptionData.data) {
+  //       return prev
+  //     }
+  //     const reducedUsers = [...prev.getUsers]
+  //     _.pullAllBy(reducedUsers, [{ id: subscriptionData.data.userDeleted.id }], 'id')
+  //     console.log(`reducedUsers ${JSON.stringify(reducedUsers)}`)
+  //     const ret = {
+  //       ...prev,
+  //       getUsers: reducedUsers,
+  //     }
+  //     // console.log(JSON.stringify(ret))
+  //     return ret
+  //   },
+  // })
+  // }
+
+  componentWillReceiveProps(nextProps) {
+    // we don't resubscribe on changed props, because it never happens in our app
+    if (!this.subscription && !nextProps.loading) {
+      // Add subscription
+      this.subscription = this.props.subscribeToMore({
+        document: userAddSubscription,
+        variables: { owner: nextProps.owner },
+        // variables: props => ({
+        //   owner: props.owner,
+        // }),
+        updateQuery: (prev, { subscriptionData, variables }) => {
+          // if it's our own mutation, we might get the subscription result
+          // after the mutation result.
+          console.log(`prev: ${JSON.stringify(prev)}`)
+          console.log(`subscriptionData: ${JSON.stringify(subscriptionData)}`)
+          console.log(`variables: ${JSON.stringify(variables)}`)
+
+          if (prev && prev.getUsers) {
+            if (!subscriptionData.data) {
+              return prev
+            }
+
+            if (!_.isEmpty(prev)) {
+              const ret = {
+                ...prev,
+                getUsers: [...prev.getUsers, subscriptionData.data.userAdded],
+              }
+
+              // console.log(JSON.stringify(ret))
+              return ret
+            }
+          }
+          return prev
+        },
+        onError: (error) => {
+          console.log(`Erorr in subscribeToMore: ${error}`)
+        },
+      })
+
+      // Delete subscription
+      this.props.subscribeToMore({
+        document: userDeleteSubscription,
+        variables: {},
+        updateQuery: (prev, { subscriptionData }) => {
+          // console.log(`Delete:updateQuery:prev: ${JSON.stringify(prev)}`)
+          // console.log(`Delete:updateQuery:subscriptionData: ${JSON.stringify(subscriptionData)}`)
+          if (!subscriptionData.data) {
+            return prev
+          }
+          const reducedUsers = [...prev.getUsers]
+          _.pullAllBy(reducedUsers, [{ id: subscriptionData.data.userDeleted.id }], 'id')
+          // console.log(`reducedUsers ${JSON.stringify(reducedUsers)}`)
+          const ret = {
+            ...prev,
+            getUsers: reducedUsers,
+          }
+          // console.log(JSON.stringify(ret))
+          return ret
+        },
+      })
+    }
+  }
+
+  // componentWillReceiveProps({ ownerId }) {
+  //   console.log(`componentWillReceiveProps:owner ${ownerId}`)
+  //   if (this.props.ownerId !== ownerId) {
+  //     console.log(`componentWillReceiveProps:owner ${this.props.ownerId !== ownerId}`)
+  //     if (this.unsubscribe) {
+  //       console.log(`componentWillReceiveProps:this.unsubscribe ${this.unsubscribe}`)
+  //       this.unsubscribe()
+  //     }
+  //     this.unsubscribe = this.subscribeAddUser(ownerId)
+  //   }
+  // }
+
+  // componentWillUnmount() {
+  //   if (this.unsubscribe) {
+  //     this.unsubscribe()
+  //   }
+  // }
+
+  // subscribeAddUser = owner =>
+  //   this.props.data.subscribeToMore({
+  //     document: userAddSubscription,
+  //     variables: (props) => {
+  //       console.log('VariablesS!!!!!', props.ownerId)
+  //       return { ownerId: props.ownerId, othervar: true }
+  //     },
+  //     // variables: {
+  //     //   ownerId: 12341234234,
+  //     // },
+  //     updateQuery: (prev, { subscriptionData }) => {
+  //       console.log('Subscribe AddUser!!!!!!')
+  //       console.log(`prev: ${JSON.stringify(prev)}`)
+  //       console.log(`subscriptionData: ${JSON.stringify(subscriptionData)}`)
+
+  //       if (prev && prev.getUsers) {
+  //         if (!subscriptionData.data) {
+  //           return prev
+  //         }
+
+  //         if (!_.isEmpty(prev)) {
+  //           const ret = {
+  //             ...prev,
+  //             getUsers: [...prev.getUsers, subscriptionData.data.userAdded],
+  //           }
+
+  //           // console.log(JSON.stringify(ret))
+  //           return ret
+  //         }
+  //       }
+
+  //       return prev
+  //     },
+  //   })
 
   confirmDeleteHandler = () => {
     client
@@ -34,9 +213,10 @@ export class UsersGraphQL extends Component {
         variables: {
           id: this.state.user.id,
         },
-        refetchQueries: [{ query }],
+        // refetchQueries: [{ query }],
       })
       .then((response) => {
+        // console.log(`confirmDeleteHandler: ${JSON.stringify(response)}`)
         if (response.data.deleteUser.id) {
           console.log(`${response.data.deleteUser.id} deleted successfully.`) //eslint-disable-line
           this.setState({
@@ -66,7 +246,7 @@ export class UsersGraphQL extends Component {
 
   render() {
     try {
-      const { loading, error, getUsers } = this.props.data
+      const { loading, error, getUsers } = this.props
       if (loading) {
         return (
           <PushDownDiv className="ui container">
@@ -94,28 +274,26 @@ export class UsersGraphQL extends Component {
       }
 
       // Data errors
-      if (getUsers.errors) {
+      if (getUsers && getUsers.errors) {
         return (
           <PushDownDiv className="ui container">
-            <Container>
-              {this.renderErrors(getUsers.errors)}
-            </Container>
+            <Container>{this.renderErrors(getUsers.errors)}</Container>
           </PushDownDiv>
         )
       }
 
       // Formatting errors
-      if (!getUsers.ok) {
-        return (
-          <PushDownDiv className="ui container">
-            <Container>
-              <Message error header="Access message" list={_.map(getUsers.errors, 'message')} />
-            </Container>
-          </PushDownDiv>
-        )
-      }
+      // if (!getUsers.ok) {
+      //   return (
+      //     <PushDownDiv className="ui container">
+      //       <Container>
+      //         <Message error header="Access message" list={_.map(getUsers.errors, 'message')} />
+      //       </Container>
+      //     </PushDownDiv>
+      //   )
+      // }
 
-      if (getUsers.users.length === 0) {
+      if (getUsers.length === 0) {
         return (
           <PushDownDiv className="ui container">
             <Container>
@@ -140,7 +318,7 @@ export class UsersGraphQL extends Component {
             />
             <Container>
               <Card.Group>
-                {getUsers.users.map(user => (
+                {getUsers.map(user => (
                   <Card key={user.id}>
                     <Card.Content>
                       <Image floated="right" size="mini" src="/img/matthew.png" />
@@ -166,9 +344,11 @@ export class UsersGraphQL extends Component {
         </div>
       )
     } catch (error) {
+      console.log(error)
       return (
         <PushDownDiv className="ui container">
           <Container>
+            <p>asdasdasdsd</p>
             <Message error header={{ error }} />
           </Container>
         </PushDownDiv>
@@ -178,22 +358,72 @@ export class UsersGraphQL extends Component {
 }
 
 UsersGraphQL.propTypes = {
-  data: PropTypes.shape({
-    loading: PropTypes.bool.isRequired,
-    error: PropTypes.object,
-    getUsers: PropTypes.shape({
-      ok: PropTypes.bool.isRequired,
-      errors: PropTypes.array,
-      users: PropTypes.array,
-    }),
-  }).isRequired,
+  loading: PropTypes.bool.isRequired,
+  subscribeToMore: PropTypes.func.isRequired,
+  getUsers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    fullName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  })),
 }
 
-const options = {
-  options: {
-    pollInterval,
-    notifyOnNetworkStatusChange: true,
-  },
-}
+// UsersGraphQL.propTypes = {
+//   loading: PropTypes.bool.isRequired,
+//   currentUser: PropTypes.shape({
+//     login: PropTypes.string,
+//   }),
+//   entry: PropTypes.shape({
+//     id: PropTypes.number,
+//     comments: PropTypes.arrayOf(
+//       PropTypes.shape({
+//         postedBy: PropTypes.shape({
+//           login: PropTypes.string.isRequired,
+//         }),
+//         createdAt: PropTypes.number,
+//         content: PropTypes.string.isRequired,
+//       })
+//     ),
+//     repository: PropTypes.shape({
+//       full_name: PropTypes.string,
+//       html_url: PropTypes.string,
+//     }),
+//   }),
+//   submit: PropTypes.func.isRequired,
+//   subscribeToMore: PropTypes.func,
+// };
 
-export default graphql(query, options)(UsersGraphQL)
+// const options = {
+//   pollInterval,
+//   notifyOnNetworkStatusChange: true,
+//   variables: {},
+// }
+
+// export default graphql(query, {
+//   options: props => ({ variables: { owner: props.owner } }),
+// })(UsersGraphQL)
+
+const withData = graphql(usersListQuery, {
+  options: props => ({ variables: { owner: props.owner, mainVar: true } }),
+  props: ({
+    data: {
+      loading, currentUser, entry, subscribeToMore, getUsers,
+    },
+  }) => ({
+    loading,
+    currentUser,
+    entry,
+    subscribeToMore,
+    getUsers,
+  }),
+})
+
+export default withData(UsersGraphQL)
+
+// export default graphql(USERS_QUERY, {
+//   variables: props => ({
+//     ownerId: props.owner,
+//   }),
+//   options: {
+//     fetchPolicy: 'network-only',
+//   },
+// })(UsersGraphQL)

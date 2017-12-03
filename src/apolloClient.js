@@ -1,8 +1,11 @@
 import localforage from 'localforage'
 import { ApolloClient } from 'apollo-client'
-import { ApolloLink } from 'apollo-link'
+import { ApolloLink, split } from 'apollo-link'
+import { getOperationAST } from 'graphql'
+import { getMainDefinition } from 'apollo-utilities'
 import { onError } from 'apollo-link-error'
 import { createHttpLink } from 'apollo-link-http'
+import { WebSocketLink } from 'apollo-link-ws'
 import { InMemoryCache } from 'apollo-cache-inmemory' //eslint-disable-line
 import { setContext } from 'apollo-link-context'
 import getBaseUrl from './utils/baseUrl'
@@ -18,10 +21,13 @@ const saveToken = (key, value) => {
     .catch(() => {})
 }
 
+let token
+let refreshToken
+
 const authLink = setContext(async (_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = await localforage.getItem('token')
-  const refreshToken = await localforage.getItem('refreshToken')
+  token = await localforage.getItem('token')
+  refreshToken = await localforage.getItem('refreshToken')
 
   // return the headers to the context so httpLink can read them
   return {
@@ -40,15 +46,15 @@ const tokenAfterwareLink = new ApolloLink((operation, forward) =>
     const { headers } = context.response
 
     if (headers) {
-      const token = headers.get('x-token')
-      const refreshToken = headers.get('x-refresh-token')
+      const htoken = headers.get('x-token')
+      const hrefreshToken = headers.get('x-refresh-token')
 
-      if (token) {
-        saveToken('token', token)
+      if (htoken) {
+        saveToken('token', htoken)
       }
 
-      if (refreshToken) {
-        saveToken('refreshToken', refreshToken)
+      if (hrefreshToken) {
+        saveToken('refreshToken', hrefreshToken)
       }
     }
     return response
@@ -68,6 +74,45 @@ const tokenAfterwareLink = new ApolloLink((operation, forward) =>
 //   }
 // })
 
+// Websocket Link
+// const wsLink = new WebSocketLink({
+//   uri: 'ws://localhost:5000/subscriptions',
+//   options: {
+//     reconnect: true,
+//     connectionParams: {
+//       authToken: token,
+//     },
+//   },
+// })
+
+// const wsLink = (config = {}) =>
+//   new WebSocketLink({
+//     uri:
+//       process.env.NODE_ENV !== 'production'
+//         ? 'ws://localhost:5000/subscriptions'
+//         : 'wss://cherrypieapp.herokuapp.com/subscriptions',
+//     options: {
+//       reconnect: true,
+//       connectionParams: {
+//         authToken: token,
+//       },
+//     },
+//     ...config,
+//   })
+
+const wsLink = new WebSocketLink({
+  uri:
+    process.env.NODE_ENV !== 'production'
+      ? 'ws://localhost:5000/subscriptions'
+      : 'wss://cherrypieapp.herokuapp.com/subscriptions',
+  options: {
+    reconnect: true,
+    connectionParams: {
+      authToken: token,
+    },
+  },
+})
+
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     // eslint-disable-next-line
@@ -80,7 +125,35 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (networkError) console.log(`[Network error]: ${networkError}`) // eslint-disable-line
 })
 
-const link = ApolloLink.from([errorLink, tokenAfterwareLink, authLink, httpLink])
+const httpLinkWithMiddleware = ApolloLink.from([errorLink, tokenAfterwareLink, authLink, httpLink])
+
+// using the ability to split links, you can send data to each link
+// depending on what kind of operation is being sent
+// With AST
+// const link = split(
+//   // split based on operation type
+//   (operation) => {
+//     const operationAST = getOperationAST(operation.query, operation.operationName)
+//     return !!operationAST && operationAST.operation === 'subscription'
+//   },
+//   // ({ query }) => {
+//   //   const { kind, operation } = getMainDefinition(query)
+//   //   return kind === 'OperationDefinition' && operation === 'subscription'
+//   // },
+//   wsLink,
+//   httpLinkWithMiddleware
+// )
+
+// With getMainDefinition
+const link = split(
+  ({ query }) => {
+    const { kind, operation } = getMainDefinition(query)
+    return kind === 'OperationDefinition' && operation === 'subscription'
+  },
+  wsLink,
+  httpLinkWithMiddleware
+)
+
 const cache = new InMemoryCache({ dataIdFromObject: o => o.id })
 const defaultOptions = {
   watchQuery: {
@@ -101,8 +174,8 @@ export default new ApolloClient({
   link,
   cache,
   defaultOptions,
-  // ssrMode: true,
+  ssrMode: true,
   // ssrForceFetchDelay: 100,
   // connectToDevTools: true,
-  // queryDeduplication: true,
+  queryDeduplication: true,
 })

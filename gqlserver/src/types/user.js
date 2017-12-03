@@ -10,18 +10,24 @@ export default `
     state: String
     zip: String
     userType: String!
-    owner: User!
+    owner: ID!
   }
 
   type UserListResponse {
     ok: Boolean!
+    owner: ID!
     users: [User!]
     errors: [Error!]
   }
 
+  type Subscription {
+    userAdded(owner: ID!): User
+    userDeleted: User
+  }
+
   type Query {
     users: [User!]!
-    getUsers: UserListResponse!
+    getUsers(owner: ID!): [User!]
     getCurrentUser: User
     getUserById(id: Int!): User
     findUserByEmail(email: String!): User
@@ -38,6 +44,7 @@ export default `
     token: String
     refreshToken: String
     id: ID
+    owner: ID
     errors: [Error!]
   }
 

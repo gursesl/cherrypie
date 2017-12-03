@@ -1,18 +1,11 @@
 import gql from 'graphql-tag'
 
 const usersListQuery = gql`
-  query {
-    getUsers {
-      ok
-      users {
-        id
-        fullName
-        email
-      }
-      errors {
-        path
-        message
-      }
+  query getUsers($owner: ID!) {
+    getUsers(owner: $owner) {
+      id
+      fullName
+      email
     }
   }
 `
