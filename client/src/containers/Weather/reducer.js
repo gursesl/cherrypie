@@ -1,12 +1,13 @@
 import { fromJS } from 'immutable'
 import initialState from './initialState'
-import * as g from './../../utils/geoUtils'
+import * as g from './geoUtils'
 import * as c from './constants'
 
 export function processResultData(data) {
   if (data && data.list) {
-    let items = data.list.map((city) => { // eslint-disable-line
-      return {
+    const items = data.list.map(city =>
+      // eslint-disable-line
+      ({
         dt: city.dt,
         temp: (city.main.temp - 273.15).toFixed(2),
         pressure: city.main.pressure,
@@ -17,8 +18,7 @@ export function processResultData(data) {
         clouds: city.clouds.all,
         description: city.weather[0].description,
         icon: `https://openweathermap.org/img/w/${city.weather[0].icon}.png`,
-      }
-    })
+      }))
 
     return fromJS({
       id: data.city.id,
@@ -35,15 +35,9 @@ function weatherContainerReducer(state = initialState, action) {
   switch (action.type) {
     case c.WEATHER_DATA_FETCH_START:
       if (action.payload && g.matchZipCode(action.payload)) {
-        return state.set(
-          c.SELECTOR_WEATHER_ZIP,
-          action.payload
-        )
+        return state.set(c.SELECTOR_WEATHER_ZIP, action.payload)
       } else if (action.payload) {
-        return state.set(
-          c.SELECTOR_WEATHER_CITY,
-          action.payload
-        )
+        return state.set(c.SELECTOR_WEATHER_CITY, action.payload)
       }
       return state
     case c.WEATHER_DATA_FETCH_SUCCESS:
