@@ -32,4 +32,5 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserListContainer))
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserListContainer))
+export default connect(mapStateToProps, mapDispatchToProps)(UserListContainer)

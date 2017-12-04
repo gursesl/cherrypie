@@ -48,7 +48,20 @@ class LogoutModal extends Component {
     this.props
       .mutate({
         // variables: {},
-        refetchQueries: [{ query: usersListQuery }, { query: currentUserQuery }],
+        // refetchQueries: [
+        //   // { query: usersListQuery },
+        //   { query: currentUserQuery },
+        // ],
+        update: (proxy, { data: { logoutUser } }) => {
+          // Read the data from our cache for this query.
+          const data = proxy.readQuery({ query: currentUserQuery })
+
+          // Add our user from the mutation to the end
+          data.getCurrentUser = null
+
+          // Write our data back to the cache
+          proxy.writeQuery({ query: currentUserQuery, data })
+        },
       })
       .then((response) => {
         const { ok } = response.data.logoutUser

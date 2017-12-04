@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Popup, Button, Header, Image, Modal, Grid, Message } from 'semantic-ui-react'
 import { graphql } from 'react-apollo'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import localforage from 'localforage'
 import LoginForm from './loginForm'
 import LoginSuccessModal from './loginSuccessModal'
@@ -18,21 +18,24 @@ class LoginModal extends Component {
   state = {
     successModalOpen: false,
     failureModalOpen: false,
+    next: null,
     errors: [],
   }
 
   componentWillMount() {
+    console.log(`LoginModal:cwm: ${JSON.stringify(this.props)}`)
     if (this.props.location && this.props.location.state) {
-      const { modalOpen } = this.props.location.state
-      this.setState({ modalOpen })
+      const { modalOpen, next } = this.props.location.state
+      // const { next } = this.state
+      this.setState({ modalOpen, next })
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.location && nextProps.location.state) {
-      this.setState({ modalOpen: true })
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.location && nextProps.location.state) {
+  //     this.setState({ modalOpen: true })
+  //   }
+  // }
 
   saveToken = (key, value) => {
     localforage
@@ -44,30 +47,57 @@ class LoginModal extends Component {
         // console.log(err)
       })
   }
+
   handleOpen = () =>
     this.setState({
       modalOpen: true,
       successModalOpen: false,
       failureModalOpen: false,
     })
+
   handleClose = () =>
     this.setState({
       modalOpen: false,
       successModalOpen: false,
       failureModalOpen: false,
     })
-  handleSuccess = () => this.setState({ modalOpen: false, successModalOpen: true })
+
+  handleSuccess = () => {
+    console.log('handleSuccess')
+    console.log(this.props)
+    console.log(this.state)
+    // this.setState({ modalOpen: false, successModalOpen: true })
+    // debugger
+    this.setState({ modalOpen: false })
+    if (this.state.next) {
+      // this.context.history.push(this.state.next)
+      // setTimeout(() => {
+      this.props.history.push(this.state.next)
+      // }, 10)
+    }
+  }
+
   handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
   handleLogin = (values) => {
     const variables = values.toJS()
     this.props
       .mutate({
         variables,
-        refetchQueries: [
-          { query: usersListQuery, variables },
-          { query: currentUserQuery },
-          // { query: findUserByEmailQuery, variables },
-        ],
+        // refetchQueries: [
+        //   // { query: usersListQuery, variables },
+        //   { query: currentUserQuery },
+        //   // { query: findUserByEmailQuery, variables },
+        // ],
+        update: (proxy, { data: { loginUser } }) => {
+          // Read the data from our cache for this query.
+          const data = proxy.readQuery({ query: currentUserQuery })
+
+          // Add our user from the mutation to the end
+          data.getCurrentUser = loginUser
+
+          // Write our data back to the cache
+          proxy.writeQuery({ query: currentUserQuery, data })
+        },
       })
       .then((response) => {
         const {
@@ -153,4 +183,4 @@ LoginModal.defaultProps = {
   },
 }
 
-export default graphql(loginMutation)(LoginModal)
+export default withRouter(graphql(loginMutation)(LoginModal))
