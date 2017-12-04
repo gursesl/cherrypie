@@ -4,14 +4,17 @@ import PropTypes from 'prop-types'
 import { Popup, Button, Header, Image, Modal, Grid, Message } from 'semantic-ui-react'
 import { graphql } from 'react-apollo'
 import { Link } from 'react-router-dom'
-import RegisterForm from './registerForm'
-import RegistrationSuccessModal from './registrationSuccessModal'
-import RegistrationFailureModal from './registrationFailureModal'
-// import usersListQuery from '../../graphql/queries/usersListQuery'
+import localforage from 'localforage'
+import LoginForm from './loginForm'
+import LoginSuccessModal from './loginSuccessModal'
+import LoginFailureModal from './loginFailureModal'
+import loginMutation from '../../graphql/mutations/loginMutation'
+import usersListQuery from '../../graphql/queries/usersListQuery'
+import currentUserQuery from '../../graphql/queries/currentUserQuery'
+import logo from './logo.png'
 // import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
-import registerMutation from '../../graphql/mutations/registerMutation'
 
-class RegisterModal extends Component {
+class LoginModal extends Component {
   state = {
     successModalOpen: false,
     failureModalOpen: false,
@@ -31,6 +34,16 @@ class RegisterModal extends Component {
     }
   }
 
+  saveToken = (key, value) => {
+    localforage
+      .setItem(key, value)
+      .then(() => {
+        // console.log(item)
+      })
+      .catch(() => {
+        // console.log(err)
+      })
+  }
   handleOpen = () =>
     this.setState({
       modalOpen: true,
@@ -45,21 +58,27 @@ class RegisterModal extends Component {
     })
   handleSuccess = () => this.setState({ modalOpen: false, successModalOpen: true })
   handleFailure = errors => this.setState({ modalOpen: false, failureModalOpen: true, errors })
-  handleRegister = (values) => {
+  handleLogin = (values) => {
     const variables = values.toJS()
     this.props
       .mutate({
         variables,
         refetchQueries: [
-          // { query: usersListQuery, variables },
+          { query: usersListQuery, variables },
+          { query: currentUserQuery },
           // { query: findUserByEmailQuery, variables },
         ],
       })
-      .then(({ data }) => {
-        if (data.registerUser.user) {
+      .then((response) => {
+        const {
+          ok, token, refreshToken, errors,
+        } = response.data.loginUser
+        if (ok) {
+          this.saveToken('token', token)
+          this.saveToken('refreshToken', refreshToken)
           this.handleSuccess()
         } else {
-          this.handleFailure(data.registerUser.errors)
+          this.handleFailure(errors)
         }
       })
       .catch((errors) => {
@@ -74,9 +93,9 @@ class RegisterModal extends Component {
   render() {
     return (
       <div>
-        <Popup trigger={<Button onClick={this.handleOpen}>Sign up</Button>}>
-          <Popup.Header>Registration details</Popup.Header>
-          <Popup.Content>Click here to sign up</Popup.Content>
+        <Popup trigger={<Button onClick={this.handleOpen}>Sign in</Button>}>
+          <Popup.Header>Sign in details</Popup.Header>
+          <Popup.Content>Click here to sign in</Popup.Content>
         </Popup>
 
         <Modal open={this.state.modalOpen} onClose={this.handleClose} basic size="small">
@@ -84,30 +103,30 @@ class RegisterModal extends Component {
             <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
               <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as="h2" color="teal" textAlign="center">
-                  <Image src="/img/logo.png" /> Sign up for a new account
+                  <Image src={logo} /> Sign in
                 </Header>
-                <RegisterForm {...this.props} onSubmit={this.handleRegister} />
+                <LoginForm {...this.props} onSubmit={this.handleLogin} />
                 <Message>
-                  Already have an account?{' '}
+                  Don&#39;t have an account?{' '}
                   <Link
-                    href="/login"
+                    href="/register"
                     to={{
-                      pathname: '/login',
+                      pathname: '/register',
                       state: { modalOpen: true },
                     }}
                   >
-                    Sign in
+                    Sign up
                   </Link>
                 </Message>
               </Grid.Column>
             </Grid>
           </Modal.Content>
         </Modal>
-        <RegistrationSuccessModal
+        <LoginSuccessModal
           successModalOpen={this.state.successModalOpen}
           handleClose={this.handleClose}
         />
-        <RegistrationFailureModal
+        <LoginFailureModal
           successModalOpen={this.state.failureModalOpen}
           errors={this.state.errors}
           handleClose={this.handleClose}
@@ -117,7 +136,7 @@ class RegisterModal extends Component {
   }
 }
 
-RegisterModal.propTypes = {
+LoginModal.propTypes = {
   mutate: PropTypes.func.isRequired,
   location: PropTypes.shape({
     state: PropTypes.shape({
@@ -126,7 +145,7 @@ RegisterModal.propTypes = {
   }),
 }
 
-RegisterModal.defaultProps = {
+LoginModal.defaultProps = {
   location: {
     state: {
       modalOpen: false,
@@ -134,4 +153,4 @@ RegisterModal.defaultProps = {
   },
 }
 
-export default graphql(registerMutation)(RegisterModal)
+export default graphql(loginMutation)(LoginModal)

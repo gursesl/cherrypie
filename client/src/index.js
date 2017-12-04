@@ -1,8 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import 'semantic-ui-css/semantic.min.css'
+// import './dist/semantic.min.css'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { ApolloProvider } from 'react-apollo'
+import { ConnectedRouter } from 'react-router-redux'
+import store, { history } from './store'
+import './index.css'
+import App from './App'
+import client from './apolloClient'
+import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const target = document.getElementById('root')
+
+render(
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </Provider>
+  </ApolloProvider>,
+  target
+)
+registerServiceWorker()

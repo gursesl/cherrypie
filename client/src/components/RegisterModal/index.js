@@ -10,6 +10,7 @@ import RegistrationFailureModal from './registrationFailureModal'
 // import usersListQuery from '../../graphql/queries/usersListQuery'
 // import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
 import registerMutation from '../../graphql/mutations/registerMutation'
+import logo from './logo.png'
 
 class RegisterModal extends Component {
   state = {
@@ -84,7 +85,7 @@ class RegisterModal extends Component {
             <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
               <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as="h2" color="teal" textAlign="center">
-                  <Image src="/img/logo.png" /> Sign up for a new account
+                  <Image src={logo} /> Sign up for a new account
                 </Header>
                 <RegisterForm {...this.props} onSubmit={this.handleRegister} />
                 <Message>

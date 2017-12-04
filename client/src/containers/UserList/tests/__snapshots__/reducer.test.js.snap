@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserListContainer:reducer handles the usersFetchFailure action snapshot 1`] = `
+Immutable.Map {
+  "app/UserListContainer/SELECTOR_USERS_USERS": Immutable.List [
+    Immutable.Map {
+      "id": 95617189,
+      "firstName": "Elfrieda",
+      "lastName": "Frank",
+      "email": "Ada20@hotmail.com",
+    },
+    Immutable.Map {
+      "id": 95617188,
+      "firstName": "Jim",
+      "lastName": "Smith",
+      "email": "jsmith@mail.com",
+    },
+  ],
+  "app/UserListContainer/SELECTOR_USERS_ERROR": Immutable.Map {
+    "type": 1,
+    "message": "An error occurred.",
+  },
+  "app/UserListContainer/SELECTOR_USERS_ISLOADING": true,
+}
+`;
+
+exports[`UserListContainer:reducer handles the usersFetchStart action snapshot 1`] = `Object {}`;
+
+exports[`UserListContainer:reducer handles the usersFetchSuccess action snapshot 1`] = `
+Immutable.Map {
+  "app/UserListContainer/SELECTOR_USERS_USERS": Immutable.List [
+    Immutable.Map {
+      "id": 95617189,
+      "firstName": "Elfrieda",
+      "lastName": "Frank",
+      "email": "Ada20@hotmail.com",
+    },
+    Immutable.Map {
+      "id": 95617188,
+      "firstName": "Jim",
+      "lastName": "Smith",
+      "email": "jsmith@mail.com",
+    },
+  ],
+  "app/UserListContainer/SELECTOR_USERS_ERROR": "This is an error",
+  "app/UserListContainer/SELECTOR_USERS_ISLOADING": true,
+}
+`;

@@ -1,0 +1,7 @@
+export const USERS_FETCH_START = 'app/UserListContainer/USERS_FETCH_START'
+export const USERS_FETCH_SUCCESS = 'app/UserListContainer/USERS_FETCH_SUCCESS'
+export const USERS_FETCH_FAILURE = 'app/UserListContainer/USERS_FETCH_FAILURE'
+export const SELECTOR_USERS = 'app/UserListContainer/SELECTOR_USERS'
+export const SELECTOR_USERS_USERS = 'app/UserListContainer/SELECTOR_USERS_USERS'
+export const SELECTOR_USERS_ERROR = 'app/UserListContainer/SELECTOR_USERS_ERROR'
+export const SELECTOR_USERS_ISLOADING = 'app/UserListContainer/SELECTOR_USERS_ISLOADING'
