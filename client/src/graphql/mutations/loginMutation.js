@@ -5,6 +5,8 @@ const loginMutation = gql`
     loginUser(email: $email, password: $password) {
       ok
       id
+      fullName
+      email
       owner
       errors {
         path

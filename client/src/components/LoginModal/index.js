@@ -68,7 +68,7 @@ class LoginModal extends Component {
     console.log(this.state)
     // this.setState({ modalOpen: false, successModalOpen: true })
     // debugger
-    this.setState({ modalOpen: false })
+    // this.setState({ modalOpen: false })
     if (this.state.next) {
       // this.context.history.push(this.state.next)
       // setTimeout(() => {

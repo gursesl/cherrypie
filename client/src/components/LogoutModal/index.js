@@ -19,11 +19,11 @@ class LogoutModal extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.location && nextProps.location.state) {
-      this.setState({ modalOpen: true })
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.location && nextProps.location.state) {
+  //     this.setState({ modalOpen: true })
+  //   }
+  // }
 
   removeToken = (key) => {
     localforage
@@ -66,7 +66,7 @@ class LogoutModal extends Component {
       .then((response) => {
         const { ok } = response.data.logoutUser
         if (ok) {
-          this.setState({ modalOpen: false })
+          // this.setState({ modalOpen: false })
           // TODO: Dispatch Logout action
         } else {
           // this.handleFailure(errors)

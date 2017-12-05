@@ -32,6 +32,7 @@ export default (WrappedComponent) => {
 
       if (!getCurrentUser) {
         // this.props.history.push('/login', { modalOpen: true, next: this.props.match.path })
+        this.props.history.push('/login', { modalOpen: true, next: this.props.match.path })
         return <p>Redirecting...</p>
       }
 
