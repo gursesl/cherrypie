@@ -1,5 +1,5 @@
 import 'whatwg-fetch'
-import getBaseUrl from '../../utils/baseUrl'
+import getBaseUrl from '../../baseUrl'
 
 const baseUrl = getBaseUrl()
 

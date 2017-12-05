@@ -37,6 +37,7 @@
     "merge-graphql-schemas": "^1.4.0",
     "mongoose": "^4.13.6",
     "morgan": "^1.9.0",
+    "nodemon": "^1.12.5",
     "request": "^2.83.0",
     "subscriptions-transport-ws": "^0.9.4",
     "validator": "^9.1.2"
