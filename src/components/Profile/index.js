@@ -7,8 +7,8 @@ class Profile extends Component {
     modalOpen: true,
   }
   componentWillMount() {
-    console.log(`This.props: ${this.props}`) //eslint-disable-line
-    console.log(`This.state: ${this.state}`) //eslint-disable-line
+    // console.log(`This.props: ${this.props}`) //eslint-disable-line
+    // console.log(`This.state: ${this.state}`) //eslint-disable-line
   }
 
   handleClose = (e) => {

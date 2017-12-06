@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import '../../../setupTests'
 import WeatherSearchResultList from '../'
 import WeatherSearchResultItem from '../../WeatherSearchResultItem'
-import * as m from '../../../containers/WeatherContainer/tests/mockdata'
+import * as m from '../../../containers/Weather/tests/mockdata'
 
 const component = (
   <WeatherSearchResultList results={m.processedMockData} />

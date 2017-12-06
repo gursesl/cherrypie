@@ -6,7 +6,7 @@ import {
 } from 'semantic-ui-react'
 import '../../../setupTests'
 import WeatherSearchResultItem from '../'
-import * as m from '../../../containers/WeatherContainer/tests/mockdata'
+import * as m from '../../../containers/Weather/tests/mockdata'
 
 const component = (
   <WeatherSearchResultItem

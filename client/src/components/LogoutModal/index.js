@@ -5,7 +5,7 @@ import localforage from 'localforage'
 import { graphql } from 'react-apollo'
 import { Popup, Button, Header, Image, Modal, Form, Grid, Segment } from 'semantic-ui-react'
 import logoutMutation from '../../graphql/mutations/logoutMutation'
-import usersListQuery from '../../graphql/queries/usersListQuery'
+// import usersListQuery from '../../graphql/queries/usersListQuery'
 import currentUserQuery from '../../graphql/queries/currentUserQuery'
 import logo from './logo.png'
 

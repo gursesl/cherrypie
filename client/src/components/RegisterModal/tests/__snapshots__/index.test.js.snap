@@ -6,14 +6,14 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RegisterModal
     location={
-      Object {
-        "state": Object {
-          "modalOpen": false,
-        },
-      }
+        Object {
+            "state": Object {
+              "modalOpen": false,
+            },
+          }
     }
     mutate={[Function]}
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -31,21 +31,21 @@ ShallowWrapper {
           on="hover"
           position="top left"
           trigger={
-            <Button
-              as="button"
-              onClick={[Function]}
-            >
-              Sign up
-            </Button>
+                    <Button
+                              as="button"
+                              onClick={[Function]}
+                    >
+                              Sign up
+                    </Button>
           }
-        >
+>
           <PopupHeader>
-            Registration details
+                    Registration details
           </PopupHeader>
           <PopupContent>
-            Click here to sign up
+                    Click here to sign up
           </PopupContent>
-        </Popup>,
+</Popup>,
         <Modal
           basic={true}
           closeOnDimmerClick={true}
@@ -55,78 +55,78 @@ ShallowWrapper {
           onClose={[Function]}
           open={false}
           size="small"
-        >
+>
           <ModalContent>
-            <Grid
-              style={
-                Object {
-                  "height": "100%",
-                }
-              }
-              textAlign="center"
-              verticalAlign="middle"
-            >
-              <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
-              >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
-              </GridColumn>
-            </Grid>
+                    <Grid
+                              style={
+                                        Object {
+                                                  "height": "100%",
+                                                }
+                              }
+                              textAlign="center"
+                              verticalAlign="middle"
+                    >
+                              <GridColumn
+                                        style={
+                                                  Object {
+                                                            "maxWidth": 450,
+                                                          }
+                                        }
+                              >
+                                        <Header
+                                                  as="h2"
+                                                  color="teal"
+                                                  textAlign="center"
+                                        >
+                                                  <Image
+                                                            as="img"
+                                                            src="logo.png"
+                                                            ui={true}
+                                                  />
+                                                   Sign up for a new account
+                                        </Header>
+                                        <ReduxForm
+                                                  location={
+                                                            Object {
+                                                                      "state": Object {
+                                                                        "modalOpen": false,
+                                                                      },
+                                                                    }
+                                                  }
+                                                  mutate={[Function]}
+                                                  onSubmit={[Function]}
+                                        />
+                                        <Message>
+                                                  Already have an account?
+                                                   
+                                                  <Link
+                                                            href="/login"
+                                                            replace={false}
+                                                            to={
+                                                                      Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                                            }
+                                                  >
+                                                            Sign in
+                                                  </Link>
+                                        </Message>
+                              </GridColumn>
+                    </Grid>
           </ModalContent>
-        </Modal>,
+</Modal>,
         <RegistrationSuccessModal
           handleClose={[Function]}
           successModalOpen={false}
-        />,
+/>,
         <RegistrationFailureModal
           errors={Array []}
           handleClose={[Function]}
           successModalOpen={false}
-        />,
+/>,
       ],
     },
     "ref": null,
@@ -139,19 +139,19 @@ ShallowWrapper {
           "children": Array [
             <PopupHeader>
               Registration details
-            </PopupHeader>,
+</PopupHeader>,
             <PopupContent>
               Click here to sign up
-            </PopupContent>,
+</PopupContent>,
           ],
           "on": "hover",
           "position": "top left",
           "trigger": <Button
             as="button"
             onClick={[Function]}
-          >
+>
             Sign up
-          </Button>,
+</Button>,
         },
         "ref": null,
         "rendered": Array [
@@ -188,65 +188,65 @@ ShallowWrapper {
           "basic": true,
           "children": <ModalContent>
             <Grid
-              style={
-                Object {
-                  "height": "100%",
-                }
-              }
-              textAlign="center"
-              verticalAlign="middle"
+                        style={
+                                    Object {
+                                                "height": "100%",
+                                              }
+                        }
+                        textAlign="center"
+                        verticalAlign="middle"
             >
-              <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
-              >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
-              </GridColumn>
+                        <GridColumn
+                                    style={
+                                                Object {
+                                                            "maxWidth": 450,
+                                                          }
+                                    }
+                        >
+                                    <Header
+                                                as="h2"
+                                                color="teal"
+                                                textAlign="center"
+                                    >
+                                                <Image
+                                                            as="img"
+                                                            src="logo.png"
+                                                            ui={true}
+                                                />
+                                                 Sign up for a new account
+                                    </Header>
+                                    <ReduxForm
+                                                location={
+                                                            Object {
+                                                                        "state": Object {
+                                                                          "modalOpen": false,
+                                                                        },
+                                                                      }
+                                                }
+                                                mutate={[Function]}
+                                                onSubmit={[Function]}
+                                    />
+                                    <Message>
+                                                Already have an account?
+                                                 
+                                                <Link
+                                                            href="/login"
+                                                            replace={false}
+                                                            to={
+                                                                        Object {
+                                                                                    "pathname": "/login",
+                                                                                    "state": Object {
+                                                                                      "modalOpen": true,
+                                                                                    },
+                                                                                  }
+                                                            }
+                                                >
+                                                            Sign in
+                                                </Link>
+                                    </Message>
+                        </GridColumn>
             </Grid>
-          </ModalContent>,
+</ModalContent>,
           "closeOnDimmerClick": true,
           "closeOnDocumentClick": false,
           "dimmer": true,
@@ -263,63 +263,63 @@ ShallowWrapper {
           "props": Object {
             "children": <Grid
               style={
-                Object {
-                  "height": "100%",
-                }
+                            Object {
+                                          "height": "100%",
+                                        }
               }
               textAlign="center"
               verticalAlign="middle"
-            >
+>
               <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
+                            style={
+                                          Object {
+                                                        "maxWidth": 450,
+                                                      }
+                            }
               >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
+                            <Header
+                                          as="h2"
+                                          color="teal"
+                                          textAlign="center"
+                            >
+                                          <Image
+                                                        as="img"
+                                                        src="logo.png"
+                                                        ui={true}
+                                          />
+                                           Sign up for a new account
+                            </Header>
+                            <ReduxForm
+                                          location={
+                                                        Object {
+                                                                      "state": Object {
+                                                                        "modalOpen": false,
+                                                                      },
+                                                                    }
+                                          }
+                                          mutate={[Function]}
+                                          onSubmit={[Function]}
+                            />
+                            <Message>
+                                          Already have an account?
+                                           
+                                          <Link
+                                                        href="/login"
+                                                        replace={false}
+                                                        to={
+                                                                      Object {
+                                                                                    "pathname": "/login",
+                                                                                    "state": Object {
+                                                                                      "modalOpen": true,
+                                                                                    },
+                                                                                  }
+                                                        }
+                                          >
+                                                        Sign in
+                                          </Link>
+                            </Message>
               </GridColumn>
-            </Grid>,
+</Grid>,
           },
           "ref": null,
           "rendered": Object {
@@ -329,53 +329,53 @@ ShallowWrapper {
             "props": Object {
               "children": <GridColumn
                 style={
-                  Object {
-                    "maxWidth": 450,
-                  }
+                                Object {
+                                                "maxWidth": 450,
+                                              }
                 }
-              >
+>
                 <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
+                                as="h2"
+                                color="teal"
+                                textAlign="center"
                 >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
+                                <Image
+                                                as="img"
+                                                src="logo.png"
+                                                ui={true}
+                                />
+                                 Sign up for a new account
                 </Header>
                 <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
+                                location={
+                                                Object {
+                                                                "state": Object {
+                                                                  "modalOpen": false,
+                                                                },
+                                                              }
+                                }
+                                mutate={[Function]}
+                                onSubmit={[Function]}
                 />
                 <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
+                                Already have an account?
+                                 
+                                <Link
+                                                href="/login"
+                                                replace={false}
+                                                to={
+                                                                Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                                }
+                                >
+                                                Sign in
+                                </Link>
                 </Message>
-              </GridColumn>,
+</GridColumn>,
               "style": Object {
                 "height": "100%",
               },
@@ -393,43 +393,43 @@ ShallowWrapper {
                     as="h2"
                     color="teal"
                     textAlign="center"
-                  >
+>
                     <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
+                                        as="img"
+                                        src="logo.png"
+                                        ui={true}
                     />
                      Sign up for a new account
-                  </Header>,
+</Header>,
                   <ReduxForm
                     location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
+                                        Object {
+                                                            "state": Object {
+                                                              "modalOpen": false,
+                                                            },
+                                                          }
                     }
                     mutate={[Function]}
                     onSubmit={[Function]}
-                  />,
+/>,
                   <Message>
                     Already have an account?
                      
                     <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
+                                        href="/login"
+                                        replace={false}
+                                        to={
+                                                            Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                        }
                     >
-                      Sign in
+                                        Sign in
                     </Link>
-                  </Message>,
+</Message>,
                 ],
                 "style": Object {
                   "maxWidth": 450,
@@ -446,9 +446,9 @@ ShallowWrapper {
                     "children": Array [
                       <Image
                         as="img"
-                        src="/img/logo.png"
+                        src="logo.png"
                         ui={true}
-                      />,
+/>,
                       " Sign up for a new account",
                     ],
                     "color": "teal",
@@ -462,7 +462,7 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "img",
-                        "src": "/img/logo.png",
+                        "src": "logo.png",
                         "ui": true,
                       },
                       "ref": null,
@@ -502,16 +502,16 @@ ShallowWrapper {
                         href="/login"
                         replace={false}
                         to={
-                          Object {
-                            "pathname": "/login",
-                            "state": Object {
-                              "modalOpen": true,
-                            },
-                          }
+                                                Object {
+                                                                        "pathname": "/login",
+                                                                        "state": Object {
+                                                                          "modalOpen": true,
+                                                                        },
+                                                                      }
                         }
-                      >
+>
                         Sign in
-                      </Link>,
+</Link>,
                     ],
                   },
                   "ref": null,
@@ -588,21 +588,21 @@ ShallowWrapper {
             on="hover"
             position="top left"
             trigger={
-              <Button
-                as="button"
-                onClick={[Function]}
-              >
-                Sign up
-              </Button>
+                        <Button
+                                    as="button"
+                                    onClick={[Function]}
+                        >
+                                    Sign up
+                        </Button>
             }
-          >
+>
             <PopupHeader>
-              Registration details
+                        Registration details
             </PopupHeader>
             <PopupContent>
-              Click here to sign up
+                        Click here to sign up
             </PopupContent>
-          </Popup>,
+</Popup>,
           <Modal
             basic={true}
             closeOnDimmerClick={true}
@@ -612,78 +612,78 @@ ShallowWrapper {
             onClose={[Function]}
             open={false}
             size="small"
-          >
+>
             <ModalContent>
-              <Grid
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
-                textAlign="center"
-                verticalAlign="middle"
-              >
-                <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
-                >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
-                </GridColumn>
-              </Grid>
+                        <Grid
+                                    style={
+                                                Object {
+                                                            "height": "100%",
+                                                          }
+                                    }
+                                    textAlign="center"
+                                    verticalAlign="middle"
+                        >
+                                    <GridColumn
+                                                style={
+                                                            Object {
+                                                                        "maxWidth": 450,
+                                                                      }
+                                                }
+                                    >
+                                                <Header
+                                                            as="h2"
+                                                            color="teal"
+                                                            textAlign="center"
+                                                >
+                                                            <Image
+                                                                        as="img"
+                                                                        src="logo.png"
+                                                                        ui={true}
+                                                            />
+                                                             Sign up for a new account
+                                                </Header>
+                                                <ReduxForm
+                                                            location={
+                                                                        Object {
+                                                                                    "state": Object {
+                                                                                      "modalOpen": false,
+                                                                                    },
+                                                                                  }
+                                                            }
+                                                            mutate={[Function]}
+                                                            onSubmit={[Function]}
+                                                />
+                                                <Message>
+                                                            Already have an account?
+                                                             
+                                                            <Link
+                                                                        href="/login"
+                                                                        replace={false}
+                                                                        to={
+                                                                                    Object {
+                                                                                                "pathname": "/login",
+                                                                                                "state": Object {
+                                                                                                  "modalOpen": true,
+                                                                                                },
+                                                                                              }
+                                                                        }
+                                                            >
+                                                                        Sign in
+                                                            </Link>
+                                                </Message>
+                                    </GridColumn>
+                        </Grid>
             </ModalContent>
-          </Modal>,
+</Modal>,
           <RegistrationSuccessModal
             handleClose={[Function]}
             successModalOpen={false}
-          />,
+/>,
           <RegistrationFailureModal
             errors={Array []}
             handleClose={[Function]}
             successModalOpen={false}
-          />,
+/>,
         ],
       },
       "ref": null,
@@ -696,19 +696,19 @@ ShallowWrapper {
             "children": Array [
               <PopupHeader>
                 Registration details
-              </PopupHeader>,
+</PopupHeader>,
               <PopupContent>
                 Click here to sign up
-              </PopupContent>,
+</PopupContent>,
             ],
             "on": "hover",
             "position": "top left",
             "trigger": <Button
               as="button"
               onClick={[Function]}
-            >
+>
               Sign up
-            </Button>,
+</Button>,
           },
           "ref": null,
           "rendered": Array [
@@ -745,65 +745,65 @@ ShallowWrapper {
             "basic": true,
             "children": <ModalContent>
               <Grid
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
-                textAlign="center"
-                verticalAlign="middle"
+                            style={
+                                          Object {
+                                                        "height": "100%",
+                                                      }
+                            }
+                            textAlign="center"
+                            verticalAlign="middle"
               >
-                <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
-                >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
-                </GridColumn>
+                            <GridColumn
+                                          style={
+                                                        Object {
+                                                                      "maxWidth": 450,
+                                                                    }
+                                          }
+                            >
+                                          <Header
+                                                        as="h2"
+                                                        color="teal"
+                                                        textAlign="center"
+                                          >
+                                                        <Image
+                                                                      as="img"
+                                                                      src="logo.png"
+                                                                      ui={true}
+                                                        />
+                                                         Sign up for a new account
+                                          </Header>
+                                          <ReduxForm
+                                                        location={
+                                                                      Object {
+                                                                                    "state": Object {
+                                                                                      "modalOpen": false,
+                                                                                    },
+                                                                                  }
+                                                        }
+                                                        mutate={[Function]}
+                                                        onSubmit={[Function]}
+                                          />
+                                          <Message>
+                                                        Already have an account?
+                                                         
+                                                        <Link
+                                                                      href="/login"
+                                                                      replace={false}
+                                                                      to={
+                                                                                    Object {
+                                                                                                  "pathname": "/login",
+                                                                                                  "state": Object {
+                                                                                                    "modalOpen": true,
+                                                                                                  },
+                                                                                                }
+                                                                      }
+                                                        >
+                                                                      Sign in
+                                                        </Link>
+                                          </Message>
+                            </GridColumn>
               </Grid>
-            </ModalContent>,
+</ModalContent>,
             "closeOnDimmerClick": true,
             "closeOnDocumentClick": false,
             "dimmer": true,
@@ -820,63 +820,63 @@ ShallowWrapper {
             "props": Object {
               "children": <Grid
                 style={
-                  Object {
-                    "height": "100%",
-                  }
+                                Object {
+                                                "height": "100%",
+                                              }
                 }
                 textAlign="center"
                 verticalAlign="middle"
-              >
+>
                 <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
+                                style={
+                                                Object {
+                                                                "maxWidth": 450,
+                                                              }
+                                }
                 >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
+                                <Header
+                                                as="h2"
+                                                color="teal"
+                                                textAlign="center"
+                                >
+                                                <Image
+                                                                as="img"
+                                                                src="logo.png"
+                                                                ui={true}
+                                                />
+                                                 Sign up for a new account
+                                </Header>
+                                <ReduxForm
+                                                location={
+                                                                Object {
+                                                                                "state": Object {
+                                                                                  "modalOpen": false,
+                                                                                },
+                                                                              }
+                                                }
+                                                mutate={[Function]}
+                                                onSubmit={[Function]}
+                                />
+                                <Message>
+                                                Already have an account?
+                                                 
+                                                <Link
+                                                                href="/login"
+                                                                replace={false}
+                                                                to={
+                                                                                Object {
+                                                                                                "pathname": "/login",
+                                                                                                "state": Object {
+                                                                                                  "modalOpen": true,
+                                                                                                },
+                                                                                              }
+                                                                }
+                                                >
+                                                                Sign in
+                                                </Link>
+                                </Message>
                 </GridColumn>
-              </Grid>,
+</Grid>,
             },
             "ref": null,
             "rendered": Object {
@@ -886,53 +886,53 @@ ShallowWrapper {
               "props": Object {
                 "children": <GridColumn
                   style={
-                    Object {
-                      "maxWidth": 450,
-                    }
+                                    Object {
+                                                      "maxWidth": 450,
+                                                    }
                   }
-                >
+>
                   <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
+                                    as="h2"
+                                    color="teal"
+                                    textAlign="center"
                   >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
+                                    <Image
+                                                      as="img"
+                                                      src="logo.png"
+                                                      ui={true}
+                                    />
+                                     Sign up for a new account
                   </Header>
                   <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
+                                    location={
+                                                      Object {
+                                                                        "state": Object {
+                                                                          "modalOpen": false,
+                                                                        },
+                                                                      }
+                                    }
+                                    mutate={[Function]}
+                                    onSubmit={[Function]}
                   />
                   <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
+                                    Already have an account?
+                                     
+                                    <Link
+                                                      href="/login"
+                                                      replace={false}
+                                                      to={
+                                                                        Object {
+                                                                                          "pathname": "/login",
+                                                                                          "state": Object {
+                                                                                            "modalOpen": true,
+                                                                                          },
+                                                                                        }
+                                                      }
+                                    >
+                                                      Sign in
+                                    </Link>
                   </Message>
-                </GridColumn>,
+</GridColumn>,
                 "style": Object {
                   "height": "100%",
                 },
@@ -950,43 +950,43 @@ ShallowWrapper {
                       as="h2"
                       color="teal"
                       textAlign="center"
-                    >
+>
                       <Image
-                        as="img"
-                        src="/img/logo.png"
-                        ui={true}
+                                            as="img"
+                                            src="logo.png"
+                                            ui={true}
                       />
                        Sign up for a new account
-                    </Header>,
+</Header>,
                     <ReduxForm
                       location={
-                        Object {
-                          "state": Object {
-                            "modalOpen": false,
-                          },
-                        }
+                                            Object {
+                                                                  "state": Object {
+                                                                    "modalOpen": false,
+                                                                  },
+                                                                }
                       }
                       mutate={[Function]}
                       onSubmit={[Function]}
-                    />,
+/>,
                     <Message>
                       Already have an account?
                        
                       <Link
-                        href="/login"
-                        replace={false}
-                        to={
-                          Object {
-                            "pathname": "/login",
-                            "state": Object {
-                              "modalOpen": true,
-                            },
-                          }
-                        }
+                                            href="/login"
+                                            replace={false}
+                                            to={
+                                                                  Object {
+                                                                                        "pathname": "/login",
+                                                                                        "state": Object {
+                                                                                          "modalOpen": true,
+                                                                                        },
+                                                                                      }
+                                            }
                       >
-                        Sign in
+                                            Sign in
                       </Link>
-                    </Message>,
+</Message>,
                   ],
                   "style": Object {
                     "maxWidth": 450,
@@ -1003,9 +1003,9 @@ ShallowWrapper {
                       "children": Array [
                         <Image
                           as="img"
-                          src="/img/logo.png"
+                          src="logo.png"
                           ui={true}
-                        />,
+/>,
                         " Sign up for a new account",
                       ],
                       "color": "teal",
@@ -1019,7 +1019,7 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "img",
-                          "src": "/img/logo.png",
+                          "src": "logo.png",
                           "ui": true,
                         },
                         "ref": null,
@@ -1059,16 +1059,16 @@ ShallowWrapper {
                           href="/login"
                           replace={false}
                           to={
-                            Object {
-                              "pathname": "/login",
-                              "state": Object {
-                                "modalOpen": true,
-                              },
-                            }
+                                                    Object {
+                                                                              "pathname": "/login",
+                                                                              "state": Object {
+                                                                                "modalOpen": true,
+                                                                              },
+                                                                            }
                           }
-                        >
+>
                           Sign in
-                        </Link>,
+</Link>,
                       ],
                     },
                     "ref": null,
@@ -3415,14 +3415,14 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RegisterModal
     location={
-      Object {
-        "state": Object {
-          "modalOpen": false,
-        },
-      }
+        Object {
+            "state": Object {
+              "modalOpen": false,
+            },
+          }
     }
     mutate={[Function]}
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -3440,21 +3440,21 @@ ShallowWrapper {
           on="hover"
           position="top left"
           trigger={
-            <Button
-              as="button"
-              onClick={[Function]}
-            >
-              Sign up
-            </Button>
+                    <Button
+                              as="button"
+                              onClick={[Function]}
+                    >
+                              Sign up
+                    </Button>
           }
-        >
+>
           <PopupHeader>
-            Registration details
+                    Registration details
           </PopupHeader>
           <PopupContent>
-            Click here to sign up
+                    Click here to sign up
           </PopupContent>
-        </Popup>,
+</Popup>,
         <Modal
           basic={true}
           closeOnDimmerClick={true}
@@ -3464,78 +3464,78 @@ ShallowWrapper {
           onClose={[Function]}
           open={false}
           size="small"
-        >
+>
           <ModalContent>
-            <Grid
-              style={
-                Object {
-                  "height": "100%",
-                }
-              }
-              textAlign="center"
-              verticalAlign="middle"
-            >
-              <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
-              >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
-              </GridColumn>
-            </Grid>
+                    <Grid
+                              style={
+                                        Object {
+                                                  "height": "100%",
+                                                }
+                              }
+                              textAlign="center"
+                              verticalAlign="middle"
+                    >
+                              <GridColumn
+                                        style={
+                                                  Object {
+                                                            "maxWidth": 450,
+                                                          }
+                                        }
+                              >
+                                        <Header
+                                                  as="h2"
+                                                  color="teal"
+                                                  textAlign="center"
+                                        >
+                                                  <Image
+                                                            as="img"
+                                                            src="logo.png"
+                                                            ui={true}
+                                                  />
+                                                   Sign up for a new account
+                                        </Header>
+                                        <ReduxForm
+                                                  location={
+                                                            Object {
+                                                                      "state": Object {
+                                                                        "modalOpen": false,
+                                                                      },
+                                                                    }
+                                                  }
+                                                  mutate={[Function]}
+                                                  onSubmit={[Function]}
+                                        />
+                                        <Message>
+                                                  Already have an account?
+                                                   
+                                                  <Link
+                                                            href="/login"
+                                                            replace={false}
+                                                            to={
+                                                                      Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                                            }
+                                                  >
+                                                            Sign in
+                                                  </Link>
+                                        </Message>
+                              </GridColumn>
+                    </Grid>
           </ModalContent>
-        </Modal>,
+</Modal>,
         <RegistrationSuccessModal
           handleClose={[Function]}
           successModalOpen={false}
-        />,
+/>,
         <RegistrationFailureModal
           errors={Array []}
           handleClose={[Function]}
           successModalOpen={false}
-        />,
+/>,
       ],
     },
     "ref": null,
@@ -3548,19 +3548,19 @@ ShallowWrapper {
           "children": Array [
             <PopupHeader>
               Registration details
-            </PopupHeader>,
+</PopupHeader>,
             <PopupContent>
               Click here to sign up
-            </PopupContent>,
+</PopupContent>,
           ],
           "on": "hover",
           "position": "top left",
           "trigger": <Button
             as="button"
             onClick={[Function]}
-          >
+>
             Sign up
-          </Button>,
+</Button>,
         },
         "ref": null,
         "rendered": Array [
@@ -3597,65 +3597,65 @@ ShallowWrapper {
           "basic": true,
           "children": <ModalContent>
             <Grid
-              style={
-                Object {
-                  "height": "100%",
-                }
-              }
-              textAlign="center"
-              verticalAlign="middle"
+                        style={
+                                    Object {
+                                                "height": "100%",
+                                              }
+                        }
+                        textAlign="center"
+                        verticalAlign="middle"
             >
-              <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
-              >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
-              </GridColumn>
+                        <GridColumn
+                                    style={
+                                                Object {
+                                                            "maxWidth": 450,
+                                                          }
+                                    }
+                        >
+                                    <Header
+                                                as="h2"
+                                                color="teal"
+                                                textAlign="center"
+                                    >
+                                                <Image
+                                                            as="img"
+                                                            src="logo.png"
+                                                            ui={true}
+                                                />
+                                                 Sign up for a new account
+                                    </Header>
+                                    <ReduxForm
+                                                location={
+                                                            Object {
+                                                                        "state": Object {
+                                                                          "modalOpen": false,
+                                                                        },
+                                                                      }
+                                                }
+                                                mutate={[Function]}
+                                                onSubmit={[Function]}
+                                    />
+                                    <Message>
+                                                Already have an account?
+                                                 
+                                                <Link
+                                                            href="/login"
+                                                            replace={false}
+                                                            to={
+                                                                        Object {
+                                                                                    "pathname": "/login",
+                                                                                    "state": Object {
+                                                                                      "modalOpen": true,
+                                                                                    },
+                                                                                  }
+                                                            }
+                                                >
+                                                            Sign in
+                                                </Link>
+                                    </Message>
+                        </GridColumn>
             </Grid>
-          </ModalContent>,
+</ModalContent>,
           "closeOnDimmerClick": true,
           "closeOnDocumentClick": false,
           "dimmer": true,
@@ -3672,63 +3672,63 @@ ShallowWrapper {
           "props": Object {
             "children": <Grid
               style={
-                Object {
-                  "height": "100%",
-                }
+                            Object {
+                                          "height": "100%",
+                                        }
               }
               textAlign="center"
               verticalAlign="middle"
-            >
+>
               <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
+                            style={
+                                          Object {
+                                                        "maxWidth": 450,
+                                                      }
+                            }
               >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
+                            <Header
+                                          as="h2"
+                                          color="teal"
+                                          textAlign="center"
+                            >
+                                          <Image
+                                                        as="img"
+                                                        src="logo.png"
+                                                        ui={true}
+                                          />
+                                           Sign up for a new account
+                            </Header>
+                            <ReduxForm
+                                          location={
+                                                        Object {
+                                                                      "state": Object {
+                                                                        "modalOpen": false,
+                                                                      },
+                                                                    }
+                                          }
+                                          mutate={[Function]}
+                                          onSubmit={[Function]}
+                            />
+                            <Message>
+                                          Already have an account?
+                                           
+                                          <Link
+                                                        href="/login"
+                                                        replace={false}
+                                                        to={
+                                                                      Object {
+                                                                                    "pathname": "/login",
+                                                                                    "state": Object {
+                                                                                      "modalOpen": true,
+                                                                                    },
+                                                                                  }
+                                                        }
+                                          >
+                                                        Sign in
+                                          </Link>
+                            </Message>
               </GridColumn>
-            </Grid>,
+</Grid>,
           },
           "ref": null,
           "rendered": Object {
@@ -3738,53 +3738,53 @@ ShallowWrapper {
             "props": Object {
               "children": <GridColumn
                 style={
-                  Object {
-                    "maxWidth": 450,
-                  }
+                                Object {
+                                                "maxWidth": 450,
+                                              }
                 }
-              >
+>
                 <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
+                                as="h2"
+                                color="teal"
+                                textAlign="center"
                 >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
+                                <Image
+                                                as="img"
+                                                src="logo.png"
+                                                ui={true}
+                                />
+                                 Sign up for a new account
                 </Header>
                 <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
+                                location={
+                                                Object {
+                                                                "state": Object {
+                                                                  "modalOpen": false,
+                                                                },
+                                                              }
+                                }
+                                mutate={[Function]}
+                                onSubmit={[Function]}
                 />
                 <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
+                                Already have an account?
+                                 
+                                <Link
+                                                href="/login"
+                                                replace={false}
+                                                to={
+                                                                Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                                }
+                                >
+                                                Sign in
+                                </Link>
                 </Message>
-              </GridColumn>,
+</GridColumn>,
               "style": Object {
                 "height": "100%",
               },
@@ -3802,43 +3802,43 @@ ShallowWrapper {
                     as="h2"
                     color="teal"
                     textAlign="center"
-                  >
+>
                     <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
+                                        as="img"
+                                        src="logo.png"
+                                        ui={true}
                     />
                      Sign up for a new account
-                  </Header>,
+</Header>,
                   <ReduxForm
                     location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
+                                        Object {
+                                                            "state": Object {
+                                                              "modalOpen": false,
+                                                            },
+                                                          }
                     }
                     mutate={[Function]}
                     onSubmit={[Function]}
-                  />,
+/>,
                   <Message>
                     Already have an account?
                      
                     <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
+                                        href="/login"
+                                        replace={false}
+                                        to={
+                                                            Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                        }
                     >
-                      Sign in
+                                        Sign in
                     </Link>
-                  </Message>,
+</Message>,
                 ],
                 "style": Object {
                   "maxWidth": 450,
@@ -3855,9 +3855,9 @@ ShallowWrapper {
                     "children": Array [
                       <Image
                         as="img"
-                        src="/img/logo.png"
+                        src="logo.png"
                         ui={true}
-                      />,
+/>,
                       " Sign up for a new account",
                     ],
                     "color": "teal",
@@ -3871,7 +3871,7 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "img",
-                        "src": "/img/logo.png",
+                        "src": "logo.png",
                         "ui": true,
                       },
                       "ref": null,
@@ -3911,16 +3911,16 @@ ShallowWrapper {
                         href="/login"
                         replace={false}
                         to={
-                          Object {
-                            "pathname": "/login",
-                            "state": Object {
-                              "modalOpen": true,
-                            },
-                          }
+                                                Object {
+                                                                        "pathname": "/login",
+                                                                        "state": Object {
+                                                                          "modalOpen": true,
+                                                                        },
+                                                                      }
                         }
-                      >
+>
                         Sign in
-                      </Link>,
+</Link>,
                     ],
                   },
                   "ref": null,
@@ -3997,21 +3997,21 @@ ShallowWrapper {
             on="hover"
             position="top left"
             trigger={
-              <Button
-                as="button"
-                onClick={[Function]}
-              >
-                Sign up
-              </Button>
+                        <Button
+                                    as="button"
+                                    onClick={[Function]}
+                        >
+                                    Sign up
+                        </Button>
             }
-          >
+>
             <PopupHeader>
-              Registration details
+                        Registration details
             </PopupHeader>
             <PopupContent>
-              Click here to sign up
+                        Click here to sign up
             </PopupContent>
-          </Popup>,
+</Popup>,
           <Modal
             basic={true}
             closeOnDimmerClick={true}
@@ -4021,78 +4021,78 @@ ShallowWrapper {
             onClose={[Function]}
             open={false}
             size="small"
-          >
+>
             <ModalContent>
-              <Grid
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
-                textAlign="center"
-                verticalAlign="middle"
-              >
-                <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
-                >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
-                </GridColumn>
-              </Grid>
+                        <Grid
+                                    style={
+                                                Object {
+                                                            "height": "100%",
+                                                          }
+                                    }
+                                    textAlign="center"
+                                    verticalAlign="middle"
+                        >
+                                    <GridColumn
+                                                style={
+                                                            Object {
+                                                                        "maxWidth": 450,
+                                                                      }
+                                                }
+                                    >
+                                                <Header
+                                                            as="h2"
+                                                            color="teal"
+                                                            textAlign="center"
+                                                >
+                                                            <Image
+                                                                        as="img"
+                                                                        src="logo.png"
+                                                                        ui={true}
+                                                            />
+                                                             Sign up for a new account
+                                                </Header>
+                                                <ReduxForm
+                                                            location={
+                                                                        Object {
+                                                                                    "state": Object {
+                                                                                      "modalOpen": false,
+                                                                                    },
+                                                                                  }
+                                                            }
+                                                            mutate={[Function]}
+                                                            onSubmit={[Function]}
+                                                />
+                                                <Message>
+                                                            Already have an account?
+                                                             
+                                                            <Link
+                                                                        href="/login"
+                                                                        replace={false}
+                                                                        to={
+                                                                                    Object {
+                                                                                                "pathname": "/login",
+                                                                                                "state": Object {
+                                                                                                  "modalOpen": true,
+                                                                                                },
+                                                                                              }
+                                                                        }
+                                                            >
+                                                                        Sign in
+                                                            </Link>
+                                                </Message>
+                                    </GridColumn>
+                        </Grid>
             </ModalContent>
-          </Modal>,
+</Modal>,
           <RegistrationSuccessModal
             handleClose={[Function]}
             successModalOpen={false}
-          />,
+/>,
           <RegistrationFailureModal
             errors={Array []}
             handleClose={[Function]}
             successModalOpen={false}
-          />,
+/>,
         ],
       },
       "ref": null,
@@ -4105,19 +4105,19 @@ ShallowWrapper {
             "children": Array [
               <PopupHeader>
                 Registration details
-              </PopupHeader>,
+</PopupHeader>,
               <PopupContent>
                 Click here to sign up
-              </PopupContent>,
+</PopupContent>,
             ],
             "on": "hover",
             "position": "top left",
             "trigger": <Button
               as="button"
               onClick={[Function]}
-            >
+>
               Sign up
-            </Button>,
+</Button>,
           },
           "ref": null,
           "rendered": Array [
@@ -4154,65 +4154,65 @@ ShallowWrapper {
             "basic": true,
             "children": <ModalContent>
               <Grid
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
-                textAlign="center"
-                verticalAlign="middle"
+                            style={
+                                          Object {
+                                                        "height": "100%",
+                                                      }
+                            }
+                            textAlign="center"
+                            verticalAlign="middle"
               >
-                <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
-                >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
-                </GridColumn>
+                            <GridColumn
+                                          style={
+                                                        Object {
+                                                                      "maxWidth": 450,
+                                                                    }
+                                          }
+                            >
+                                          <Header
+                                                        as="h2"
+                                                        color="teal"
+                                                        textAlign="center"
+                                          >
+                                                        <Image
+                                                                      as="img"
+                                                                      src="logo.png"
+                                                                      ui={true}
+                                                        />
+                                                         Sign up for a new account
+                                          </Header>
+                                          <ReduxForm
+                                                        location={
+                                                                      Object {
+                                                                                    "state": Object {
+                                                                                      "modalOpen": false,
+                                                                                    },
+                                                                                  }
+                                                        }
+                                                        mutate={[Function]}
+                                                        onSubmit={[Function]}
+                                          />
+                                          <Message>
+                                                        Already have an account?
+                                                         
+                                                        <Link
+                                                                      href="/login"
+                                                                      replace={false}
+                                                                      to={
+                                                                                    Object {
+                                                                                                  "pathname": "/login",
+                                                                                                  "state": Object {
+                                                                                                    "modalOpen": true,
+                                                                                                  },
+                                                                                                }
+                                                                      }
+                                                        >
+                                                                      Sign in
+                                                        </Link>
+                                          </Message>
+                            </GridColumn>
               </Grid>
-            </ModalContent>,
+</ModalContent>,
             "closeOnDimmerClick": true,
             "closeOnDocumentClick": false,
             "dimmer": true,
@@ -4229,63 +4229,63 @@ ShallowWrapper {
             "props": Object {
               "children": <Grid
                 style={
-                  Object {
-                    "height": "100%",
-                  }
+                                Object {
+                                                "height": "100%",
+                                              }
                 }
                 textAlign="center"
                 verticalAlign="middle"
-              >
+>
                 <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
+                                style={
+                                                Object {
+                                                                "maxWidth": 450,
+                                                              }
+                                }
                 >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
+                                <Header
+                                                as="h2"
+                                                color="teal"
+                                                textAlign="center"
+                                >
+                                                <Image
+                                                                as="img"
+                                                                src="logo.png"
+                                                                ui={true}
+                                                />
+                                                 Sign up for a new account
+                                </Header>
+                                <ReduxForm
+                                                location={
+                                                                Object {
+                                                                                "state": Object {
+                                                                                  "modalOpen": false,
+                                                                                },
+                                                                              }
+                                                }
+                                                mutate={[Function]}
+                                                onSubmit={[Function]}
+                                />
+                                <Message>
+                                                Already have an account?
+                                                 
+                                                <Link
+                                                                href="/login"
+                                                                replace={false}
+                                                                to={
+                                                                                Object {
+                                                                                                "pathname": "/login",
+                                                                                                "state": Object {
+                                                                                                  "modalOpen": true,
+                                                                                                },
+                                                                                              }
+                                                                }
+                                                >
+                                                                Sign in
+                                                </Link>
+                                </Message>
                 </GridColumn>
-              </Grid>,
+</Grid>,
             },
             "ref": null,
             "rendered": Object {
@@ -4295,53 +4295,53 @@ ShallowWrapper {
               "props": Object {
                 "children": <GridColumn
                   style={
-                    Object {
-                      "maxWidth": 450,
-                    }
+                                    Object {
+                                                      "maxWidth": 450,
+                                                    }
                   }
-                >
+>
                   <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
+                                    as="h2"
+                                    color="teal"
+                                    textAlign="center"
                   >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
+                                    <Image
+                                                      as="img"
+                                                      src="logo.png"
+                                                      ui={true}
+                                    />
+                                     Sign up for a new account
                   </Header>
                   <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
+                                    location={
+                                                      Object {
+                                                                        "state": Object {
+                                                                          "modalOpen": false,
+                                                                        },
+                                                                      }
+                                    }
+                                    mutate={[Function]}
+                                    onSubmit={[Function]}
                   />
                   <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
+                                    Already have an account?
+                                     
+                                    <Link
+                                                      href="/login"
+                                                      replace={false}
+                                                      to={
+                                                                        Object {
+                                                                                          "pathname": "/login",
+                                                                                          "state": Object {
+                                                                                            "modalOpen": true,
+                                                                                          },
+                                                                                        }
+                                                      }
+                                    >
+                                                      Sign in
+                                    </Link>
                   </Message>
-                </GridColumn>,
+</GridColumn>,
                 "style": Object {
                   "height": "100%",
                 },
@@ -4359,43 +4359,43 @@ ShallowWrapper {
                       as="h2"
                       color="teal"
                       textAlign="center"
-                    >
+>
                       <Image
-                        as="img"
-                        src="/img/logo.png"
-                        ui={true}
+                                            as="img"
+                                            src="logo.png"
+                                            ui={true}
                       />
                        Sign up for a new account
-                    </Header>,
+</Header>,
                     <ReduxForm
                       location={
-                        Object {
-                          "state": Object {
-                            "modalOpen": false,
-                          },
-                        }
+                                            Object {
+                                                                  "state": Object {
+                                                                    "modalOpen": false,
+                                                                  },
+                                                                }
                       }
                       mutate={[Function]}
                       onSubmit={[Function]}
-                    />,
+/>,
                     <Message>
                       Already have an account?
                        
                       <Link
-                        href="/login"
-                        replace={false}
-                        to={
-                          Object {
-                            "pathname": "/login",
-                            "state": Object {
-                              "modalOpen": true,
-                            },
-                          }
-                        }
+                                            href="/login"
+                                            replace={false}
+                                            to={
+                                                                  Object {
+                                                                                        "pathname": "/login",
+                                                                                        "state": Object {
+                                                                                          "modalOpen": true,
+                                                                                        },
+                                                                                      }
+                                            }
                       >
-                        Sign in
+                                            Sign in
                       </Link>
-                    </Message>,
+</Message>,
                   ],
                   "style": Object {
                     "maxWidth": 450,
@@ -4412,9 +4412,9 @@ ShallowWrapper {
                       "children": Array [
                         <Image
                           as="img"
-                          src="/img/logo.png"
+                          src="logo.png"
                           ui={true}
-                        />,
+/>,
                         " Sign up for a new account",
                       ],
                       "color": "teal",
@@ -4428,7 +4428,7 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "img",
-                          "src": "/img/logo.png",
+                          "src": "logo.png",
                           "ui": true,
                         },
                         "ref": null,
@@ -4468,16 +4468,16 @@ ShallowWrapper {
                           href="/login"
                           replace={false}
                           to={
-                            Object {
-                              "pathname": "/login",
-                              "state": Object {
-                                "modalOpen": true,
-                              },
-                            }
+                                                    Object {
+                                                                              "pathname": "/login",
+                                                                              "state": Object {
+                                                                                "modalOpen": true,
+                                                                              },
+                                                                            }
                           }
-                        >
+>
                           Sign in
-                        </Link>,
+</Link>,
                       ],
                     },
                     "ref": null,
@@ -4560,14 +4560,14 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RegisterModal
     location={
-      Object {
-        "state": Object {
-          "modalOpen": false,
-        },
-      }
+        Object {
+            "state": Object {
+              "modalOpen": false,
+            },
+          }
     }
     mutate={[Function]}
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -4585,21 +4585,21 @@ ShallowWrapper {
           on="hover"
           position="top left"
           trigger={
-            <Button
-              as="button"
-              onClick={[Function]}
-            >
-              Sign up
-            </Button>
+                    <Button
+                              as="button"
+                              onClick={[Function]}
+                    >
+                              Sign up
+                    </Button>
           }
-        >
+>
           <PopupHeader>
-            Registration details
+                    Registration details
           </PopupHeader>
           <PopupContent>
-            Click here to sign up
+                    Click here to sign up
           </PopupContent>
-        </Popup>,
+</Popup>,
         <Modal
           basic={true}
           closeOnDimmerClick={true}
@@ -4609,78 +4609,78 @@ ShallowWrapper {
           onClose={[Function]}
           open={false}
           size="small"
-        >
+>
           <ModalContent>
-            <Grid
-              style={
-                Object {
-                  "height": "100%",
-                }
-              }
-              textAlign="center"
-              verticalAlign="middle"
-            >
-              <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
-              >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
-              </GridColumn>
-            </Grid>
+                    <Grid
+                              style={
+                                        Object {
+                                                  "height": "100%",
+                                                }
+                              }
+                              textAlign="center"
+                              verticalAlign="middle"
+                    >
+                              <GridColumn
+                                        style={
+                                                  Object {
+                                                            "maxWidth": 450,
+                                                          }
+                                        }
+                              >
+                                        <Header
+                                                  as="h2"
+                                                  color="teal"
+                                                  textAlign="center"
+                                        >
+                                                  <Image
+                                                            as="img"
+                                                            src="logo.png"
+                                                            ui={true}
+                                                  />
+                                                   Sign up for a new account
+                                        </Header>
+                                        <ReduxForm
+                                                  location={
+                                                            Object {
+                                                                      "state": Object {
+                                                                        "modalOpen": false,
+                                                                      },
+                                                                    }
+                                                  }
+                                                  mutate={[Function]}
+                                                  onSubmit={[Function]}
+                                        />
+                                        <Message>
+                                                  Already have an account?
+                                                   
+                                                  <Link
+                                                            href="/login"
+                                                            replace={false}
+                                                            to={
+                                                                      Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                                            }
+                                                  >
+                                                            Sign in
+                                                  </Link>
+                                        </Message>
+                              </GridColumn>
+                    </Grid>
           </ModalContent>
-        </Modal>,
+</Modal>,
         <RegistrationSuccessModal
           handleClose={[Function]}
           successModalOpen={false}
-        />,
+/>,
         <RegistrationFailureModal
           errors={Array []}
           handleClose={[Function]}
           successModalOpen={false}
-        />,
+/>,
       ],
     },
     "ref": null,
@@ -4693,19 +4693,19 @@ ShallowWrapper {
           "children": Array [
             <PopupHeader>
               Registration details
-            </PopupHeader>,
+</PopupHeader>,
             <PopupContent>
               Click here to sign up
-            </PopupContent>,
+</PopupContent>,
           ],
           "on": "hover",
           "position": "top left",
           "trigger": <Button
             as="button"
             onClick={[Function]}
-          >
+>
             Sign up
-          </Button>,
+</Button>,
         },
         "ref": null,
         "rendered": Array [
@@ -4742,65 +4742,65 @@ ShallowWrapper {
           "basic": true,
           "children": <ModalContent>
             <Grid
-              style={
-                Object {
-                  "height": "100%",
-                }
-              }
-              textAlign="center"
-              verticalAlign="middle"
+                        style={
+                                    Object {
+                                                "height": "100%",
+                                              }
+                        }
+                        textAlign="center"
+                        verticalAlign="middle"
             >
-              <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
-              >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
-              </GridColumn>
+                        <GridColumn
+                                    style={
+                                                Object {
+                                                            "maxWidth": 450,
+                                                          }
+                                    }
+                        >
+                                    <Header
+                                                as="h2"
+                                                color="teal"
+                                                textAlign="center"
+                                    >
+                                                <Image
+                                                            as="img"
+                                                            src="logo.png"
+                                                            ui={true}
+                                                />
+                                                 Sign up for a new account
+                                    </Header>
+                                    <ReduxForm
+                                                location={
+                                                            Object {
+                                                                        "state": Object {
+                                                                          "modalOpen": false,
+                                                                        },
+                                                                      }
+                                                }
+                                                mutate={[Function]}
+                                                onSubmit={[Function]}
+                                    />
+                                    <Message>
+                                                Already have an account?
+                                                 
+                                                <Link
+                                                            href="/login"
+                                                            replace={false}
+                                                            to={
+                                                                        Object {
+                                                                                    "pathname": "/login",
+                                                                                    "state": Object {
+                                                                                      "modalOpen": true,
+                                                                                    },
+                                                                                  }
+                                                            }
+                                                >
+                                                            Sign in
+                                                </Link>
+                                    </Message>
+                        </GridColumn>
             </Grid>
-          </ModalContent>,
+</ModalContent>,
           "closeOnDimmerClick": true,
           "closeOnDocumentClick": false,
           "dimmer": true,
@@ -4817,63 +4817,63 @@ ShallowWrapper {
           "props": Object {
             "children": <Grid
               style={
-                Object {
-                  "height": "100%",
-                }
+                            Object {
+                                          "height": "100%",
+                                        }
               }
               textAlign="center"
               verticalAlign="middle"
-            >
+>
               <GridColumn
-                style={
-                  Object {
-                    "maxWidth": 450,
-                  }
-                }
+                            style={
+                                          Object {
+                                                        "maxWidth": 450,
+                                                      }
+                            }
               >
-                <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
-                >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
-                </Header>
-                <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
-                />
-                <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
-                </Message>
+                            <Header
+                                          as="h2"
+                                          color="teal"
+                                          textAlign="center"
+                            >
+                                          <Image
+                                                        as="img"
+                                                        src="logo.png"
+                                                        ui={true}
+                                          />
+                                           Sign up for a new account
+                            </Header>
+                            <ReduxForm
+                                          location={
+                                                        Object {
+                                                                      "state": Object {
+                                                                        "modalOpen": false,
+                                                                      },
+                                                                    }
+                                          }
+                                          mutate={[Function]}
+                                          onSubmit={[Function]}
+                            />
+                            <Message>
+                                          Already have an account?
+                                           
+                                          <Link
+                                                        href="/login"
+                                                        replace={false}
+                                                        to={
+                                                                      Object {
+                                                                                    "pathname": "/login",
+                                                                                    "state": Object {
+                                                                                      "modalOpen": true,
+                                                                                    },
+                                                                                  }
+                                                        }
+                                          >
+                                                        Sign in
+                                          </Link>
+                            </Message>
               </GridColumn>
-            </Grid>,
+</Grid>,
           },
           "ref": null,
           "rendered": Object {
@@ -4883,53 +4883,53 @@ ShallowWrapper {
             "props": Object {
               "children": <GridColumn
                 style={
-                  Object {
-                    "maxWidth": 450,
-                  }
+                                Object {
+                                                "maxWidth": 450,
+                                              }
                 }
-              >
+>
                 <Header
-                  as="h2"
-                  color="teal"
-                  textAlign="center"
+                                as="h2"
+                                color="teal"
+                                textAlign="center"
                 >
-                  <Image
-                    as="img"
-                    src="/img/logo.png"
-                    ui={true}
-                  />
-                   Sign up for a new account
+                                <Image
+                                                as="img"
+                                                src="logo.png"
+                                                ui={true}
+                                />
+                                 Sign up for a new account
                 </Header>
                 <ReduxForm
-                  location={
-                    Object {
-                      "state": Object {
-                        "modalOpen": false,
-                      },
-                    }
-                  }
-                  mutate={[Function]}
-                  onSubmit={[Function]}
+                                location={
+                                                Object {
+                                                                "state": Object {
+                                                                  "modalOpen": false,
+                                                                },
+                                                              }
+                                }
+                                mutate={[Function]}
+                                onSubmit={[Function]}
                 />
                 <Message>
-                  Already have an account?
-                   
-                  <Link
-                    href="/login"
-                    replace={false}
-                    to={
-                      Object {
-                        "pathname": "/login",
-                        "state": Object {
-                          "modalOpen": true,
-                        },
-                      }
-                    }
-                  >
-                    Sign in
-                  </Link>
+                                Already have an account?
+                                 
+                                <Link
+                                                href="/login"
+                                                replace={false}
+                                                to={
+                                                                Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                                }
+                                >
+                                                Sign in
+                                </Link>
                 </Message>
-              </GridColumn>,
+</GridColumn>,
               "style": Object {
                 "height": "100%",
               },
@@ -4947,43 +4947,43 @@ ShallowWrapper {
                     as="h2"
                     color="teal"
                     textAlign="center"
-                  >
+>
                     <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
+                                        as="img"
+                                        src="logo.png"
+                                        ui={true}
                     />
                      Sign up for a new account
-                  </Header>,
+</Header>,
                   <ReduxForm
                     location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
+                                        Object {
+                                                            "state": Object {
+                                                              "modalOpen": false,
+                                                            },
+                                                          }
                     }
                     mutate={[Function]}
                     onSubmit={[Function]}
-                  />,
+/>,
                   <Message>
                     Already have an account?
                      
                     <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
+                                        href="/login"
+                                        replace={false}
+                                        to={
+                                                            Object {
+                                                                                "pathname": "/login",
+                                                                                "state": Object {
+                                                                                  "modalOpen": true,
+                                                                                },
+                                                                              }
+                                        }
                     >
-                      Sign in
+                                        Sign in
                     </Link>
-                  </Message>,
+</Message>,
                 ],
                 "style": Object {
                   "maxWidth": 450,
@@ -5000,9 +5000,9 @@ ShallowWrapper {
                     "children": Array [
                       <Image
                         as="img"
-                        src="/img/logo.png"
+                        src="logo.png"
                         ui={true}
-                      />,
+/>,
                       " Sign up for a new account",
                     ],
                     "color": "teal",
@@ -5016,7 +5016,7 @@ ShallowWrapper {
                       "nodeType": "function",
                       "props": Object {
                         "as": "img",
-                        "src": "/img/logo.png",
+                        "src": "logo.png",
                         "ui": true,
                       },
                       "ref": null,
@@ -5056,16 +5056,16 @@ ShallowWrapper {
                         href="/login"
                         replace={false}
                         to={
-                          Object {
-                            "pathname": "/login",
-                            "state": Object {
-                              "modalOpen": true,
-                            },
-                          }
+                                                Object {
+                                                                        "pathname": "/login",
+                                                                        "state": Object {
+                                                                          "modalOpen": true,
+                                                                        },
+                                                                      }
                         }
-                      >
+>
                         Sign in
-                      </Link>,
+</Link>,
                     ],
                   },
                   "ref": null,
@@ -5142,21 +5142,21 @@ ShallowWrapper {
             on="hover"
             position="top left"
             trigger={
-              <Button
-                as="button"
-                onClick={[Function]}
-              >
-                Sign up
-              </Button>
+                        <Button
+                                    as="button"
+                                    onClick={[Function]}
+                        >
+                                    Sign up
+                        </Button>
             }
-          >
+>
             <PopupHeader>
-              Registration details
+                        Registration details
             </PopupHeader>
             <PopupContent>
-              Click here to sign up
+                        Click here to sign up
             </PopupContent>
-          </Popup>,
+</Popup>,
           <Modal
             basic={true}
             closeOnDimmerClick={true}
@@ -5166,78 +5166,78 @@ ShallowWrapper {
             onClose={[Function]}
             open={false}
             size="small"
-          >
+>
             <ModalContent>
-              <Grid
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
-                textAlign="center"
-                verticalAlign="middle"
-              >
-                <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
-                >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
-                </GridColumn>
-              </Grid>
+                        <Grid
+                                    style={
+                                                Object {
+                                                            "height": "100%",
+                                                          }
+                                    }
+                                    textAlign="center"
+                                    verticalAlign="middle"
+                        >
+                                    <GridColumn
+                                                style={
+                                                            Object {
+                                                                        "maxWidth": 450,
+                                                                      }
+                                                }
+                                    >
+                                                <Header
+                                                            as="h2"
+                                                            color="teal"
+                                                            textAlign="center"
+                                                >
+                                                            <Image
+                                                                        as="img"
+                                                                        src="logo.png"
+                                                                        ui={true}
+                                                            />
+                                                             Sign up for a new account
+                                                </Header>
+                                                <ReduxForm
+                                                            location={
+                                                                        Object {
+                                                                                    "state": Object {
+                                                                                      "modalOpen": false,
+                                                                                    },
+                                                                                  }
+                                                            }
+                                                            mutate={[Function]}
+                                                            onSubmit={[Function]}
+                                                />
+                                                <Message>
+                                                            Already have an account?
+                                                             
+                                                            <Link
+                                                                        href="/login"
+                                                                        replace={false}
+                                                                        to={
+                                                                                    Object {
+                                                                                                "pathname": "/login",
+                                                                                                "state": Object {
+                                                                                                  "modalOpen": true,
+                                                                                                },
+                                                                                              }
+                                                                        }
+                                                            >
+                                                                        Sign in
+                                                            </Link>
+                                                </Message>
+                                    </GridColumn>
+                        </Grid>
             </ModalContent>
-          </Modal>,
+</Modal>,
           <RegistrationSuccessModal
             handleClose={[Function]}
             successModalOpen={false}
-          />,
+/>,
           <RegistrationFailureModal
             errors={Array []}
             handleClose={[Function]}
             successModalOpen={false}
-          />,
+/>,
         ],
       },
       "ref": null,
@@ -5250,19 +5250,19 @@ ShallowWrapper {
             "children": Array [
               <PopupHeader>
                 Registration details
-              </PopupHeader>,
+</PopupHeader>,
               <PopupContent>
                 Click here to sign up
-              </PopupContent>,
+</PopupContent>,
             ],
             "on": "hover",
             "position": "top left",
             "trigger": <Button
               as="button"
               onClick={[Function]}
-            >
+>
               Sign up
-            </Button>,
+</Button>,
           },
           "ref": null,
           "rendered": Array [
@@ -5299,65 +5299,65 @@ ShallowWrapper {
             "basic": true,
             "children": <ModalContent>
               <Grid
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
-                textAlign="center"
-                verticalAlign="middle"
+                            style={
+                                          Object {
+                                                        "height": "100%",
+                                                      }
+                            }
+                            textAlign="center"
+                            verticalAlign="middle"
               >
-                <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
-                >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
-                </GridColumn>
+                            <GridColumn
+                                          style={
+                                                        Object {
+                                                                      "maxWidth": 450,
+                                                                    }
+                                          }
+                            >
+                                          <Header
+                                                        as="h2"
+                                                        color="teal"
+                                                        textAlign="center"
+                                          >
+                                                        <Image
+                                                                      as="img"
+                                                                      src="logo.png"
+                                                                      ui={true}
+                                                        />
+                                                         Sign up for a new account
+                                          </Header>
+                                          <ReduxForm
+                                                        location={
+                                                                      Object {
+                                                                                    "state": Object {
+                                                                                      "modalOpen": false,
+                                                                                    },
+                                                                                  }
+                                                        }
+                                                        mutate={[Function]}
+                                                        onSubmit={[Function]}
+                                          />
+                                          <Message>
+                                                        Already have an account?
+                                                         
+                                                        <Link
+                                                                      href="/login"
+                                                                      replace={false}
+                                                                      to={
+                                                                                    Object {
+                                                                                                  "pathname": "/login",
+                                                                                                  "state": Object {
+                                                                                                    "modalOpen": true,
+                                                                                                  },
+                                                                                                }
+                                                                      }
+                                                        >
+                                                                      Sign in
+                                                        </Link>
+                                          </Message>
+                            </GridColumn>
               </Grid>
-            </ModalContent>,
+</ModalContent>,
             "closeOnDimmerClick": true,
             "closeOnDocumentClick": false,
             "dimmer": true,
@@ -5374,63 +5374,63 @@ ShallowWrapper {
             "props": Object {
               "children": <Grid
                 style={
-                  Object {
-                    "height": "100%",
-                  }
+                                Object {
+                                                "height": "100%",
+                                              }
                 }
                 textAlign="center"
                 verticalAlign="middle"
-              >
+>
                 <GridColumn
-                  style={
-                    Object {
-                      "maxWidth": 450,
-                    }
-                  }
+                                style={
+                                                Object {
+                                                                "maxWidth": 450,
+                                                              }
+                                }
                 >
-                  <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
-                  >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
-                  </Header>
-                  <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
-                  />
-                  <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
-                  </Message>
+                                <Header
+                                                as="h2"
+                                                color="teal"
+                                                textAlign="center"
+                                >
+                                                <Image
+                                                                as="img"
+                                                                src="logo.png"
+                                                                ui={true}
+                                                />
+                                                 Sign up for a new account
+                                </Header>
+                                <ReduxForm
+                                                location={
+                                                                Object {
+                                                                                "state": Object {
+                                                                                  "modalOpen": false,
+                                                                                },
+                                                                              }
+                                                }
+                                                mutate={[Function]}
+                                                onSubmit={[Function]}
+                                />
+                                <Message>
+                                                Already have an account?
+                                                 
+                                                <Link
+                                                                href="/login"
+                                                                replace={false}
+                                                                to={
+                                                                                Object {
+                                                                                                "pathname": "/login",
+                                                                                                "state": Object {
+                                                                                                  "modalOpen": true,
+                                                                                                },
+                                                                                              }
+                                                                }
+                                                >
+                                                                Sign in
+                                                </Link>
+                                </Message>
                 </GridColumn>
-              </Grid>,
+</Grid>,
             },
             "ref": null,
             "rendered": Object {
@@ -5440,53 +5440,53 @@ ShallowWrapper {
               "props": Object {
                 "children": <GridColumn
                   style={
-                    Object {
-                      "maxWidth": 450,
-                    }
+                                    Object {
+                                                      "maxWidth": 450,
+                                                    }
                   }
-                >
+>
                   <Header
-                    as="h2"
-                    color="teal"
-                    textAlign="center"
+                                    as="h2"
+                                    color="teal"
+                                    textAlign="center"
                   >
-                    <Image
-                      as="img"
-                      src="/img/logo.png"
-                      ui={true}
-                    />
-                     Sign up for a new account
+                                    <Image
+                                                      as="img"
+                                                      src="logo.png"
+                                                      ui={true}
+                                    />
+                                     Sign up for a new account
                   </Header>
                   <ReduxForm
-                    location={
-                      Object {
-                        "state": Object {
-                          "modalOpen": false,
-                        },
-                      }
-                    }
-                    mutate={[Function]}
-                    onSubmit={[Function]}
+                                    location={
+                                                      Object {
+                                                                        "state": Object {
+                                                                          "modalOpen": false,
+                                                                        },
+                                                                      }
+                                    }
+                                    mutate={[Function]}
+                                    onSubmit={[Function]}
                   />
                   <Message>
-                    Already have an account?
-                     
-                    <Link
-                      href="/login"
-                      replace={false}
-                      to={
-                        Object {
-                          "pathname": "/login",
-                          "state": Object {
-                            "modalOpen": true,
-                          },
-                        }
-                      }
-                    >
-                      Sign in
-                    </Link>
+                                    Already have an account?
+                                     
+                                    <Link
+                                                      href="/login"
+                                                      replace={false}
+                                                      to={
+                                                                        Object {
+                                                                                          "pathname": "/login",
+                                                                                          "state": Object {
+                                                                                            "modalOpen": true,
+                                                                                          },
+                                                                                        }
+                                                      }
+                                    >
+                                                      Sign in
+                                    </Link>
                   </Message>
-                </GridColumn>,
+</GridColumn>,
                 "style": Object {
                   "height": "100%",
                 },
@@ -5504,43 +5504,43 @@ ShallowWrapper {
                       as="h2"
                       color="teal"
                       textAlign="center"
-                    >
+>
                       <Image
-                        as="img"
-                        src="/img/logo.png"
-                        ui={true}
+                                            as="img"
+                                            src="logo.png"
+                                            ui={true}
                       />
                        Sign up for a new account
-                    </Header>,
+</Header>,
                     <ReduxForm
                       location={
-                        Object {
-                          "state": Object {
-                            "modalOpen": false,
-                          },
-                        }
+                                            Object {
+                                                                  "state": Object {
+                                                                    "modalOpen": false,
+                                                                  },
+                                                                }
                       }
                       mutate={[Function]}
                       onSubmit={[Function]}
-                    />,
+/>,
                     <Message>
                       Already have an account?
                        
                       <Link
-                        href="/login"
-                        replace={false}
-                        to={
-                          Object {
-                            "pathname": "/login",
-                            "state": Object {
-                              "modalOpen": true,
-                            },
-                          }
-                        }
+                                            href="/login"
+                                            replace={false}
+                                            to={
+                                                                  Object {
+                                                                                        "pathname": "/login",
+                                                                                        "state": Object {
+                                                                                          "modalOpen": true,
+                                                                                        },
+                                                                                      }
+                                            }
                       >
-                        Sign in
+                                            Sign in
                       </Link>
-                    </Message>,
+</Message>,
                   ],
                   "style": Object {
                     "maxWidth": 450,
@@ -5557,9 +5557,9 @@ ShallowWrapper {
                       "children": Array [
                         <Image
                           as="img"
-                          src="/img/logo.png"
+                          src="logo.png"
                           ui={true}
-                        />,
+/>,
                         " Sign up for a new account",
                       ],
                       "color": "teal",
@@ -5573,7 +5573,7 @@ ShallowWrapper {
                         "nodeType": "function",
                         "props": Object {
                           "as": "img",
-                          "src": "/img/logo.png",
+                          "src": "logo.png",
                           "ui": true,
                         },
                         "ref": null,
@@ -5613,16 +5613,16 @@ ShallowWrapper {
                           href="/login"
                           replace={false}
                           to={
-                            Object {
-                              "pathname": "/login",
-                              "state": Object {
-                                "modalOpen": true,
-                              },
-                            }
+                                                    Object {
+                                                                              "pathname": "/login",
+                                                                              "state": Object {
+                                                                                "modalOpen": true,
+                                                                              },
+                                                                            }
                           }
-                        >
+>
                           Sign in
-                        </Link>,
+</Link>,
                       ],
                     },
                     "ref": null,

@@ -1,6 +1,7 @@
 import localforage from 'localforage'
 import { ApolloClient } from 'apollo-client'
 import { ApolloLink, split } from 'apollo-link'
+// import WebSocket from 'ws'
 // import { getOperationAST } from 'graphql'
 import { getMainDefinition } from 'apollo-utilities' // eslint-disable-line
 import { onError } from 'apollo-link-error'
@@ -60,51 +61,17 @@ const tokenAfterwareLink = new ApolloLink((operation, forward) =>
     return response
   }))
 
-// const errorLink = onError(({ graphQLErrors, networkError }) => {
-//   if (graphQLErrors) {
-//     graphQLErrors.map(({ message, locations, path }) =>
-//       // eslint-disable-next-line
-//       console.log(
-//         `[GraphQL error]: Message: ${message},
-// Location: ${JSON.stringify(locations)}, Path: ${path}`))
-//   }
 
-//   if (networkError) {
-//     console.log(`[Network error]: ${networkError}`) //eslint-disable-line
-//   }
-// })
-
-// Websocket Link
-// const wsLink = new WebSocketLink({
-//   uri: 'ws://localhost:5000/subscriptions',
-//   options: {
-//     reconnect: true,
-//     connectionParams: {
-//       authToken: token,
-//     },
-//   },
-// })
-
-// const wsLink = (config = {}) =>
-//   new WebSocketLink({
-//     uri:
-//       process.env.NODE_ENV !== 'production'
-//         ? 'ws://localhost:5000/subscriptions'
-//         : 'wss://cherrypieapp.herokuapp.com/subscriptions',
-//     options: {
-//       reconnect: true,
-//       connectionParams: {
-//         authToken: token,
-//       },
-//     },
-//     ...config,
-//   })
+// Object.assign(global, {
+//   WebSocket: WebSocket,
+// });
 
 const wsLink = new WebSocketLink({
   uri:
     process.env.NODE_ENV !== 'production'
       ? 'ws://localhost:5000/subscriptions'
       : 'wss://cherrypieapp.herokuapp.com/subscriptions',
+  // webSocketImpl: WebSocket,
   options: {
     reconnect: true,
     connectionParams: {

@@ -9,7 +9,7 @@ import LoginForm from './loginForm'
 import LoginSuccessModal from './loginSuccessModal'
 import LoginFailureModal from './loginFailureModal'
 import loginMutation from '../../graphql/mutations/loginMutation'
-import usersListQuery from '../../graphql/queries/usersListQuery'
+// import usersListQuery from '../../graphql/queries/usersListQuery'
 import currentUserQuery from '../../graphql/queries/currentUserQuery'
 import logo from './logo.png'
 // import findUserByEmailQuery from '../../graphql/queries/findUserByEmailQuery'
@@ -23,7 +23,7 @@ class LoginModal extends Component {
   }
 
   componentWillMount() {
-    console.log(`LoginModal:cwm: ${JSON.stringify(this.props)}`)
+    // console.log(`LoginModal:cwm: ${JSON.stringify(this.props)}`)
     if (this.props.location && this.props.location.state) {
       const { modalOpen, next } = this.props.location.state
       // const { next } = this.state
@@ -63,9 +63,9 @@ class LoginModal extends Component {
     })
 
   handleSuccess = () => {
-    console.log('handleSuccess')
-    console.log(this.props)
-    console.log(this.state)
+    // console.log('handleSuccess')
+    // console.log(this.props)
+    // console.log(this.state)
     // this.setState({ modalOpen: false, successModalOpen: true })
     // debugger
     // this.setState({ modalOpen: false })

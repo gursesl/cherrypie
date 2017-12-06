@@ -7,7 +7,7 @@ export default (WrappedComponent) => {
   class RequireAuth extends Component {
     componentWillMount() {
       // console.log(this.props.match.path)
-      console.log(`RequireAuth:cwm ${JSON.stringify(this.props)}`)
+      // console.log(`RequireAuth:cwm ${JSON.stringify(this.props)}`)
       const { loading, getCurrentUser } = this.props.data
       if (!loading && !getCurrentUser) {
         this.props.history.push('/login', { modalOpen: true, next: this.props.match.path })
