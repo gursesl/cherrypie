@@ -2,7 +2,7 @@ import { fromJS } from 'immutable'
 import * as api from '../api'
 import * as m from './mockdata'
 
-describe('API:Users', () => {
+xdescribe('API:Users', () => {
   beforeEach(() => {
     fetch.mockResponse(JSON.stringify(m.mockData.toJS()))
   });

@@ -6,7 +6,6 @@ import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import Immutable from 'immutable'
 import configureStore from 'redux-mock-store'
-import sinon from 'sinon'
 import {
   Button,
   Container,
