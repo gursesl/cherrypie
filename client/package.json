@@ -2,6 +2,13 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "clean": "rm -rf node_modules build && yarn install",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.3",
     "apollo-client": "^2.1.0",
@@ -38,13 +45,6 @@
     "subscriptions-transport-ws": "^0.9.4",
     "validator": "^9.1.2",
     "whatwg-fetch": "^2.0.3"
-  },
-  "scripts": {
-    "clean": "rm -rf node_modules build && yarn install",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "NODE_ENV=test ENABLE_MOCK_API=true MOCK_API_URL=http://localhost:3001 react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "enzyme": "^3.2.0",
