@@ -1,5 +1,4 @@
 import 'semantic-ui-css/semantic.min.css'
-// import './dist/semantic.min.css'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -13,14 +12,15 @@ import registerServiceWorker from './registerServiceWorker'
 
 const target = document.getElementById('root')
 
-render(
+const body = (
   <ApolloProvider client={client}>
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <App />
       </ConnectedRouter>
     </Provider>
-  </ApolloProvider>,
-  target
+  </ApolloProvider>
 )
+
+render(body, target)
 registerServiceWorker()
