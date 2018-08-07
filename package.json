@@ -138,7 +138,7 @@
     "redux-saga-testing": "^1.0.5",
     "rimraf": "2.6.2",
     "sinon": "^4.0.0",
-    "style-loader": "^0.19.0",
+    "style-loader": "^0.22.0",
     "surge": "^0.19.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-hot-middleware": "^2.19.1",
