@@ -52,7 +52,7 @@
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "dotenv-webpack": "^1.5.4",
-    "enzyme": "^3.0.0",
+    "enzyme": "^3.5.1",
     "enzyme-adapter-react-16": "^1.0.0",
     "express": "^4.16.2",
     "express-history-api-fallback": "^2.2.1",
