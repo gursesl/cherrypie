@@ -68,7 +68,7 @@
     "json-schema-faker": "^0.4.6",
     "mime": "^2.0.3",
     "nodemon": "^1.12.1",
-    "open": "^0.0.5",
+    "open": "^7.3.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-apollo": "^2.0.0",
